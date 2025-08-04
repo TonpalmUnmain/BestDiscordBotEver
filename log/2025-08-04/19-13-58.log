@@ -1,0 +1,28 @@
+2025-08-04 19:14:06,272 - INFO - logging in using static token
+2025-08-04 19:14:08,089 - INFO - Shard ID None has connected to Gateway (Session ID: a1093842c40ccfa413c542705bb3964b).
+2025-08-04 19:14:10,110 - INFO - Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-08-04 19:14:10,473 - INFO - BestBotEver!!!#9403 (1386280922218893465) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: I HAVE AWAKEN. RAHHHHH.
+2025-08-04 19:14:10,537 - INFO - Sent startup message to channel ID: 1371357608904228924
+2025-08-04 19:14:21,846 - INFO - tritoniscool. (1179654613738201129) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: \u2115\u236e\u24bc\u24bc\u24ba\u24c7
+2025-08-04 19:14:52,384 - INFO - p.pumpum (1260198579067420722) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: !session
+2025-08-04 19:14:52,384 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "session" is not found
+2025-08-04 19:15:03,585 - INFO - tritoniscool. (1179654613738201129) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: !session
+2025-08-04 19:15:03,586 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "session" is not found
+2025-08-04 19:15:06,328 - INFO - p.pumpum (1260198579067420722) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: !sessioninfo
+2025-08-04 19:15:07,168 - INFO - BestBotEver!!!#9403 (1386280922218893465) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: **Session Info**
+Hostname: `MainPC`
+IP Address: `192.168.56.1`
+OS: `Windows 11`
+Version: `10.0.26100`
+Architecture: `AMD64`
+User: `jimnd`
+Session ID: `ea35173b-276d-41e4-a540-24707c679e15`
+2025-08-04 19:15:07,218 - INFO - Session info sent by p.pumpum
+2025-08-04 19:15:19,686 - INFO - p.pumpum (1260198579067420722) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: !version
+2025-08-04 19:15:20,025 - INFO - BestBotEver!!!#9403 (1386280922218893465) in #\u2726-chat-\u2726 [1371357608904228924] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: Bot version: 1.7.0
+My papi is: TonpalmUnmain (P.pumpum)
+2025-08-04 19:15:33,595 - INFO - tritoniscool. (1179654613738201129) in #\u2726-bots-commands-\u2726 [1386878389196951563] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: !version
+2025-08-04 19:15:33,950 - INFO - BestBotEver!!!#9403 (1386280922218893465) in #\u2726-bots-commands-\u2726 [1386878389196951563] of \U0001f4da\u208a\u02da\u22b9\u2661M.1/1 Discord\u2661\u22b9\u02da\u208a\U0001f3a7: Bot version: 1.7.0
+My papi is: TonpalmUnmain (P.pumpum)
