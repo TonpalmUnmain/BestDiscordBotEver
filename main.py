@@ -17,8 +17,76 @@ import getpass
 # Setup import path for local libs
 sys.path.insert(0, r"D:\TonpalmUnmain\Project\BestDiscordBotEver\lib")
 
-# Load token from environment variable or file
-token = open("token.config", "r").read().strip() if os.path.exists("token.config") else logging.error("Token file not found. Please create 'token.config' with your bot token.") or None
+# Load config
+CONFIG_FILE = "config.json"
+
+def get_config():
+    with open(CONFIG_FILE, "r") as f:
+        return json.load(f)
+
+def save_config(cfg):
+    with open(CONFIG_FILE, "w") as f:
+        json.dump(cfg, f, indent=4)
+
+config_data = get_config()
+token = config_data["config"]["token"]
+target_channel_id = int(config_data["config"]["default_target_channel_id"])
+
+# Setup bot
+intents = discord.Intents.default()
+intents.messages = True
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+running = False
+bot_thread = None
+
+@bot.event
+async def on_ready():
+    logging.info(f"{bot.user} has connected to Discord!")
+
+# ---------- BOT SESSION ----------
+
+def startsession(startmsg="Bot session started."):
+    global running
+    if running:
+        print("Bot already running.")
+        return
+    running = True
+
+    def run_bot():
+        try:
+            bot.loop.create_task(send_message(startmsg))
+            bot.run(bot_token)
+        except Exception as e:
+            logging.error(f"Error running bot: {e}")
+            print(f"Error: {e}")
+
+    global bot_thread
+    bot_thread = threading.Thread(target=run_bot, daemon=True)
+    bot_thread.start()
+
+async def send_message(message):
+    await bot.wait_until_ready()
+    channel = bot.get_channel(target_channel_id)
+    if channel:
+        await channel.send(message)
+    else:
+        print("Invalid channel ID.")
+
+def stopsession(stopmsg="Bot session ended."):
+    global running
+    if not running:
+        print("Bot not running.")
+        return
+    running = False
+    async def shutdown():
+        await send_message(stopmsg)
+        await bot.close()
+    asyncio.run(shutdown())
+# Load values
+target_channel_id = int(config_data["config"]["default_target_channel_id"])
+VERSION = config_data["version"]
+AUTHOR = config_data["author"]
 # Logging setup
 START_TIME = datetime.now()
 LOG_DIR = f"log/{START_TIME.strftime('%Y-%m-%d')}"
@@ -31,8 +99,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-VERSION = "1.7.0"
-AUTHOR = "TonpalmUnmain (P.pumpum)"
 target_channel_id = 1371357608904228924
 
 # Discord Intents
@@ -331,93 +397,147 @@ async def privileged_error(ctx, error):
 
 # Console input loop
 def console_input():
-    global target_channel_id
-    while True:
-        try:
-            user_input = input("bsessconsole> ")
-            if user_input.startswith("cfch(") and user_input.endswith(")"):
-                new_id = int(user_input[5:-1])
-                target_channel_id = new_id
-                logging.info(f"Console changed channel ID to: {new_id}")
-                print(f"Target channel changed to {new_id}")
-            else:
-                channel = bot.get_channel(target_channel_id)
-                if channel:
-                    asyncio.run_coroutine_threadsafe(channel.send(user_input), bot.loop)
-                    logging.info(f"Console message: {user_input}")
-        except Exception as e:
-            logging.error(f"Console input error: {e}")
-
-# Global session state
-bot_running = False
-bot_thread = None  # Track bot thread
-
-def console_loop():
-    global bot_running, target_channel_id, bot_thread
-
+    global target_channel_id, bot_token, config_data
     print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], config [key] [value]")
     while True:
         try:
             cmd = input("console> ").strip()
             if not cmd:
                 continue
-
             parts = cmd.split()
             command = parts[0].lower()
+            args = parts[1:]
 
             if command == "start":
-                if not bot_running:
-                    bot_running = True
-                    msg = " ".join(parts[1:]) or "Bot session started."
-
-                    # Start bot in a separate thread
-                    def run_bot():
-                        try:
-                            bot.run(token)
-                        except Exception as e:
-                            logging.error(f"Error running bot: {e}")
-                            print(f"Error running bot: {e}")
-
-                    bot_thread = threading.Thread(target=run_bot, daemon=True)
-                    bot_thread.start()
-
-                    # Schedule on_startup message
-                    asyncio.run_coroutine_threadsafe(on_startup(msg), bot.loop)
-                else:
-                    print("Bot already running.")
+                msg = " ".join(args) if args else "Bot session started."
+                startsession(msg)
 
             elif command == "stop":
-                if bot_running:
-                    bot_running = False
-                    msg = " ".join(parts[1:]) or "Bot session stopped."
-                    asyncio.run_coroutine_threadsafe(on_shutdown(msg), bot.loop)
-                    asyncio.run_coroutine_threadsafe(bot.close(), bot.loop)
-                else:
-                    print("Bot is not running.")
+                msg = " ".join(args) if args else "Bot session ended."
+                stopsession(msg)
 
-            elif command == "targch":
-                if len(parts) < 2:
-                    print("Usage: targch [channel_id]")
-                    continue
+            elif command == "targch" and len(args) == 1:
                 try:
-                    target_channel_id = int(parts[1])
-                    print(f"Target channel set to {target_channel_id}")
+                    target_channel_id = int(args[0])
+                    config_data["config"]["default_target_channel_id"] = str(target_channel_id)
+                    save_config(config_data)
+                    print(f"Target channel updated to {target_channel_id}")
                 except ValueError:
                     print("Invalid channel ID.")
 
-            elif command == "config":
-                if len(parts) < 3:
-                    print("Usage: config [key] [value]")
-                    continue
-                key, value = parts[1], " ".join(parts[2:])
-                set_config(key, value)
-                print(f"Config '{key}' updated to '{value}'")
+            elif command == "config" and len(args) >= 2:
+                key = args[0]
+                value = " ".join(args[1:])
+                config_data["config"][key] = value
+                save_config(config_data)
+                print(f"Config '{key}' set to '{value}'")
+                if key == "token":
+                    bot_token = value
+                elif key == "default_target_channel_id":
+                    target_channel_id = int(value)
 
             else:
-                print("Unknown command.")
+                target_channel_id.message(cmd)
+        except Exception as e:
+            print(f"Console error: {e}")
+
+# Global session state
+bot_running = False
+bot_thread = None  # Track bot thread
+
+def console_interface():
+    global TARGET_CHANNEL_ID
+    print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], config [key] [value]")
+
+    while True:
+        try:
+            cmd = input("console> ").strip()
+            if not cmd:
+                continue
+
+            args = cmd.split()
+            command = args[0].lower()
+
+            if command == "start":
+                msg = " ".join(args[1:]) if len(args) > 1 else None
+                asyncio.run_coroutine_threadsafe(startsession(msg), bot.loop)
+
+            elif command == "stop":
+                msg = " ".join(args[1:]) if len(args) > 1 else None
+                asyncio.run_coroutine_threadsafe(stop_session(msg), bot.loop)
+
+            elif command == "targch":
+                if len(args) < 2:
+                    print("Usage: targch [channel_id]")
+                    continue
+                new_id = int(args[1])
+                TARGET_CHANNEL_ID = new_id
+                set_config("default_target_channel_id", str(new_id))
+                print(f"Target channel set to: {new_id}")
+
+            elif command == "config":
+                if len(args) < 3:
+                    print("Usage: config [key] [value]")
+                    continue
+                key = args[1]
+                value = args[2]
+                set_config(key, value)
+                print(f"Set config '{key}' to '{value}'")
+
+            else:
+                print("Unknown command")
 
         except Exception as e:
             print(f"Console error: {e}")
+
+# --- BOT SESSION COMMANDS ---
+
+async def startsession(message=None):
+    global bot_started
+    if bot_started:
+        print("Bot already running.")
+        return
+
+    @bot.event
+    async def on_ready():
+        print(f"Logged in as {bot.user} (ID: {bot.user.id})")
+        if message and TARGET_CHANNEL_ID:
+            try:
+                channel = bot.get_channel(TARGET_CHANNEL_ID)
+                if channel:
+                    await channel.send(message)
+                    print("Startup message sent.")
+                else:
+                    print("Channel not found.")
+            except Exception as e:
+                print(f"Failed to send message: {e}")
+
+    bot_started = True
+    try:
+        await bot.start(token)
+    except Exception as e:
+        print(f"Error starting bot: {e}")
+        print(token)
+        bot_started = False
+
+async def stop_session(message=None):
+    global bot_started
+    if not bot_started:
+        print("Bot not running.")
+        return
+
+    if message and TARGET_CHANNEL_ID:
+        try:
+            channel = bot.get_channel(TARGET_CHANNEL_ID)
+            if channel:
+                await channel.send(message)
+                print("Shutdown message sent.")
+        except Exception as e:
+            print(f"Failed to send message: {e}")
+
+    await bot.close()
+    bot_started = False
+    print("Bot stopped.")
 
 def startsession():
     # DEPRECATED — moved logic into console `start` command
@@ -472,7 +592,7 @@ def set_config(key, value):
         json.dump(conf, f, indent=4)
 
 
-threading.Thread(target=console_loop, daemon=True).start()
+threading.Thread(target=console_interface, daemon=True).start()
 
 def startsession():
     try:
@@ -486,12 +606,4 @@ def startsession():
 
 # Launch console on script run
 if __name__ == "__main__":
-    threading.Thread(target=console_loop, daemon=True).start()
-    while True:
-        try:
-            # Keep the main thread alive
-            threading.Event().wait(60)
-        except KeyboardInterrupt:
-            print("\nExiting...")
-            break
-
+    threading.Thread(target=console_interface, daemon=True).start()
