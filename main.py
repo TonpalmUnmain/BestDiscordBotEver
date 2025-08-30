@@ -98,12 +98,12 @@ async def stopsession(message=None):
 
 # ===== UTILS =====
 def normalize_message(text):
-    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+    text = unicodedata.normalize('NFKD', str(text)).encode('ASCII', 'ignore').decode('ASCII')
     text = re.sub(r'[\s\W_]+', '', text)
     text = ''.join(c for c in text if not unicodedata.combining(c))
     text = re.sub(r'[\u200B-\u200F\uFE00-\uFE0F\u2060-\u206F]', '', text)
     text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C')
-    return unicodedata.normalize("NFKC", text).lower()
+    return str(unicodedata.normalize("NFKC", str(text)).lower())
 
 # ===== BANNED WORDS =====
 BANNED_WORDS_FILE = "banned_words.json"
@@ -139,8 +139,9 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-
-    logging.info(f"{message.author} ({message.author.id}) in {message.channel}: {message.content}")
+    logging.info(
+        f"{message.author} ({message.author.id}) in {message.channel}: {message.content}".encode("utf-8", errors="replace").decode("utf-8")
+    )
     content = normalize_message(message.content)
     await bot.process_commands(message)
 

@@ -1,0 +1,279 @@
+2025-08-30 21:50:24,295 [INFO] logging in using static token
+2025-08-30 21:50:25,846 [INFO] Shard ID None has connected to Gateway (Session ID: bd6f487b7f77f6d39371d8e6ba793acb).
+2025-08-30 21:50:27,867 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-08-30 21:50:28,565 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-08-30 21:50:34,849 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:50:45,709 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:50:57,535 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:05,761 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:10,156 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:12,779 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:15,139 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:16,739 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:17,925 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:19,443 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:24,601 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:26,499 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:27,480 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:28,995 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:31,199 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:33,220 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:34,830 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:35,892 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:36,962 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:47,215 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:49,377 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:52,191 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:51:53,501 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:52:08,881 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member
+2025-08-30 21:54:00,169 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 143, in on_message
+    f"{normalize_message(message.author)} ({normalize_message(message.author.id)}) in {normalize_message(message.channel)}: {normalize_message(message.content)}".encode("utf-8", errors="replace").decode("utf-8")
+       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 101, in normalize_message
+    text = unicodedata.normalize('NFKD', str(text)).encode('ASCII', 'ignore').decode('ASCII')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: normalize() argument 2 must be str, not Member

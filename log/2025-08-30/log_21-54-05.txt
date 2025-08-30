@@ -1,0 +1,11 @@
+2025-08-30 21:54:07,672 [INFO] logging in using static token
+2025-08-30 21:54:09,965 [INFO] Shard ID None has connected to Gateway (Session ID: 18a11ed96d272ecaddd0913ecde3f9ad).
+2025-08-30 21:54:11,974 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-08-30 21:54:12,433 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-08-30 21:54:21,990 [INFO] ppumpum (1260198579067420722) in chat: adfadfa
+2025-08-30 21:54:28,894 [INFO] ppumpum (1260198579067420722) in chat: fgsfgsafgs
+2025-08-30 21:54:33,785 [INFO] ppumpum (1260198579067420722) in chat: adgadgadg
+2025-08-30 21:54:37,665 [INFO] ppumpum (1260198579067420722) in chat: testes
+2025-08-30 21:54:37,972 [INFO] endulix (913994744953196614) in chat: httpstenorcomviewbeavercarroteatinggif21665554
+2025-08-30 21:55:21,400 [INFO] sleepycimo (1300754808185290762) in chat: ekjs
+2025-08-30 21:55:24,933 [INFO] sleepycimo (1300754808185290762) in chat: tuffemoji1382989105327112253
