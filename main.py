@@ -23,9 +23,11 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='repla
 log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
 os.makedirs(log_dir, exist_ok=True)
 log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
+handler = logging.StreamHandler(sys.stdout)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
+    encoding='utf-8',
     handlers=[logging.FileHandler(log_file), logging.StreamHandler(sys.stdout)]
 )
 
