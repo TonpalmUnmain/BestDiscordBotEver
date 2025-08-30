@@ -13,6 +13,12 @@ import platform
 import socket
 import uuid
 import getpass
+import io
+
+# ===== UTF-8 OUTPUT SETUP =====
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
 # ===== LOGGING SETUP =====
 log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
 os.makedirs(log_dir, exist_ok=True)
