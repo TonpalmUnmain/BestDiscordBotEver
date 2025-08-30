@@ -1,7 +1,7 @@
 {
-    "version": "2.0",
-    "author": "TonpalmUnmain",
     "config": {
+        "version": "2.0",
+        "author": "TonpalmUnmain",
         "token": "MTM4NjI4MDkyMjIxODg5MzQ2NQ.GmY6TE.ntnZoUOncSyDvhlDAIwCQM9faouBW6JWoXJCB0",
         "default_target_channel_id": "1371357608904228924"
     }

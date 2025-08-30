@@ -13,11 +13,6 @@ import platform
 import socket
 import uuid
 import getpass
-
-# ===== VERSION INFO =====
-VERSION = "1.3.3"
-AUTHOR = "TonpalmUnmain"
-
 # ===== LOGGING SETUP =====
 log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
 os.makedirs(log_dir, exist_ok=True)
@@ -49,6 +44,10 @@ if not config_data:
 token = config_data["config"]["token"]
 target_channel_id = int(config_data["config"]["default_target_channel_id"])
 
+# ===== VERSION INFO =====
+VERSION = config_data["config"]["version"]
+AUTHOR = config_data["config"]["author"]
+
 # ===== BOT SETUP =====
 intents = discord.Intents.default()
 intents.messages = True
@@ -60,6 +59,8 @@ bot_started = False
 # ===== SESSION CONTROL =====
 async def startsession(message=None):
     global bot_started
+    global startmessage
+    startmessage = message
     if bot_started:
         print("Bot already running.")
         return
@@ -72,16 +73,17 @@ async def startsession(message=None):
 
 async def stopsession(message=None):
     global bot_started
+    global stopmessage
+    stopmessage = message
     if not bot_started:
         print("Bot is not running.")
         return
-    if message and target_channel_id:
-        channel = bot.get_channel(target_channel_id)
-        if channel:
-            try:
-                await channel.send(message)
-            except Exception as e:
-                logging.error(f"Failed to send stop message: {e}")
+    channel = bot.get_channel(target_channel_id)
+    if channel:
+        try:
+            await channel.send(stopmessage or "My papi or isp or MEA is shutting me down nooo.")
+        except Exception as e:
+            logging.error(f"Failed to send stop message: {e}")
     bot_started = False
     print("Bot stopped.")
     await bot.close()
@@ -120,7 +122,7 @@ async def on_ready():
     logging.info(f"Logged in as {bot.user} (ID: {bot.user.id})")
     channel = bot.get_channel(target_channel_id)
     if channel:
-        await channel.send("I HAVE AWAKEN. RAHHHHH.")
+        await channel.send(startmessage or "I am watching you.")
         logging.info(f"Sent startup message to channel ID: {target_channel_id}")
     else:
         logging.warning("Couldn't find startup channel.")
