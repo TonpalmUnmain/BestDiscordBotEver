@@ -140,7 +140,7 @@ async def on_message(message):
     if message.author.bot:
         return
     logging.info(
-        f"{message.author} ({message.author.id}) in {message.channel}: {message.content}".encode("utf-8", errors="replace").decode("utf-8")
+        f"{message.author} ({message.author.id}) in {message.channel.id} ({normalize_message(message)}): {message.content}".encode("utf-8", errors="replace").decode("utf-8")
     )
     content = normalize_message(message.content)
     await bot.process_commands(message)
