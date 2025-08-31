@@ -403,6 +403,7 @@ def create_bot():
     @commands.has_permissions(administrator=True)
     async def see_log(ctx, date: str = None, filename: str = None):
         logging.info(f"[{ctx.author} ({ctx.author.id})] Called see_log with date: {date}, filename: {filename}")
+
         if date == "recent":
             log_dirs = sorted(os.listdir("log"), reverse=True)
             if not log_dirs:
@@ -421,12 +422,20 @@ def create_bot():
 
         path = f"log/{date}/{filename}"
         if os.path.exists(path):
-            with open(path, "r") as f:
-                content = f.read()
-            if len(content) < 1900:
-                await ctx.send(f"```\n{content}\n```")
-            else:
-                await ctx.send("Log too large to send. Sending as file.", file=discord.File(path))
+            try:
+                with open(path, "r", encoding="utf-8", errors="replace") as f:
+                    content = f.read()
+
+                if len(content) < 1900:
+                    await ctx.send(f"```\n{content}\n```")
+                else:
+                    # Send just the last 1900 chars for readability
+                    await ctx.send(f"```{content[-1900:]}```")
+                    # Or send full log file as attachment
+                    await ctx.send("Full log attached:", file=discord.File(path))
+
+            except Exception as e:
+                await ctx.send(f"Error reading log file: {e}")
         else:
             await ctx.send("Log not found. I lost it or u dyslexic?")
 
