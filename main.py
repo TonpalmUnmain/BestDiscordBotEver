@@ -23,12 +23,14 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='repla
 log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
 os.makedirs(log_dir, exist_ok=True)
 log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
-handler = logging.StreamHandler(sys.stdout)
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    encoding='utf-8',
-    handlers=[logging.FileHandler(log_file), logging.StreamHandler(sys.stdout)]
+    handlers=[
+        logging.FileHandler(log_file, encoding="utf-8"),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 
 # ===== CONFIG HANDLING =====
@@ -79,21 +81,22 @@ async def startsession(message=None):
         print(f"Error starting bot: {e}")
         bot_started = False
 
-async def stopsession(message=None):
+async def stopsession(message: str = None):
     global bot_started
-    global stopmessage
-    stopmessage = message
     if not bot_started:
-        print("Bot is not running.")
+        logging.info("Bot is not running.")
         return
+
     channel = bot.get_channel(target_channel_id)
     if channel:
         try:
-            await channel.send(stopmessage or "My papi or isp or MEA is shutting me down nooo.")
+            await channel.send(message or "My papi or ISP or MEA is shutting me down nooo.")
         except Exception as e:
             logging.error(f"Failed to send stop message: {e}")
+
     bot_started = False
-    print("Bot stopped.")
+    logging.info("Bot stopped. Closing connection...")
+
     await bot.close()
 
 # ===== UTILS =====
@@ -140,7 +143,7 @@ async def on_message(message):
     if message.author.bot:
         return
     logging.info(
-        f"{message.author} ({message.author.id}) in {message.channel.id} ({normalize_message(message)}): {message.content}".encode("utf-8", errors="replace").decode("utf-8")
+        f"{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
     )
     content = normalize_message(message.content)
     await bot.process_commands(message)
@@ -193,7 +196,7 @@ async def session_info(ctx):
         info = (
             f"**Session Info**\n"
             f"Hostname: `{hostname}`\n"
-            f"IP Address: `{ip_address}`\n"
+            f"IPv4: `{ip_address}`\n"
             f"OS: `{platform.system()} {platform.release()}`\n"
             f"Version: `{platform.version()}`\n"
             f"Architecture: `{platform.machine()}`\n"
