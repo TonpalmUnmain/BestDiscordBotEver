@@ -479,14 +479,40 @@ def console_interface():
 
         elif command == "sendmsg" and args:
             msg = " ".join(args)
+
+            # Function to replace all placeholders dynamically
+            def replace_placeholders(text):
+                # General pattern: <{type:ID}>
+                pattern = r"<\{(\w+):(\d+)\}>"
+
+                def repl(match):
+                    p_type, p_id = match.groups()
+                    if p_type.lower() == "mention":
+                        return f"<@{p_id}>"
+                    elif p_type.lower() == "channel":
+                        return f"<#{p_id}>"
+                    elif p_type.lower() == "role":
+                        return f"<@&{p_id}>"
+                    else:
+                        # Unknown placeholder, keep it as is
+                        return match.group(0)
+
+                return re.sub(pattern, repl, text)
+
+            # Apply placeholder replacement
+            msg = replace_placeholders(msg)
+
             if bot_started and bot_loop:
                 async def send_message():
-                    channel = bot.get_channel(target_channel_id)
-                    if channel:
+                    try:
+                        channel = bot.get_channel(target_channel_id)
+                        if channel is None:
+                            channel = await bot.fetch_channel(target_channel_id)
                         await channel.send(msg)
                         print("Message sent.")
-                    else:
-                        print("Invalid target channel.")
+                    except Exception as e:
+                        print("Failed to send message:", e)
+
                 asyncio.run_coroutine_threadsafe(send_message(), bot_loop)
             else:
                 print("Bot is not running.")
