@@ -1,14 +1,17 @@
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
+
 import discord
 from discord.ext import commands
 from datetime import datetime, timedelta
 import json
-import os
 import unicodedata
 import re
 import asyncio
 import logging
 import threading
-import sys
 import platform
 import socket
 import uuid
@@ -69,14 +72,15 @@ bot_started = False
 
 # ===== SESSION CONTROL =====
 async def startsession(message=None):
-    global bot_started
-    global startmessage
+    global bot_started, bot_loop, startmessage
     startmessage = message
     if bot_started:
         print("Bot already running.")
         return
     bot_started = True
+    bot_started = True
     try:
+        bot_loop = asyncio.get_running_loop()  # Save the bot's loop
         await bot.start(token)
     except Exception as e:
         print(f"Error starting bot: {e}")
@@ -88,6 +92,7 @@ async def stopsession(message: str = None):
         logging.info("Bot is not running.")
         return
 
+    # Attempt to send shutdown message
     channel = bot.get_channel(target_channel_id)
     if channel:
         try:
@@ -98,7 +103,14 @@ async def stopsession(message: str = None):
     bot_started = False
     logging.info("Bot stopped. Closing connection...")
 
+    # Close the bot connection
     await bot.close()
+
+def stop_bot_threadsafe(message: str = None):
+    if bot_started and bot_loop:
+        asyncio.run_coroutine_threadsafe(stopsession(message), bot_loop)
+    else:
+        print("Bot loop not running.")
 
 # ===== UTILS =====
 def normalize_message(text):
@@ -442,42 +454,39 @@ def create_bot():
 
 # ===== CONSOLE INTERFACE =====
 def console_interface():
-        global target_channel_id, config_data
-        
-        print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
-        while True:
-            cmd = input("console> ").strip().split()
-            if not cmd:
-                continue
-            command, *args = cmd
+    global target_channel_id, config_data
 
-            if command == "start":
-                msg = " ".join(args) if args else None
-                threading.Thread(target=lambda: asyncio.run(startsession(msg)), daemon=True).start()
+    print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
+    while True:
+        cmd = input("console> ").strip().split()
+        if not cmd:
+            continue
+        command, *args = cmd
 
-            elif command == "stop":
-                msg = " ".join(args) if args else None
-                if bot_loop.is_running():
-                    asyncio.run_coroutine_threadsafe(stopsession(msg), bot_loop)
-                else:
-                    print("Bot loop not running.")
+        if command == "start":
+            msg = " ".join(args) if args else None
+            threading.Thread(target=lambda: asyncio.run(startsession(msg)), daemon=True).start()
 
-            elif command == "targch" and args and args[0].isdigit():
-                target_channel_id = int(args[0])
-                config_data["config"]["default_target_channel_id"] = str(target_channel_id)
-                save_config(config_data)
-                print(f"Target channel set to {target_channel_id}")
+        elif command == "stop":
+            msg = " ".join(args) if args else None
+            stop_bot_threadsafe(msg)
 
-            elif command == "exit":
-                print("Exiting...")
-                break
+        elif command == "targch" and args and args[0].isdigit():
+            target_channel_id = int(args[0])
+            config_data["config"]["default_target_channel_id"] = str(target_channel_id)
+            save_config(config_data)
+            print(f"Target channel set to {target_channel_id}")
 
-            else:
-                print(f"Unknown command: {command}")
+        elif command == "exit":
+            print("Exiting...")
+            break
+
+        else:
+            print(f"Unknown command: {command}")
+
 
 
 # ===== MAIN =====
 if __name__ == "__main__":
     bot = create_bot()
-    bot_loop = asyncio.get_event_loop()
     console_interface()
