@@ -59,7 +59,7 @@ if not config_data:
     exit(1)
 
 token = config_data["config"]["token"]
-target_channel_id = int(config_data["config"]["default_target_channel_id"])
+target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
 
 # ===== VERSION INFO =====
 VERSION = config_data["config"]["version"]
@@ -338,7 +338,6 @@ def create_bot():
 
     @bot.command(name="pewurselfnga")
     @commands.is_owner()
-    @commands.has_role(1399766498246918216)
     async def sessionend(ctx):
         await ctx.send(f"Ight {ctx.author.mention}... I'm out. 💀")
         await bot.close()
@@ -477,6 +476,23 @@ def console_interface():
             config_data["config"]["default_target_channel_id"] = str(target_channel_id)
             save_config(config_data)
             print(f"Target channel set to {target_channel_id}")
+
+        elif command == "sendmsg" and args:
+            msg = " ".join(args)
+            if bot_started and bot_loop:
+                async def send_message():
+                    channel = bot.get_channel(target_channel_id)
+                    if channel:
+                        await channel.send(msg)
+                        print("Message sent.")
+                    else:
+                        print("Invalid target channel.")
+                asyncio.run_coroutine_threadsafe(send_message(), bot_loop)
+            else:
+                print("Bot is not running.")
+
+        elif command == "status":
+            print(f"Bot running: {bot_started}, Target channel ID: {target_channel_id}")
 
         elif command == "exit":
             print("Exiting...")

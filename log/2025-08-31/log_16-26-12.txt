@@ -1,0 +1,8 @@
+2025-08-31 16:26:14,141 [INFO] logging in using static token
+2025-08-31 16:26:15,530 [INFO] Shard ID None has connected to Gateway (Session ID: 4c0b20f5e1f7876ed4f1ecab0b88ed3b).
+2025-08-31 16:26:17,560 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-08-31 16:26:17,961 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-08-31 16:27:22,425 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): <@1386280922218893465> log ts
+2025-08-31 16:27:42,745 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): <@1260198579067420722>
+2025-08-31 16:43:41,899 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): this guy got exposed and became a pdf and a racist
+2025-08-31 16:43:43,352 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): btw
