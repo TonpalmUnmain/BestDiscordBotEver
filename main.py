@@ -20,6 +20,7 @@ import io
 import platform
 import psutil
 import GPUtil
+import traceback
 
 # ===== UTF-8 OUTPUT SETUP =====
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -488,5 +489,10 @@ def console_interface():
 
 # ===== MAIN =====
 if __name__ == "__main__":
-    bot = create_bot()
-    console_interface()
+    try:
+        bot = create_bot()
+        console_interface()
+    except Exception:
+        logging.critical("Unhandled exception:\n" + traceback.format_exc())
+        input("Press Enter to exit...")
+        sys.exit(1)
