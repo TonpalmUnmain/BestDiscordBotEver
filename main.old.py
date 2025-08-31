@@ -227,7 +227,7 @@ async def ban_word(ctx, *, word: str):
         logging.info(f"Added banned word: {word}")
 
 @bot.command(name="rmword")
-@commands.has_role(1399766498246918216)
+@commands.has_role(ADMIN_ROLE_ID)
 @commands.has_permissions(administrator=True)
 async def remove_ban_word(ctx, *, word: str):
     word = word.lower().strip()
@@ -260,7 +260,7 @@ async def forgive(ctx, member: discord.Member):
 
 @bot.command(name="pewurselfnga")
 @commands.is_owner()
-@commands.has_role(1399766498246918216)
+@commands.has_role(ADMIN_ROLE_ID)
 async def sessionend(ctx):
     await ctx.send(f"Ight {ctx.author.mention}... I'm out. 💀")
     await bot.close()
@@ -284,13 +284,13 @@ async def disagree_with_me(ctx, *, message: str = None):
         await ctx.send(f"No, daddy {ctx.author.mention}😩.")
 
 @bot.command(name="repeat")
-@commands.has_role(1399766498246918216)
+@commands.has_role(ADMIN_ROLE_ID)
 async def repeat(ctx, *, message: str):
     logging.info(f"[{ctx.author} ({ctx.author.id})] Called repeat with message: {message}")
     await ctx.send(message)
 
 @bot.command(name="deplete")
-@commands.has_role(1399766498246918216)
+@commands.has_role(ADMIN_ROLE_ID)
 async def deplete(ctx, type: str, value: int):
     logging.info(f"[{ctx.author} ({ctx.author.id})] Called deplete with type: {type}, value: {value}")
     units = {"ms": 0.001, "sec": 1, "min": 60, "hr": 3600, "d": 86400}

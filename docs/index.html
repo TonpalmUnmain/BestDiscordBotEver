@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discord Moderation Bot – Documentation</title>
+  <style>
+    :root{
+      --bg: #0b0e14;
+      --panel: #0f1320;
+      --text: #e6e6e6;
+      --muted: #9aa4b2;
+      --primary: #7c9cf5;
+      --accent: #53d1b6;
+      --warn: #f5a97f;
+      --danger: #ef6a6a;
+      --code-bg: #0a0f1f;
+      --border: rgba(255,255,255,.08);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc; --panel:#ffffff; --text:#0f172a; --muted:#475569; --primary:#3b82f6; --accent:#10b981; --warn:#f59e0b; --danger:#ef4444; --code-bg:#0b12251a; --border:#e5e7eb;
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;background:linear-gradient(180deg,var(--panel),transparent);backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid var(--border)}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .title{display:flex;align-items:center;gap:12px}
+    .badge{font-size:.8rem;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:24px}
+    nav{position:sticky;top:72px;align-self:start}
+    nav .card{padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+    nav ul{list-style:none;margin:0;padding:0}
+    nav li{margin:.25rem 0}
+    nav a{display:block;padding:6px 8px;border-radius:10px}
+    nav a:hover{background:rgba(124,156,245,.12)}
+    main{padding-bottom:64px}
+    section{margin:24px 0;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+    h1,h2,h3{line-height:1.2;margin:0 0 12px}
+    h1{font-size:2rem}
+    h2{font-size:1.35rem;margin-top:8px}
+    h3{font-size:1.05rem;color:var(--muted)}
+    p{margin:8px 0}
+    .kbd{display:inline-block;background:var(--code-bg);border:1px solid var(--border);padding:2px 6px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:.9em}
+    pre,code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    pre{background:var(--code-bg);border:1px solid var(--border);padding:14px;border-radius:12px;overflow:auto}
+    .flex{display:flex;gap:12px;flex-wrap:wrap}
+    .callout{border-left:4px solid var(--accent);padding:8px 12px;background:rgba(83,209,182,.08);border-radius:8px}
+    .warn{border-left-color:var(--warn);background:rgba(245,169,127,.1)}
+    .danger{border-left-color:var(--danger);background:rgba(239,106,106,.1)}
+    table{width:100%;border-collapse:collapse;margin:8px 0}
+    th,td{border-bottom:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}
+    th{color:var(--muted);font-weight:600}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--border);font-size:.85em;color:var(--muted)}
+    .small{font-size:.9em;color:var(--muted)}
+    footer{border-top:1px solid var(--border);padding:24px;color:var(--muted)}
+    .toc-search{width:100%;padding:8px 10px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text)}
+    .hr{height:1px;background:var(--border);margin:12px 0}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8l5-5z" stroke="currentColor" stroke-width="1.2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.2"/></svg>
+        <h1>BestBotEver!!!</h1>
+      </div>
+      <div class="small">Covers setup, configuration, commands, logging, and safety notes for the provided Python/discord.py bot.</div>
+    </div>
+  </header>
+
+  <div class="wrap grid">
+    <nav>
+      <div class="card">
+        <input class="toc-search" placeholder="Filter sections…" oninput="filterTOC(this.value)" />
+        <div class="hr"></div>
+        <ul id="toc">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#configuration">Configuration</a></li>
+          <li><a href="#running">Running the Bot</a></li>
+          <li><a href="#console">Console Interface</a></li>
+          <li><a href="#events">Bot Events & Filters</a></li>
+          <li><a href="#commands">Discord Commands</a></li>
+          <li><a href="#banned">Banned Words System</a></li>
+          <li><a href="#logging">Logging</a></li>
+          <li><a href="#session">Session Control</a></li>
+          <li><a href="#security">Security & Privacy Notes</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li><a href="#changelog">Changelog</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>This repository contains a Discord bot written in Python using <span class="mono">discord.py</span>. The bot provides basic moderation (message filtering with timeouts), admin utilities, hardware/session diagnostics, a console control interface, and a persistent banned-words list.</p>
+        <ul>
+          <li><strong>Language:</strong> Python 3.10+</li>
+          <li><strong>Library:</strong> discord.py (commands extension)</li>
+          <li><strong>Features:</strong> banned-word deletion + timeout, admin commands, logging by date, system diagnostics, console controls.</li>
+        </ul>
+        <div class="callout warn">
+          <strong>Content warning:</strong> default banned words include offensive slurs (including Thai variants). Edit <span class="mono">banned_words.json</span> before production use.
+        </div>
+      </section>
+
+      <section id="requirements">
+        <h2>Requirements</h2>
+        <ul>
+          <li>Python 3.10 or newer</li>
+          <li>A Discord application & bot token with the following <em>Privileged Gateway Intents</em> enabled in the Developer Portal:
+            <ul>
+              <li>Message Content Intent</li>
+              <li>Server Members Intent (for timeouts, role checks)</li>
+            </ul>
+          </li>
+          <li>Permissions for the bot role sufficient to: <em>View Channels</em>, <em>Read Message History</em>, <em>Manage Messages</em>, <em>Moderate Members</em>, and any channels you plan to post in.</li>
+        </ul>
+        <h3>Python dependencies</h3>
+        <pre><code>pip install -U discord.py psutil gputil setuptools</code></pre>
+        <p class="small">Optional: <span class="mono">GPUtil</span> is only used to report GPU info for <span class="mono">!sessioninfo</span>.</p>
+      </section>
+
+      <section id="installation">
+        <h2>Installation</h2>
+        <ol>
+          <li>Clone or copy the project files into a directory.</li>
+          <li>Create and activate a virtual environment (recommended).</li>
+          <li>Install dependencies (see above).</li>
+          <li>Create <span class="mono">config.json</span> (see next section).</li>
+          <li>Run the script (see <a href="#running">Running the Bot</a>).</li>
+        </ol>
+      </section>
+
+      <section id="configuration">
+        <h2>Configuration (<span class="mono">config.json</span>)</h2>
+        <p>The bot expects a file named <span class="mono">config.json</span> alongside the script. Example:</p>
+<pre><code>{
+  "config": {
+    "token": "YOUR_BOT_TOKEN_HERE",
+    "default_target_channel_id": "123456789012345678",
+    "version": "1.0.0",
+    "author": "YourName",
+    "command_prefix": "!",
+    "admin_role_id": "987654321098765432"  // optional; used by some commands
+  }
+}</code></pre>
+        <ul>
+          <li><span class="mono">token</span>: Discord bot token from Developer Portal.</li>
+          <li><span class="mono">default_target_channel_id</span>: Channel where startup/shutdown and console-sent messages go.</li>
+          <li><span class="mono">version</span>, <span class="mono">author</span>: Displayed by the <span class="mono">!version</span> command.</li>
+          <li><span class="mono">command_prefix</span>: Command prefix, e.g. <span class="kbd">!</span>.</li>
+          <li><span class="mono">admin_role_id</span>: Role ID required by certain commands (see table below).</li>
+        </ul>
+      </section>
+
+      <section id="running">
+        <h2>Running the Bot</h2>
+        <h3>Direct</h3>
+        <pre><code>python your_bot_file.py</code></pre>
+        <h3>As a background service</h3>
+        <p>Use a process manager such as <span class="mono">pm2</span>, <span class="mono">systemd</span>, or <span class="mono">docker</span> depending on your environment.</p>
+      </section>
+
+      <section id="console">
+        <h2>Console Interface</h2>
+        <p>When you run the script, a simple console is available:</p>
+        <table>
+          <thead><tr><th>Command</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><span class="mono">start [message]</span></td><td>Starts the bot in a background thread and optionally posts a startup message in the target channel with the default being "I am watching.".</td></tr>
+            <tr><td><span class="mono">stop [message]</span></td><td>Stops the bot, optionally posting a shutdown message with the default being "My papi or ISP or MEA is shutting me down nooo.".</td></tr>
+            <tr><td><span class="mono">targch &lt;channel_id&gt;</span></td><td>Sets the target channel and persists it to <span class="mono">config.json</span>.</td></tr>
+            <tr><td><span class="mono">sendmsg &lt;text&gt;</span></td><td>Sends a message to the target channel. Supports placeholders:<br>
+              <span class="mono">&lt;{mention:USER_ID}&gt;</span>, <span class="mono">&lt;{channel:CHANNEL_ID}&gt;</span>, <span class="mono">&lt;{role:ROLE_ID}&gt;</span>.</td></tr>
+            <tr><td><span class="mono">status</span></td><td>Prints whether the bot is running and the current target channel.</td></tr>
+            <tr><td><span class="mono">exit</span></td><td>Quits the console program.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="events">
+        <h2>Bot Events &amp; Filters</h2>
+        <ul>
+          <li><strong>on_ready</strong>: Logs in and posts a startup message to the target channel (if configured).</li>
+          <li><strong>on_message</strong>: Logs all user messages, processes commands, and if a message isn’t a command checks for banned words.
+            If a banned word is detected, the message is deleted and the author is timed out for <strong>5 minutes</strong>.</li>
+          <li><strong>on_message_edit</strong>: Same filtering applies to edited messages.</li>
+        </ul>
+        <div class="callout danger">
+          <strong>Note:</strong> Timeout and deletion require appropriate bot permissions in the guild and channel.
+        </div>
+      </section>
+
+      <section id="commands">
+        <h2>Discord Commands</h2>
+        <table>
+          <thead>
+            <tr><th>Command</th><th>Args</th><th>Who can use</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="mono">sessioninfo</td><td>–</td><td><span class="pill">Bot Owner</span></td><td>Prints host OS, CPU, memory, disks, GPUs, network interfaces, Python & bot versions.</td></tr>
+            <tr><td class="mono">banword</td><td><em>word</em></td><td><span class="pill">Administrator</span></td><td>Adds a word to the banned list.</td></tr>
+            <tr><td class="mono">rmword</td><td><em>word</em></td><td><span class="pill">Administrator + Admin Role ID</span></td><td>Removes a word from the banned list.</td></tr>
+            <tr><td class="mono">listbanword</td><td>–</td><td><span class="pill">Administrator</span></td><td>Displays all banned words.</td></tr>
+            <tr><td class="mono">forgive</td><td><em>@member</em></td><td><span class="pill">Moderate Members</span></td><td>Clears a member timeout.</td></tr>
+            <tr><td class="mono">pewurselfnga</td><td>–</td><td><span class="pill">Bot Owner</span></td><td>Gracefully shuts down the bot.</td></tr>
+            <tr><td class="mono">version</td><td>–</td><td>Everyone</td><td>Shows bot version and author from config.</td></tr>
+            <tr><td class="mono">agreewme</td><td>[message]</td><td>Everyone</td><td>Playful confirmation reply.</td></tr>
+            <tr><td class="mono">disagreewme</td><td>[message]</td><td>Everyone</td><td>Playful disagreement reply.</td></tr>
+            <tr><td class="mono">repeat</td><td><em>message</em></td><td><span class="pill">Admin Role ID</span></td><td>Echoes a message (use wisely).</td></tr>
+            <tr><td class="mono">deplete</td><td><em>type</em> <em>value</em></td><td><span class="pill">Admin Role ID</span></td><td>
+              Schedules shutdown after the specified duration. Types: <span class="mono">ms, sec, min, hr, d</span>.
+            </td></tr>
+            <tr><td class="mono">cfch</td><td><em>channel_id</em> | <span class="mono">current</span></td><td><span class="pill">Administrator</span></td><td>Changes target channel for startup/shutdown and console messages.</td></tr>
+            <tr><td class="mono">seelog</td><td>[<em>date</em>] [<em>filename</em>] | <span class="mono">recent</span></td><td><span class="pill">Administrator</span></td><td>Displays or uploads log content from <span class="mono">log/&lt;date&gt;/&lt;file&gt;</span>.</td></tr>
+            <tr><td class="mono">thx</td><td>–</td><td>Everyone</td><td>Replies with <span class="mono">np</span>.</td></tr>
+          </tbody>
+        </table>
+        <p class="small">Some error messages in code are intentionally irreverent. Consider replacing them for production communities.</p>
+      </section>
+
+      <section id="banned">
+        <h2>Banned Words System</h2>
+        <p>Banned words are persisted to <span class="mono">banned_words.json</span>. On first run, a default set is saved if the file doesn’t exist.</p>
+        <ul>
+          <li>Filtering normalizes messages: removes accents/diacritics, strips non‑word characters, lowercases, and removes control/format characters (e.g., zero‑width).</li>
+          <li>Any banned word contained in the normalized content triggers deletion and a 5‑minute timeout.</li>
+          <li>Edits are also checked via <span class="mono">on_message_edit</span>.</li>
+        </ul>
+        <div class="callout warn">
+          <strong>Recommendation:</strong> Maintain your own word list appropriate to your community and local laws. Review regularly and localize as needed.
+        </div>
+      </section>
+
+      <section id="logging">
+        <h2>Logging</h2>
+        <p>Logs are written to <span class="mono">log/YYYY-MM-DD/log_HH-MM-SS.txt</span> and mirrored to stdout with UTF‑8.</p>
+        <ul>
+          <li>Use <span class="mono">!seelog recent</span> to quickly retrieve the latest log file from Discord.</li>
+          <li>All user messages (content only) are logged with author, channel, and message ID.</li>
+        </ul>
+        <div class="callout">
+          <strong>Tip:</strong> Consider rotating or pruning logs in production, and ensure storage complies with your privacy policy.
+        </div>
+      </section>
+
+      <section id="session">
+        <h2>Session Control</h2>
+        <ul>
+          <li><span class="mono">startsession()</span> / <span class="mono">stopsession()</span> manage the Discord connection within the event loop.</li>
+          <li><span class="mono">stop_bot_threadsafe()</span> schedules shutdown safely from the console thread.</li>
+          <li>Startup/shutdown messages are sent to the configured target channel when possible.</li>
+        </ul>
+      </section>
+
+      <section id="security">
+        <h2>Security &amp; Privacy Notes</h2>
+        <ul>
+          <li><strong>Protect your token.</strong> Never commit <span class="mono">config.json</span> to public repos.</li>
+          <li><strong>Permissions principle of least privilege.</strong> Grant only the permissions your features need.</li>
+          <li><strong>Session diagnostics</strong> (<span class="mono">!sessioninfo</span>) reveal host details (OS, IP, interfaces). Restrict to bot owner (already enforced) and use judiciously.</li>
+          <li>Some responses contain profanity. Replace text before deploying to public servers.</li>
+        </ul>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <table>
+          <thead><tr><th>Issue</th><th>Likely Cause</th><th>Fix</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Bot doesn’t respond to commands</td>
+              <td>Missing intents or insufficient permissions; wrong prefix</td>
+              <td>Enable Message Content & Server Members intents; grant permissions; verify <span class="mono">command_prefix</span>.</td>
+            </tr>
+            <tr>
+              <td>Timeouts fail</td>
+              <td>Missing <em>Moderate Members</em> permission or role hierarchy</td>
+              <td>Give the bot the permission and ensure its role is above members it moderates.</td>
+            </tr>
+            <tr>
+              <td>Startup message not posted</td>
+              <td>Invalid <span class="mono">default_target_channel_id</span> or lack of send perms</td>
+              <td>Update channel ID or permissions; try <span class="mono">!cfch current</span>.</td>
+            </tr>
+            <tr>
+              <td>GPU info missing</td>
+              <td>No GPUs or missing <span class="mono">GPUtil</span></td>
+              <td>Install <span class="mono">gputil</span> or ignore.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="changelog">
+        <h2>Changelog</h2>
+        <pre><code>THERE IS NONE BAKA, NOW READ THE GIBBERISH ON GITHUB
+</code></pre>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> TonpalmUnmain All Right Reserved for me baka.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function filterTOC(q){
+      q = (q||'').toLowerCase();
+      const items = document.querySelectorAll('#toc li');
+      items.forEach(li=>{
+        const txt = li.textContent.toLowerCase();
+        li.style.display = txt.includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

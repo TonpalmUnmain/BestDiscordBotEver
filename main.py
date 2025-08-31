@@ -64,7 +64,8 @@ target_channel_id = int(config_data["config"]["default_target_channel_id"]) or N
 # ===== VERSION INFO =====
 VERSION = config_data["config"]["version"]
 AUTHOR = config_data["config"]["author"]
-
+CMD_PREFIX = config_data["config"]["command_prefix"]
+ADMIN_ROLE_ID = int(config_data["config"].get("admin_role_id", 0)) or None
 # ===== BOT SETUP =====
 if "bot" in globals():
     del globals()["bot"]
@@ -148,7 +149,7 @@ def create_bot():
     intents.message_content = True
     intents.guilds = True
     intents.members = True
-    bot = commands.Bot(command_prefix="!", intents=intents)
+    bot = commands.Bot(command_prefix=CMD_PREFIX, intents=intents)
 
     # ===== BOT EVENTS =====
     @bot.event
@@ -305,7 +306,7 @@ def create_bot():
             logging.info(f"Added banned word: {word}")
 
     @bot.command(name="rmword")
-    @commands.has_role(1399766498246918216)
+    @commands.has_role(ADMIN_ROLE_ID)
     @commands.has_permissions(administrator=True)
     async def remove_ban_word(ctx, *, word: str):
         word = word.lower().strip()
@@ -361,13 +362,13 @@ def create_bot():
             await ctx.send(f"No, daddy {ctx.author.mention}😩.")
 
     @bot.command(name="repeat")
-    @commands.has_role(1399766498246918216)
+    @commands.has_role(ADMIN_ROLE_ID)
     async def repeat(ctx, *, message: str):
         logging.info(f"[{ctx.author} ({ctx.author.id})] Called repeat with message: {message}")
         await ctx.send(message)
 
     @bot.command(name="deplete")
-    @commands.has_role(1399766498246918216)
+    @commands.has_role(ADMIN_ROLE_ID)
     async def deplete(ctx, type: str, value: int):
         logging.info(f"[{ctx.author} ({ctx.author.id})] Called deplete with type: {type}, value: {value}")
         units = {"ms": 0.001, "sec": 1, "min": 60, "hr": 3600, "d": 86400}
