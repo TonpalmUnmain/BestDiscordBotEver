@@ -485,9 +485,6 @@ def create_bot():
         if isinstance(error, commands.MissingRole):
             await ctx.send("*I, the creator of this bot, have the right to end it. You don't, stoobid.*")
             await ctx.send("-THE CREATOR")
-
-    bot.loop.create_task(mcstat())
-
     return bot
 
 # ===== CONSOLE INTERFACE =====
