@@ -8,7 +8,6 @@
         "command_prefix": "!"
     },
     "MCS": {
-        "mcsLogPath": "bedrock_server.log",
         "mcsAdress": "multi-nor.gl.at.ply.gg",
         "mcsPort": 5355,
         "mcsChID": 1421497953834631319

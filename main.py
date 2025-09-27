@@ -66,7 +66,6 @@ token = config_data["config"]["token"]
 target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
 
 # ===== MINECRAFT SERVER MONITORING SETUP =====
-LOG_PATH = config_data["MCS"]["mcsLogPath"] or None
 BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
 BEDROCK_PORT = config_data["MCS"]["mcsPort"] or 5355
 ServerUpdateChannelID = config_data["MCS"]["mcsChID"] or 1421497953834631319
@@ -565,25 +564,6 @@ def console_interface():
 
         else:
             print(f"Unknown command: {command}")
-
-async def tail_logs():
-    await bot.wait_until_ready()
-    ch = bot.get_channel(ServerUpdateChannelID)
-    # Open log and seek to end
-    with open(LOG_PATH, "r", encoding="utf-8") as f:
-        f.seek(0, os.SEEK_END)
-        while not bot.is_closed():
-            line = f.readline()
-            if not line:
-                await asyncio.sleep(1)
-                continue
-            # Adjust to match actual Bedrock log format
-            if "Player connected:" in line:
-                name = line.split("Player connected:")[1].split(",")[0].strip()
-                await ch.send(f"✅ **{name}** joined the server")
-            elif "Player disconnected:" in line:
-                name = line.split("Player disconnected:")[1].split(",")[0].strip()
-                await ch.send(f"❌ **{name}** left the server")
 
 async def monitor_status():
     await bot.wait_until_ready()
