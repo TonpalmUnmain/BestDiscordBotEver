@@ -1,0 +1,312 @@
+2025-09-02 19:07:31,523 [INFO] logging in using static token
+2025-09-02 19:07:33,627 [INFO] Shard ID None has connected to Gateway (Session ID: 5bbbf7ffd8b9943cdb168a294bba4d97).
+2025-09-02 19:07:35,689 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-02 19:07:36,146 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-02 19:08:51,474 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): !cfch current
+2025-09-02 19:08:55,800 [INFO] tekantapat_2555 (1371694813690200146) in #✦-spam-✦ (1375378978348601385): That game sucks
+2025-09-02 19:08:58,773 [INFO] tekantapat_2555 (1371694813690200146) in #✦-spam-✦ (1375378978348601385): Bro
+2025-09-02 19:12:13,995 [INFO] p.pumpum (1260198579067420722) in #✦-spam-✦ (1375378978348601385): i played these game before ahh te
+2025-09-02 19:13:58,557 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): BRO GET THE FUCK OUT OF MY SECRET CHANNEL💔🥀
+2025-09-02 19:14:30,802 [INFO] p.pumpum (1260198579067420722) in #triton-secret-channel-dont-look (1412272341882376222): why do you have a secret channel
+2025-09-02 19:14:37,859 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): for
+2025-09-02 19:14:42,366 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): idk
+2025-09-02 19:14:45,071 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): get out
+2025-09-02 19:14:50,792 [INFO] p.pumpum (1260198579067420722) in #triton-secret-channel-dont-look (1412272341882376222): im admin
+2025-09-02 19:14:58,339 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Damn Un grr
+2025-09-02 19:14:58,434 [INFO] p.pumpum (1260198579067420722) in #triton-secret-channel-dont-look (1412272341882376222): !cfch current
+2025-09-02 19:15:15,394 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Shut the fuck up
+2025-09-02 19:15:16,474 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): !cfch current
+2025-09-02 19:18:22,798 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Everyone that doesn't have the name Triton ignore this
+2025-09-02 19:19:19,945 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): 
+2025-09-02 19:19:32,329 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): 
+2025-09-02 19:21:22,482 [INFO] tritoniscool. (1179654613738201129) in #✦-chat-✦ (1371357608904228924): 
+2025-09-02 19:24:24,137 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): make uma edit
+2025-09-02 19:30:51,916 [INFO] p.pumpum (1260198579067420722) in #triton-secret-channel-dont-look (1412272341882376222): My name,is triton
+2025-09-02 19:31:22,178 [INFO] p.pumpum (1260198579067420722) in #triton-secret-channel-dont-look (1412272341882376222): 
+2025-09-02 19:33:11,010 [INFO] tritoniscool. (1179654613738201129) in #✦-chat-✦ (1371357608904228924): i won't  edit  a character that I don't know anything about
+2025-09-02 19:33:45,822 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): una
+2025-09-02 19:33:47,051 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): uma
+2025-09-02 19:33:48,728 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): horse
+2025-09-02 19:33:49,653 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): run
+2025-09-02 19:54:43,530 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): People who's name isn't Kawinphat Akkarachotchaiwut 
+Get the fuck out and ignore this
+2025-09-02 19:55:05,569 [INFO] endulix_ (913994744953196614) in #triton-secret-channel-dont-look (1412272341882376222): why did u create this
+2025-09-02 19:55:11,102 [INFO] endulix_ (913994744953196614) in #triton-secret-channel-dont-look (1412272341882376222): 🥹🥹✌️✌️
+2025-09-02 19:55:27,185 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Ahmed
+2025-09-02 19:55:37,436 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): can you delete everyone that isn't me here
+2025-09-02 19:55:41,526 [INFO] endulix_ (913994744953196614) in #triton-secret-channel-dont-look (1412272341882376222): no
+2025-09-02 19:55:49,549 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): damn Un grr
+2025-09-02 19:55:51,677 [INFO] endulix_ (913994744953196614) in #triton-secret-channel-dont-look (1412272341882376222): just create ur own server 🥹✌️✌️
+2025-09-02 19:55:55,779 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Ok
+2025-09-02 19:57:35,458 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Delete this channel
+2025-09-02 19:57:39,477 [INFO] tritoniscool. (1179654613738201129) in #triton-secret-channel-dont-look (1412272341882376222): Damn Un grr
+2025-09-02 20:02:23,656 [INFO] endulix_ (913994744953196614) in #endu-secret-channel-dont-look (1412272341882376222): mine now
+2025-09-02 20:02:48,850 [INFO] tritoniscool. (1179654613738201129) in #endu-secret-channel-dont-look (1412272341882376222): Nigegr
+2025-09-02 20:03:26,417 [INFO] tritoniscool. (1179654613738201129) in #endu-secret-channel-dont-look (1412272341882376222): Is bro from claimbodia💔🥀
+2025-09-02 20:11:03,467 [INFO] sleepycimo (1300754808185290762) in #cambodian-secret-channel (1412272341882376222): ok
+2025-09-02 20:11:08,498 [INFO] sleepycimo (1300754808185290762) in #cambodian-secret-channel (1412272341882376222): i claim this channel
+2025-09-02 20:11:09,534 [INFO] sleepycimo (1300754808185290762) in #cambodian-secret-channel (1412272341882376222): mine
+2025-09-02 20:30:36,464 [INFO] endulix_ (913994744953196614) in #cambodian-secret-channel (1412272341882376222): no
+2025-09-02 20:30:42,480 [INFO] endulix_ (913994744953196614) in #cambodian-secret-channel (1412272341882376222): i claimed it first
+2025-09-02 20:30:48,373 [INFO] endulix_ (913994744953196614) in #cambodian-secret-channel (1412272341882376222): 
+2025-09-02 20:36:10,521 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-02 20:36:12,773 [INFO] Session info sent by p.pumpum
+2025-09-02 20:39:42,778 [INFO] Shard ID None has successfully RESUMED session 5bbbf7ffd8b9943cdb168a294bba4d97.
+2025-09-02 21:01:04,940 [INFO] tekantapat_2555 (1371694813690200146) in #✦-spam-✦ (1375378978348601385): LlllllllLLlLLLLLLLlLLlLLllLLLLllLLLLLLlpolydashLLLLLllLlLlLLLLLLLlLLllLlllLlLLLLLlLlll
+2025-09-02 21:02:52,364 [INFO] Shard ID None has successfully RESUMED session 5bbbf7ffd8b9943cdb168a294bba4d97.
+2025-09-02 21:44:11,455 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): 
+2025-09-02 21:44:18,874 [INFO] Shard ID None has successfully RESUMED session 5bbbf7ffd8b9943cdb168a294bba4d97.
+2025-09-02 21:44:47,314 [INFO] tritoniscool. (1179654613738201129) in #✦-chat-✦ (1371357608904228924): 
+2025-09-02 21:44:51,485 [INFO] tritoniscool. (1179654613738201129) in #✦-chat-✦ (1371357608904228924): <:Tuff_emoji:1382989105327112253>
+2025-09-02 21:45:04,777 [INFO] p.pumpum (1260198579067420722) in #cambodian-secret-channel (1412272341882376222): เมี่ยงปร้ะ สรัยดึก เสงรึ
+2025-09-02 21:45:20,409 [INFO] p.pumpum (1260198579067420722) in #cambodian-secret-channel (1412272341882376222): คะเมียวตาปรุช
+2025-09-02 22:44:13,656 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-02 22:44:59,321 [WARNING] Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1014, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1043, in _bootstrap_inner
+    self.run()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 478, in <lambda>
+    threading.Thread(target=lambda: asyncio.run(startsession(msg)), daemon=True).start()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2042, in _run_once
+    handle._run()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 169, in on_message
+    logging.info(
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 2208, in info
+    root.info(msg, *args, **kwargs)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1522, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1667, in _log
+    self.handle(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1686, in handle
+    self.callHandlers(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1744, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1027, in handle
+    self.emit(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1155, in emit
+    self.flush()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1137, in flush
+    self.stream.flush()
+
+2025-09-02 22:46:12,191 [INFO] Session info sent by p.pumpum
+2025-09-02 22:46:12,372 [INFO] Shard ID None session has been invalidated.
+2025-09-02 22:46:18,379 [INFO] Shard ID None has connected to Gateway (Session ID: 8cf250b13da8d0634f7cc48a19f4d77b).
+2025-09-02 22:46:45,420 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-02 22:46:46,015 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-09-02 22:47:04,965 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): Wtf it restart itself
+2025-09-02 22:48:50,553 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): **FIX LIST**
+• Discord actv block 10s
+• Log restart ed
+• Console ui
+2025-09-02 22:59:16,210 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://youtu.be/8boNcoba6pQ?si=84tLKIQRo6eB_A1b
+2025-09-02 22:59:26,859 [WARNING] Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1014, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1043, in _bootstrap_inner
+    self.run()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 478, in <lambda>
+    threading.Thread(target=lambda: asyncio.run(startsession(msg)), daemon=True).start()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2042, in _run_once
+    handle._run()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 169, in on_message
+    logging.info(
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 2208, in info
+    root.info(msg, *args, **kwargs)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1522, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1667, in _log
+    self.handle(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1686, in handle
+    self.callHandlers(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1744, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1027, in handle
+    self.emit(record)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1155, in emit
+    self.flush()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1137, in flush
+    self.stream.flush()
+
+2025-09-04 19:27:35,528 [INFO] Shard ID None session has been invalidated.
+2025-09-04 19:27:41,500 [INFO] Shard ID None has connected to Gateway (Session ID: e9a518d19f3780de2cee27ada0abe5cf).
+2025-09-04 19:27:43,513 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-04 19:27:44,000 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-09-04 19:28:31,392 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): 
+2025-09-04 19:28:32,954 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): what is this guy on
+2025-09-04 20:41:19,688 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-04 20:41:21,200 [INFO] Session info sent by p.pumpum
+2025-09-04 20:41:29,121 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !seelog recent
+2025-09-04 20:41:29,122 [INFO] [p.pumpum (1260198579067420722)] Called see_log with date: recent, filename: None
+2025-09-04 21:11:19,656 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-04 23:40:16,967 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 00:11:59,084 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 00:25:06,255 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 00:27:58,399 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 00:40:24,819 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 01:15:14,028 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 02:35:51,148 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 02:40:50,219 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/%E3%82%A6%E3%83%9E%E5%A8%98-uma-musume-meisho-doto-wave-%E3%83%A1%E3%82%A4%E3%82%B7%E3%83%A7%E3%82%A6%E3%83%89%E3%83%88%E3%82%A6-gif-11158453935725948414
+2025-09-05 03:43:33,126 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/uma-musume-uma-musume-manhattan-cafe-manhattan-cafe-gif-8391654041541662597
+2025-09-05 05:46:28,225 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 06:04:16,014 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/haru-urara-uma-musume-headbang-gif-8619844923579100517
+2025-09-05 07:58:31,553 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): # REMINDER
+•Science Project
+- Use 1/4 of an illustration board and make a poster about any topic about plants
+- Deadline: Final Day Of Exam
+2025-09-05 07:58:47,717 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): whats
+2025-09-05 07:58:55,921 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): 1/4 illustration board?
+2025-09-05 07:59:09,476 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): 1 ส่วน 4
+2025-09-05 07:59:17,409 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): ตัดออกมา
+2025-09-05 07:59:29,000 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): u use 1/4 of the A4 paper?
+2025-09-05 07:59:37,966 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): not A4 paper
+2025-09-05 07:59:40,203 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): Illustration
+2025-09-05 07:59:41,327 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): Board
+2025-09-05 07:59:43,995 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): I asked teach
+2025-09-05 07:59:56,489 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): i asked her and she said a4
+2025-09-05 07:59:58,077 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): what
+2025-09-05 08:00:00,603 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): 😭
+2025-09-05 08:00:23,819 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): uhhhhhh
+2025-09-05 08:00:36,628 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): https://tenor.com/view/bakushin-sakura-bakushin-o-uma-musame-uma-musume-head-banging-gif-6233409287171606109
+2025-09-05 08:00:54,565 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): hol on
+2025-09-05 08:01:00,452 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): is illustration board
+2025-09-05 08:01:06,261 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): 100 pound paper?
+2025-09-05 08:01:13,694 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): it looks so similar
+2025-09-05 08:01:39,743 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): 
+2025-09-05 08:01:44,504 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): I think
+2025-09-05 08:01:45,936 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): Lemme ask
+2025-09-05 08:02:45,007 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): Lemme edit
+2025-09-05 08:02:45,622 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): - คณิตเพิ่ม
+   — ทำทั้งเล่ม, ส่งก่อนสอบ
+2025-09-05 08:03:48,612 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): If you use A4 100 pound u don't have to cut it into 1/4
+2025-09-05 08:10:03,928 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): <@&1394558898475630702> มีไรอีกบอกได้ ถ้ามีคำถามไปถามโอมไม่ก็ปาม
+2025-09-05 08:46:04,428 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 08:50:09,738 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): # REMINDER
+- Science Project
+    - Use 1/4 of an illustration board (THE WHOLE A4 100 POUND PAPER) and make a poster about any topic about plants
+    - Deadline: Final Day Of Exam
+
+- ชีทสังคม
+    - ทำทั้งหมด
+    - ส่งอาทิตย์หน้า
+
+- คณิตเพิ่ม
+    - ทำทั้งเล่ม, ส่งก่อนสอบ
+
+- เคมี
+    - เคลียร์งาน
+    - ทำงาน 70(ค้างบน), 72-76
+
+- วิทย์ของเล่น
+   - สมุดส่งอาทิตย์หน้า
+   - คนที่ยังไม่นำเสนอให้นำเสนออาทิตย์หน้า
+2025-09-05 08:51:51,300 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): ถ้ามีการบ้านอีกมาก้อปแล้วเขียนต่อได้ editก้ได้
+2025-09-05 08:52:01,619 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): https://tenor.com/view/daiwa-scarlet-uma-musume-gif-8263914655454525293
+2025-09-05 08:52:12,170 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): https://tenor.com/view/agnes-tachyon-umamusume-uma-musume-gif-10675756065587635861
+2025-09-05 08:52:38,293 [INFO] sleepycimo (1300754808185290762) in #✦-school-✦ (1401077358051721278): https://tenor.com/view/uma-manhattan-cafe-agnes-tachyon-uma-musume-umazing-gif-929470116780488280
+2025-09-05 08:52:55,150 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): https://tenor.com/view/haru-urara-uma-musume-headbang-gif-8619844923579100517
+2025-09-05 09:02:23,860 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/uma-manhattan-cafe-agnes-tachyon-uma-musume-umazing-gif-929470116780488280
+2025-09-05 09:02:40,140 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/uma-uma-musume-horse-cafe-manhattan-gif-11697371095915953693
+2025-09-05 09:03:20,897 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/uma-musume-%E3%82%A6%E3%83%9E%E5%A8%98-manhattan-cafe-%E3%83%9E%E3%83%B3%E3%83%8F%E3%83%83%E3%82%BF%E3%83%B3%E3%82%AB%E3%83%95%E3%82%A7-gif-25621273
+2025-09-05 09:03:39,702 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/umamusume-gif-12753782284804895014
+2025-09-05 09:03:56,961 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/%E3%82%A6%E3%83%9E%E5%A8%98-uma-musume-manhattan-cafe-%E3%83%9E%E3%83%B3%E3%83%8F%E3%83%83%E3%82%BF%E3%83%B3%E3%82%AB%E3%83%95%E3%82%A7-gif-25621288
+2025-09-05 09:04:55,953 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/uma-musume-manhattan-cafe-whira-dancing-gif-25494371
+2025-09-05 09:11:44,418 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): Which should I get
+2025-09-05 09:11:45,920 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): Which is more tuff
+2025-09-05 09:45:55,885 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): 
+2025-09-05 09:46:00,240 [INFO] endulix_ (913994744953196614) in #✦-school-✦ (1401077358051721278): for lazy people
+2025-09-05 09:46:22,486 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): both tuff
+2025-09-05 10:19:08,616 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): ไอสัส
+2025-09-05 10:19:11,502 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): จบไปแล้ว
+2025-09-05 10:19:20,587 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): ทั้งสองฝ่ายก็ดีกัน
+2025-09-05 10:19:28,490 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): ทำไมต้องมาร่วมด้วย
+2025-09-05 10:19:35,536 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): เพื่ออะไร
+2025-09-05 10:20:22,767 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): เข้าใจว่าเรียกมาคุยหาทางออก แต่กุหาเจอแล้วแต่ยังเอาอีก
+2025-09-05 10:20:31,288 [INFO] endulix_ (913994744953196614) in #✦-ranting-✦ (1405556665058857070): ผสปวผยหดยย้จดหยวสนเด
+2025-09-05 10:21:04,806 [INFO] tritoniscool. (1179654613738201129) in #✦-ranting-✦ (1405556665058857070): 3 found dead at 744
+2025-09-05 10:25:46,503 [INFO] tritoniscool. (1179654613738201129) in #✦-chat-✦ (1371357608904228924): <@1260198579067420722>  tell the people that's playing dead rails to shut the fuck up โคตรรําคาญกูฟังไรไม่ออก
+2025-09-05 10:39:57,580 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 11:15:32,585 [INFO] y0ur_1dvd3c0d3r (1283803225312460923) in #✦-school-✦ (1401077358051721278): I think i used A3 but teacher said it's okay
+2025-09-05 11:24:16,132 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 11:27:43,817 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-05 11:27:45,250 [INFO] Session info sent by p.pumpum
+2025-09-05 11:46:17,868 [INFO] sleepycimo (1300754808185290762) in #✦-chat-✦ (1371357608904228924): 767990987075
+2025-09-05 12:37:10,881 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 13:17:30,827 [INFO] y0ur_1dvd3c0d3r (1283803225312460923) in #✦-chat-✦ (1371357608904228924): Oguri tuff
+2025-09-05 13:42:37,981 [INFO] sleepycimo (1300754808185290762) in #✦-gaming-✦ (1395783584253739141): https://youtu.be/r_BHA8xl8fc?si=S6fSmDC6aR4FLVbn <@913994744953196614>
+2025-09-05 13:42:55,621 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): 🧓
+2025-09-05 14:18:53,031 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-05 14:18:54,605 [INFO] Session info sent by p.pumpum
+2025-09-05 14:36:42,376 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 15:32:22,017 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 18:18:28,223 [INFO] p.pumpum (1260198579067420722) in #cambodian-secret-channel (1412272341882376222): អ្នកមិនអាចទាមទារឆានែលនេះបានទេ។
+2025-09-05 18:18:46,605 [INFO] p.pumpum (1260198579067420722) in #cambodian-secret-channel (1412272341882376222): វា​សម្រាប់​ខ្មែរ​យើង
+2025-09-05 18:30:42,249 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 20:01:37,187 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 20:08:32,504 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): 
+2025-09-05 20:08:40,603 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): I cant link umamu sume with face book
+2025-09-05 20:08:43,902 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): 😭
+2025-09-05 20:08:57,355 [INFO] tritoniscool. (1179654613738201129) in #✦-gaming-✦ (1395783584253739141): Skill niggues
+2025-09-05 20:08:57,470 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): just link with google play
+2025-09-05 20:18:49,111 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): I want to play on my ipad
+2025-09-05 20:18:54,338 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): And its ios
+2025-09-05 20:18:58,803 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): No google play
+2025-09-05 20:19:09,944 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): uhh
+2025-09-05 20:19:13,558 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): https://tenor.com/view/%E3%82%B5%E3%82%AF%E3%83%A9%E3%83%90%E3%82%AF%E3%82%B7%E3%83%B3%E3%82%AA%E3%83%BC-%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%9F%E3%83%8B%E3%82%AD%E3%83%A3%E3%83%A9-%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84-%E3%83%80%E3%83%B3%E3%82%B9-gif-24011503
+2025-09-05 20:19:24,515 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): Facebook nigger
+2025-09-05 20:19:26,087 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-09-05 20:19:32,036 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): WHAT
+2025-09-05 20:19:39,449 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): THE IS STILL WORK
+2025-09-05 20:20:01,408 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !listbw
+2025-09-05 20:20:01,409 [ERROR] Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "listbw" is not found
+2025-09-05 20:20:05,863 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): How to use it
+2025-09-05 20:20:07,630 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): I forgot
+2025-09-05 20:21:07,912 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !listbanword
+2025-09-05 20:21:18,975 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !agreewm
+2025-09-05 20:21:18,975 [ERROR] Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "agreewm" is not found
+2025-09-05 20:21:24,607 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !agreewithme
+2025-09-05 20:21:24,608 [ERROR] Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "agreewithme" is not found
+2025-09-05 20:23:05,997 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !agreewme
+2025-09-05 20:23:15,407 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !agreewme nigger
+2025-09-05 20:24:05,362 [INFO] .toast_toaster. (1210218568889798658) in #✦-gaming-✦ (1395783584253739141): !agreewme I hate Mark Zuckmaballs
+2025-09-05 21:28:20,382 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): plz give me racing shoes in club
+2025-09-05 21:28:44,756 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): 
+2025-09-05 21:34:16,756 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): <@&1412722981914017812> PLEASE I NEED SHOES
+2025-09-05 21:34:19,816 [INFO] endulix_ (913994744953196614) in #✦-gaming-✦ (1395783584253739141): AUAHSHHSHSJHDNSBASD
+2025-09-05 21:38:04,830 [INFO] sleepycimo (1300754808185290762) in #✦-gaming-✦ (1395783584253739141): ok
+2025-09-05 21:38:08,014 [INFO] sleepycimo (1300754808185290762) in #✦-gaming-✦ (1395783584253739141): wait hol on
+2025-09-05 22:18:14,096 [INFO] Shard ID None has successfully RESUMED session e9a518d19f3780de2cee27ada0abe5cf.
+2025-09-05 22:27:20,833 [INFO] Bot stopped. Closing connection...
