@@ -21,6 +21,7 @@ import platform
 import psutil
 import GPUtil
 import traceback
+from mcstatus import BedrockServer
 
 # ===== UTF-8 OUTPUT SETUP =====
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -60,6 +61,12 @@ if not config_data:
 
 token = config_data["config"]["token"]
 target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
+
+# ===== MINECRAFT SERVER MONITORING SETUP =====
+LOG_PATH = config_data["config"]["default_target_channel_id"] or None
+BEDROCK_HOST = "multi-nor.gl.at.ply.gg"
+BEDROCK_PORT = 5355
+ServerUpdateChannelID = 1421497953834631319
 
 # ===== VERSION INFO =====
 VERSION = config_data["config"]["version"]
@@ -445,6 +452,22 @@ def create_bot():
         logging.info(f"[{ctx.author} ({ctx.author.id})] Called thx")
         await ctx.send("np")
 
+    @bot.command(name="mcstat")
+    async def mcstat(ctx):
+        server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
+        try:
+            status = server.status()
+            players = status.players.online
+            latency = status.latency
+            await ctx.send(
+                f"🟢 **Minecraft Bedrock Server is ONLINE**\n"
+                f"Players: {players}\n"
+                f"Latency: {latency:.1f} ms"
+            )
+        except Exception as e:
+            await ctx.send("🔴 **Minecraft Bedrock Server is OFFLINE**")
+            logging.error(f"mcstat command failed: {e}")
+            
     # ===== ERROR HANDLERS =====
     @ban_word.error
     @remove_ban_word.error
@@ -460,6 +483,9 @@ def create_bot():
         if isinstance(error, commands.MissingRole):
             await ctx.send("*I, the creator of this bot, have the right to end it. You don't, stoobid.*")
             await ctx.send("-THE CREATOR")
+
+    bot.loop.create_task(mcstat())
+
     return bot
 
 # ===== CONSOLE INTERFACE =====
@@ -537,7 +563,45 @@ def console_interface():
         else:
             print(f"Unknown command: {command}")
 
+async def tail_logs():
+    await bot.wait_until_ready()
+    ch = bot.get_channel(ServerUpdateChannelID)
+    # Open log and seek to end
+    with open(LOG_PATH, "r", encoding="utf-8") as f:
+        f.seek(0, os.SEEK_END)
+        while not bot.is_closed():
+            line = f.readline()
+            if not line:
+                await asyncio.sleep(1)
+                continue
+            # Adjust to match actual Bedrock log format
+            if "Player connected:" in line:
+                name = line.split("Player connected:")[1].split(",")[0].strip()
+                await ch.send(f"✅ **{name}** joined the server")
+            elif "Player disconnected:" in line:
+                name = line.split("Player disconnected:")[1].split(",")[0].strip()
+                await ch.send(f"❌ **{name}** left the server")
 
+async def monitor_status():
+    await bot.wait_until_ready()
+    ch = bot.get_channel(ServerUpdateChannelID)
+
+    was_online = None
+    server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
+    while not bot.is_closed():
+        try:
+            status = server.status()
+            # status.players.online, status.latency, etc. are available per mcstatus docs :contentReference[oaicite:1]{index=1}
+            if was_online is False:
+                await ch.send("🟢 Server is online!")
+                print(f"The server has {status.players.online} players online and replied in {status.latency} ms")
+            was_online = True
+        except Exception as e:
+            if was_online is True or was_online is None:
+                await ch.send("🔴 Server is down!")
+            was_online = False
+
+        await asyncio.sleep(3600)
 
 # ===== MAIN =====
 if __name__ == "__main__":
