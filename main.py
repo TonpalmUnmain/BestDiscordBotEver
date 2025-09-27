@@ -63,10 +63,10 @@ token = config_data["config"]["token"]
 target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
 
 # ===== MINECRAFT SERVER MONITORING SETUP =====
-LOG_PATH = config_data["config"]["default_target_channel_id"] or None
-BEDROCK_HOST = "multi-nor.gl.at.ply.gg"
-BEDROCK_PORT = 5355
-ServerUpdateChannelID = 1421497953834631319
+LOG_PATH = config_data["MCS"]["mcsLogPath"] or None
+BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
+BEDROCK_PORT = config_data["MCS"]["mcsPort"] or 5355
+ServerUpdateChannelID = config_data["MCS"]["mcsChID"] or 1421497953834631319
 
 # ===== VERSION INFO =====
 VERSION = config_data["config"]["version"]
