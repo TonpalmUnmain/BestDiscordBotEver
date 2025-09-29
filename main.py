@@ -22,6 +22,8 @@ import psutil
 import GPUtil
 import traceback
 from mcstatus import BedrockServer
+import mss
+import mss.tools
 
 try:
     # ===== UTF-8 OUTPUT SETUP =====
@@ -65,11 +67,13 @@ try:
 
     token = config_data["config"]["token"]
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
+    SAVE_DIR = config_data["config"]["sreenshotdir"] or "scs"
 
     # ===== MINECRAFT SERVER MONITORING SETUP =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
     BEDROCK_PORT = config_data["MCS"]["mcsPort"] or 5355
     ServerUpdateChannelID = config_data["MCS"]["mcsChID"] or 1421497953834631319
+    MCSDURATION = int(config_data["MCS"]["mcsDelay"]) or 3600  # in seconds
 
     # ===== VERSION INFO =====
     VERSION = config_data["config"]["version"]
@@ -459,18 +463,42 @@ try:
         async def mcstat(ctx):
             server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
             try:
+                address = f"{BEDROCK_HOST}:{BEDROCK_PORT}"
                 status = server.status()
                 players = status.players.online
                 latency = status.latency
                 await ctx.send(
                     f"🟢 **Minecraft Bedrock Server is ONLINE**\n"
+                    f"Address: {address}\n"
                     f"Players: {players}\n"
                     f"Latency: {latency:.1f} ms"
                 )
             except Exception as e:
                 await ctx.send("🔴 **Minecraft Bedrock Server is OFFLINE**")
                 logging.error(f"mcstat command failed: {e}")
-                
+    
+        @bot.event
+        async def monitor_status():
+            await bot.wait_until_ready()
+            ch = bot.get_channel(ServerUpdateChannelID)
+
+            was_online = None
+            server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
+            while not bot.is_closed():
+                try:
+                    status = server.status()
+                    # status.players.online, status.latency, etc. are available per mcstatus docs :contentReference[oaicite:1]{index=1}
+                    if was_online is False:
+                        await ch.send("🟢 Server is online!")
+                        print(f"The server has {status.players.online} players online and replied in {status.latency} ms")
+                    was_online = True
+                except Exception as e:
+                    if was_online is True or was_online is None:
+                        await ch.send("🔴 Server is down!")
+                    was_online = False
+
+                await asyncio.sleep(MCSDURATION)
+
         # ===== ERROR HANDLERS =====
         @ban_word.error
         @remove_ban_word.error
@@ -562,27 +590,6 @@ try:
 
             else:
                 print(f"Unknown command: {command}")
-
-    async def monitor_status():
-        await bot.wait_until_ready()
-        ch = bot.get_channel(ServerUpdateChannelID)
-
-        was_online = None
-        server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
-        while not bot.is_closed():
-            try:
-                status = server.status()
-                # status.players.online, status.latency, etc. are available per mcstatus docs :contentReference[oaicite:1]{index=1}
-                if was_online is False:
-                    await ch.send("🟢 Server is online!")
-                    print(f"The server has {status.players.online} players online and replied in {status.latency} ms")
-                was_online = True
-            except Exception as e:
-                if was_online is True or was_online is None:
-                    await ch.send("🔴 Server is down!")
-                was_online = False
-
-            await asyncio.sleep(3600)
 
     # ===== MAIN =====
     if __name__ == "__main__":

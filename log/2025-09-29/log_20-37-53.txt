@@ -1,0 +1,33 @@
+2025-09-29 20:37:56,085 [INFO] logging in using static token
+2025-09-29 20:37:57,693 [INFO] Shard ID None has connected to Gateway (Session ID: 4ad526aac8b4abb1710a332da81a94d9).
+2025-09-29 20:37:59,731 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 20:38:00,136 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-29 20:38:08,773 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !scrsnow
+2025-09-29 20:38:08,782 [ERROR] Ignoring exception in command scrsnow
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 491, in screenshot
+    sct_img = sct.grab(monitor)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\mss\base.py", line 101, in grab
+    screenshot = self._grab_impl(monitor)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\mss\windows.py", line 244, in _grab_impl
+    raise ScreenShotError(msg)
+mss.exception.ScreenShotError: gdi32.GetDIBits() failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ScreenShotError: gdi32.GetDIBits() failed.
+2025-09-29 20:39:07,707 [INFO] Bot stopped. Closing connection...
+2025-09-29 20:39:15,727 [ERROR] Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002B99B8C3FB0>, 5906.3730398)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002B99B8EC830>

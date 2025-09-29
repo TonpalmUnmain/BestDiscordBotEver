@@ -1,0 +1,6 @@
+2025-09-29 20:41:17,965 [INFO] logging in using static token
+2025-09-29 20:41:19,432 [INFO] Shard ID None has connected to Gateway (Session ID: 2b778ad7e210a1d2d84f9ef9dabaf2b1).
+2025-09-29 20:41:21,436 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 20:41:21,829 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-29 20:41:28,732 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): can u tell it to stop watching me
+2025-09-29 20:41:28,999 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !scrsnow
