@@ -164,3 +164,21 @@
 2025-09-28 21:03:11,782 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
 2025-09-28 21:29:32,787 [INFO] endulix_ (913994744953196614) in #📃-staff-shitpost-📃 (1383314592339464233): 
 2025-09-28 21:30:03,520 [INFO] sleepycimo (1300754808185290762) in #📃-staff-shitpost-📃 (1383314592339464233): https://tenor.com/view/gentildonna-umamusume-victory-win-1st-gif-1385891026311925567
+2025-09-28 23:14:11,925 [INFO] Shard ID None has successfully RESUMED session de15e92cebb4e6ee9c9796ad6a6051bb.
+2025-09-29 19:01:21,025 [INFO] Shard ID None session has been invalidated.
+2025-09-29 19:01:27,971 [INFO] Shard ID None has connected to Gateway (Session ID: 105ee547f0b759b8a565886994560de6).
+2025-09-29 19:01:31,207 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 19:01:31,923 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-09-29 19:02:27,343 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !seelog recent
+2025-09-29 19:02:27,450 [INFO] [p.pumpum (1260198579067420722)] Called see_log with date: recent, filename: None
+2025-09-29 19:05:02,710 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): noo
+2025-09-29 19:05:09,285 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): <@&1394542459538640977>
+2025-09-29 19:05:22,518 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): เล่นrovอยุ่
+2025-09-29 19:10:36,094 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): <@&1394542459538640977> Server closed. Reason : Doing Stuff lah. ETA : 5 min
+2025-09-29 19:10:50,403 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): if you do mcstat itll show up that it was on
+2025-09-29 19:11:08,880 [INFO] tritoniscool. (1179654613738201129) in #🗣️-ranting-👀 (1405556665058857070): fuckass tiktok why can't I post my edits that took me 6 hours💔🥀
+2025-09-29 19:11:18,062 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): bc mcstat checks the server, not the network
+2025-09-29 19:11:22,981 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): 5 min lah
+2025-09-29 19:13:04,542 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): Sefver is back online.
+2025-09-29 19:13:19,866 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): <@&1394542459538640977>
+2025-09-29 19:14:01,578 [INFO] Bot stopped. Closing connection...
