@@ -23,6 +23,7 @@ import GPUtil
 import traceback
 from mcstatus import BedrockServer
 
+
 # ===== UTF-8 OUTPUT SETUP =====
 if hasattr(sys.stdout, "buffer"):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
