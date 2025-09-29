@@ -1,0 +1,26 @@
+2025-09-29 20:43:07,679 [INFO] logging in using static token
+2025-09-29 20:43:09,192 [INFO] Shard ID None has connected to Gateway (Session ID: 71c5353f911dcd343402214957bbfd95).
+2025-09-29 20:43:11,212 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 20:43:11,572 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-29 20:43:33,605 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): im watching u shower
+2025-09-29 20:44:09,664 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): eww
+2025-09-29 20:44:19,828 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): ewww
+2025-09-29 20:44:59,166 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): bro
+2025-09-29 20:45:26,359 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): I CAN SEND EMOJIS THRU CONSOLE
+2025-09-29 20:45:31,586 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): wow
+2025-09-29 20:45:32,482 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): yippe
+2025-09-29 20:45:35,371 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): congratulations
+2025-09-29 20:45:39,381 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-09-29 20:46:05,383 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-29 20:46:07,547 [INFO] Session info sent by p.pumpum
+2025-09-29 20:56:19,108 [INFO] sleepycimo (1300754808185290762) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/stay-gold-staygold-uma-musume-stay-gold-uma-musume-gif-13445221533769985263
+2025-09-29 20:56:28,373 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/umamusume-satono-diamond-vr-chat-tongue-out-meme-gif-17865685083697075722
+2025-09-29 20:56:35,155 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/satono-diamond-kitasan-black-dancing-tongue-out-umamusume-gif-10360028360813380941
+2025-09-29 20:56:39,774 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/kitasan-black-satono-diamond-umamusume-satono-diamond-tongue-kitasan-black-knockback-gif-1546071629347855274
+2025-09-29 20:56:48,954 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/uma-uma-musume-umasatono-uma-satono-satonodiamond-gif-13336439090134210064
+2025-09-29 20:56:56,494 [INFO] sleepycimo (1300754808185290762) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/shookai-umamusume-satono-diamond-gif-14347762895409516784
+2025-09-29 20:57:06,291 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/satono-diamond-diamond-satono-umamusume-uma-musume-gif-13967917794999833132
+2025-09-29 20:58:34,592 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): <@1386280922218893465>  Changelog :
+1.!mcstat now display address and port.
+2.I can now remote my server to fix problems anywhere.
+3.Using string "commandIgnore" wont execute any command in your message

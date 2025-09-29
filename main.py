@@ -189,7 +189,10 @@ try:
             ctx = await bot.get_context(message)
             if ctx.valid:
                 return
-
+            
+            if "commandIgnore" in message.content:
+                return
+            
             if any(word in content for word in BANNED_WORDS):
                 try:
                     await message.delete()
@@ -301,7 +304,7 @@ try:
                     + ("\n".join(net_info) if net_info else "No active network interfaces") + "\n"
                 )
 
-                await ctx.send(f"```yaml\n{info}\n```")
+                await ctx.send(f"{info}")
                 logging.info(f"Session info sent by {ctx.author}")
             except Exception as e:
                 await ctx.send("Error retrieving session info.")
