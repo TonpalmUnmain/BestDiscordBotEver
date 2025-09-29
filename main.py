@@ -22,8 +22,6 @@ import psutil
 import GPUtil
 import traceback
 from mcstatus import BedrockServer
-import mss
-import mss.tools
 
 try:
     # ===== UTF-8 OUTPUT SETUP =====
@@ -74,6 +72,7 @@ try:
     BEDROCK_PORT = config_data["MCS"]["mcsPort"] or 5355
     ServerUpdateChannelID = config_data["MCS"]["mcsChID"] or 1421497953834631319
     MCSDURATION = int(config_data["MCS"]["mcsDelay"]) or 3600  # in seconds
+    MCSROLEID = int(config_data["MCS"]["mcsRoleID"]) or 1394542459538640977
 
     # ===== VERSION INFO =====
     VERSION = config_data["config"]["version"]
@@ -463,22 +462,32 @@ try:
             await ctx.send("np")
 
         @bot.command(name="mcstat")
-        async def mcstat(ctx):
+        async def mcstat(ctx, option: str = None):
             server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
             try:
                 address = f"{BEDROCK_HOST}:{BEDROCK_PORT}"
                 status = server.status()
                 players = status.players.online
                 latency = status.latency
+
+                # Add role mention only if "tagmcr" was provided
+                role_mention = f"<@&{MCSROLEID}>\n" if option == "tagmcr" else ""
+
                 await ctx.send(
+                    f"{role_mention}"
                     f"🟢 **Minecraft Bedrock Server is ONLINE**\n"
                     f"Address: {address}\n"
                     f"Players: {players}\n"
                     f"Latency: {latency:.1f} ms"
                 )
             except Exception as e:
-                await ctx.send("🔴 **Minecraft Bedrock Server is OFFLINE**")
+                role_mention = f"<@&{MCSROLEID}>\n" if option == "tagmcr" else ""
+                await ctx.send(
+                    f"{role_mention}"
+                    "🔴 **Minecraft Bedrock Server is OFFLINE**"
+                )
                 logging.error(f"mcstat command failed: {e}")
+
     
         @bot.event
         async def monitor_status():

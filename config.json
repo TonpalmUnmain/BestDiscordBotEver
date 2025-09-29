@@ -1,6 +1,6 @@
 {
     "config": {
-        "version": "3.0.0",
+        "version": "3.2.0",
         "author": "TonpalmUnmain",
         "token": "MTM4NjI4MDkyMjIxODg5MzQ2NQ.GmY6TE.ntnZoUOncSyDvhlDAIwCQM9faouBW6JWoXJCB0",
         "default_target_channel_id": "1399900695993253970",
@@ -12,6 +12,7 @@
         "mcsAdress": "multi-nor.gl.at.ply.gg",
         "mcsPort": 5355,
         "mcsChID": 1421497953834631319,
-        "mcsDelay": 3600
+        "mcsDelay": 3600,
+        "mcsRoleID": "1394542459538640977"
     }
 }
