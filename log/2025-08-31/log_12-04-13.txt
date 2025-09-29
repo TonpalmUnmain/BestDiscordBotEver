@@ -1,6 +1,0 @@
-2025-08-31 12:04:15,476 [INFO] logging in using static token
-2025-08-31 12:04:16,996 [INFO] Shard ID None has connected to Gateway (Session ID: 469e709ab77728ece998344331848178).
-2025-08-31 12:04:19,010 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
-2025-08-31 12:04:19,399 [INFO] Sent startup message to channel ID: 1371357608904228924
-2025-08-31 12:04:39,436 [INFO] p.pumpum (1260198579067420722) in 1371357608904228924 (messageid1411577403771195453channeltextchannelid1371357608904228924namechatposition3nsfwfalsenewsfalsecategoryid1371357608459501641typemessagetypedefault0authormemberid1260198579067420722nameppumpumglobalnameppumpumbotfalsenicknoneguildguildid1371357608459501640namem11discordshardid0chunkedfalsemembercount34flagsmessageflagsvalue0): logging 21.8.25 12.4.40
-2025-08-31 12:04:58,609 [INFO] p.pumpum (1260198579067420722) in 1371357608904228924 (messageid1411577484021076080channeltextchannelid1371357608904228924namechatposition3nsfwfalsenewsfalsecategoryid1371357608459501641typemessagetypedefault0authormemberid1260198579067420722nameppumpumglobalnameppumpumbotfalsenicknoneguildguildid1371357608459501640namem11discordshardid0chunkedfalsemembercount34flagsmessageflagsvalue0): chk

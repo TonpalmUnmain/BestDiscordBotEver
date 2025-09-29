@@ -1,7 +1,0 @@
-2025-08-30 12:42:35,569 [INFO] logging in using static token
-2025-08-30 12:42:37,469 [INFO] Shard ID None has connected to Gateway (Session ID: 50678696d5fe6c35fc92337a02e3bf52).
-2025-08-30 12:42:39,486 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
-2025-08-30 12:42:39,918 [INFO] Sent startup message to channel ID: 1371357608904228924
-2025-08-30 12:43:38,241 [ERROR] Unclosed connector
-connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001D39BC2D250>, 4042.5843013)])']
-connector: <aiohttp.connector.TCPConnector object at 0x000001D39BC0E660>

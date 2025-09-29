@@ -1,8 +1,0 @@
-2025-08-31 00:07:06,563 [INFO] logging in using static token
-2025-08-31 00:07:08,078 [INFO] Shard ID None has connected to Gateway (Session ID: fffb31cc7cba23ab417f3b3523b00c02).
-2025-08-31 00:07:10,088 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
-2025-08-31 00:07:10,825 [INFO] Sent startup message to channel ID: 1371357608904228924
-2025-08-31 00:07:14,289 [INFO] p.pumpum (1260198579067420722) in 1371357608904228924 (chat): logging
-2025-08-31 00:08:18,198 [INFO] logging in using static token
-2025-08-31 00:08:18,198 [ERROR] Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000002738A522BA0>
