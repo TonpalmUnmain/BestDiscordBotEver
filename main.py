@@ -190,9 +190,6 @@ try:
             if ctx.valid:
                 return
             
-            if "commandIgnore" in message.content:
-                return
-            
             if any(word in content for word in BANNED_WORDS):
                 try:
                     await message.delete()
@@ -204,7 +201,10 @@ try:
                     logging.error("Bot doesn't have permission to timeout this dumb fuck.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
-
+            
+            if "commandIgnore" in message.content:
+                return
+            
         @bot.event
         async def on_message_edit(before, after):
             if after.author.bot:
