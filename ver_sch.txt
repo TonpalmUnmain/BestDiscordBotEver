@@ -1,0 +1,6 @@
+# Version format:
+#A.B.C
+
+#A = Code Revamp
+#B = Feature Added / Major Bug Fix
+#C = Minor Bug Fix / Hotfix
