@@ -280,6 +280,12 @@ try:
                 except Exception as e:
                     logging.error(f"Error: {e}")
 
+            if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
+                try:
+                    await message.channel.send(f"☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {message.author.mention} 😩.")
+                except Exception as e:
+                    logging.error(f"Error sending good boy response: {e}")
+
             await bot.process_commands(message)
 
             if ctx.valid:
