@@ -140,7 +140,24 @@ try:
         text = ''.join(c for c in text if not unicodedata.combining(c))
         text = re.sub(r'[\u200B-\u200F\uFE00-\uFE0F\u2060-\u206F]', '', text)
         text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C')
-        return str(unicodedata.normalize("NFKC", str(text)).lower())
+        text = unicodedata.normalize("NFKC", str(text)).lower()
+
+        # Extended number-to-letter replacements
+        replacements = str.maketrans({
+            '0': 'o',
+            '1': 'i',
+            '2': 'z',
+            '3': 'e',
+            '4': 'a',
+            '5': 's',
+            '6': 'g',
+            '7': 't',
+            '8': 'b',
+            '9': 'g'
+        })
+        text = text.translate(replacements)
+
+        return text
     
     def replace_placeholders(text, self_id: int = 1260198579067420722):
         # General pattern: <{type:ID}>
@@ -183,7 +200,7 @@ try:
             json.dump(list(BANNED_WORDS), f)
 
     BANNED_WORDS = load_banned_words() or {
-        "nigga", "nigger", "niga", "n1gger", "์NIGGER",
+        "nigga", "nigger", "niga", "n1gger",
         "นิกก้า", "นิกเกอร์", "นิกเก้อ"
     }
     save_banned_words()
@@ -239,13 +256,8 @@ try:
                 f"{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
             content = normalize_message(message.content)
-            await bot.process_commands(message)
-
-            ctx = await bot.get_context(message)
-            if ctx.valid:
-                return
-            
-            if any(word in content for word in BANNED_WORDS):
+ 
+            if any(word in content for word in BANNED_WORDS) and ctx.command and ctx.command.name not in ["banword", "rmbanword"]:
                 try:
                     await message.delete()
                     await message.author.timeout(timedelta(minutes=5), reason="You said the Banned word you dumb fuck.")
@@ -256,6 +268,12 @@ try:
                     logging.error("Bot doesn't have permission to timeout this dumb fuck.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
+
+            await bot.process_commands(message)
+
+            ctx = await bot.get_context(message)
+            if ctx.valid:
+                return
             
             if "commandIgnore" in message.content:
                 return
