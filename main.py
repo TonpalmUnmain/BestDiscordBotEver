@@ -63,7 +63,7 @@ try:
     if not config_data:
         exit(1)
 
-    token = config_data["config"]["token"]
+    token = open("token.config", "r").read().strip()
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
     SAVE_DIR = config_data["config"]["sreenshotdir"] or "scs"
 
@@ -79,6 +79,17 @@ try:
     AUTHOR = config_data["config"]["author"]
     CMD_PREFIX = config_data["config"]["command_prefix"]
     ADMIN_ROLE_ID = int(config_data["config"].get("admin_role_id", 0)) or None
+
+    # ===== GLOBALS =====
+    bot_started = False
+    bot = None
+    bot_loop = None
+    manual_shutdown = False
+
+    # ===== MESSAGES =====
+    startmessage: str | None = None
+    stopmessage: str | None = None
+
     # ===== BOT SETUP =====
     if "bot" in globals():
         del globals()["bot"]
@@ -86,20 +97,21 @@ try:
     bot_started = False
 
     # ===== SESSION CONTROL =====
-    async def startsession(message=None):
-        global bot_started, bot_loop, startmessage
-        startmessage = message
+    async def startsession():
+        global bot_started
         if bot_started:
-            print("Bot already running.")
+            logging.info("Bot is already running.")
             return
+
+        async def runner():
+            try:
+                await bot.start(token)
+            except Exception as e:
+                logging.error(f"Error starting bot: {e}")
+
+        bot_loop.create_task(runner())
         bot_started = True
-        bot_started = True
-        try:
-            bot_loop = asyncio.get_running_loop()  # Save the bot's loop
-            await bot.start(token)
-        except Exception as e:
-            print(f"Error starting bot: {e}")
-            bot_started = False
+        logging.info("Bot started.")
 
     async def stopsession(message: str = None):
         global bot_started
@@ -107,19 +119,13 @@ try:
             logging.info("Bot is not running.")
             return
 
-        # Attempt to send shutdown message
-        channel = bot.get_channel(target_channel_id)
-        if channel:
-            try:
-                await channel.send(message or "My papi or ISP or MEA is shutting me down nooo.")
-            except Exception as e:
-                logging.error(f"Failed to send stop message: {e}")
+        logging.info("Bot stopped. Closing connection...")
+        try:
+            await bot.close()
+        except Exception as e:
+            logging.error(f"Error shutting down bot cleanly: {e}")
 
         bot_started = False
-        logging.info("Bot stopped. Closing connection...")
-
-        # Close the bot connection
-        await bot.close()
 
     def stop_bot_threadsafe(message: str = None):
         if bot_started and bot_loop:
@@ -135,7 +141,34 @@ try:
         text = re.sub(r'[\u200B-\u200F\uFE00-\uFE0F\u2060-\u206F]', '', text)
         text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C')
         return str(unicodedata.normalize("NFKC", str(text)).lower())
+    
+    def replace_placeholders(text, self_id: int = 1260198579067420722):
+        # General pattern: <{type:ID}>
+        pattern = r"<\{(\w+):([^}]*)\}>"
 
+        def repl(match):
+            p_type, p_value = match.groups()
+            p_type = p_type.lower()
+
+            if p_type == "mention":
+                if p_value.lower() == "a":   # shorthand for self
+                    return f"<@{self_id}>"
+                elif p_value.isdigit():      # normal numeric ID
+                    return f"<@{p_value}>"
+                else:
+                    return match.group(0)    # leave unchanged if not valid
+
+            elif p_type == "channel":
+                return f"<#{p_value}>" if p_value.isdigit() else match.group(0)
+
+            elif p_type == "role":
+                return f"<@&{p_value}>" if p_value.isdigit() else match.group(0)
+
+            else:
+                return match.group(0)
+
+        return re.sub(pattern, repl, text)
+    
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
 
@@ -167,13 +200,36 @@ try:
         # ===== BOT EVENTS =====
         @bot.event
         async def on_ready():
+            global startmessage
             logging.info(f"Logged in as {bot.user} (ID: {bot.user.id})")
+
+            if startmessage is None:
+                logging.info("No startmessage set.")
+                return
+
             channel = bot.get_channel(target_channel_id)
             if channel:
-                await channel.send(startmessage or "I am watching you.")
-                logging.info(f"Sent startup message to channel ID: {target_channel_id}")
-            else:
-                logging.warning("Couldn't find startup channel.")
+                try:
+                    await channel.send(startmessage)
+                    logging.info(f"Sent startup message to channel ID: {target_channel_id}")
+                except Exception as e:
+                    logging.error(f"Failed to send startup message: {e}")
+
+        @bot.event
+        async def on_disconnect():
+            global manual_shutdown, stopmessage
+            if not manual_shutdown:
+                return  # ignore gateway hiccups
+
+            if stopmessage:
+                channel = bot.get_channel(target_channel_id)
+                if channel:
+                    try:
+                        await channel.send(stopmessage)
+                        logging.info(f"Sent stop message to channel ID: {target_channel_id}")
+                    except Exception as e:
+                        logging.error(f"Failed to send stop message: {e}")
+            manual_shutdown = False
 
         @bot.event
         async def on_message(message):
@@ -353,17 +409,17 @@ try:
             except discord.HTTPException as e:
                 await ctx.send(f"Something went wrong while forgiving. DEBUG: {e}")
 
-        @bot.command(name="pewurselfnga")
+        @bot.command(name="pewthyself")
         @commands.is_owner()
         async def sessionend(ctx):
-            await ctx.send(f"Ight {ctx.author.mention}... I'm out. 💀")
-            await bot.close()
+            await stopsession(f"Ight {ctx.author.mention}... I'm out. 💀")
 
         @bot.command(name="version")
         async def version_command(ctx):
             await ctx.send(f"Bot version: {VERSION}\nMy papi is: {AUTHOR}")
 
         @bot.command(name="agreewme")
+        @commands.is_owner()
         async def agree_with_me(ctx, *, message: str = None):
             if message:
                 await ctx.send(f"Yes, daddy {ctx.author.mention}😩. You're absolutely right about: \"{message}\".")
@@ -378,13 +434,13 @@ try:
                 await ctx.send(f"No, daddy {ctx.author.mention}😩.")
 
         @bot.command(name="repeat")
-        @commands.has_role(ADMIN_ROLE_ID)
+        @commands.is_owner()
         async def repeat(ctx, *, message: str):
             logging.info(f"[{ctx.author} ({ctx.author.id})] Called repeat with message: {message}")
             await ctx.send(message)
 
         @bot.command(name="deplete")
-        @commands.has_role(ADMIN_ROLE_ID)
+        @commands.is_owner()
         async def deplete(ctx, type: str, value: int):
             logging.info(f"[{ctx.author} ({ctx.author.id})] Called deplete with type: {type}, value: {value}")
             units = {"ms": 0.001, "sec": 1, "min": 60, "hr": 3600, "d": 86400}
@@ -395,7 +451,7 @@ try:
             seconds = value * units[type]
             await ctx.send(f"After finishing I will deplete myself in {seconds:.2f}s, I AM STILL WATCHING.")
             await asyncio.sleep(seconds)
-            await sessionend(ctx)
+            await stopsession(f"Ight {ctx.author.mention}... I'm out. 💀")
 
         @bot.command(name="cfch")
         @commands.has_permissions(administrator=True)
@@ -531,6 +587,7 @@ try:
     # ===== CONSOLE INTERFACE =====
     def console_interface():
         global target_channel_id, config_data
+        global bot_started, bot, bot_loop
 
         print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
         while True:
@@ -540,12 +597,90 @@ try:
             command, *args = cmd
 
             if command == "start":
-                msg = " ".join(args) if args else None
-                threading.Thread(target=lambda: asyncio.run(startsession(msg)), daemon=True).start()
+                if bot_started:
+                    print("Bot already running.")
+                    continue
+                    
+                try:
+                    global startmessage
+                    if not args:
+                        startmessage = "I am watching you."   # default
+                    elif args[0].lower() == "none":
+                        startmessage = None                   # skip
+                    else:
+                        startmessage = " ".join(args)         # custom
+
+                    bot = create_bot()  # NEW bot each time
+                    bot_loop = asyncio.new_event_loop()  # NEW loop each time
+                    asyncio.set_event_loop(bot_loop)
+
+                    def run_bot():
+                        try:
+                            bot_loop.run_until_complete(bot.start(token))
+                        except Exception as e:
+                            print("Error starting bot:", e)
+                        finally:
+                            bot_loop.close()
+
+                    threading.Thread(target=run_bot, daemon=True).start()
+                    bot_started = True
+                    print("Bot started.")
+                except Exception as e:
+                    print("Failed to start bot:", e)
 
             elif command == "stop":
-                msg = " ".join(args) if args else None
-                stop_bot_threadsafe(msg)
+                if not bot_started:
+                    print("Bot is not running.")
+                    continue
+
+                global manual_shutdown, stop_message
+                manual_shutdown = True
+
+                if not args:
+                    stop_message = "My papi or ISP or MEA is shutting me down nooo."
+                elif args[0].lower() == "none":
+                    stop_message = None
+                else:
+                    stop_message = " ".join(args)
+
+                import contextlib
+
+                async def shutdown():
+                    try:
+                        # wait max 5s for bot.close()
+                        with contextlib.suppress(asyncio.TimeoutError):
+                            await asyncio.wait_for(bot.close(), timeout=5)
+
+                        # force–close aiohttp session if still open
+                        if bot.http._HTTPClient__session and not bot.http._HTTPClient__session.closed:
+                            await bot.http._HTTPClient__session.close()
+
+                        logging.info("Bot shutdown complete.")
+                    except Exception as e:
+                        logging.error(f"Error in shutdown: {type(e).__name__}: {e}")
+
+                fut = asyncio.run_coroutine_threadsafe(shutdown(), bot.loop)
+
+                logging.info("Waiting for bot to shut down...")
+                try:
+                    fut.result()
+                except Exception as e:
+                    logging.error(f"Error shutting down bot (outer): {type(e).__name__}: {e}")
+
+                bot_started = False
+                logging.info("Bot stopped.")
+
+            elif command == "exit":
+                if bot_started and bot_loop:
+                    async def shutdown():
+                        await bot.close()
+                    fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
+                    try:
+                        fut.result()
+                    except Exception as e:
+                        logging.error(f"Error shutting down bot: {e}")
+                logging.info("Console exited by user input.")
+                sys.exit(0)
 
             elif command == "targch" and args and args[0].isdigit():
                 target_channel_id = int(args[0])
@@ -553,55 +688,115 @@ try:
                 save_config(config_data)
                 print(f"Target channel set to {target_channel_id}")
 
+            elif command == "reply" and args and args[0].isdigit():
+                message_to_re = int(args[0])
+                if len(args) < 2:
+                    print("Usage: reply <message_id> <message>")
+                    continue
+
+                raw_msg = " ".join(args[1:])
+
+                override_channel_id = None
+                possible_override = None
+
+                # Check if last arg is {something}
+                if raw_msg.endswith("}"):
+                    match = re.search(r"\{(\d+)\}$", raw_msg)
+                    if match:
+                        possible_override = int(match.group(1))
+
+                if bot_started and bot_loop:
+                    async def reply_to_message():
+                        nonlocal raw_msg, override_channel_id, possible_override
+                        try:
+                            ch_id = target_channel_id
+                            msg_text = raw_msg
+
+                            if possible_override:
+                                # Try to fetch the channel
+                                channel = bot.get_channel(possible_override)
+                                if channel is None:
+                                    try:
+                                        channel = await bot.fetch_channel(possible_override)
+                                    except:
+                                        channel = None
+
+                                if channel:
+                                    override_channel_id = possible_override
+                                    ch_id = override_channel_id
+                                    # remove the {id} from the text
+                                    msg_text = raw_msg[: raw_msg.rfind("{")].strip()
+
+                            # Apply placeholder replacement
+                            msg_text = replace_placeholders(msg_text)
+
+                            # Fetch target channel
+                            channel = bot.get_channel(ch_id)
+                            if channel is None:
+                                channel = await bot.fetch_channel(ch_id)
+
+                            # Fetch the message to reply to
+                            target_msg = await channel.fetch_message(message_to_re)
+
+                            # Send reply
+                            await target_msg.reply(msg_text, mention_author=False)
+                            print(f"Replied to message {message_to_re} in channel {ch_id}.")
+                        except Exception as e:
+                            print("Failed to reply:", e)
+
+                    asyncio.run_coroutine_threadsafe(reply_to_message(), bot_loop)
+                else:
+                    print("Bot is not running.")
+
             elif command == "sendmsg" and args:
-                msg = " ".join(args)
+                raw_msg = " ".join(args)
 
-                # Function to replace all placeholders dynamically
-                def replace_placeholders(text):
-                    # General pattern: <{type:ID}>
-                    pattern = r"<\{(\w+):(\d+)\}>"
+                override_channel_id = None
+                possible_override = None
 
-                    def repl(match):
-                        p_type, p_id = match.groups()
-                        if p_type.lower() == "mention":
-                            return f"<@{p_id}>"
-                        elif p_type.lower() == "channel":
-                            return f"<#{p_id}>"
-                        elif p_type.lower() == "role":
-                            return f"<@&{p_id}>"
-                        else:
-                            # Unknown placeholder, keep it as is
-                            return match.group(0)
-
-                    return re.sub(pattern, repl, text)
-
-                # Apply placeholder replacement
-                msg = replace_placeholders(msg)
+                # Check if last arg is {something}
+                if raw_msg.endswith("}"):
+                    match = re.search(r"\{(\d+)\}$", raw_msg)
+                    if match:
+                        possible_override = int(match.group(1))
 
                 if bot_started and bot_loop:
                     async def send_message():
+                        nonlocal raw_msg, override_channel_id, possible_override
                         try:
-                            channel = bot.get_channel(target_channel_id)
+                            ch_id = target_channel_id
+                            msg_text = raw_msg
+
+                            if possible_override:
+                                # Try to fetch the channel
+                                channel = bot.get_channel(possible_override)
+                                if channel is None:
+                                    try:
+                                        channel = await bot.fetch_channel(possible_override)
+                                    except:
+                                        channel = None
+
+                                if channel:
+                                    override_channel_id = possible_override
+                                    ch_id = override_channel_id
+                                    # remove the {id} from the text
+                                    msg_text = raw_msg[: raw_msg.rfind("{")].strip()
+
+                            # Apply placeholder replacement
+                            msg_text = replace_placeholders(msg_text)
+
+                            channel = bot.get_channel(ch_id)
                             if channel is None:
-                                channel = await bot.fetch_channel(target_channel_id)
-                            await channel.send(msg)
-                            print("Message sent.")
+                                channel = await bot.fetch_channel(ch_id)
+
+                            await channel.send(msg_text)
+                            print(f"Message sent to channel {ch_id}.")
                         except Exception as e:
                             print("Failed to send message:", e)
 
                     asyncio.run_coroutine_threadsafe(send_message(), bot_loop)
                 else:
                     print("Bot is not running.")
-
-            elif command == "status":
-                print(f"Bot running: {bot_started}, Target channel ID: {target_channel_id}")
-
-            elif command == "exit":
-                print("Exiting...")
-                break
-
-            else:
-                print(f"Unknown command: {command}")
 
     # ===== MAIN =====
     if __name__ == "__main__":
