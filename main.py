@@ -29,8 +29,17 @@ try:
     if hasattr(sys.stderr, "buffer"):
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
-
     # ===== LOGGING SETUP =====
+    class ConsoleFriendlyHandler(logging.StreamHandler):
+        def emit(self, record):
+            try:
+                msg = self.format(record)
+                # Move to a new line, print log, then reprint the prompt
+                sys.stdout.write(f"\r{msg}\nconsole> ")
+                sys.stdout.flush()
+            except Exception:
+                self.handleError(record)
+
     log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
     os.makedirs(log_dir, exist_ok=True)
     log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
@@ -112,25 +121,27 @@ try:
         bot_started = True
         logging.info("Bot started.")
 
-    async def stopsession(message: str = None):
+    async def stopsession(message: str = None): # FOR INTERNAL USE ONLY
         global bot_started
         if not bot_started:
             logging.info("Bot is not running.")
             return
 
         logging.info("Bot stopped. Closing connection...")
+        if stopmessage:
+            channel = bot.get_channel(target_channel_id)
+            if channel:
+                try:
+                    await channel.send(message)
+                    logging.info(f"Sent stop message to channel ID: {target_channel_id}")
+                except Exception as e:
+                    logging.error(f"Failed to send stop message: {e}")
         try:
             await bot.close()
         except Exception as e:
             logging.error(f"Error shutting down bot cleanly: {e}")
 
         bot_started = False
-
-    def stop_bot_threadsafe(message: str = None):
-        if bot_started and bot_loop:
-            asyncio.run_coroutine_threadsafe(stopsession(message), bot_loop)
-        else:
-            print("Bot loop not running.")
 
     # ===== UTILS =====
     def normalize_message(text):
@@ -232,26 +243,7 @@ try:
                     logging.error(f"Failed to send startup message: {e}")
 
         @bot.event
-        async def on_disconnect():
-            global manual_shutdown, stopmessage
-            if not manual_shutdown:
-                return  # ignore gateway hiccups
-
-            if stopmessage:
-                channel = bot.get_channel(target_channel_id)
-                if channel:
-                    try:
-                        await channel.send(stopmessage)
-                        logging.info(f"Sent stop message to channel ID: {target_channel_id}")
-                    except Exception as e:
-                        logging.error(f"Failed to send stop message: {e}")
-            manual_shutdown = False
-
-        @bot.event
         async def on_message(message):
-            if message.author.bot:
-                return
-
             logging.info(
                 f"{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
@@ -283,6 +275,7 @@ try:
             if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
                 try:
                     await message.channel.send(f"☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {message.author.mention} 😩.")
+                    logging.info(f"Sent Goodboy response to {message.author}")
                 except Exception as e:
                     logging.error(f"Error sending good boy response: {e}")
 
@@ -617,6 +610,15 @@ try:
             if isinstance(error, commands.MissingRole):
                 await ctx.send("*I, the creator of this bot, have the right to end it. You don't, stoobid.*")
                 await ctx.send("-THE CREATOR")
+        
+        @bot.listen("on_command_completion")
+        async def log_command_done(ctx):
+            logging.info(f"Command completed: {ctx.command} by {ctx.author}")
+
+        @bot.listen("on_command_error")
+        async def log_command_error(ctx, error):
+            logging.error(f"Error in command {ctx.command} by {ctx.author}: {error}")
+
         return bot
 
     # ===== CONSOLE INTERFACE =====
@@ -630,6 +632,10 @@ try:
             if not cmd:
                 continue
             command, *args = cmd
+
+            if command[0] == "&":
+                print("Console isn't closed, proceeding to exit.")
+                sys.exit(0)
 
             if command == "start":
                 if bot_started:
@@ -663,7 +669,7 @@ try:
                 except Exception as e:
                     print("Failed to start bot:", e)
 
-            elif command == "stop":
+            elif command == "stop": 
                 if not bot_started:
                     print("Bot is not running.")
                     continue
@@ -681,7 +687,15 @@ try:
                 async def shutdown():
                     try:
                         logging.info("Shutting down bot...")
-                        
+
+                        if stop_message and target_channel_id:
+                            channel = bot.get_channel(target_channel_id)
+                            if channel:
+                                await channel.send(stop_message)
+                                logging.info(f"Sent shutdown message to #{channel} ({channel.id}): {stop_message}")
+                            else:
+                                logging.warning(f"Could not find channel with ID {target_channel_id}")
+
                         # Cancel all background tasks except current
                         for task in asyncio.all_tasks(bot_loop):
                             if task is not asyncio.current_task(bot_loop):
@@ -691,15 +705,16 @@ try:
                         logging.info("Bot shutdown complete.")
                     except Exception as e:
                         logging.error(f"Error during shutdown: {e}")
-
-                # Run shutdown safely in the bot's loop
-                fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
-
-                logging.info("Waiting for bot to shut down...")
                 try:
+                # Run shutdown safely in the bot's loop
+                    fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
+
+                    logging.info("Waiting for bot to shut down...")
                     fut.result(timeout=10)  # Wait max 10s for shutdown
+                except asyncio.CancelledError:
+                    logging.info("CancelledError during shutdown. No threat.")
                 except Exception as e:
-                    logging.error(f"Error waiting for shutdown: {e}")
+                    logging.error(f"Error shutting down: {e}")
 
                 bot_started = False
                 logging.info("Bot stopped.")
