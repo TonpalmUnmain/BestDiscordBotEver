@@ -1,0 +1,23 @@
+2025-09-29 21:04:02,653 [INFO] logging in using static token
+2025-09-29 21:04:04,596 [INFO] Shard ID None has connected to Gateway (Session ID: 9d22b7380cec298c472b632bae8dc86e).
+2025-09-29 21:04:06,622 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 21:04:07,098 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-29 21:08:02,482 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): so if i didnt have admin and used commandIgnore then i can say the n word
+2025-09-29 21:08:32,539 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): it doesnt work like that
+2025-09-29 21:08:38,277 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): fym
+2025-09-29 21:08:41,233 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): !thx
+2025-09-29 21:08:41,234 [INFO] [p.pumpum (1260198579067420722)] Called thx
+2025-09-29 21:08:50,270 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): !thx
+2025-09-29 21:08:50,270 [INFO] [endulix_ (913994744953196614)] Called thx
+2025-09-29 21:08:56,029 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): commandIgnore !thx
+2025-09-29 21:09:00,326 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): see
+2025-09-29 21:09:03,929 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): ohhhhh
+2025-09-29 21:09:04,813 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): i can get it now
+2025-09-29 21:09:10,501 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): commandIgnore nigger
+2025-09-29 21:09:15,162 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): no
+2025-09-29 21:09:19,623 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): i need to fix
+2025-09-29 21:09:21,235 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): brb
+2025-09-29 21:10:04,458 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): No shit
+2025-09-29 21:10:18,166 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): i placed if in the wrong place
+2025-09-29 21:10:30,774 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): before the banword
+2025-09-29 21:10:34,377 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): aasadas

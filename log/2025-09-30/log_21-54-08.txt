@@ -1,0 +1,64 @@
+2025-09-30 21:54:13,757 [INFO] logging in using static token
+2025-09-30 21:54:15,276 [INFO] Shard ID None has connected to Gateway (Session ID: e94d4d255d1a7a26bdd14dd53aaeb441).
+2025-09-30 21:54:17,318 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-30 21:54:17,743 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-30 22:27:53,311 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-09-30 22:29:06,289 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-01 01:47:55,621 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 03:06:30,892 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 03:21:36,622 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 03:25:15,205 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 04:56:52,649 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 07:48:16,768 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 07:48:36,826 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !Sessioninfo
+2025-10-01 07:48:36,826 [ERROR] Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "Sessioninfo" is not found
+2025-10-01 07:48:43,874 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-10-01 07:48:47,666 [INFO] Session info sent by p.pumpum
+2025-10-01 08:23:09,215 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 08:56:37,487 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 09:10:17,492 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-01 09:10:18,998 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): tuff?
+2025-10-01 09:12:26,661 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/mambo-ume-usume-chibi-dance-anime-gif-10304596603435351987
+2025-10-01 09:12:31,172 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): yes
+2025-10-01 09:12:39,535 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-01 09:14:12,460 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): Tuff?
+2025-10-01 09:14:21,628 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): 💔
+2025-10-01 09:14:45,778 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-01 09:14:52,002 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): Tuff?
+2025-10-01 09:15:02,973 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): ,xdseฟๆๆๆๆๆ เตโชๅเเกสสี้⚠️
+2025-10-01 09:15:07,840 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): <:Tuff_emoji:1382989105327112253>
+2025-10-01 09:15:10,448 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): techo
+2025-10-01 09:22:01,233 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 09:33:12,236 [INFO] lowmassivetaper (1364178005186056235) in #❌-nsfw-🚫 (1397599131488223353): Yuri
+2025-10-01 09:33:16,550 [INFO] lowmassivetaper (1364178005186056235) in #❌-nsfw-🚫 (1397599131488223353): Yeattttyyyy
+2025-10-01 09:33:33,988 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): gassy
+2025-10-01 09:33:34,102 [INFO] lowmassivetaper (1364178005186056235) in #❌-nsfw-🚫 (1397599131488223353): ( • ) ( • )
+2025-10-01 09:33:38,036 [INFO] sleepycimo (1300754808185290762) in #❌-nsfw-🚫 (1397599131488223353): /kill hina
+2025-10-01 09:33:53,807 [INFO] lowmassivetaper (1364178005186056235) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-01 09:33:59,841 [INFO] lowmassivetaper (1364178005186056235) in #❌-nsfw-🚫 (1397599131488223353): Now give me rule 34!
+2025-10-01 09:43:58,439 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): clear all hina
+2025-10-01 09:44:04,524 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): https://tenor.com/view/wild-hunt-limbus-company-pookie-gif-17794749622365586425
+2025-10-01 09:53:11,769 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 09:53:21,027 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 09:53:23,286 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 09:53:25,297 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 09:53:27,921 [INFO] endulix_ (913994744953196614) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 11:17:20,460 [INFO] Shard ID None has successfully RESUMED session e94d4d255d1a7a26bdd14dd53aaeb441.
+2025-10-01 11:35:19,835 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-10-01 11:35:29,760 [ERROR] mcstat command failed: timed out
+2025-10-01 11:35:59,402 [INFO] endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-01 11:39:50,240 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): hello
+2025-10-01 11:39:54,260 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): hi
+2025-10-01 11:40:11,828 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): where u
+2025-10-01 11:40:27,981 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): I at krapow
+2025-10-01 11:40:31,830 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): I eating krapow
+2025-10-01 11:41:30,368 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): uh
+2025-10-01 11:42:37,195 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): what that mean
+2025-10-01 11:42:43,451 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): 🤡
+2025-10-01 11:42:55,209 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): กะเพรา
+2025-10-01 11:42:58,097 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): นิกเก้อ
+2025-10-01 11:43:02,681 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): ohh
+2025-10-01 11:43:10,833 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): and where
+2025-10-01 11:43:24,929 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ร้านกะเพราข้าง teamwork
+2025-10-01 11:43:32,556 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): oh
