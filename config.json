@@ -1,8 +1,8 @@
 {
     "config": {
-        "version": "3.6.8",
+        "version": "4.0 (Thailand 4.0™ Edition)",
         "author": "TonpalmUnmain",
-        "default_target_channel_id": "1399900695993253970",
+        "default_target_channel_id": "1371357608904228924",
         "admin_role_id": "1411139316171931738",
         "command_prefix": "!",
         "sreenshotdir": "scs"

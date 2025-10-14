@@ -17,7 +17,6 @@ import socket
 import uuid
 import getpass
 import io
-import platform
 import psutil
 import GPUtil
 import traceback
@@ -252,32 +251,44 @@ try:
         async def on_message(message):
             if message.author.bot:
                 return
+
             logging.info(
                 f"{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
+
             content = normalize_message(message.content)
- 
-            if any(word in content for word in BANNED_WORDS) and ctx.command and ctx.command.name not in ["banword", "rmbanword"]:
+            ctx = await bot.get_context(message)
+
+            if any(word in content for word in BANNED_WORDS) and not (
+                ctx.command and ctx.command.name in ["banword", "rmword"]
+            ):
                 try:
                     await message.delete()
-                    await message.author.timeout(timedelta(minutes=5), reason="You said the Banned word you dumb fuck.")
-                    await message.channel.send(f"{message.author.mention} has been timed out for using the fucking Banned word.")
+                    await message.author.timeout(
+                        timedelta(minutes=5),
+                        reason="You said a banned word."
+                    )
+                    await message.channel.send(
+                        f"{message.author.mention} has been timed out for using a banned word."
+                    )
                     logging.info(f"Timed out: {message.author} for '{message.content}'")
                 except discord.Forbidden:
-                    await message.channel.send(f"I can't ban {message.author.mention}, this mf should be ashamed of themself.")
-                    logging.error("Bot doesn't have permission to timeout this dumb fuck.")
+                    await message.channel.send(
+                        f"I can't timeout {message.author.mention}, missing permissions."
+                    )
+                    logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
 
             await bot.process_commands(message)
 
-            ctx = await bot.get_context(message)
             if ctx.valid:
                 return
-            
+
             if "commandIgnore" in message.content:
                 return
-            
+
+                
         @bot.event
         async def on_message_edit(before, after):
             if after.author.bot:
@@ -661,29 +672,28 @@ try:
                 else:
                     stop_message = " ".join(args)
 
-                import contextlib
-
                 async def shutdown():
                     try:
-                        # wait max 5s for bot.close()
-                        with contextlib.suppress(asyncio.TimeoutError):
-                            await asyncio.wait_for(bot.close(), timeout=5)
-
-                        # force–close aiohttp session if still open
-                        if bot.http._HTTPClient__session and not bot.http._HTTPClient__session.closed:
-                            await bot.http._HTTPClient__session.close()
-
+                        logging.info("Shutting down bot...")
+                        
+                        # Cancel all background tasks except current
+                        for task in asyncio.all_tasks(bot_loop):
+                            if task is not asyncio.current_task(bot_loop):
+                                task.cancel()
+                        
+                        await bot.close()  # Properly close connection
                         logging.info("Bot shutdown complete.")
                     except Exception as e:
-                        logging.error(f"Error in shutdown: {type(e).__name__}: {e}")
+                        logging.error(f"Error during shutdown: {e}")
 
-                fut = asyncio.run_coroutine_threadsafe(shutdown(), bot.loop)
+                # Run shutdown safely in the bot's loop
+                fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
 
                 logging.info("Waiting for bot to shut down...")
                 try:
-                    fut.result()
+                    fut.result(timeout=10)  # Wait max 10s for shutdown
                 except Exception as e:
-                    logging.error(f"Error shutting down bot (outer): {type(e).__name__}: {e}")
+                    logging.error(f"Error waiting for shutdown: {e}")
 
                 bot_started = False
                 logging.info("Bot stopped.")
