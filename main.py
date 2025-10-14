@@ -279,6 +279,12 @@ try:
                 except Exception as e:
                     logging.error(f"Error sending good boy response: {e}")
 
+            if any(word in content.lower() for word in ["badboy", "bad boy"]) and bot.user.mentioned_in(message):
+                try:
+                    await message.channel.send(f"ヾ(≧へ≦)〃, Fuck you {message.author.mention}.")
+                    logging.info(f"Sent Goodboy response to {message.author}")
+                except Exception as e:
+                    logging.error(f"Error sending 'Insulting' response: {e}")
             await bot.process_commands(message)
 
             if ctx.valid:
