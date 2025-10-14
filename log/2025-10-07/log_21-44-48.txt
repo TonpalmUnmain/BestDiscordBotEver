@@ -1,0 +1,630 @@
+2025-10-07 21:45:29,916 [INFO] logging in using static token
+2025-10-07 21:45:38,860 [INFO] Shard ID None has connected to Gateway (Session ID: 5311120d7b2b7eed4e1cbc9e33fd66c9).
+2025-10-07 21:45:40,930 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-07 21:45:41,294 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-10-07 21:50:48,683 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !cfch current
+2025-10-07 22:05:14,602 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !mcstat
+2025-10-07 22:05:21,970 [ERROR] mcstat command failed: unpack requires a buffer of 2 bytes
+2025-10-07 22:05:37,812 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !mcstat
+2025-10-07 22:06:06,729 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !mcstat tagmcr
+2025-10-07 22:07:52,038 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): <:Tuff_emoji:1382989105327112253>
+2025-10-07 23:18:26,720 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 01:43:22,078 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 02:49:05,723 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 03:04:49,492 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 03:58:23,453 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 05:47:10,195 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 05:53:26,412 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 05:53:27,695 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): <@&1412722981914017812>
+2025-10-08 05:53:35,150 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Free SSR ticket
+2025-10-08 05:57:31,538 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 05:57:42,142 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): not vodka ssr power but ok
+2025-10-08 05:57:55,297 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Atleast i didnt get goldship stamina
+2025-10-08 05:59:07,032 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I've got too many soeed SSR bro😭
+2025-10-08 06:33:15,215 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Who is the AI bro
+2025-10-08 06:33:21,414 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I bet it is endu's alt acc
+2025-10-08 06:33:37,074 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): And he was just talking to himself
+2025-10-08 06:33:51,977 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): might be true
+2025-10-08 06:33:54,568 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 🤔
+2025-10-08 06:34:00,733 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🤔
+2025-10-08 06:40:13,037 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): why is it lined up
+2025-10-08 06:40:15,880 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 💔
+2025-10-08 06:45:40,355 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): i got goldship stamina
+2025-10-08 06:54:13,096 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): REALLY???
+2025-10-08 06:54:14,582 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bro
+2025-10-08 06:54:23,668 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): uhm
+2025-10-08 06:55:37,377 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Idk if it is real but the tierlist says it is in B tier
+2025-10-08 06:56:08,734 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😭😭😭
+2025-10-08 06:56:38,647 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 💔💔💔
+2025-10-08 06:56:40,632 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): bro 💔
+2025-10-08 06:56:49,095 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): atleast i can get corner conoussier or wtv
+2025-10-08 06:56:58,925 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Why every goldship card suck
+2025-10-08 06:57:01,497 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ☠️
+2025-10-08 06:57:09,324 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Anything but training
+2025-10-08 06:59:14,390 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it ok
+2025-10-08 06:59:23,245 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): i rich
+2025-10-08 06:59:45,577 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): also they just released new uma story and new main story
+2025-10-08 06:59:47,116 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): so i richer
+2025-10-08 07:01:50,070 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): New main story?
+2025-10-08 07:01:56,254 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Lemme check
+2025-10-08 07:01:58,227 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-08 07:02:03,122 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it focus on narita brian
+2025-10-08 07:02:33,965 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): i wanna watch the story
+2025-10-08 07:05:29,012 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1210218568889798658> can i borrow ur nishino flower for quest
+2025-10-08 07:07:43,263 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nvm i found a guy who has it
+2025-10-08 07:53:31,598 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-08 07:54:40,099 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Maybe you aren't ai but you are spy
+2025-10-08 07:55:22,593 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): You are Cambodian spy
+2025-10-08 08:51:55,861 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-08 09:13:45,112 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 09:23:39,204 [INFO] sleepycimo (1300754808185290762) in #🔧-server-updates-🔧 (1411656420373565440): new emojis <:angela_ai:1425306753117061160>
+2025-10-08 09:23:55,407 [INFO] sleepycimo (1300754808185290762) in #🔧-server-updates-🔧 (1411656420373565440): <:oguri_fat:1425306325461504145>
+2025-10-08 09:24:27,918 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): <:tamamo:1424957862525931652>
+2025-10-08 09:24:36,573 [INFO] sleepycimo (1300754808185290762) in #🔧-server-updates-🔧 (1411656420373565440): <:tachycafe_lesbian:1425307212095426652>
+2025-10-08 09:25:02,265 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-08 09:26:06,811 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): poketaki lesbian
+2025-10-08 09:27:20,876 [INFO] sleepycimo (1300754808185290762) in #🔧-server-updates-🔧 (1411656420373565440): 
+2025-10-08 09:37:26,374 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): <:poketaki_lesbian:1425311013254987870>
+2025-10-08 09:56:01,348 [INFO] endulix_ (913994744953196614) in #🔧-server-updates-🔧 (1411656420373565440): 😛
+2025-10-08 10:02:31,282 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/little-witch-academia-ursula-callistis-smile-sad-smile-emoji-gif-778835575997083787
+2025-10-08 11:17:02,766 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 11:31:44,250 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): <:poketaki_lesbian:1425311013254987870> <:tachycafe_lesbian:1425307212095426652>
+2025-10-08 12:35:29,838 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): <:Tuff_emoji:1382989105327112253> <:Tuff_emoji:1382989105327112253>
+2025-10-08 13:01:22,055 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): <:poom_dying:1389243688751992973>
+2025-10-08 13:01:39,967 [INFO] endulix_ (913994744953196614) in #📣-sub-announcement-📣 (1419216320293241002): 
+2025-10-08 13:02:17,939 [INFO] sleepycimo (1300754808185290762) in #📣-sub-announcement-📣 (1419216320293241002): https://tenor.com/view/takipoke-takipokke-tachyon-agnes-tachyon-jungle-pocket-gif-15208210980325522580
+2025-10-08 13:02:27,263 [INFO] sleepycimo (1300754808185290762) in #📣-sub-announcement-📣 (1419216320293241002): https://tenor.com/view/cafetaki-tachycafe-cafetakky-agnes-tachyon-manhattan-cafe-gif-12646404009084387011
+2025-10-08 13:05:39,439 [INFO] endulix_ (913994744953196614) in #📣-sub-announcement-📣 (1419216320293241002): https://tenor.com/view/mambo-ume-usume-chibi-dance-anime-gif-10304596603435351987
+2025-10-08 13:06:29,869 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): <:kris_s_chibi:1425307371902603275>
+2025-10-08 13:07:25,392 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/durandal-light-o-calstone-light-o-uma-umamusume-gif-4015694879170416503
+2025-10-08 13:10:56,436 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/kris-s-symboli-kris-s-agnes-digital-dejitan-umamusume-gif-175773538186419752
+2025-10-08 13:11:47,625 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/agnes-digital-uma-musume-cheer-cheering-gif-25293744
+2025-10-08 13:29:54,885 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/gentildonna-umamusume-irene-gif-3883780175088265825
+2025-10-08 13:34:28,333 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/%E3%82%A6%E3%83%9E%E5%A8%98-umamusume-%E3%82%A2%E3%82%B0%E3%83%8D%E3%82%B9%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB-agnes-digital-gif-23231849
+2025-10-08 13:37:31,042 [INFO] valriita. (1308050122600611861) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/venom-no-meme-gif-12285963639960653567
+2025-10-08 14:10:31,526 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): blaze by oguri fat is so peak
+2025-10-08 14:10:33,531 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 🥹
+2025-10-08 14:19:07,537 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 15:19:10,408 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 15:29:53,336 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-08 15:36:51,251 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-08 15:47:52,580 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Nigggggggggeeerrrr
+2025-10-08 16:36:20,900 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 17:25:37,976 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/gmod-source-game-garrys-mod-garrys-mod-gif-21838568
+2025-10-08 17:25:54,715 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Tung tung tung saruuuuuu
+2025-10-08 18:10:19,066 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Who is this nga
+2025-10-08 18:10:20,223 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-08 18:10:27,808 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): its ai
+2025-10-08 18:10:29,450 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): new bot
+2025-10-08 18:10:33,870 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): better than bestbotever
+2025-10-08 18:10:39,272 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): หลอกกุ
+2025-10-08 18:10:42,139 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): ไม่เชื่อ
+2025-10-08 18:10:45,700 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): no
+2025-10-08 18:10:48,831 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): it bot
+2025-10-08 18:10:49,428 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): real
+2025-10-08 18:10:55,064 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ask cimo
+2025-10-08 18:11:01,235 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): ใครเอาเข้ามา
+2025-10-08 18:11:05,429 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): cimo
+2025-10-08 18:11:13,748 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): <@1300754808185290762>
+2025-10-08 18:11:49,009 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Aiมันส่ฃgifเป็นด้วยออ
+2025-10-08 18:12:09,890 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ai สมัยใหม่
+2025-10-08 18:12:20,708 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): มึงตามข่าวไม่ทัน
+2025-10-08 18:12:22,970 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 🤑
+2025-10-08 18:12:30,353 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): <:joseph_sigma:1386326827836112986>
+2025-10-08 18:19:49,991 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): yes
+2025-10-08 18:20:07,163 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): โม้
+2025-10-08 18:20:10,620 [INFO] valriita. (1308050122600611861) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/uma-musume-uma-symboli-kris-s-kris-s-kris-gif-4453390143614614432
+2025-10-08 18:20:17,470 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ซีโม้
+2025-10-08 18:20:24,508 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): เออซีโม้
+2025-10-08 18:20:33,907 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): ?
+2025-10-08 18:20:42,275 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/uma-musume-cheval-grand-%E3%82%A6%E3%83%9E%E5%A8%98%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%83%AB%E3%82%B0%E3%83%A9%E3%83%B3-gif-7262972151041857205
+2025-10-08 18:20:48,313 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/mambo-ume-usume-chibi-dance-anime-gif-10304596603435351987
+2025-10-08 18:21:25,128 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/gentildonna-umamusume-irene-gif-3883780175088265825
+2025-10-08 18:52:46,322 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): <@1340262742782771323> พัชต้องเป็นราชา rage bait
+2025-10-08 18:53:06,664 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): ไม่
+2025-10-08 18:53:11,030 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 😡
+2025-10-08 18:53:16,642 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ราชีนี
+2025-10-08 19:12:11,109 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Brr brr patapim taralelo tralala
+2025-10-08 19:12:27,924 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cappucino asasino liliri larila
+2025-10-08 19:12:47,861 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-08 19:13:03,075 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/tm-opera-o-umamusume-uma-musume-pretty-derby-tm-opera-gif-17755027566761646613
+2025-10-08 19:13:09,912 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Bro remember it all???
+2025-10-08 19:13:25,827 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): my brother always sing it
+2025-10-08 19:13:25,828 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 19:13:28,145 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): and he right next to me
+2025-10-08 19:13:29,028 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): so
+2025-10-08 19:13:30,109 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😭
+2025-10-08 19:14:03,142 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): Tung 😢
+2025-10-08 19:14:12,786 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): omg
+2025-10-08 19:14:13,819 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cat ears
+2025-10-08 19:14:18,933 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): very tuff
+2025-10-08 19:14:20,677 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🤑
+2025-10-08 19:14:21,491 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): How
+2025-10-08 19:14:26,552 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 5000 orbs quest
+2025-10-08 19:14:27,822 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): only on pc
+2025-10-08 19:14:29,516 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-08 19:14:30,922 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): easy
+2025-10-08 19:14:35,659 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): How
+2025-10-08 19:14:36,966 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): u go to discover and click quest
+2025-10-08 19:14:41,421 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): click the 5k one
+2025-10-08 19:14:43,778 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): download cosmic
+2025-10-08 19:14:47,204 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): then leave it on for 15 mins
+2025-10-08 19:14:49,287 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): then u claim
+2025-10-08 19:14:51,007 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): download a basic ahh browser and use it for 15 mins
+2025-10-08 19:14:54,900 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): after that u go to shop and use it
+2025-10-08 19:15:13,852 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Tung😢
+2025-10-08 19:15:19,642 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😢
+2025-10-08 19:15:26,860 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 19:15:27,785 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😢😢😢
+2025-10-08 19:15:43,138 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): so tuff 😭
+2025-10-08 19:15:46,684 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 19:15:53,295 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-08 19:16:03,536 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Bro
+2025-10-08 19:16:04,988 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): toaster car
+2025-10-08 19:16:08,722 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): so u also remember it all
+2025-10-08 19:16:11,277 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-08 19:17:03,037 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): he also gooned to ballerina cappucina 😢
+2025-10-08 19:17:07,568 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-08 19:17:09,826 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): how do i spell ts
+2025-10-08 19:17:12,416 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 😭
+2025-10-08 19:17:27,990 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): also espresso
+2025-10-08 19:17:34,795 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): toaster goon to brainrot
+2025-10-08 19:17:35,308 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): bad
+2025-10-08 19:18:06,484 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/brainrot-meme-intelig%C3%AAncia-artificial-ia-ballerina-gif-2187149683257210316
+2025-10-08 19:18:19,225 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/mambo-ume-usume-chibi-dance-anime-gif-10304596603435351987
+2025-10-08 19:18:35,781 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 19:18:46,012 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Damn is😂🎉
+2025-10-08 19:18:59,031 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/mayano-top-gun-mayano-top-gun-umamusume-cute-gif-4468970404873282877
+2025-10-08 19:19:03,634 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): damn is
+2025-10-08 19:19:07,908 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 19:19:11,106 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😂
+2025-10-08 19:19:21,035 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): Fake is Arming 😭 😡 😡 🥳
+2025-10-08 19:19:28,414 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/still-in-love-stillinlove-uma-musume-uma-dance-gif-13947761331212397536
+2025-10-08 19:25:30,570 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 19:48:14,941 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): ทำไมมันไม่มีแทก app
+2025-10-08 19:48:19,815 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Ai กาก
+2025-10-08 19:48:29,139 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): เรื่องของมัน
+2025-10-08 19:48:36,675 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ไม่กาก
+2025-10-08 19:56:03,727 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/lotte-lotte-little-witch-academia-little-witch-academia-good-day-chat-lotte-little-witch-academia-good-day-chat-lotte-gif-4328774705318106122
+2025-10-08 21:55:20,694 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-08 23:15:40,491 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-08 23:16:35,742 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-08 23:25:39,196 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): Mask<:poketaki_lesbian:1425311013254987870> <:Tuff_emoji:1382989105327112253> <:monkethink:1405561721933926530>
+2025-10-08 23:26:04,374 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-08 23:26:14,364 [INFO] tritoniscool. (1179654613738201129) in #📚-school-🎒 (1401077358051721278): Mask
+2025-10-08 23:26:17,982 [INFO] tritoniscool. (1179654613738201129) in #📚-school-🎒 (1401077358051721278): 
+2025-10-08 23:26:24,743 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Mask
+2025-10-08 23:26:28,520 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-08 23:26:33,531 [INFO] tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): Mask
+2025-10-08 23:26:37,694 [INFO] tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-08 23:27:02,238 [INFO] tritoniscool. (1179654613738201129) in #🗣️-ranting-👀 (1405556665058857070): Mask
+2025-10-08 23:27:06,917 [INFO] tritoniscool. (1179654613738201129) in #❌-nsfw-🚫 (1397599131488223353): Mask
+2025-10-08 23:27:57,631 [INFO] tritoniscool. (1179654613738201129) in #❌-nsfw-🚫 (1397599131488223353): Very porn
+2025-10-09 00:16:58,744 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 01:17:55,473 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 05:08:23,659 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 07:53:23,500 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 07:55:06,979 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Wtf
+2025-10-09 07:55:52,411 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ezzz
+2025-10-09 08:02:03,211 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-09 08:02:04,596 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cheat
+2025-10-09 09:03:14,046 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): no
+2025-10-09 09:03:15,323 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): I pro
+2025-10-09 09:03:59,476 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Aiคือใคร
+2025-10-09 09:04:27,892 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): กุว่าอยุ่ในห้องกุนี่แหละ
+2025-10-09 09:13:52,815 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): คือหุ่นยนต์
+2025-10-09 09:15:08,872 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): False
+2025-10-09 09:15:16,552 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): true
+2025-10-09 09:15:42,220 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): true
+2025-10-09 09:16:05,753 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): <:poketaki_lesbian:1425311013254987870>
+2025-10-09 09:18:51,713 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/uma-musume-cheval-grand-%E3%82%A6%E3%83%9E%E5%A8%98%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%83%AB%E3%82%B0%E3%83%A9%E3%83%B3-gif-7262972151041857205
+2025-10-09 09:28:42,533 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/uma-uma-musume-musume-pokke-jungle-pocket-gif-11152912155852580997
+2025-10-09 09:28:53,855 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/winning-ticket-%E3%82%A6%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%81%E3%82%B1%E3%83%83%E3%83%88-cry-umamusume-uma-musume-gif-5115651147046998744
+2025-10-09 09:29:51,405 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/catch-brick-throw-horse-%E3%82%A6%E3%83%9E%E5%A8%98-gif-11085463237824121980
+2025-10-09 09:47:48,128 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/jungle-pocket-pokke-uma-musume-uma-musume-pretty-derby-whira-gif-12702119496115110964
+2025-10-09 10:38:42,192 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 11:41:14,918 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-09 11:41:26,748 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-09 11:41:28,665 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): tm
+2025-10-09 11:42:00,116 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🍆nigger
+2025-10-09 11:42:01,519 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-09 11:42:08,064 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-09 12:23:40,135 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-09 12:51:27,089 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 13:01:56,385 [INFO] endulix_ (913994744953196614) in #📣-sub-announcement-📣 (1419216320293241002): 
+2025-10-09 14:19:25,919 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 14:22:40,281 [INFO] endulix_ (913994744953196614) in #📚-school-🎒 (1401077358051721278): 🥹
+2025-10-09 14:27:52,575 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): NEGGER
+2025-10-09 14:29:02,068 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): Nigker
+2025-10-09 14:29:10,089 [INFO] tritoniscool. (1179654613738201129) in #📚-school-🎒 (1401077358051721278): Nigg3r
+2025-10-09 15:30:22,723 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): Off topic, I love this outfit lol
+2025-10-09 16:29:37,171 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 16:57:04,593 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/umamusume-satono-diamond-vr-chat-tongue-out-meme-gif-17865685083697075722
+2025-10-09 17:47:59,443 [INFO] p.pumpum (1260198579067420722) in #📚-school-🎒 (1401077358051721278): I forgot to convert number to text
+2025-10-09 17:48:11,090 [INFO] p.pumpum (1260198579067420722) in #📚-school-🎒 (1401077358051721278): Thank you for ideas
+2025-10-09 18:02:12,882 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 18:22:57,907 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@&1412722981914017812> tomorrow is 10/10 🥹🥹
+2025-10-09 18:27:10,228 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): whos going next
+2025-10-09 18:55:39,385 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 19:12:48,795 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-09 19:38:30,274 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): I love my new profile🥰
+2025-10-09 19:38:40,326 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): wtf
+2025-10-09 19:38:42,003 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): anime lover
+2025-10-09 19:38:43,358 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): So tuff
+2025-10-09 19:38:49,376 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): ใครวะ
+2025-10-09 19:38:52,034 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): poom
+2025-10-09 19:38:54,371 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 7jooer
+2025-10-09 20:10:08,126 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://cdn.discordapp.com/attachments/1376362777761026098/1425341940010061875/IMG_3856.gif
+2025-10-09 20:28:39,839 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Something tell me to do this
+2025-10-09 20:28:47,263 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Idk what is that
+2025-10-09 20:28:55,948 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): the inner female in u
+2025-10-09 22:21:58,870 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 00:11:35,469 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 00:26:52,831 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 01:23:33,508 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 03:10:51,003 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 04:55:22,438 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 05:28:57,809 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 06:31:42,486 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 06:52:57,091 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/mambo-ume-usume-chibi-dance-anime-gif-10304596603435351987
+2025-10-10 06:53:27,412 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): *i like eating toes*
+2025-10-10 06:53:35,839 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wow
+2025-10-10 07:02:05,909 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 07:04:55,303 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 07:07:56,630 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nigger
+2025-10-10 07:07:57,791 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-10 07:08:04,019 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-10 08:06:36,857 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): ez
+2025-10-10 08:07:05,789 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): hack
+2025-10-10 08:07:21,368 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): no hack
+2025-10-10 08:07:25,972 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): pure skill
+2025-10-10 08:07:31,857 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): real hack
+2025-10-10 08:07:35,681 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-10 08:07:46,289 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): <:poketaki_lesbian:1425311013254987870>
+2025-10-10 08:08:00,294 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): omg
+2025-10-10 08:08:03,063 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): yippee
+2025-10-10 08:08:05,589 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🤑🤑🤑
+2025-10-10 08:08:09,001 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870>
+2025-10-10 08:15:20,016 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): Today wordle easy
+2025-10-10 08:29:34,089 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 08:52:33,591 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-10 09:52:41,530 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 10:31:02,005 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 13:47:06,283 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 14:26:59,652 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 15:03:22,533 [INFO] endulix_ (913994744953196614) in #📚-school-🎒 (1401077358051721278): <@1173572905649578025>
+2025-10-10 15:03:23,939 [INFO] endulix_ (913994744953196614) in #📚-school-🎒 (1401077358051721278): Where u
+2025-10-10 16:43:55,126 [INFO] sleepycimo (1300754808185290762) in #📣-sub-announcement-📣 (1419216320293241002): cheese soup incident:
+those who knows: 💀💀💀
+2025-10-10 16:45:54,243 [INFO] endulix_ (913994744953196614) in #📣-sub-announcement-📣 (1419216320293241002): Tom yum cheese incident
+2025-10-10 16:46:01,454 [INFO] endulix_ (913994744953196614) in #📣-sub-announcement-📣 (1419216320293241002): those who know
+2025-10-10 17:27:30,496 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 18:01:53,688 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 18:28:43,507 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): <@1308050122600611861>
+2025-10-10 18:28:53,349 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): เปิดเผยตัวตนมา
+2025-10-10 18:47:53,030 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): แฟนซีโม้
+2025-10-10 18:48:48,938 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): เอาดี
+2025-10-10 18:48:54,050 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): ใช่อ่อ
+2025-10-10 18:48:57,293 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): yes
+2025-10-10 18:48:58,292 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): fr
+2025-10-10 18:49:00,070 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 🤑🤑🤑
+2025-10-10 18:49:57,187 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): ใครวะะะ
+2025-10-10 18:56:55,026 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Cambodian spy
+2025-10-10 18:58:00,560 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): <@1308050122600611861> Tell me who are you
+2025-10-10 18:58:15,157 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): cimo anonymous girlfriend
+2025-10-10 18:58:20,343 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Or I'm gonna send sofa to you
+2025-10-10 18:59:01,942 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): You lie
+2025-10-10 18:59:36,875 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): I know that is ohm girlfriend but I can't prove it
+2025-10-10 18:59:54,964 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:00:05,837 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): sofa is my boyfriend
+2025-10-10 19:00:22,901 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): I see it
+2025-10-10 19:00:56,108 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): no
+2025-10-10 19:01:32,505 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Is cimo gf
+2025-10-10 19:01:52,523 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): yes
+2025-10-10 19:01:55,266 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): I notice it when I see the profile
+2025-10-10 19:02:02,910 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): yes
+2025-10-10 19:02:04,405 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ez
+2025-10-10 19:02:16,207 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:02:31,901 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): But why it said is a bot🤔
+2025-10-10 19:02:32,165 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): see
+2025-10-10 19:02:36,298 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): because
+2025-10-10 19:02:42,887 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): cimo inlove with a bot
+2025-10-10 19:04:20,831 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): What about Pat?
+2025-10-10 19:04:28,489 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): oh yes
+2025-10-10 19:04:33,590 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): we have to find out who his girlfriend is
+2025-10-10 19:05:02,304 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:05:28,659 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:05:29,005 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): I know it now
+2025-10-10 19:05:37,686 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): Who
+2025-10-10 19:06:03,600 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Anime girl in his imagine
+2025-10-10 19:06:23,593 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 🥀🥀🥀
+2025-10-10 19:06:42,076 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): then I have like 10 girlfriends if that counts
+2025-10-10 19:06:42,090 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): He dont have in irl cuz he already have but I can't prove it
+2025-10-10 19:07:37,789 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): I think is would have 1 gf if that conunt
+2025-10-10 19:07:49,253 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): She is in my profile🥰
+2025-10-10 19:08:06,000 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): wow
+2025-10-10 19:08:14,992 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): I didn't know u were like this
+2025-10-10 19:08:17,836 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 🤑🤑🤑
+2025-10-10 19:08:36,504 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Why😭
+2025-10-10 19:09:16,058 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Mahiru damage is too much😭
+2025-10-10 19:10:10,591 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): mahiru r34
+2025-10-10 19:35:00,921 [INFO] valriita. (1308050122600611861) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/uma-musume-cheval-grand-%E3%82%A6%E3%83%9E%E5%A8%98%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%83%AB%E3%82%B0%E3%83%A9%E3%83%B3-gif-7262972151041857205
+2025-10-10 19:35:26,303 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Who is this ngaaaaaa
+2025-10-10 19:35:27,431 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-10 19:35:33,588 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Bro
+2025-10-10 19:35:33,862 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): valriita
+2025-10-10 19:35:43,783 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): <:Tuff_emoji:1382989105327112253>
+2025-10-10 19:35:50,979 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:35:56,368 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Those who know
+2025-10-10 19:36:29,052 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): cheese soup 💔
+2025-10-10 19:36:34,164 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): "yo bro remember when copter and triton making lava chicken"
+2025-10-10 19:36:41,114 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): At60
+2025-10-10 19:36:43,256 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): Tomyum cheese
+2025-10-10 19:36:54,341 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:37:05,947 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): yo remember the football feet smell incident
+2025-10-10 19:37:28,073 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:37:28,532 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 🧓
+2025-10-10 19:37:48,812 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 19:38:11,289 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ส่งในกลุ่ม
+2025-10-10 19:39:00,222 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): go the holeee
+2025-10-10 19:39:06,570 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): im getting free money
+2025-10-10 19:39:08,760 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): 😱
+2025-10-10 19:39:16,620 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Infinite moneyy
+2025-10-10 19:39:19,103 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Yesss
+2025-10-10 19:39:22,002 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): yes yes go in the holeee
+2025-10-10 19:39:25,600 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): อะไรของมันว่ะ
+2025-10-10 19:41:56,029 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-10 19:43:03,707 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 50 carats for maintenance is crazyy
+2025-10-10 19:45:25,398 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): What
+2025-10-10 19:45:26,324 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): Word
+2025-10-10 19:45:36,855 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-10 19:45:40,792 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): lever
+2025-10-10 19:45:41,712 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): i think
+2025-10-10 19:45:42,485 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): i forgot
+2025-10-10 21:41:44,796 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-10 22:03:08,748 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 3rd Open Playtest Rough Date,
+Hello all! 
+
+I have been actively developing Derby recently and Picking some of your Suggestions to improve the Gameplay. 
+
+And i would like to inform the Rough Date of next Open Playtest is at 31 Oct or at the end of October (subject to change). 
+
+Open Playtest is Soon!
+
+Hope you all can be patient because the only ones actively developing Derby are me and Reasonal.
+2025-10-10 22:03:10,852 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): derby
+2025-10-10 22:03:12,813 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): yippee
+2025-10-10 22:37:31,916 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 00:10:31,736 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 02:04:46,806 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 02:09:32,752 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 03:17:07,922 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 03:54:46,323 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 07:17:38,847 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): new loomian legacy collab skin with forsaken
+2025-10-11 07:17:40,199 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): ez
+2025-10-11 07:32:49,413 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 10:19:09,067 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🥹
+2025-10-11 10:31:46,452 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 10:31:48,786 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🥰
+2025-10-11 10:31:59,142 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://cdn.discordapp.com/attachments/1376362777761026098/1425341940010061875/IMG_3856.gif
+2025-10-11 10:41:30,607 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 10:43:04,891 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 11:27:20,463 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 11:27:31,937 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i got new faust id
+2025-10-11 11:27:33,665 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): is this good
+2025-10-11 11:27:34,476 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): idk
+2025-10-11 11:29:23,562 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-11 11:29:48,590 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): use defense 4 times and then use her ult it’ll deal like so much dmg
+2025-10-11 11:30:07,295 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): use defense = activate bow
+2025-10-11 11:30:23,061 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): my sinners do little dmg
+2025-10-11 11:30:25,529 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😭
+2025-10-11 11:30:33,421 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): what canto ru on
+2025-10-11 11:30:33,562 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): sinclair carry my acc bro
+2025-10-11 11:30:38,899 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): uh
+2025-10-11 11:30:41,220 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): yi san
+2025-10-11 11:30:44,951 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): spice bush
+2025-10-11 11:30:45,349 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 4
+2025-10-11 11:30:55,838 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): yeah
+2025-10-11 11:30:59,522 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i just return to this game
+2025-10-11 11:31:01,849 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): do u have n.corp sinclair?
+2025-10-11 11:31:05,123 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-11 11:31:13,028 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): if yes make bleed team
+2025-10-11 11:31:19,457 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): it is my only sinner that actually does good dmg
+2025-10-11 11:31:23,293 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-11 11:31:25,342 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): Shi assoc faust, n.corp sinclair
+2025-10-11 11:31:32,726 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i have barber utis too
+2025-10-11 11:31:38,058 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): but her dmg is😭😭😭
+2025-10-11 11:31:41,512 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i suc
+2025-10-11 11:31:46,260 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): shi assoc faust deals good dmg too
+2025-10-11 11:31:58,264 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): just spam defense and activate her bow
+2025-10-11 11:32:05,151 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): crit rate is alr
+2025-10-11 11:33:16,002 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): it’s because u prob dont have sancho
+2025-10-11 11:33:39,265 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): the blood fiends ids needs sancho to work properly
+2025-10-11 11:33:41,249 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): i think
+2025-10-11 11:33:52,620 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): i have blood fiends don and gregor
+2025-10-11 11:33:57,457 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): shi assoc faust
+2025-10-11 11:34:08,790 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): The gang leader honglu
+2025-10-11 11:34:19,855 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): and kurokumo ryoshu
+2025-10-11 11:34:27,376 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): pretty alr bleed team
+2025-10-11 11:34:35,685 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 11:34:46,312 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nigga no
+2025-10-11 11:34:47,546 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-11 11:34:51,878 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 11:34:57,630 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nga
+2025-10-11 11:34:58,817 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-11 11:35:04,915 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): N1gg4
+2025-10-11 11:35:14,553 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Ni99a
+2025-10-11 11:42:07,644 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): buffalo
+2025-10-11 13:31:25,485 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 13:43:16,455 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): คำว่าไร
+2025-10-11 13:53:31,386 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): stack
+2025-10-11 13:53:35,316 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): <@1340262742782771323>
+2025-10-11 13:57:31,143 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): 👍
+2025-10-11 15:04:27,870 [INFO] sonata_.101 (1395312518569918664) in #🗣️-ranting-👀 (1405556665058857070): Chinese food final boss ☠️
+2025-10-11 15:35:42,687 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-11 16:23:11,424 [INFO] sleepycimo (1300754808185290762) in #🗣️-ranting-👀 (1405556665058857070): how do u even have access to discord in china
+2025-10-11 16:23:24,756 [INFO] tritoniscool. (1179654613738201129) in #🗣️-ranting-👀 (1405556665058857070): Tuff
+2025-10-11 16:25:19,899 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i tried that and she does 226 dmg
+2025-10-11 16:25:27,005 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): is that good
+2025-10-11 16:25:33,538 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-11 16:25:33,903 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🥺
+2025-10-11 16:31:00,021 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 321 on crit
+2025-10-11 16:31:01,143 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-11 16:31:02,829 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): faust op
+2025-10-11 16:31:43,137 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): w cimo
+2025-10-11 16:38:50,884 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 18:15:55,142 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:15:56,201 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): wtf is this
+2025-10-11 18:16:12,424 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): thought it was yi sangs
+2025-10-11 18:16:17,425 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): idk about heathcliff one tho
+2025-10-11 18:17:50,572 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:17:52,552 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): got another ego
+2025-10-11 18:17:55,068 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 💀💀💀
+2025-10-11 18:17:59,156 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): bro
+2025-10-11 18:18:01,794 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): why u get so much
+2025-10-11 18:18:02,314 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-11 18:18:04,970 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): yeah
+2025-10-11 18:18:05,980 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): they give a lot of stuff?
+2025-10-11 18:18:11,249 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): uh no
+2025-10-11 18:18:15,069 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i pulls like 30 times
+2025-10-11 18:18:19,963 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): got faust id and 2 ego
+2025-10-11 18:18:22,173 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): hack
+2025-10-11 18:18:22,960 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): what is this luck
+2025-10-11 18:18:24,516 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): kmoa
+2025-10-11 18:18:25,678 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): lmoa
+2025-10-11 18:18:31,435 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): let me pull
+2025-10-11 18:18:36,051 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): watch me get 5 egos bro
+2025-10-11 18:18:57,265 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bro but i want ego that heal
+2025-10-11 18:18:59,595 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i have no heal
+2025-10-11 18:19:01,921 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😭
+2025-10-11 18:19:17,419 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-11 18:22:30,443 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-11 18:22:33,839 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): what banner should I pull
+2025-10-11 18:23:15,698 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): why is everyone chinese
+2025-10-11 18:26:37,376 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1210218568889798658> what banner should I pull
+2025-10-11 18:26:47,732 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): shi assoc faust
+2025-10-11 18:26:49,721 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): trust
+2025-10-11 18:26:58,408 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-11 18:27:16,559 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): holon my luck kinda ass
+2025-10-11 18:28:02,731 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 18:29:32,669 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nga I ain't got nothing 🥹🥹🎋🎋
+2025-10-11 18:29:33,828 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-11 18:29:37,318 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): bro
+2025-10-11 18:29:51,536 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I got nothing 🥹🥹🎋🎋
+2025-10-11 18:36:58,858 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-11 18:37:06,858 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-11 18:37:10,680 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Beo got nothing😭🙏
+2025-10-11 18:37:23,381 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:37:32,452 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I got like 6 don quixote in 1 10 pull
+2025-10-11 18:37:38,705 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): help
+2025-10-11 18:37:56,437 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:38:51,018 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): stop
+2025-10-11 18:38:58,147 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-11 18:39:00,842 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://cdn.discordapp.com/attachments/1376362777761026098/1425341940010061875/IMG_3856.gif
+2025-10-11 18:39:03,661 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:39:12,915 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I'm gonna bang you
+2025-10-11 18:39:30,611 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:39:43,817 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I'm gonna remove ur embed perms
+2025-10-11 18:39:46,842 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🤑🤑
+2025-10-11 18:40:14,251 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:40:20,438 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): bro
+2025-10-11 18:40:24,284 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): in the nig 25 is crazy
+2025-10-11 18:40:27,718 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): big
+2025-10-11 18:40:32,313 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nig
+2025-10-11 18:40:33,741 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Ga
+2025-10-11 18:40:35,960 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nigga
+2025-10-11 18:40:37,208 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-11 18:40:45,818 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nger
+2025-10-11 18:41:06,242 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nickgah
+2025-10-11 18:41:35,509 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:42:01,342 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🤢
+2025-10-11 18:42:08,436 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-11 18:42:09,293 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Gooner fr
+2025-10-11 18:42:11,925 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): no
+2025-10-11 18:42:13,863 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): not gooner
+2025-10-11 18:42:14,787 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): bad
+2025-10-11 18:42:21,702 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <:poketaki_lesbian:1425311013254987870>
+2025-10-11 18:42:26,312 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:poketaki_lesbian:1425311013254987870> <:tachycafe_lesbian:1425307212095426652> <:tachycafe_lesbian:1425307212095426652> <:tachycafe_lesbian:1425307212095426652> <:tachycafe_lesbian:1425307212095426652> <:poketaki_lesbian:1425311013254987870> <:tachycafe_lesbian:1425307212095426652> <:poketaki_lesbian:1425311013254987870> <:tachycafe_lesbian:1425307212095426652> <:tachycafe_lesbian:1425307212095426652>
+2025-10-11 18:44:00,809 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-11 18:44:31,552 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): hai ding ding doi ho
+2025-10-11 18:47:38,425 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): ding ding ding doi ho
+2025-10-11 20:57:52,447 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): <@1395312518569918664>  is this you?💔
+2025-10-11 21:09:11,118 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): Nah
+2025-10-11 21:09:38,736 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): AND FINALLY DISCORD IS WORKING <:an_smiley:1389241103097528370>
+2025-10-11 21:09:41,138 [INFO] Timed out: sonata_.101 for 'AND FINALLY DISCORD IS WORKING <:an_smiley:1389241103097528370>'
+2025-10-11 21:17:05,893 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): Chinese moneh
+2025-10-11 21:18:48,350 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): Yes
+2025-10-11 21:19:00,395 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): But WHAT BAN WORD DID I SAY
+2025-10-11 21:19:18,016 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): 1 yuan = 5 baht
+2025-10-11 21:19:24,267 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): I have 200 yuan ☠️
+2025-10-11 21:20:01,080 [INFO] sonata_.101 (1395312518569918664) in #🗣️-ranting-👀 (1405556665058857070): I used Data roaming, it didn't work when I tried with the hotel wifi
+2025-10-11 21:33:51,794 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 22:04:29,761 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-11 22:51:35,061 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 00:03:58,168 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !seeword
+2025-10-12 00:03:58,196 [ERROR] Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "seeword" is not found
+2025-10-12 00:05:17,923 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !listbanword
+2025-10-12 00:05:39,509 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): One of those
+2025-10-12 00:06:01,894 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !rmword nga
+2025-10-12 00:06:02,845 [INFO] Removed banned word: nga
+2025-10-12 02:12:47,338 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 04:38:48,659 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 05:46:20,875 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 06:20:50,658 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 07:52:38,458 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 08:11:49,786 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-12 08:11:58,233 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): meisho doto just developed pneumonia yesterday
+2025-10-12 08:42:36,035 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): joseph caught playing peak
+2025-10-12 09:10:08,815 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): Nah, i didnt say ANY of that
+2025-10-12 09:11:07,307 [INFO] sleepycimo (1300754808185290762) in #💬-chat-✉️ (1371357608904228924): bestbot sucks
+2025-10-12 09:12:12,763 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): Yes
+2025-10-12 09:12:25,580 [INFO] sonata_.101 (1395312518569918664) in #💬-chat-✉️ (1371357608904228924): Wait no
+2025-10-12 10:00:47,788 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cimo noob
+2025-10-12 10:00:51,654 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): get bite by mosquito
+2025-10-12 10:05:38,658 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Why was porno a word
+2025-10-12 10:46:46,651 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): good game
+2025-10-12 10:51:58,363 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): What word
+2025-10-12 10:52:16,319 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Wound
+2025-10-12 10:52:43,534 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): First try
+2025-10-12 10:53:15,276 [INFO] tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): Ez
+2025-10-12 11:07:21,552 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Shut the fuck up N1GG3R
+2025-10-12 11:07:24,065 [INFO] Timed out: tritoniscool. for 'Shut the fuck up N1GG3R'
+2025-10-12 11:07:57,579 [INFO] Shard ID None has successfully RESUMED session 5311120d7b2b7eed4e1cbc9e33fd66c9.
+2025-10-12 11:47:26,130 [INFO] sleepycimo (1300754808185290762) in #marlon fooled us (1426793362559598653): he left us for a week he fooled the internet bro
+2025-10-12 11:50:00,599 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Yes
+2025-10-12 11:50:15,221 [INFO] 7jooer (1385167797360922675) in #💬-chat-✉️ (1371357608904228924): Bestbot is useless
+2025-10-12 11:50:30,646 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Best bot suck
+2025-10-12 11:56:39,924 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): fuq u
+2025-10-12 11:57:02,662 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): I will grape Ja Morant if you dont correct yourself
+2025-10-12 11:57:07,160 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): worstbot
+2025-10-12 11:58:03,054 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): you too
+2025-10-12 11:58:53,914 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): pumpum noob
+2025-10-12 11:58:56,536 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 😛😛😛
+2025-10-12 11:59:56,008 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Fuck best bot
+2025-10-12 12:18:02,234 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): How tf am i supposed to beat spicebush
+2025-10-12 12:18:20,536 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-12 12:18:31,687 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): spicebush so ez
+2025-10-12 12:18:50,965 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): just
+2025-10-12 12:18:51,642 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-12 12:18:56,680 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): read
+2025-10-12 12:21:27,782 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Wdym just read
+2025-10-12 12:21:30,945 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ☠️☠️☠️
+2025-10-12 12:22:45,549 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-12 12:22:46,067 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): read
+2025-10-12 12:22:52,031 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): skills and passive
+2025-10-12 12:23:03,366 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cuz most limbus players dont know how to read
+2025-10-12 12:24:52,076 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): It doesnt matter in that bossfight
+2025-10-12 12:25:11,455 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): The aoe attack is insane
+2025-10-12 12:26:36,995 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): this is why endu said most limbus players dont know how to read btw 😭
+2025-10-12 12:28:50,112 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): just use ego bro
+2025-10-12 12:29:18,382 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nga fym 🎋
+2025-10-12 12:39:09,358 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): ight
+2025-10-12 12:39:22,573 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): n1gger
+2025-10-12 12:39:23,764 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-12 12:39:29,958 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): n1gg3r
+2025-10-12 12:39:30,271 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): nigger
+2025-10-12 12:39:31,011 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-12 12:39:31,392 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-10-12 12:39:40,603 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): n1993r
+2025-10-12 12:39:50,858 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): negggar

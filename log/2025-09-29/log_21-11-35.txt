@@ -1,0 +1,11 @@
+2025-09-29 21:11:43,419 [INFO] logging in using static token
+2025-09-29 21:11:45,560 [INFO] Shard ID None has connected to Gateway (Session ID: b261ca6b9f72461293f27456d35a59f9).
+2025-09-29 21:11:47,572 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 21:11:47,971 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-29 21:11:57,886 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): ignoreCommand nigger
+2025-09-29 21:11:59,105 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-09-29 21:12:02,156 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): ok
+2025-09-29 21:12:14,686 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): commandIgnore nigger
+2025-09-29 21:12:15,911 [ERROR] Bot doesn't have permission to timeout this dumb fuck.
+2025-09-29 21:12:30,562 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-09-29 21:12:33,958 [INFO] Session info sent by p.pumpum
