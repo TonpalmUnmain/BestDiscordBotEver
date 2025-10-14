@@ -1,7 +1,0 @@
-2025-08-31 15:02:11,000 [INFO] logging in using static token
-2025-08-31 15:02:12,837 [INFO] Shard ID None has connected to Gateway (Session ID: 342dd24dac5d9d8203755f34d96cdb11).
-2025-08-31 15:02:14,863 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
-2025-08-31 15:02:15,271 [INFO] Sent startup message to channel ID: 1371357608904228924
-2025-08-31 15:02:21,713 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): !sessioninfo
-2025-08-31 15:02:23,722 [ERROR] Session info error: [WinError 21] The device is not ready: 'I:\\'
-2025-08-31 15:02:29,597 [INFO] p.pumpum (1260198579067420722) in #✦-chat-✦ (1371357608904228924): bruh
