@@ -162,7 +162,7 @@ try:
             '5': 's',
             '6': 'g',
             '7': 't',
-            '8': 'b',
+            '8': 'a',
             '9': 'g'
         })
         text = text.translate(replacements)
@@ -251,6 +251,9 @@ try:
             content = normalize_message(message.content)
             ctx = await bot.get_context(message)
 
+            if "commandIgnore" in message.content and commands.is_owner():
+                return
+        
             if any(word in content for word in BANNED_WORDS) and not (
                 ctx.command and ctx.command.name in ["banword", "rmword"]
             ):
@@ -285,15 +288,12 @@ try:
                     logging.info(f"Sent Goodboy response to {message.author}")
                 except Exception as e:
                     logging.error(f"Error sending 'Insulting' response: {e}")
+
             await bot.process_commands(message)
 
             if ctx.valid:
                 return
 
-            if "commandIgnore" in message.content:
-                return
-
-                
         @bot.event
         async def on_message_edit(before, after):
             if after.author.bot:
@@ -727,15 +727,28 @@ try:
 
             elif command == "exit":
                 if bot_started and bot_loop:
-                    async def shutdown():
-                        await bot.close()
-                    fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
-                    try:
-                        fut.result()
-                    except Exception as e:
-                        logging.error(f"Error shutting down bot: {e}")
-                logging.info("Console exited by user input.")
-                sys.exit(0)
+                    while True:
+                        decision = input("Bot isn't shutdown, exit? (y/n/f(fuq u)): ").strip().lower()
+                        if decision in ("y", ""):
+                            try:
+                                fut = asyncio.run_coroutine_threadsafe(stopsession(), bot_loop)
+                                fut.result(timeout=10)
+                                print("Bot shutdown complete.")
+                            except asyncio.TimeoutError:
+                                logging.error("Bot shutdown timed out.")
+                            except Exception as e:
+                                logging.error(f"Error shutting down bot: {e}")
+                            finally:
+                                sys.exit(0)
+                        elif decision == "f":
+                            print("Committing suicide...")
+                            sys.exit(0)
+                        elif decision == "n":
+                            break
+                        else:
+                            logging.info("Pick something.")
+                else:
+                    sys.exit(0)
 
             elif command == "targch" and args and args[0].isdigit():
                 target_channel_id = int(args[0])
