@@ -155,30 +155,33 @@ try:
     async def auto_save_users():
         await bot.wait_until_ready()
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
+
         if "discord_users" not in user_info:
             user_info["discord_users"] = {}
 
         for guild in bot.guilds:
-            for member in guild.members:
+            async for member in guild.fetch_members(limit=None):  # Fetch all members
                 if member.bot:
                     continue
+
                 roles = [r.name for r in member.roles if r.name != "@everyone"]
-                # Add/update user info in memory
+
+                # Keep existing var1/var2 if present
+                old_data = user_info["discord_users"].get(str(member.id), {})
                 user_info["discord_users"][str(member.id)] = {
                     "id": str(member.id),
                     "dispname": member.display_name,
-                    "var1": user_info.get("discord_users", {}).get(str(member.id), {}).get("var1", "N/A"),
-                    "var2": user_info.get("discord_users", {}).get(str(member.id), {}).get("var2", "N/A"),
-                    "roles": ", ".join(roles)
+                    "username": str(member),  # full username with #1234
+                    "joined_at": str(member.joined_at) if member.joined_at else "Unknown",
+                    "created_at": str(member.created_at),
+                    "roles": ", ".join(roles),
+                    "var1": old_data.get("var1", "N/A"),
+                    "var2": old_data.get("var2", "N/A")
                 }
 
-        # Update last saved timestamp
         user_info["last_saved"] = now
-
-        # Write to disk
         save_json(USER_INFO_FILE, user_info)
-        logging.info(f"Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
+        logging.info(f"✅ Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
     # ===== MINECRAFT SERVER MONITORING SETUP =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
