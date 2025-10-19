@@ -26,7 +26,6 @@ from prompt_toolkit.patch_stdout import patch_stdout
 import tkinter as tk
 from tkinter import filedialog
 import shutil
-import queue
 
 try:
     # ===== UTF-8 OUTPUT SETUP =====
@@ -459,8 +458,11 @@ try:
             if "commandIgnore" in message.content and commands.is_owner():
                 return
         
-            if any(word in content for word in BANNED_WORDS) and not (
-                ctx.command and ctx.command.name in ["banword", "rmword"]
+            if (
+                any(word in content for word in BANNED_WORDS)
+                and not (ctx.command and ctx.command.name in ["banword", "rmword"])
+                and not (message.author == bot.user)
+                and not any(role.id == 1411139316171931738 for role in message.author.roles)
             ):
                 try:
                     await message.delete()
