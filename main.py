@@ -4,7 +4,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
 
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from datetime import datetime, timedelta
 import json
 import unicodedata
@@ -53,27 +53,132 @@ try:
         ]
     )
 
-    # ===== CONFIG HANDLING =====
+    # ===== JSON HANDLING =====
     CONFIG_FILE = "config.json"
+    USER_INFO_FILE = "uinfo.json"
 
-    def load_config():
-        if not os.path.exists(CONFIG_FILE):
-            print(f"{CONFIG_FILE} not found!")
+    def load_json(file_path, default=None):
+        if not os.path.exists(file_path):
+            logging.warning(f"{file_path} not found, creating new file...")
+            if default is not None:
+                save_json(file_path, default)
+                return default
             return None
-        with open(CONFIG_FILE, "r") as f:
-            return json.load(f)
 
-    def save_config(cfg):
-        with open(CONFIG_FILE, "w") as f:
-            json.dump(cfg, f, indent=4)
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            logging.error(f"Failed to read {file_path}: invalid JSON format.")
+            return None
 
-    config_data = load_config()
+    def save_json(file_path, data):
+        try:
+            with open(file_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+        except Exception as e:
+            logging.error(f"Failed to write to {file_path}: {e}")
+
+    def load_userinfo():
+        return load_json(USER_INFO_FILE, default={"discord_users": {}, "last_saved": None})
+
+    def save_userinfo(data):
+        save_json(USER_INFO_FILE, data)
+
+    config_data = load_json(CONFIG_FILE)
     if not config_data:
         exit(1)
+
+    user_info = load_json(USER_INFO_FILE, default={"discord_users": {}, "last_saved": None})
+    if not user_info or "discord_users" not in user_info:
+        user_info = {"discord_users": {}, "last_saved": None}
 
     token = open("token.config", "r").read().strip()
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
     SAVE_DIR = config_data["config"]["sreenshotdir"] or "scs"
+
+    # ===== INTERNAL USERINFO FUNCTIONS =====
+    def get_userinfo(uid: int):
+        return user_info.get("discord_users", {}).get(str(uid))
+
+    def set_userinfo(uid: int, dispname: str, var1=None, var2=None, roles=None):
+        if "discord_users" not in user_info:
+            user_info["discord_users"] = {}
+
+        if str(uid) not in user_info["discord_users"]:
+            user_info["discord_users"][str(uid)] = {
+                "id": str(uid),
+                "dispname": dispname,
+                "var1": "N/A",
+                "var2": "N/A",
+                "roles": roles or ""
+            }
+
+        if var1 is not None:
+            user_info["discord_users"][str(uid)]["var1"] = var1
+        if var2 is not None:
+            user_info["discord_users"][str(uid)]["var2"] = var2
+        if roles is not None:
+            user_info["discord_users"][str(uid)]["roles"] = roles
+
+        save_json(USER_INFO_FILE, user_info)
+        return user_info["discord_users"][str(uid)]
+    
+    def update_user_var(uid_or_name, var1=None, var2=None):
+        if "discord_users" not in user_info:
+            user_info["discord_users"] = {}
+
+        # First try by ID
+        if str(uid_or_name) in user_info["discord_users"]:
+            user_data = user_info["discord_users"][str(uid_or_name)]
+        else:
+            # Try by display name
+            user_data = None
+            for u in user_info["discord_users"].values():
+                if u.get("dispname") == uid_or_name:
+                    user_data = u
+                    break
+
+        if not user_data:
+            return None
+
+        if var1 is not None:
+            user_data["var1"] = var1
+        if var2 is not None:
+            user_data["var2"] = var2
+
+        save_json(USER_INFO_FILE, user_info)
+        return user_data
+
+    # ===== AUTO-SAVE USERS =====
+    @tasks.loop(hours=24)
+    async def auto_save_users():
+        await bot.wait_until_ready()
+        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        if "discord_users" not in user_info:
+            user_info["discord_users"] = {}
+
+        for guild in bot.guilds:
+            for member in guild.members:
+                if member.bot:
+                    continue
+                roles = [r.name for r in member.roles if r.name != "@everyone"]
+                # Add/update user info in memory
+                user_info["discord_users"][str(member.id)] = {
+                    "id": str(member.id),
+                    "dispname": member.display_name,
+                    "var1": user_info.get("discord_users", {}).get(str(member.id), {}).get("var1", "N/A"),
+                    "var2": user_info.get("discord_users", {}).get(str(member.id), {}).get("var2", "N/A"),
+                    "roles": ", ".join(roles)
+                }
+
+        # Update last saved timestamp
+        user_info["last_saved"] = now
+
+        # Write to disk
+        save_json(USER_INFO_FILE, user_info)
+        logging.info(f"✅ Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
     # ===== MINECRAFT SERVER MONITORING SETUP =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
@@ -242,6 +347,8 @@ try:
                 except Exception as e:
                     logging.error(f"Failed to send startup message: {e}")
 
+            auto_save_users.start()
+
         @bot.event
         async def on_message(message):
             logging.info(
@@ -317,6 +424,64 @@ try:
                     logging.error(f"[EDIT] Error: {e}")
 
         # ===== ADMIN COMMANDS =====
+        @bot.command(name="saveuinf")
+        @commands.has_permissions(administrator=True)
+        async def saveall(ctx):
+            await auto_save_users()
+            await ctx.send("Manual save completed.")
+
+        @bot.command(name="userinfo")
+        async def userinfo_cmd(ctx, action: str = None, key: str = None, *, value: str = None):
+            uid = str(ctx.author.id)
+            if uid not in user_info:
+                user_info[uid] = {
+                    "id": uid,
+                    "dispname": ctx.author.display_name,
+                    "var1": "",
+                    "var2": "",
+                    "roles": ""
+                }
+
+            if action == "view":
+                info = user_info[uid]
+                embed = discord.Embed(title=f"User Info: {ctx.author.display_name}", color=discord.Color.blue())
+                for k, v in info.items():
+                    embed.add_field(name=k, value=v or "N/A", inline=False)
+                await ctx.send(embed=embed)
+
+            elif action == "edit":
+                if key not in user_info[uid]:
+                    await ctx.send(f"Invalid key: `{key}`")
+                    return
+                user_info[uid][key] = value
+                save_userinfo(user_info)
+                await ctx.send(f"`{key}` updated to `{value}`")
+
+            elif action == "roles":
+                roles = [r.name for r in ctx.author.roles if r.name != "@everyone"]
+                user_info[uid]["roles"] = ", ".join(roles)
+                save_userinfo(user_info)
+                await ctx.send(f"Roles updated: `{user_info[uid]['roles']}`")
+
+            else:
+                await ctx.send("Usage: `!userinfo view` | `!userinfo edit <key> <value>` | `!userinfo roles`")
+
+        @bot.command()
+        @commands.has_permissions(administrator=True)
+        async def editvar(ctx, identifier: str, var1: str = None, var2: str = None):
+            """
+            Edit a user's var1/var2 by ID or display name.
+            Usage: !editvar <ID or dispname> <var1> <var2>
+            """
+            updated = update_user_var(identifier, var1, var2)
+            if not updated:
+                await ctx.send(f"❌ User `{identifier}` not found in user info.")
+                return
+
+            await ctx.send(
+                f"✅ Updated user `{updated['dispname']}`:\nvar1 = `{updated.get('var1','N/A')}`\nvar2 = `{updated.get('var2','N/A')}`"
+            )
+
         @bot.command(name="sessioninfo")
         @commands.is_owner()
         async def session_info(ctx):
@@ -656,7 +821,7 @@ try:
                     elif args[0].lower() == "none":
                         startmessage = None                   # skip
                     else:
-                        startmessage = " ".join(args)         # custom
+                        startmessage = " ".join(args)         # var
 
                     bot = create_bot()  # NEW bot each time
                     bot_loop = asyncio.new_event_loop()  # NEW loop each time
@@ -754,7 +919,7 @@ try:
             elif command == "targch" and args and args[0].isdigit():
                 target_channel_id = int(args[0])
                 config_data["config"]["default_target_channel_id"] = str(target_channel_id)
-                save_config(config_data)
+                save_json(CONFIG_FILE, config_data)
                 print(f"Target channel set to {target_channel_id}")
 
             elif command == "reply" and args and args[0].isdigit():
