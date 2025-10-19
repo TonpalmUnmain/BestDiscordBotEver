@@ -351,6 +351,7 @@ try:
                     logging.error(f"Failed to send startup message: {e}")
 
             auto_save_users.start()
+            await auto_save_users()
 
         @bot.event
         async def on_message(message):
