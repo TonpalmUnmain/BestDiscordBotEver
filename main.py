@@ -444,8 +444,8 @@ try:
                 except Exception as e:
                     logging.error(f"Failed to send startup message: {e}")
 
-            auto_save_users.start()
-            await auto_save_users()
+            if not auto_save_users.is_running():
+                auto_save_users.start()
 
         @bot.event
         async def on_message(message):
