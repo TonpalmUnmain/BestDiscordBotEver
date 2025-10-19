@@ -55,7 +55,7 @@ try:
 
     # ===== JSON HANDLING =====
     CONFIG_FILE = "config.json"
-    USER_INFO_FILE = "uinfo.json"
+    USER_INFO_FILE = "userdata/uinfo.json"
 
     def load_json(file_path, default=None):
         if not os.path.exists(file_path):
