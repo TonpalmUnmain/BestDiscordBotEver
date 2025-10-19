@@ -52,7 +52,7 @@ try:
     def save_filedb(data):
         save_json(FILE_DB, data)
 
-    def add_file(mode, recall_name):
+    def add_file(mode, file_reference):
         db = load_filedb()
 
         if mode == "ui":
@@ -63,7 +63,7 @@ try:
         elif mode == "dir":
             file_path = input("Enter file path: ").strip()
         else:
-            print("Usage: addfile <ui|dir> <recall_name>")
+            print("Usage: addfile <ui|dir> <file_reference>")
             return
 
         if not os.path.isfile(file_path):
@@ -76,40 +76,40 @@ try:
 
         shutil.copy2(file_path, dest_path)
 
-        # Save recall in JSON, but do NOT rename file
-        db[recall_name] = {
+        # Save reference in JSON, but do NOT rename file
+        db[file_reference] = {
             "original_path": os.path.abspath(file_path),
             "dump_path": os.path.abspath(dest_path),
             "filename": original_name
         }
         save_filedb(db)
 
-        print(f"File '{recall_name}' added. Original filename preserved: {original_name}")
+        print(f"File '{file_reference}' added. Original filename preserved: {original_name}")
 
-    def get_file(recall_name):
+    def get_file(file_reference):
         db = load_filedb()
-        if recall_name not in db:
-            print(f"Recall '{recall_name}' not found.")
+        if file_reference not in db:
+            print(f"reference '{file_reference}' not found.")
             return None
-        info = db[recall_name]
+        info = db[file_reference]
         return info["dump_path"], info["filename"]
 
-    def del_file(recall_name):
+    def del_file(file_reference):
         db = load_filedb()
-        if recall_name not in db:
-            print(f"No such recall name '{recall_name}'.")
+        if file_reference not in db:
+            print(f"No such reference name '{file_reference}'.")
             return
 
-        dump_path = db[recall_name].get("dump_path")
+        dump_path = db[file_reference].get("dump_path")
         if dump_path and os.path.exists(dump_path):
             try:
                 os.remove(dump_path)
             except Exception as e:
                 logging.warning(f"Failed to remove file {dump_path}: {e}")
 
-        del db[recall_name]
+        del db[file_reference]
         save_filedb(db)
-        print(f"Deleted recall '{recall_name}'")
+        print(f"Deleted reference '{file_reference}'")
     
     # ===== LOGGING SETUP =====
     # Create log directory
@@ -378,16 +378,16 @@ try:
                 output.append(f"<@&{p_value}>" if p_value.isdigit() else m.group(0))
 
             elif p_type == "file":
-                recall_name = p_value.strip()
-                path_info = get_file(recall_name)
+                file_reference = p_value.strip()
+                path_info = get_file(file_reference)
                 if path_info:
                     path, filename = path_info
                     if os.path.isfile(path):
                         await ctx.send(file=discord.File(path, filename=filename))
                     else:
-                        await ctx.send(f"File not found: {recall_name}")
+                        await ctx.send(f"File not found: {file_reference}")
                 else:
-                    await ctx.send(f"File not found: {recall_name}")
+                    await ctx.send(f"File not found: {file_reference}")
 
             else:
                 output.append(m.group(0))
@@ -1128,19 +1128,19 @@ try:
             
             elif command == "addfile":
                 if len(args) != 2:
-                    print("Usage: addfile <ui|dir> <recall_name>")
+                    print("Usage: addfile <ui|dir> <file_reference>")
                     continue
                 add_file(args[0], args[1])
 
             elif command == "getfile":
                 if len(args) != 1:
-                    print("Usage: getfile <recall_name>")
+                    print("Usage: getfile <file_reference>")
                     continue
                 get_file(args[0])
 
             elif command == "delfile":
                 if len(args) != 1:
-                    print("Usage: delfile <recall_name>")
+                    print("Usage: delfile <file_reference>")
                     continue
                 del_file(args[0])
 
