@@ -170,7 +170,6 @@ try:
 
     token = open("token.config", "r").read().strip()
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
-    SAVE_DIR = config_data["config"]["sreenshotdir"] or "scs"
 
     # ===== INTERNAL USERINFO FUNCTIONS =====
     def get_userinfo(uid: int):
@@ -348,6 +347,7 @@ try:
             '8': 'a',
             '9': 'g'
         })
+        
         text = text.translate(replacements)
 
         return text
