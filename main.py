@@ -21,6 +21,12 @@ import psutil
 import GPUtil
 import traceback
 from mcstatus import BedrockServer
+from prompt_toolkit import prompt
+from prompt_toolkit.patch_stdout import patch_stdout
+import tkinter as tk
+from tkinter import filedialog
+import shutil
+import queue
 
 try:
     # ===== UTF-8 OUTPUT SETUP =====
@@ -29,27 +35,97 @@ try:
     if hasattr(sys.stderr, "buffer"):
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
-    # ===== LOGGING SETUP =====
-    class ConsoleFriendlyHandler(logging.StreamHandler):
-        def emit(self, record):
-            try:
-                msg = self.format(record)
-                # Move to a new line, print log, then reprint the prompt
-                sys.stdout.write(f"\r{msg}\nconsole> ")
-                sys.stdout.flush()
-            except Exception:
-                self.handleError(record)
+    # ===== FILE HANDLING =====
+    DUMP_DIR = "fdump"
+    FILE_DB = "fdump/files.json"
+    os.makedirs(DUMP_DIR, exist_ok=True)
+    
+    def browse_file():
+        root = tk.Tk()
+        root.withdraw()
+        root.attributes('-topmost', True)  # bring window to front
+        return filedialog.askopenfilename(title="Select a file")
 
+    def load_filedb():
+        return load_json(FILE_DB, default={})
+
+    def save_filedb(data):
+        save_json(FILE_DB, data)
+
+    def add_file(mode, recall_name):
+        db = load_filedb()
+
+        if mode == "ui":
+            file_path = browse_file()
+            if not file_path:
+                print("No file selected.")
+                return
+        elif mode == "dir":
+            file_path = input("Enter file path: ").strip()
+        else:
+            print("Usage: addfile <ui|dir> <recall_name>")
+            return
+
+        if not os.path.isfile(file_path):
+            print("File not found.")
+            return
+
+        # Keep original filename
+        original_name = os.path.basename(file_path)
+        dest_path = os.path.join(DUMP_DIR, original_name)
+
+        shutil.copy2(file_path, dest_path)
+
+        # Save recall in JSON, but do NOT rename file
+        db[recall_name] = {
+            "original_path": os.path.abspath(file_path),
+            "dump_path": os.path.abspath(dest_path),
+            "filename": original_name
+        }
+        save_filedb(db)
+
+        print(f"File '{recall_name}' added. Original filename preserved: {original_name}")
+
+    def get_file(recall_name):
+        db = load_filedb()
+        if recall_name not in db:
+            print(f"Recall '{recall_name}' not found.")
+            return None
+        info = db[recall_name]
+        return info["dump_path"], info["filename"]
+
+    def del_file(recall_name):
+        db = load_filedb()
+        if recall_name not in db:
+            print(f"No such recall name '{recall_name}'.")
+            return
+
+        dump_path = db[recall_name].get("dump_path")
+        if dump_path and os.path.exists(dump_path):
+            try:
+                os.remove(dump_path)
+            except Exception as e:
+                logging.warning(f"Failed to remove file {dump_path}: {e}")
+
+        del db[recall_name]
+        save_filedb(db)
+        print(f"Deleted recall '{recall_name}'")
+    
+    # ===== LOGGING SETUP =====
+    # Create log directory
     log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
     os.makedirs(log_dir, exist_ok=True)
+
+    # Log file path
     log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
 
+    # Standard logging setup
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=[
             logging.FileHandler(log_file, encoding="utf-8"),
-            logging.StreamHandler(sys.stdout)
+            logging.StreamHandler()  # simple stdout logging
         ]
     )
 
@@ -181,7 +257,7 @@ try:
 
         user_info["last_saved"] = now
         save_json(USER_INFO_FILE, user_info)
-        logging.info(f"✅ Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
+        logging.info(f"Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
     # ===== MINECRAFT SERVER MONITORING SETUP =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
@@ -276,33 +352,51 @@ try:
         text = text.translate(replacements)
 
         return text
-    
-    def replace_placeholders(text, self_id: int = 1260198579067420722):
-        # General pattern: <{type:ID}>
-        pattern = r"<\{(\w+):([^}]*)\}>"
 
-        def repl(match):
-            p_type, p_value = match.groups()
+    async def replace_placeholders(ctx, text, self_id: int = 1260198579067420722):
+        pattern = r"<\{(\w+):([^}]*)\}>"
+        output = []
+        last_end = 0
+
+        for m in re.finditer(pattern, text):
+            output.append(text[last_end:m.start()])
+            p_type, p_value = m.groups()
             p_type = p_type.lower()
 
             if p_type == "mention":
-                if p_value.lower() == "a":   # shorthand for self
-                    return f"<@{self_id}>"
-                elif p_value.isdigit():      # normal numeric ID
-                    return f"<@{p_value}>"
+                if p_value.lower() == "a":
+                    output.append(f"<@{self_id}>")
+                elif p_value.isdigit():
+                    output.append(f"<@{p_value}>")
                 else:
-                    return match.group(0)    # leave unchanged if not valid
+                    output.append(m.group(0))
 
             elif p_type == "channel":
-                return f"<#{p_value}>" if p_value.isdigit() else match.group(0)
+                output.append(f"<#{p_value}>" if p_value.isdigit() else m.group(0))
 
             elif p_type == "role":
-                return f"<@&{p_value}>" if p_value.isdigit() else match.group(0)
+                output.append(f"<@&{p_value}>" if p_value.isdigit() else m.group(0))
+
+            elif p_type == "file":
+                recall_name = p_value.strip()
+                path_info = get_file(recall_name)
+                if path_info:
+                    path, filename = path_info
+                    if os.path.isfile(path):
+                        await ctx.send(file=discord.File(path, filename=filename))
+                    else:
+                        await ctx.send(f"File not found: {recall_name}")
+                else:
+                    await ctx.send(f"File not found: {recall_name}")
 
             else:
-                return match.group(0)
+                output.append(m.group(0))
 
-        return re.sub(pattern, repl, text)
+            last_end = m.end()
+
+        output.append(text[last_end:])
+        return "".join(output).strip()
+
     
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
@@ -804,7 +898,8 @@ try:
 
         print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
         while True:
-            cmd = input("console> ").strip().split()
+            with patch_stdout():
+                cmd = prompt("console> ").strip().split()
             if not cmd:
                 continue
             command, *args = cmd
@@ -834,6 +929,8 @@ try:
                     def run_bot():
                         try:
                             bot_loop.run_until_complete(bot.start(token))
+                        except asyncio.CancelledError:
+                            pass
                         except Exception as e:
                             print("Error starting bot:", e)
                         finally:
@@ -992,43 +1089,35 @@ try:
                 override_channel_id = None
                 possible_override = None
 
-                # Check if last arg is {something}
+                # Check if last arg is {channel_id}
                 if raw_msg.endswith("}"):
                     match = re.search(r"\{(\d+)\}$", raw_msg)
                     if match:
                         possible_override = int(match.group(1))
+                        # remove {id} from the text
+                        raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
 
                 if bot_started and bot_loop:
                     async def send_message():
-                        nonlocal raw_msg, override_channel_id, possible_override
                         try:
-                            ch_id = target_channel_id
-                            msg_text = raw_msg
-
-                            if possible_override:
-                                # Try to fetch the channel
-                                channel = bot.get_channel(possible_override)
-                                if channel is None:
-                                    try:
-                                        channel = await bot.fetch_channel(possible_override)
-                                    except:
-                                        channel = None
-
-                                if channel:
-                                    override_channel_id = possible_override
-                                    ch_id = override_channel_id
-                                    # remove the {id} from the text
-                                    msg_text = raw_msg[: raw_msg.rfind("{")].strip()
-
-                            # Apply placeholder replacement
-                            msg_text = replace_placeholders(msg_text)
-
+                            ch_id = possible_override or target_channel_id
                             channel = bot.get_channel(ch_id)
                             if channel is None:
                                 channel = await bot.fetch_channel(ch_id)
 
-                            await channel.send(msg_text)
+                            if channel is None:
+                                print(f"Channel {ch_id} not found.")
+                                return
+
+                            # Replace placeholders and send files
+                            msg_text = await replace_placeholders(channel, raw_msg)
+
+                            # Send remaining text if any
+                            if msg_text.strip():
+                                await channel.send(msg_text)
+
                             print(f"Message sent to channel {ch_id}.")
+
                         except Exception as e:
                             print("Failed to send message:", e)
 
@@ -1036,15 +1125,39 @@ try:
                 else:
                     print("Bot is not running.")
 
+            
+            elif command == "addfile":
+                if len(args) != 2:
+                    print("Usage: addfile <ui|dir> <recall_name>")
+                    continue
+                add_file(args[0], args[1])
+
+            elif command == "getfile":
+                if len(args) != 1:
+                    print("Usage: getfile <recall_name>")
+                    continue
+                get_file(args[0])
+
+            elif command == "delfile":
+                if len(args) != 1:
+                    print("Usage: delfile <recall_name>")
+                    continue
+                del_file(args[0])
+
     # ===== MAIN =====
     if __name__ == "__main__":
         try:
             bot = create_bot()
-            console_interface()
         except Exception:
             logging.critical("Unhandled exception:\n" + traceback.format_exc())
             input("Press Enter to exit...")
             sys.exit(1)
+        
+        try:
+            console_interface()
+        except (KeyboardInterrupt, EOFError):
+            print("\nExiting console.")
+            sys.exit(0)
 except Exception as e:
     logging.critical("Critical error :\n" + traceback.format_exc())
     print(f"Critical error : {e}")
