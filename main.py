@@ -575,6 +575,7 @@ try:
                 await ctx.send(
                     f"{role_mention}"
                     "🔴 **Minecraft Bedrock Server is OFFLINE**"
+                    f"({e})"
                 )
                 logging.error(f"mcstat command failed: {e}")
 
