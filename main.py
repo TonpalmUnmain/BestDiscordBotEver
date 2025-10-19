@@ -178,7 +178,7 @@ try:
 
         # Write to disk
         save_json(USER_INFO_FILE, user_info)
-        logging.info(f"✅ Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
+        logging.info(f"Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
     # ===== MINECRAFT SERVER MONITORING SETUP =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
@@ -475,11 +475,11 @@ try:
             """
             updated = update_user_var(identifier, var1, var2)
             if not updated:
-                await ctx.send(f"❌ User `{identifier}` not found in user info.")
+                await ctx.send(f"User `{identifier}` not found in user info.")
                 return
 
             await ctx.send(
-                f"✅ Updated user `{updated['dispname']}`:\nvar1 = `{updated.get('var1','N/A')}`\nvar2 = `{updated.get('var2','N/A')}`"
+                f"Updated user `{updated['dispname']}`:\nvar1 = `{updated.get('var1','N/A')}`\nvar2 = `{updated.get('var2','N/A')}`"
             )
 
         @bot.command(name="sessioninfo")
