@@ -609,7 +609,7 @@ try:
         intents.message_content = True
         intents.guilds = True
         intents.members = True
-        bot = commands.Bot(command_prefix=CMD_PREFIX, intents=intents)
+        bot = commands.Bot(command_prefix=CMD_PREFIX, intents=intents, help_command=None)
         
         # ===== BOT EVENTS =====
         @bot.event
