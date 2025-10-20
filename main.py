@@ -1045,6 +1045,10 @@ try:
         global target_channel_id, config_data
         global bot_started, bot, bot_loop
 
+        print(f"BestBotEver!!! {VERSION}")
+        print("All Rights Reserved ©2025 TonpalmUnmain")
+        print(f"{datetime.now().strftime('%Y-%m-%d')}")
+        print("===================================")
         print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
         with patch_stdout():
             while True:
