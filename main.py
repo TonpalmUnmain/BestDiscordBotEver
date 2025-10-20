@@ -719,15 +719,83 @@ try:
                 except Exception as e:
                     logging.error(f"[EDIT] Error: {e}")
 
-        # ===== ADMIN COMMANDS =====
+        @bot.command(name="help")
+        async def help_cmd(ctx, command_name: str = None):
+            """Show command list or details for a specific command."""
+            logging.info(f"[{ctx.author} ({ctx.author.id})] Called help with: {command_name}")
+
+            if command_name:
+                cmd = bot.get_command(command_name)
+                if not cmd:
+                    await ctx.send(f"No command named `{command_name}` found.")
+                    return
+
+                usage = cmd.signature if hasattr(cmd, "signature") else ""
+                desc = cmd.help or "No description available."
+                await ctx.send(f"**{CMD_PREFIX}{cmd.name} {usage}**\n{desc}")
+                return
+
+            embed = discord.Embed(title="BestBotEver Command Reference", color=discord.Color.blurple())
+            embed.add_field(
+                name="General",
+                value=(
+                    f"`{CMD_PREFIX}repeat [message]` - Repeat your message\n"
+                    f"`{CMD_PREFIX}thx` - Replies `np`\n"
+                    f"`{CMD_PREFIX}agreewme [message]` - Agree with message\n"
+                    f"`{CMD_PREFIX}disagreewme [message]` - Disagree with message\n"
+                    f"`{CMD_PREFIX}version` - Show bot version"
+                ),
+                inline=False
+            )
+
+            embed.add_field(
+                name="For Debugging",
+                value=(
+                    f"`{CMD_PREFIX}banword [word]` - Add banned word\n"
+                    f"`{CMD_PREFIX}rmword [word]` - Remove banned word\n"
+                    f"`{CMD_PREFIX}listbanword` - List banned words\n"
+                    f"`{CMD_PREFIX}forgive @user` - Remove timeout\n"
+                    f"`{CMD_PREFIX}pewthyself` - Shutdown bot (owner)\n"
+                    f"`{CMD_PREFIX}deplete [ms|sec|min|hr|d] [value]` - Delayed shutdown\n"
+                    f"`{CMD_PREFIX}seelog [date] [filename]` or `seelog recent` - View logs\n"
+                    f"`{CMD_PREFIX}cfch [channel_id|current]` - Change target channel"
+                ),
+                inline=False
+            )
+
+            embed.add_field(
+                name="Minecraft",
+                value=(
+                    f"`{CMD_PREFIX}mcstat [tagmcr]` - Check Bedrock server status\n"
+                    f"`(Automatic server monitoring is also active)`"
+                ),
+                inline=False
+            )
+
+            embed.add_field(
+                name="Feedback / Polls",
+                value=(
+                    f"`{CMD_PREFIX}bugreport <text>` - Submit a bug\n"
+                    f"`{CMD_PREFIX}featurerequest <text>` - Submit a feature\n"
+                    f"`{CMD_PREFIX}listfeedback [type]` - List feedback\n"
+                    f"`{CMD_PREFIX}mkpoll <question> <opt1> <opt2> ... <duration>` - Create poll"
+                ),
+                inline=False
+            )
+
+            embed.set_footer(text=f"Use `{CMD_PREFIX}help <command>` for details on a specific command.")
+            await ctx.send(embed=embed)
+
         @bot.command(name="saveuinf")
         @commands.has_permissions(administrator=True)
         async def saveall(ctx):
+            """Trigger a manual save of user information (runs auto-save)."""
             await auto_save_users()
             await ctx.send("Manual save completed.")
 
         @bot.command(name="userinfo")
         async def userinfo_cmd(ctx, action: str = None, key: str = None, *, value: str = None):
+            """View or edit stored user info. Usage: !userinfo view|edit|roles ..."""
             uid = str(ctx.author.id)
             if uid not in user_info:
                 user_info[uid] = {
@@ -765,10 +833,7 @@ try:
         @bot.command(name="editvar")
         @commands.has_permissions(administrator=True)
         async def editvar(ctx, identifier: str, var1: str = None, var2: str = None):
-            """
-            Edit a user's var1/var2 by ID or display name.
-            Usage: !editvar <ID or dispname> <var1> <var2>
-            """
+            """Edit a user's var1/var2 by ID or display name. Usage: !editvar <ID|dispname> <var1> <var2>"""
             updated = update_user_var(identifier, var1, var2)
             if not updated:
                 await ctx.send(f"User `{identifier}` not found in user info.")
@@ -781,7 +846,7 @@ try:
         @bot.command(name="sessioninfo")
         @commands.is_owner()
         async def session_info(ctx):
-            """Display full system, network, and runtime info for diagnostics."""
+            """Show diagnostic session/system information (owner only)."""
             try:
                 # Date, Time, and Session ID
                 dtc = datetime.now()
@@ -930,6 +995,7 @@ try:
         @bot.command(name="banword")
         @commands.has_permissions(administrator=True)
         async def ban_word(ctx, *, word: str):
+            """Add a word to the banned-words list (admin only)."""
             word = word.lower().strip()
             if word in BANNED_WORDS:
                 await ctx.send(f"'{word}' is already banned, dumbass.")
@@ -943,6 +1009,7 @@ try:
         @commands.has_role(ADMIN_ROLE_ID)
         @commands.has_permissions(administrator=True)
         async def remove_ban_word(ctx, *, word: str):
+            """Remove a word from the banned list (admin only)."""
             word = word.lower().strip()
             if word in BANNED_WORDS:
                 BANNED_WORDS.remove(word)
@@ -955,6 +1022,7 @@ try:
         @bot.command(name="listbanword")
         @commands.has_permissions(administrator=True)
         async def list_ban_words(ctx):
+            """List all currently banned words (admin only)."""
             if BANNED_WORDS:
                 await ctx.send("Here's the shit we're banning:\n" + ", ".join(sorted(BANNED_WORDS)))
             else:
@@ -963,7 +1031,7 @@ try:
         @bot.command()
         @commands.is_owner()
         async def whitelistword(ctx, *, word: str):
-            """Add a word to the whitelist."""
+            """Add a word to the whitelist (owner only)."""
             word = word.lower()
             WHITELISTED_WORDS.add(word)
             save_banned_words("whitelist", WHITELISTED_WORDS)
@@ -973,7 +1041,7 @@ try:
         @bot.command()
         @commands.is_owner()
         async def rmwhitelistword(ctx, *, word: str):
-            """Remove a word from the whitelist."""
+            """Remove a word from the whitelist (owner only)."""
             word = word.lower()
             if word in WHITELISTED_WORDS:
                 WHITELISTED_WORDS.remove(word)
@@ -986,7 +1054,7 @@ try:
         @bot.command()
         @commands.is_owner()
         async def listwhitelistword(ctx):
-            """List all whitelisted words."""
+            """List all words in the whitelist (owner only)."""
             if WHITELISTED_WORDS:
                 words = ", ".join(sorted(WHITELISTED_WORDS))
                 await ctx.send(f"Current whitelist: {words}")
@@ -996,6 +1064,7 @@ try:
         @bot.command(name="forgive")
         @commands.has_permissions(moderate_members=True)
         async def forgive(ctx, member: discord.Member):
+            """Remove a timeout from a member (requires moderate_members permission)."""
             try:
                 await member.edit(timed_out_until=None)
                 await ctx.send(f"{member.mention} has been forgiven and their timeout has been lifted, don't say that again dumb fuck.")
@@ -1007,15 +1076,18 @@ try:
         @bot.command(name="pewthyself")
         @commands.is_owner()
         async def sessionend(ctx):
+            """Shut down the bot gracefully (owner only)."""
             await stopsession(f"Ight {ctx.author.mention}... I'm out. 💀")
 
         @bot.command(name="version")
         async def version_command(ctx):
+            """Show the bot version."""
             await ctx.send(f"Bot version: {VERSION}")
 
         @bot.command(name="agreewme")
         @commands.is_owner()
         async def agree_with_me(ctx, *, message: str = None):
+            """Respond with agreement to the provided message (owner only)."""
             if message:
                 await ctx.send(f"Yes, daddy {ctx.author.mention}😩. You're absolutely right about: \"{message}\".")
             else:
@@ -1023,6 +1095,7 @@ try:
 
         @bot.command(name="disagreewme")
         async def disagree_with_me(ctx, *, message: str = None):
+            """Respond with disagreement to the provided message."""
             if message:
                 await ctx.send(f"No, daddy {ctx.author.mention}😩. \"{message}\" is not true.")
             else:
@@ -1031,12 +1104,14 @@ try:
         @bot.command(name="repeat")
         @commands.is_owner()
         async def repeat(ctx, *, message: str):
+            """Repeat the given message verbatim (owner only)."""
             logging.info(f"[{ctx.author} ({ctx.author.id})] Called repeat with message: {message}")
             await ctx.send(message)
 
         @bot.command(name="deplete")
         @commands.is_owner()
         async def deplete(ctx, type: str, value: int):
+            """Countdown then shut down the bot. Usage: !deplete [ms|sec|min|hr|d] [value] (owner only)."""
             logging.info(f"[{ctx.author} ({ctx.author.id})] Called deplete with type: {type}, value: {value}")
             units = {"ms": 0.001, "sec": 1, "min": 60, "hr": 3600, "d": 86400}
             type = type.lower()
@@ -1051,6 +1126,7 @@ try:
         @bot.command(name="cfch")
         @commands.has_permissions(administrator=True)
         async def cfch(ctx, channel_id: str):
+            """Change the default target channel. Use 'current' to set to the invoking channel (admin only)."""
             global target_channel_id
             if channel_id.lower() == "current":
                 target_channel_id = ctx.channel.id
@@ -1070,6 +1146,8 @@ try:
         @bot.command(name="seelog")
         @commands.has_permissions(administrator=True)
         async def see_log(ctx, date: str = None, filename: str = None):
+            """Send the specified log file or the most recent log when using 'recent' (admin only).
+            Usage: !seelog recent OR !seelog YYYY-MM-DD filename.log"""
             logging.info(f"[{ctx.author} ({ctx.author.id})] Called see_log with date: {date}, filename: {filename}")
 
             if date == "recent":
@@ -1109,11 +1187,13 @@ try:
 
         @bot.command(name="thx")
         async def thank_you(ctx):
+            """Reply with 'np' when thanked."""
             logging.info(f"[{ctx.author} ({ctx.author.id})] Called thx")
             await ctx.send("np")
 
         @bot.command(name="mcstat")
         async def mcstat(ctx, option: str = None):
+            """Check Minecraft Bedrock server status. Option 'tagmcr' will mention the role."""
             server = BedrockServer.lookup(f"{BEDROCK_HOST}:{BEDROCK_PORT}")
             try:
                 address = f"{BEDROCK_HOST}:{BEDROCK_PORT}"
@@ -1142,6 +1222,7 @@ try:
                 
         @bot.command(name="mkpoll")
         async def make_poll(ctx, question: str, *args):
+            """Create a poll. Usage: !mkpoll <question> <opt1> <opt2> ... <duration>"""
             # Validation
             if len(args) < 2:
                 return await ctx.send("You need at least **2 options** and a **duration** (e.g. 1h, 3d, 1w).")
@@ -1175,6 +1256,7 @@ try:
         
         @bot.command(name="bugreport")
         async def bugreport(ctx, *, content: str = None):
+            """Submit a bug report. Usage: !bugreport <text>"""
             bugs = load_feedback()
             prefix = format_version_prefix(VERSION)
 
@@ -1201,6 +1283,7 @@ try:
 
         @bot.command(name="featurerequest")
         async def featurerequest(ctx, *, content: str = None):
+            """Submit a feature request. Usage: !featurerequest <text>"""
             if not content:
                 await ctx.reply("Please provide a feature request. Usage: `!featurerequest <text>`")
                 return
@@ -1210,6 +1293,7 @@ try:
 
         @bot.command(name="listfeedback")
         async def list_feedback(ctx, type_filter: str = None):
+            """List feedback entries. Optionally filter by type."""
             data = load_feedback()
             if type_filter:
                 type_filter = type_filter.lower()
@@ -1241,6 +1325,7 @@ try:
         @bot.command(name="delfeedback")
         @commands.has_permissions(manage_messages=True)
         async def del_feedback(ctx, entry_id: str, *, reason: str = "No reason provided"):
+            """Delete or mark feedback as deleted. Usage: !delfeedback <id> [reason] (requires manage_messages)."""
             hard_delete_triggers = ["iwanttoforgetaboutit", "pd"]
             data = load_feedback()
             entry = next((f for f in data if f.get("id") == entry_id), None)
@@ -1578,3 +1663,10 @@ except Exception as e:
     print(f"Critical error : {e}")
     input("Press Enter to exit...")
     sys.exit(1)
+    
+'''
+BestBotEver!!!
+A discord bot, not intended to be used in other servers.
+Under GNU General Public License Version 3, 29 June 2007.
+© 2025 Warat Thongsuwan (TonpalmUnmain)
+'''
