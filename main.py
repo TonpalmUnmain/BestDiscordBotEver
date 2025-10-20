@@ -14,7 +14,6 @@ import logging
 import threading
 import platform
 import socket
-import uuid
 import getpass
 import io
 import psutil
@@ -27,14 +26,16 @@ import tkinter as tk
 from tkinter import filedialog
 import shutil
 import colorama
-colorama.init()
+import hashlib
+import time
 
 try:
-    # ===== UTF-8 OUTPUT SETUP =====
+    # ===== SETUP =====
     if hasattr(sys.stdout, "buffer"):
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
     if hasattr(sys.stderr, "buffer"):
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    colorama.init()
 
 
     # ===== FILE HANDLING =====
@@ -303,8 +304,8 @@ try:
 
     bot_started = False
 
-    # ===== SESSION CONTROL =====
-    async def startsession():
+    # ===== INTERNAL SESSION CONTROL =====
+    async def startsession(): # FOR INTERNAL USE ONLY
         global bot_started
         if bot_started:
             logging.info("Bot is already running.")
@@ -313,6 +314,7 @@ try:
         async def runner():
             try:
                 await bot.start(token)
+                
             except Exception as e:
                 logging.error(f"Error starting bot: {e}")
 
@@ -342,6 +344,11 @@ try:
 
         bot_started = False
 
+    def gen_session_id():
+        raw_data = os.urandom(32) + str(time.time()).encode()
+        session_id = hashlib.sha256(raw_data).hexdigest()
+        return session_id
+
     # ===== UTILS =====
     def parse_duration(dur_str: str) -> timedelta | None:
         match = re.match(r"^(\d+)([hdw])$", dur_str.lower())
@@ -350,8 +357,11 @@ try:
 
         value, unit = match.groups()
         value = int(value)
-
-        if unit == "h":
+        if unit == "s":
+            return timedelta(seconds=value)
+        elif unit == "m":
+            return timedelta(minutes=value)
+        elif unit == "h":
             return timedelta(hours=value)
         elif unit == "d":
             return timedelta(days=value)
@@ -619,24 +629,30 @@ try:
         @bot.command(name="sessioninfo")
         @commands.is_owner()
         async def session_info(ctx):
+            """Display full system, network, and runtime info for diagnostics."""
             try:
-                # Basic host info
-                hostname = socket.gethostname()
-                ip_address = socket.gethostbyname(hostname)
+                # Date, Time, and Session ID
                 dtc = datetime.now()
-                time_str = dtc.strftime("%H:%M:%S")
                 date_str = dtc.strftime("%Y-%m-%d")
+                time_str = dtc.strftime("%H:%M:%S")
 
-                # CPU Info
+                hostname = socket.gethostname()
+                try:
+                    ip_address = socket.gethostbyname(hostname)
+                except Exception:
+                    ip_address = "Unavailable"
+
+                os_info = f"{platform.system()} {platform.release()} ({platform.version()})"
+                architecture = platform.machine()
+                user = getpass.getuser()
+                
                 cpu_count = psutil.cpu_count(logical=True)
                 cpu_freq = psutil.cpu_freq()
                 cpu_usage = psutil.cpu_percent(interval=1)
-
-                # Memory Info
+                
                 mem = psutil.virtual_memory()
                 swap = psutil.swap_memory()
 
-                # Disk Info
                 disk_info = []
                 for d in psutil.disk_partitions(all=False):
                     try:
@@ -647,56 +663,105 @@ try:
                     except OSError:
                         disk_info.append(f"{d.device} ({d.mountpoint}): Not ready")
 
-
-                # GPU Info
-                gpus = GPUtil.getGPUs()
                 gpu_info = []
-                for gpu in gpus:
-                    gpu_info.append(f"{gpu.name} ({gpu.memoryTotal}MB) - {gpu.load*100:.1f}% load")
+                if GPUtil:
+                    try:
+                        gpus = GPUtil.getGPUs()
+                        if gpus:
+                            for gpu in gpus:
+                                gpu_info.append(
+                                    f"{gpu.name} ({gpu.memoryTotal}MB) - {gpu.load * 100:.1f}% load"
+                                )
+                        else:
+                            gpu_info.append("No GPU detected")
+                    except Exception:
+                        gpu_info.append("Error retrieving GPU info")
+                else:
+                    gpu_info.append("GPUtil not installed")
 
-                # Network Info
                 net_if_addrs = psutil.net_if_addrs()
                 net_info = []
                 for interface_name, addrs in net_if_addrs.items():
                     for addr in addrs:
                         if addr.family == socket.AF_INET:
                             net_info.append(f"{interface_name}: {addr.address}")
+                try:
+                    import discord
+                    discord_ver = discord.__version__
+                except Exception:
+                    discord_ver = "Unknown"
 
-                # Construct info message
-                info = (
-                    f"**Session Info**\n"
-                    f"Time: {time_str}\n"
-                    f"Date: {date_str}\n"
-                    f"Hostname: `{hostname}`\n"
-                    f"IPv4: `{ip_address}`\n"
-                    f"OS: `{platform.system()} {platform.release()} ({platform.version()})`\n"
-                    f"Architecture: `{platform.machine()}`\n"
-                    f"User: `{getpass.getuser()}`\n"
-                    f"Session ID: `{uuid.uuid4()}`\n"
-                    f"Python: `{platform.python_version()}`\n"
-                    f"Bot Version: `{VERSION}`\n\n"
-                    f"**CPU**\n"
-                    f"Cores (Logical): {cpu_count}\n"
-                    f"Frequency: {cpu_freq.current:.2f} MHz\n"
-                    f"Usage: {cpu_usage}%\n\n"
-                    f"**Memory**\n"
-                    f"Total: {mem.total // (1024**2)}MB\n"
-                    f"Available: {mem.available // (1024**2)}MB\n"
-                    f"Used: {mem.used // (1024**2)}MB ({mem.percent}%)\n"
-                    f"Swap: {swap.used // (1024**2)}MB / {swap.total // (1024**2)}MB\n\n"
-                    f"**Disk Usage**\n"
-                    +"\n".join(disk_info) + "\n\n"
-                    f"**GPU**\n"
-                    + ("\n".join(gpu_info) if gpu_info else "No GPU detected") + "\n\n"
-                    f"**Network Interfaces**\n"
-                    + ("\n".join(net_info) if net_info else "No active network interfaces") + "\n"
+                try:
+                    import pkg_resources
+                    libs = ", ".join(
+                        sorted([p.project_name for p in pkg_resources.working_set])
+                    )
+                except Exception:
+                    libs = "Unavailable"
+
+                embed = discord.Embed(
+                    title="Session Information",
+                    color=discord.Color.blurple(),
+                    timestamp=datetime.utcnow(),
                 )
 
-                await ctx.send(f"{info}")
+                embed.add_field(
+                    name="Date / Time",
+                    value=f"**Date:** `{date_str}`\n**Time:** `{time_str}`",
+                    inline=False,
+                )
+                embed.add_field(name="Session ID", value=f"`{session_id}`", inline=False)
+                embed.add_field(
+                    name="Host Info",
+                    value=f"**Hostname:** `{hostname}`\n**IPv4:** `{ip_address}`\n**User:** `{user}`",
+                    inline=False,
+                )
+                embed.add_field(
+                    name="OS",
+                    value=f"`{os_info}`\n**Architecture:** `{architecture}`",
+                    inline=False,
+                )
+                embed.add_field(
+                    name="Bot / Environment",
+                    value=(
+                        f"**Python:** `{platform.python_version()}`\n"
+                        f"**Discord.py:** `{discord_ver}`\n"
+                        f"**Libraries:** {libs}\n"
+                        f"**Bot Version:** `{VERSION}`"
+                    ),
+                    inline=False,
+                )
+                embed.add_field(
+                    name="CPU",
+                    value=f"**Cores:** `{cpu_count}`\n**Frequency:** `{cpu_freq.current:.2f} MHz`\n**Usage:** `{cpu_usage}%`",
+                    inline=False,
+                )
+                embed.add_field(
+                    name="Memory",
+                    value=(
+                        f"**Total:** `{mem.total // (1024**2)}MB`\n"
+                        f"**Used:** `{mem.used // (1024**2)}MB` ({mem.percent}%)\n"
+                        f"**Available:** `{mem.available // (1024**2)}MB`\n"
+                        f"**Swap:** `{swap.used // (1024**2)}MB / {swap.total // (1024**2)}MB`"
+                    ),
+                    inline=False,
+                )
+                embed.add_field(
+                    name="Disk Usage", value="\n".join(disk_info) or "Unavailable", inline=False
+                )
+                embed.add_field(name="GPU", value="\n".join(gpu_info), inline=False)
+                embed.add_field(
+                    name="Network Interfaces",
+                    value="\n".join(net_info) or "No active interfaces",
+                    inline=False,
+                )
+                
+                await ctx.send(embed=embed)
                 logging.info(f"Session info sent by {ctx.author}")
+
             except Exception as e:
                 await ctx.send("Error retrieving session info.")
-                logging.error(f"Session info error: {e}")
+                logging.error(f"Error: {e}")
 
         @bot.command(name="banword")
         @commands.has_permissions(administrator=True)
@@ -983,6 +1048,9 @@ try:
                         threading.Thread(target=run_bot, daemon=True).start()
                         bot_started = True
                         print("Bot started.")
+                        global session_id
+                        session_id = gen_session_id()
+                        logging.info(f"Session ID: {session_id}")
                     except Exception as e:
                         print("Failed to start bot:", e)
 
