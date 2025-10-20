@@ -516,6 +516,21 @@ try:
         output.append(text[last_end:])
         return "".join(output).strip()
 
+    def contains_banned(content: str, banned_words) -> bool:
+        content = normalize_message(content)
+
+        for word in banned_words:
+            # direct substring (covers glued repeats)
+            if re.search(rf"(?:{word}){{1,}}", content):
+                return True
+            
+            # fuzzy match on the whole string and tokens
+            if is_similar(content, word):
+                return True
+            if any(is_similar(token, word) for token in re.findall(r"[a-z]+", content)):
+                return True
+
+        return False
     
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
@@ -530,10 +545,7 @@ try:
         with open(BANNED_WORDS_FILE, "w") as f:
             json.dump(list(BANNED_WORDS), f)
 
-    BANNED_WORDS = load_banned_words() or {
-        "nigga", "nigger", "niga", "n1gger",
-        "นิกก้า", "นิกเกอร์", "นิกเก้อ"
-    }
+    BANNED_WORDS = load_banned_words()
     save_banned_words()
 
     # ===== BOT CREATION =====
@@ -571,7 +583,7 @@ try:
         @bot.event
         async def on_message(message):
             logging.info(
-                f"{message.id}:{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
+                f"({message.id}) {message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
 
             content = normalize_message(message.content)
@@ -581,7 +593,7 @@ try:
                 return
         
             if (
-                any(word in content or any(is_similar(token, word) for token in content.split()) for word in BANNED_WORDS)
+                contains_banned(content, BANNED_WORDS)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword"])
                 and not (message.author == bot.user)
             ):
@@ -635,7 +647,11 @@ try:
                 return
 
             content = normalize_message(after.content)
-            if any(word in content for word in BANNED_WORDS):
+            if (
+                contains_banned(content, BANNED_WORDS)
+                and not (ctx.command and ctx.command.name in ["banword", "rmword"])
+                and not (after.author == bot.user)
+            ):
                 try:
                     await after.delete()
                     await after.author.timeout(timedelta(minutes=5), reason="You tried to sneak in a banned word by editing, you dumb fuck.")
