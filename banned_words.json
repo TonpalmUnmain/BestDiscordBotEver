@@ -1,11 +1,11 @@
 {
     "banned_words": [
-        "นิกก้า",
-        "นิกเกอร์",
-        "นิกเก้อ",
+        "niga",
         "nigga",
         "nigger",
-        "niga"
+        "นิกก้า",
+        "นิกเกอร์",
+        "นิกเก้อ"
     ],
     "whitelisted_words": [
         "zenegger"

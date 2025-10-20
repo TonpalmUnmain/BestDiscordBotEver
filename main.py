@@ -572,13 +572,37 @@ try:
             case _:
                 return banned
 
-    def save_banned_words():
-        with open(BANNED_WORDS_FILE, "w") as f:
-            json.dump(list(BANNED_WORDS), f)
+    def save_banned_words(mode: str, data: set):
+        # load existing data if the file exists
+        if os.path.exists(BANNED_WORDS_FILE):
+            try:
+                with open(BANNED_WORDS_FILE, "r", encoding="utf-8") as f:
+                    current = json.load(f)
+            except (json.JSONDecodeError, OSError):
+                current = {}
+        else:
+            current = {}
 
-    BANNED_WORDS = load_banned_words()
+        # ensure keys exist
+        current.setdefault("banned_words", [])
+        current.setdefault("whitelisted_words", [])
+
+        # update the appropriate key
+        if mode.lower() == "banned":
+            current["banned_words"] = sorted(list(data))
+        elif mode.lower() == "whitelist":
+            current["whitelisted_words"] = sorted(list(data))
+        else:
+            raise ValueError("mode must be 'banned' or 'whitelist'")
+
+        # write back to file
+        with open(BANNED_WORDS_FILE, "w", encoding="utf-8") as f:
+            json.dump(current, f, ensure_ascii=False, indent=4)
+
+    BANNED_WORDS = load_banned_words("banned")
     WHITELISTED_WORDS = load_banned_words("whitelist")
-    save_banned_words()
+    save_banned_words("banned", BANNED_WORDS)
+    save_banned_words("whitelist", WHITELISTED_WORDS)
 
     # ===== BOT CREATION =====
     def create_bot():
@@ -623,8 +647,10 @@ try:
 
             if "commandIgnore" in message.content and commands.is_owner():
                 return
-        
-            if (
+            
+            if any(role.id == 1411139316171931738 for role in message.author.roles):
+                    logging.info(f"User {message.author} is TonpalmUnmain, ignoring banned word.")        
+            elif (
                 contains_banned(content, BANNED_WORDS, WHITELISTED_WORDS)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword", "whitelist", "rmwhitelist"])
                 and not (message.author == bot.user)
@@ -647,9 +673,6 @@ try:
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
-            elif any(role.id == 1411139316171931738 for role in message.author.roles):
-                    logging.info(f"User {message.author} is TonpalmUnmain, ignoring banned word.")
-                    return
                 
             if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
                 try:
@@ -936,7 +959,40 @@ try:
                 await ctx.send("Here's the shit we're banning:\n" + ", ".join(sorted(BANNED_WORDS)))
             else:
                 await ctx.send("No banned words, go wild.")
+                
+        @bot.command()
+        @commands.is_owner()
+        async def whitelistword(ctx, *, word: str):
+            """Add a word to the whitelist."""
+            word = word.lower()
+            WHITELISTED_WORDS.add(word)
+            save_banned_words("whitelist", WHITELISTED_WORDS)
+            await ctx.send(f"Added `{word}` to the whitelist.")
 
+
+        @bot.command()
+        @commands.is_owner()
+        async def rmwhitelistword(ctx, *, word: str):
+            """Remove a word from the whitelist."""
+            word = word.lower()
+            if word in WHITELISTED_WORDS:
+                WHITELISTED_WORDS.remove(word)
+                save_banned_words("whitelist", WHITELISTED_WORDS)
+                await ctx.send(f"Removed `{word}` from the whitelist.")
+            else:
+                await ctx.send(f"`{word}` is not in the whitelist.")
+
+
+        @bot.command()
+        @commands.is_owner()
+        async def listwhitelistword(ctx):
+            """List all whitelisted words."""
+            if WHITELISTED_WORDS:
+                words = ", ".join(sorted(WHITELISTED_WORDS))
+                await ctx.send(f"Current whitelist: {words}")
+            else:
+                await ctx.send("The whitelist is currently empty.")
+                
         @bot.command(name="forgive")
         @commands.has_permissions(moderate_members=True)
         async def forgive(ctx, member: discord.Member):
