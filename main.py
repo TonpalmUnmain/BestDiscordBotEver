@@ -28,6 +28,7 @@ import shutil
 import colorama
 import hashlib
 import time
+from difflib import SequenceMatcher
 
 try:
     # ===== SETUP =====
@@ -115,14 +116,16 @@ try:
         print(f"Deleted reference '{file_reference}'")
     
     # ===== LOGGING SETUP =====
-    class ConsoleFriendlyHandler(logging.StreamHandler):
+    class PTKHandler(logging.Handler):
         lock = threading.Lock()
+        
         def emit(self, record):
             try:
+                msg = self.format(record)
                 with self.lock:
-                    msg = self.format(record)
-                    sys.stdout.write("\r\033[K" + msg + "\n")
-                    sys.stdout.flush()
+                    # patch_stdout print ensures prompt redraws correctly
+                    from prompt_toolkit import print_formatted_text
+                    print_formatted_text(msg)
             except Exception:
                 self.handleError(record)
 
@@ -134,7 +137,7 @@ try:
 
     # Create handlers manually
     file_handler = logging.FileHandler(log_file, encoding="utf-8")
-    console_handler = ConsoleFriendlyHandler()
+    console_handler = PTKHandler()
 
     # Formatter (you can adjust the format)
     formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
@@ -216,6 +219,12 @@ try:
     token = open("token.config", "r").read().strip()
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
 
+    # ===== VERSION INFO =====
+    VERSION = config_data["config"]["version"]
+    AUTHOR = config_data["config"]["author"]
+    CMD_PREFIX = config_data["config"]["command_prefix"]
+    
+    ADMIN_ROLE_ID = int(config_data["config"].get("admin_role_id", 0)) or None
     # ===== INTERNAL USERINFO FUNCTIONS =====
     def get_userinfo(uid: int):
         return user_info.get("discord_users", {}).get(str(uid))
@@ -301,18 +310,56 @@ try:
         save_userinfo(user_info, session_id=session_id)
         logging.info(f"Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
+    # ===== FEEDBACK SETUP =====
+    FEEDBACK_DIR = "feedback"
+    FEEDBACK_FILE = f"{FEEDBACK_DIR}/{VERSION}_feedback.json"
+
+    os.makedirs(FEEDBACK_DIR, exist_ok=True)
+
+    def load_feedback():
+        if not os.path.exists(FEEDBACK_FILE):
+            return []
+        with open(FEEDBACK_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    def save_feedback(data):
+        with open(FEEDBACK_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+
+    def create_feedback_entry(ctx, content: str, type_: str, file_path: str):
+        data = load_feedback()
+        prefix = format_version_prefix(VERSION)
+        entry_number = len(data) + 1
+        entry_id = f"{prefix}{entry_number:02d}"
+
+        entry = {
+            "id": entry_id,
+            "type": type_,
+            "version": VERSION,
+            "reporter": {
+                "name": ctx.author.name,
+                "id": ctx.author.id
+            },
+            "content": content,
+            "timestamp": datetime.utcnow().isoformat(),
+            "status": "ACTIVE",
+            "delete_reason": None,
+            "deleted_by": None
+        }
+
+        data.append(entry)
+        save_feedback(data)
+        return entry_id
+
+    def format_version_prefix(version: str) -> str:
+        return version.replace(".", "")
+    
     # ===== MINECRAFT SERVER MONITORING SETUP =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
     BEDROCK_PORT = config_data["MCS"]["mcsPort"] or 5355
     ServerUpdateChannelID = config_data["MCS"]["mcsChID"] or 1421497953834631319
     MCSDURATION = int(config_data["MCS"]["mcsDelay"]) or 3600  # in seconds
     MCSROLEID = int(config_data["MCS"]["mcsRoleID"]) or 1394542459538640977
-
-    # ===== VERSION INFO =====
-    VERSION = config_data["config"]["version"]
-    AUTHOR = config_data["config"]["author"]
-    CMD_PREFIX = config_data["config"]["command_prefix"]
-    ADMIN_ROLE_ID = int(config_data["config"].get("admin_role_id", 0)) or None
 
     # ===== GLOBALS =====
     bot_started = False
@@ -395,7 +442,10 @@ try:
             return timedelta(weeks=value)
         else:
             return None
-        
+    
+    def is_similar(a, b, threshold=0.8):
+        return SequenceMatcher(None, a, b).ratio() >= threshold
+    
     def normalize_message(text):
         text = unicodedata.normalize('NFKD', str(text)).encode('ASCII', 'ignore').decode('ASCII')
         text = re.sub(r'[\s\W_]+', '', text)
@@ -494,7 +544,7 @@ try:
         intents.guilds = True
         intents.members = True
         bot = commands.Bot(command_prefix=CMD_PREFIX, intents=intents)
-
+        
         # ===== BOT EVENTS =====
         @bot.event
         async def on_ready():
@@ -531,10 +581,9 @@ try:
                 return
         
             if (
-                any(word in content for word in BANNED_WORDS)
+                any(word in content or any(is_similar(token, word) for token in content.split()) for word in BANNED_WORDS)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword"])
                 and not (message.author == bot.user)
-                and not any(role.id == 1411139316171931738 for role in message.author.roles)
             ):
                 try:
                     await message.delete()
@@ -553,7 +602,10 @@ try:
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
-
+            elif any(role.id == 1411139316171931738 for role in message.author.roles):
+                    logging.info(f"User {message.author} is TonpalmUnmain, ignoring banned word.")
+                    return
+                
             if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
                 try:
                     await message.channel.send(f"☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {message.author.mention} 😩.")
@@ -661,7 +713,7 @@ try:
             try:
                 # Date, Time, and Session ID
                 dtc = datetime.now()
-                dtc_utc = datetime.now(datetime.timezone.utc)
+                dtc_utc = datetime.utcnow()
                 
                 date_str = dtc.strftime("%Y-%m-%d")
                 time_str = dtc.strftime("%H:%M:%S")
@@ -854,7 +906,7 @@ try:
 
         @bot.command(name="version")
         async def version_command(ctx):
-            await ctx.send(f"Bot version: {VERSION}\nMy papi is: {AUTHOR}")
+            await ctx.send(f"Bot version: {VERSION}")
 
         @bot.command(name="agreewme")
         @commands.is_owner()
@@ -1013,7 +1065,109 @@ try:
 
             await ctx.send(poll=poll)
             await ctx.message.delete()
+        
+        # ===== FEEDBACK =====
+        
+        @bot.command(name="bugreport")
+        async def bugreport(ctx, *, content: str = None):
+            bugs = load_feedback()
+            prefix = format_version_prefix(VERSION)
 
+            bug_number = len(bugs) + 1
+            bug_id = f"{prefix}{bug_number:02d}"  # e.g. 100001, 100002
+
+            bug_data = {
+                "id": bug_id,
+                "version": VERSION,
+                "reporter": {
+                    "name": ctx.author.name,
+                    "id": ctx.author.id
+                },
+                "content": content,
+                "timestamp": datetime.utcnow().isoformat(),
+                "deleted": False,
+                "delete_reason": None
+            }
+
+            bugs.append(bug_data)
+            save_feedback(bugs)
+
+            await ctx.reply(f"Bug report **#{bug_id}** submitted. Thank you!")
+
+        @bot.command(name="featurerequest")
+        async def featurerequest(ctx, *, content: str = None):
+            if not content:
+                await ctx.reply("Please provide a feature request. Usage: `!featurerequest <text>`")
+                return
+
+            feature_id = create_feedback_entry(ctx, content, "feature", FEEDBACK_FILE)
+            await ctx.reply(f"Feature request **#{feature_id}** submitted. Thank you!")
+
+        @bot.command(name="listfeedback")
+        async def list_feedback(ctx, type_filter: str = None):
+            data = load_feedback()
+            if type_filter:
+                type_filter = type_filter.lower()
+                data = [f for f in data if f.get("type") == type_filter]
+
+            if not data:
+                await ctx.reply("No feedback found.")
+                return
+
+            embed = discord.Embed(
+                title=f"Feedback (Version {VERSION})",
+                color=discord.Color.orange()
+            )
+
+            for f in data:
+                status = f.get("status", "ACTIVE")
+                reporter = f.get("reporter") or {}
+                reporter_name = reporter.get("name", "Unknown")
+                content_preview = (f.get("content") or "")[:200] + ("..." if len(f.get("content") or "") > 200 else "")
+                f_type = f.get("type", "Unknown").capitalize()
+                embed.add_field(
+                    name=f"#{f.get('id', 'N/A')} [{f_type}] by {reporter_name} ({status})",
+                    value=content_preview,
+                    inline=False
+                )
+
+            await ctx.reply(embed=embed)
+
+        @bot.command(name="delfeedback")
+        @commands.has_permissions(manage_messages=True)
+        async def del_feedback(ctx, entry_id: str, *, reason: str = "No reason provided"):
+            hard_delete_triggers = ["iwanttoforgetaboutit", "pd"]
+            data = load_feedback()
+            entry = next((f for f in data if f.get("id") == entry_id), None)
+
+            if not entry:
+                await ctx.reply(f"Feedback #{entry_id} not found.")
+                return
+
+            words = reason.split()
+            if words and words[-1].lower() in hard_delete_triggers:
+                # Hard delete
+                data = [f for f in data if f.get("id") != entry_id]
+                save_feedback(data)
+                await ctx.reply(f"Feedback **#{entry_id}** completely removed from records.")
+                return
+
+            # Soft delete
+            if entry.get("status") == "DELETED":
+                await ctx.reply(f"Feedback #{entry_id} is already deleted.")
+                return
+
+            entry_reason = " ".join(words)
+            entry["status"] = "DELETED"
+            entry["delete_reason"] = entry_reason
+            entry["deleted_by"] = {
+                "name": ctx.author.name,
+                "id": ctx.author.id,
+                "timestamp": datetime.utcnow().isoformat()
+            }
+
+            save_feedback(data)
+            await ctx.reply(f"Feedback **#{entry_id}** marked as DELETED. Reason: `{entry_reason}`")
         # ===== ERROR HANDLERS =====
         @ban_word.error
         @remove_ban_word.error
@@ -1039,7 +1193,7 @@ try:
             logging.error(f"Error in command {ctx.command} by {ctx.author}: {error}")
 
         return bot
-
+            
     # ===== CONSOLE INTERFACE =====
     def console_interface():
         global target_channel_id, config_data
