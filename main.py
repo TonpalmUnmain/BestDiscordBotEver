@@ -148,7 +148,21 @@ try:
 
     # ===== JSON HANDLING =====
     CONFIG_FILE = "config.json"
-    USER_INFO_FILE = "userdata/uinfo.json"
+    
+    def get_latest_userinfo_file():
+        folder = "userdata"
+        os.makedirs(folder, exist_ok=True)
+
+        files = [f for f in os.listdir(folder) if f.endswith(".json")]
+        if not files:
+            # No file found — create a default one
+            return os.path.join(folder, "uinfo_latest.json")
+
+        # Sort chronologically (filenames start with date)
+        files.sort()
+        return os.path.join(folder, files[-1])  # most recent
+
+    USER_INFO_FILE = get_latest_userinfo_file()
 
     def load_json(file_path, default=None):
         if not os.path.exists(file_path):
@@ -175,8 +189,21 @@ try:
     def load_userinfo():
         return load_json(USER_INFO_FILE, default={"discord_users": {}, "last_saved": None})
 
-    def save_userinfo(data):
-        save_json(USER_INFO_FILE, data)
+    def save_userinfo(data, session_id):
+        # Ensure userdata folder exists
+        os.makedirs("userdata", exist_ok=True)
+
+        # Format: YYYY-MM-DD_HH-MM-SS-sessionID
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        file_path = f"userdata/{timestamp}-{session_id}.json"
+
+        # Save JSON data
+        try:
+            with open(file_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+            logging.info(f"User info saved to {file_path}")
+        except Exception as e:
+            logging.error(f"Failed to write to {file_path}: {e}")
 
     config_data = load_json(CONFIG_FILE)
     if not config_data:
@@ -242,7 +269,6 @@ try:
         save_json(USER_INFO_FILE, user_info)
         return user_data
 
-    # ===== AUTO-SAVE USERS =====
     @tasks.loop(hours=24)
     async def auto_save_users():
         await bot.wait_until_ready()
@@ -272,7 +298,7 @@ try:
                 }
 
         user_info["last_saved"] = now
-        save_json(USER_INFO_FILE, user_info)
+        save_userinfo(user_info, session_id=session_id)
         logging.info(f"Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
     # ===== MINECRAFT SERVER MONITORING SETUP =====
@@ -489,6 +515,8 @@ try:
 
             if not auto_save_users.is_running():
                 auto_save_users.start()
+                
+            await auto_save_users()
 
         @bot.event
         async def on_message(message):
@@ -633,8 +661,13 @@ try:
             try:
                 # Date, Time, and Session ID
                 dtc = datetime.now()
+                dtc_utc = datetime.now(datetime.timezone.utc)
+                
                 date_str = dtc.strftime("%Y-%m-%d")
                 time_str = dtc.strftime("%H:%M:%S")
+                
+                utc_date_str = dtc_utc.strftime("%Y-%m-%d")
+                utc_time_str = dtc_utc.strftime("%H:%M:%S")
 
                 hostname = socket.gethostname()
                 try:
@@ -702,7 +735,7 @@ try:
                 embed = discord.Embed(
                     title="Session Information",
                     color=discord.Color.blurple(),
-                    timestamp=datetime.utcnow(),
+                    timestamp=datetime.now(),
                 )
 
                 embed.add_field(
@@ -710,6 +743,13 @@ try:
                     value=f"**Date:** `{date_str}`\n**Time:** `{time_str}`",
                     inline=False,
                 )
+                                                                
+                embed.add_field(
+                    name="Date / Time (UTC)",
+                    value=f"**Date:** `{utc_date_str}`\n**Time:** `{utc_time_str}`",
+                    inline=False,
+                )
+                
                 embed.add_field(name="Session ID", value=f"`{session_id}`", inline=False)
                 embed.add_field(
                     name="Host Info",
