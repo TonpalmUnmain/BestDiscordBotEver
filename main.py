@@ -516,18 +516,34 @@ try:
         output.append(text[last_end:])
         return "".join(output).strip()
 
-    def contains_banned(content: str, banned_words) -> bool:
+    def contains_banned(content: str, banned_words: set, whitelist: set = None) -> bool:
+        if whitelist is None:
+            whitelist = set()
+
+        # normalize text
         content = normalize_message(content)
 
+        # remove whitelisted words
+        for safe in whitelist:
+            content = content.replace(safe, "")
+
+        # scan banned words
         for word in banned_words:
-            # direct substring (covers glued repeats)
+            # detect glued/repeated words
             if re.search(rf"(?:{word}){{1,}}", content):
                 return True
-            
-            # fuzzy match on the whole string and tokens
-            if is_similar(content, word):
+
+            # direct substring check
+            if word in content:
                 return True
-            if any(is_similar(token, word) for token in re.findall(r"[a-z]+", content)):
+
+            # fuzzy match per token
+            tokens = re.findall(r"[a-zก-๙]+", content)  # supports Thai + English
+            if any(is_similar(token, word) for token in tokens):
+                return True
+
+            # fuzzy match on entire string
+            if is_similar(content, word):
                 return True
 
         return False
@@ -535,17 +551,33 @@ try:
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
 
-    def load_banned_words():
+    def load_banned_words(type: str):
+        banned = set()
+        whitelist = set()
+
         if os.path.exists(BANNED_WORDS_FILE):
-            with open(BANNED_WORDS_FILE, "r") as f:
-                return set(json.load(f))
-        return set()
+            try:
+                with open(BANNED_WORDS_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    banned = set(data.get("banned_words", []))
+                    whitelist = set(data.get("whitelisted_words", []))
+            except (json.JSONDecodeError, OSError) as e:
+                print(f"Error loading banned words file: {e}")
+
+        match type.lower():
+            case "banned":
+                return banned
+            case "whitelist":
+                return whitelist
+            case _:
+                return banned
 
     def save_banned_words():
         with open(BANNED_WORDS_FILE, "w") as f:
             json.dump(list(BANNED_WORDS), f)
 
     BANNED_WORDS = load_banned_words()
+    WHITELISTED_WORDS = load_banned_words("whitelist")
     save_banned_words()
 
     # ===== BOT CREATION =====
@@ -593,10 +625,11 @@ try:
                 return
         
             if (
-                contains_banned(content, BANNED_WORDS)
-                and not (ctx.command and ctx.command.name in ["banword", "rmword"])
+                contains_banned(content, BANNED_WORDS, WHITELISTED_WORDS)
+                and not (ctx.command and ctx.command.name in ["banword", "rmword", "whitelist", "rmwhitelist"])
                 and not (message.author == bot.user)
             ):
+
                 try:
                     await message.delete()
                     await message.author.timeout(
