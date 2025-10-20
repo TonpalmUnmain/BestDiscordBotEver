@@ -527,23 +527,21 @@ try:
         for safe in whitelist:
             content = content.replace(safe, "")
 
-        # scan banned words
+        tokens = re.findall(r"[a-zก-๙]+", content)
+
         for word in banned_words:
-            # detect glued/repeated words
-            if re.search(rf"(?:{word}){{1,}}", content):
+            w = re.escape(word)
+
+            # detect glued/repeated or concatenated versions
+            if re.search(rf"(?:{w})+", content):
                 return True
 
-            # direct substring check
-            if word in content:
+            # detect banned word stuck inside another word (e.g., "fvck[slur]")
+            if re.search(rf"{w}", content):
                 return True
 
             # fuzzy match per token
-            tokens = re.findall(r"[a-zก-๙]+", content)  # supports Thai + English
             if any(is_similar(token, word) for token in tokens):
-                return True
-
-            # fuzzy match on entire string
-            if is_similar(content, word):
                 return True
 
         return False
