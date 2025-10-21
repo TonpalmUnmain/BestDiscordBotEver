@@ -534,19 +534,19 @@ try:
     #     for word in banned_words:
     #         w = re.escape(normalize_message(word))
 
-    #         # 🔹 1️⃣ direct substring
+    #         # direct substring
     #         if w in content:
     #             return True
 
-    #         # 🔹 2️⃣ repeated/glued patterns — allow 2–5 repetitions
+    #         # repeated/glued patterns — allow 2–5 repetitions
     #         if re.search(rf"(?:{w}){{2,5}}", content):
     #             return True
 
-    #         # 🔹 3️⃣ fuzzy match per token
+    #         # fuzzy match per token
     #         if any(is_similar(token, word) for token in tokens):
     #             return True
 
-    #         # 🔹 4️⃣ full content fuzzy
+    #         # full content fuzzy
     #         if is_similar(content, word):
     #             return True
 
@@ -653,12 +653,13 @@ try:
 
             if "commandIgnore" in message.content and commands.is_owner():
                 return
-        
-            if (
+
+            if any(role.id == 1411139316171931738 for role in message.author.roles):
+                logging.info(f"User {message.author} has GOD role, skipping banned word check.")
+            elif (
                 any(word in content for word in BANNED_WORDS)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword"])
                 and not (message.author == bot.user)
-                and not any(role.id == 1411139316171931738 for role in message.author.roles)
             ):
                 try:
                     await message.delete()
