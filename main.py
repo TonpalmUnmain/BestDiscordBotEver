@@ -28,7 +28,6 @@ import shutil
 import colorama
 import hashlib
 import time
-from difflib import SequenceMatcher
 
 try:
     # ===== SETUP =====
