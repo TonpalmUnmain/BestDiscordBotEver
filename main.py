@@ -224,7 +224,9 @@ try:
     AUTHOR = config_data["config"]["author"]
     CMD_PREFIX = config_data["config"]["command_prefix"]
     
+    # ===== SERVER CONFIG =====
     ADMIN_ROLE_ID = int(config_data["config"].get("admin_role_id", 0)) or None
+    BOTTEST_CHANNEL_ID = int(config_data["config"].get("bot_test_channel_id", 0)) or None
     # ===== INTERNAL USERINFO FUNCTIONS =====
     def get_userinfo(uid: int):
         return user_info.get("discord_users", {}).get(str(uid))
@@ -443,8 +445,8 @@ try:
         else:
             return None
     
-    def is_similar(a, b, threshold=0.8):
-        return SequenceMatcher(None, a, b).ratio() >= threshold
+    # def is_similar(a, b, threshold=0.9):
+    #     return SequenceMatcher(None, a, b).ratio() >= threshold
     
     def normalize_message(text):
         text = unicodedata.normalize('NFKD', str(text)).encode('ASCII', 'ignore').decode('ASCII')
@@ -516,36 +518,40 @@ try:
         output.append(text[last_end:])
         return "".join(output).strip()
 
-    def contains_banned(content: str, banned_words: set, whitelist: set = None) -> bool:
-        if whitelist is None:
-            whitelist = set()
+    # def contains_banned(content: str, banned_words: set, whitelist: set = None) -> bool:
+    #     if whitelist is None:
+    #         whitelist = set()
 
-        # normalize text
-        content = normalize_message(content)
+    #     # normalize the message
+    #     content = normalize_message(content)
 
-        # remove whitelisted words
-        for safe in whitelist:
-            content = content.replace(safe, "")
+    #     # remove whitelisted parts
+    #     for safe in whitelist:
+    #         content = content.replace(normalize_message(safe), "")
 
-        tokens = re.findall(r"[a-zก-๙]+", content)
+    #     tokens = re.findall(r"[a-zก-๙]+", content)
 
-        for word in banned_words:
-            w = re.escape(word)
+    #     for word in banned_words:
+    #         w = re.escape(normalize_message(word))
 
-            # detect glued/repeated or concatenated versions
-            if re.search(rf"(?:{w})+", content):
-                return True
+    #         # 🔹 1️⃣ direct substring
+    #         if w in content:
+    #             return True
 
-            # detect banned word stuck inside another word (e.g., "fvck[slur]")
-            if re.search(rf"{w}", content):
-                return True
+    #         # 🔹 2️⃣ repeated/glued patterns — allow 2–5 repetitions
+    #         if re.search(rf"(?:{w}){{2,5}}", content):
+    #             return True
 
-            # fuzzy match per token
-            if any(is_similar(token, word) for token in tokens):
-                return True
+    #         # 🔹 3️⃣ fuzzy match per token
+    #         if any(is_similar(token, word) for token in tokens):
+    #             return True
 
-        return False
-    
+    #         # 🔹 4️⃣ full content fuzzy
+    #         if is_similar(content, word):
+    #             return True
+
+    #     return False
+
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
 
@@ -602,6 +608,7 @@ try:
     save_banned_words("banned", BANNED_WORDS)
     save_banned_words("whitelist", WHITELISTED_WORDS)
 
+    PENDING_MOD = {}
     # ===== BOT CREATION =====
     def create_bot():
         intents = discord.Intents.default()
@@ -609,6 +616,7 @@ try:
         intents.message_content = True
         intents.guilds = True
         intents.members = True
+        client = discord.Client(intents=intents)
         bot = commands.Bot(command_prefix=CMD_PREFIX, intents=intents, help_command=None)
         
         # ===== BOT EVENTS =====
@@ -637,7 +645,7 @@ try:
         @bot.event
         async def on_message(message):
             logging.info(
-                f"({message.id}) {message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
+                f"{message.id}:{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
 
             content = normalize_message(message.content)
@@ -645,15 +653,13 @@ try:
 
             if "commandIgnore" in message.content and commands.is_owner():
                 return
-            
-            if any(role.id == 1411139316171931738 for role in message.author.roles):
-                    logging.info(f"User {message.author} is TonpalmUnmain, ignoring banned word.")        
-            elif (
-                contains_banned(content, BANNED_WORDS, WHITELISTED_WORDS)
-                and not (ctx.command and ctx.command.name in ["banword", "rmword", "whitelist", "rmwhitelist"])
+        
+            if (
+                any(word in content for word in BANNED_WORDS)
+                and not (ctx.command and ctx.command.name in ["banword", "rmword"])
                 and not (message.author == bot.user)
+                and not any(role.id == 1411139316171931738 for role in message.author.roles)
             ):
-
                 try:
                     await message.delete()
                     await message.author.timeout(
@@ -671,7 +677,7 @@ try:
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
-                
+
             if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
                 try:
                     await message.channel.send(f"☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {message.author.mention} 😩.")
@@ -702,9 +708,10 @@ try:
 
             content = normalize_message(after.content)
             if (
-                contains_banned(content, BANNED_WORDS)
+                any(word in content for word in BANNED_WORDS)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword"])
                 and not (after.author == bot.user)
+                and not any(role.id == 1411139316171931738 for role in after.author.roles)
             ):
                 try:
                     await after.delete()
@@ -1356,6 +1363,34 @@ try:
 
             save_feedback(data)
             await ctx.reply(f"Feedback **#{entry_id}** marked as DELETED. Reason: `{entry_reason}`")
+            
+        @bot.command()
+        @commands.is_owner()
+        async def allow(ctx, message_id: int):
+            """Mark a pending message as safe, add to whitelist."""
+            if message_id not in PENDING_MOD:
+                await ctx.send(f"⚠️ Message {message_id} not pending.")
+                return
+
+            _, content = PENDING_MOD.pop(message_id)
+            WHITELISTED_WORDS.add(normalize_message(content))
+            save_banned_words("whitelist", WHITELISTED_WORDS)
+            await ctx.send(f"✅ Message {message_id} allowed. Added to whitelist.")
+
+
+        @bot.command()
+        @commands.is_owner()
+        async def ban(ctx, message_id: int):
+            """Mark a pending message as violating, add to banned words."""
+            if message_id not in PENDING_MOD:
+                await ctx.send(f"⚠️ Message {message_id} not pending.")
+                return
+
+            _, content = PENDING_MOD.pop(message_id)
+            BANNED_WORDS.add(normalize_message(content))
+            save_banned_words("banned", BANNED_WORDS)
+            await ctx.send(f"❌ Message {message_id} banned. Added to banned words.")
+
         # ===== ERROR HANDLERS =====
         @ban_word.error
         @remove_ban_word.error
