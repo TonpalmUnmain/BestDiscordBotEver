@@ -273,6 +273,7 @@ pip install -r requirements.txt
   ```bash
   mkdir log userdata feedback fdump scs
   ```
+*"scs" is not yet implemented.*
 
 3. **Run the Bot**
 ```bash
