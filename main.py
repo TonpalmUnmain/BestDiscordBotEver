@@ -1426,7 +1426,7 @@ try:
         print("© 2025 TonpalmUnmain")
         print("Under GNU general public license v3.0")
         print(f"{datetime.now().strftime('%Y-%m-%d')}")
-        print("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+        print("------------------------------------------")
         print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
         with patch_stdout():
             while True:
