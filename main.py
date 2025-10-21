@@ -1,8 +1,9 @@
-import sys
-import os
+print("Starting BestBotEver!!!...")
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 
+import nacl.secret
 import discord
 from discord.ext import commands, tasks
 from datetime import datetime, timedelta
@@ -1364,32 +1365,139 @@ try:
             save_feedback(data)
             await ctx.reply(f"Feedback **#{entry_id}** marked as DELETED. Reason: `{entry_reason}`")
             
-        @bot.command()
-        @commands.is_owner()
-        async def allow(ctx, message_id: int):
-            """Mark a pending message as safe, add to whitelist."""
-            if message_id not in PENDING_MOD:
-                await ctx.send(f"⚠️ Message {message_id} not pending.")
-                return
+        # @bot.command()
+        # @commands.is_owner()
+        # async def allow(ctx, message_id: int):
+        #     """Mark a pending message as safe, add to whitelist."""
+        #     if message_id not in PENDING_MOD:
+        #         await ctx.send(f"Message {message_id} not pending.")
+        #         return
 
-            _, content = PENDING_MOD.pop(message_id)
-            WHITELISTED_WORDS.add(normalize_message(content))
-            save_banned_words("whitelist", WHITELISTED_WORDS)
-            await ctx.send(f"✅ Message {message_id} allowed. Added to whitelist.")
+        #     _, content = PENDING_MOD.pop(message_id)
+        #     WHITELISTED_WORDS.add(normalize_message(content))
+        #     save_banned_words("whitelist", WHITELISTED_WORDS)
+        #     await ctx.send(f"Message {message_id} allowed. Added to whitelist.")
 
 
-        @bot.command()
-        @commands.is_owner()
-        async def ban(ctx, message_id: int):
-            """Mark a pending message as violating, add to banned words."""
-            if message_id not in PENDING_MOD:
-                await ctx.send(f"⚠️ Message {message_id} not pending.")
-                return
+        # @bot.command()
+        # @commands.is_owner()
+        # async def ban(ctx, message_id: int):
+        #     """Mark a pending message as violating, add to banned words."""
+        #     if message_id not in PENDING_MOD:
+        #         await ctx.send(f"Message {message_id} not pending.")
+        #         return
 
-            _, content = PENDING_MOD.pop(message_id)
-            BANNED_WORDS.add(normalize_message(content))
-            save_banned_words("banned", BANNED_WORDS)
-            await ctx.send(f"❌ Message {message_id} banned. Added to banned words.")
+        #     _, content = PENDING_MOD.pop(message_id)
+        #     BANNED_WORDS.add(normalize_message(content))
+        #     save_banned_words("banned", BANNED_WORDS)
+        #     await ctx.send(f"Message {message_id} banned. Added to banned words.")
+
+        @bot.command(name='jvc')
+        @commands.guild_only()
+        @commands.bot_has_guild_permissions(connect=True, speak=True)
+        async def jvc(ctx, mode: str = None, id_or_none: str = None):
+            """
+            Voice connection debugger command.
+            Usage:
+            !jvc                     -> join caller's VC
+            !jvc u <USER_ID>         -> join that user's VC
+            !jvc a <VC_ID>           -> join VC by ID (alone)
+            !jvc <VC_ID>             -> same as 'a'
+            """
+
+            guild = ctx.guild
+            existing_vc = guild.voice_client
+            channel = None
+
+            logging.info(f"[COMMAND] jvc called by {ctx.author} | mode={mode} | id={id_or_none}")
+
+            # Case 1: no args → join caller's VC
+            if mode is None and id_or_none is None:
+                member = ctx.author
+                if not member.voice or not member.voice.channel:
+                    await ctx.reply("You are not in a voice channel.")
+                    return
+                channel = member.voice.channel
+                logging.info(f"[DEBUG] Detected caller's channel: {channel} ({channel.id})")
+
+            # Case 2: only one argument (VC ID)
+            elif id_or_none is None and mode is not None:
+                id_str = mode
+                mode_flag = 'a'
+            else:
+                id_str = id_or_none
+                mode_flag = (mode or '').lower()
+
+            if not channel:
+                if not id_str or not id_str.isdigit():
+                    await ctx.reply("Provide a valid numeric ID.")
+                    return
+                target_id = int(id_str)
+
+                try:
+                    if mode_flag == 'u':
+                        member = guild.get_member(target_id) or await guild.fetch_member(target_id)
+                        if not member or not member.voice or not member.voice.channel:
+                            await ctx.reply("User not found or not in VC.")
+                            return
+                        channel = member.voice.channel
+                        logging.info(f"[DEBUG] Target user VC: {channel} ({channel.id})")
+                    else:
+                        channel = guild.get_channel(target_id) or await guild.fetch_channel(target_id)
+                        if not isinstance(channel, discord.VoiceChannel):
+                            await ctx.reply("Voice channel not found.")
+                            return
+                        logging.info(f"[DEBUG] Target VC by ID: {channel} ({channel.id})")
+                except Exception as e:
+                    logging.exception(f"[ERROR] Failed to resolve target: {e}")
+                    await ctx.reply(f"Error resolving target: {e}")
+                    return
+
+            # Connection logic with debug and retries
+            async def attempt_connect(max_retries=3, delay=5):
+                nonlocal existing_vc
+                for attempt in range(1, max_retries + 1):
+                    try:
+                        if existing_vc and existing_vc.channel.id == channel.id:
+                            await ctx.reply(f"Already connected to **{channel.name}**.")
+                            logging.info(f"[INFO] Already in channel {channel.name}")
+                            return True
+                        elif existing_vc:
+                            await existing_vc.move_to(channel)
+                            await ctx.reply(f"Moved to **{channel.name}**.")
+                            logging.info(f"[INFO] Moved to {channel.name}")
+                            return True
+                        else:
+                            # Ensure clean state
+                            if existing_vc:
+                                await existing_vc.disconnect(force=True)
+                                logging.info("[DEBUG] Disconnected existing VC before reconnecting")
+
+                            logging.info(f"[INFO] Attempt {attempt}: connecting to {channel.name} ({channel.id})...")
+                            vc = await channel.connect(reconnect=False)
+                            logging.info(f"[SUCCESS] Connected to {channel.name}")
+                            await ctx.reply(f"✅ Connected to **{channel.name}** (attempt {attempt})")
+                            return True
+
+                    except discord.errors.ConnectionClosed as e:
+                        logging.error(f"[ERROR] Voice WebSocket closed (code={e.code}). Retrying in {delay}s...")
+                        await asyncio.sleep(delay)
+                    except discord.ClientException as e:
+                        logging.error(f"[ERROR] ClientException: {e}. Retrying in {delay}s...")
+                        await asyncio.sleep(delay)
+                    except Exception as e:
+                        logging.exception(f"[ERROR] Unexpected connection error: {e}")
+                        await asyncio.sleep(delay)
+
+                await ctx.reply("❌ Failed to connect after multiple attempts.")
+                return False
+
+            # Run connection attempts
+            success = await attempt_connect()
+
+            if not success:
+                logging.error(f"[FATAL] Failed to connect to {channel} after retries.")
+
 
         # ===== ERROR HANDLERS =====
         @ban_word.error
@@ -1421,7 +1529,9 @@ try:
     def console_interface():
         global target_channel_id, config_data
         global bot_started, bot, bot_loop
-
+        
+        os.system("cls" if os.name == "nt" else "clear")
+        
         print(f"BestBotEver!!! {VERSION}")
         print("© 2025 TonpalmUnmain")
         print("Under GNU general public license v3.0")
@@ -1683,6 +1793,7 @@ try:
         try:
             bot = create_bot()
         except Exception:
+            os.system("cls" if os.name == "nt" else "clear")
             logging.critical("Unhandled exception:\n" + traceback.format_exc())
             input("Press Enter to exit...")
             sys.exit(1)
@@ -1693,6 +1804,7 @@ try:
             print("\nExiting console.")
             sys.exit(0)
 except Exception as e:
+    os.system("cls" if os.name == "nt" else "clear")
     logging.critical("Critical error :\n" + traceback.format_exc())
     print(f"Critical error : {e}")
     input("Press Enter to exit...")
