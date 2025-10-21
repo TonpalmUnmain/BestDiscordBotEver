@@ -226,6 +226,7 @@ try:
     # ===== SERVER CONFIG =====
     ADMIN_ROLE_ID = int(config_data["config"].get("admin_role_id", 0)) or None
     BOTTEST_CHANNEL_ID = int(config_data["config"].get("bot_test_channel_id", 0)) or None
+    
     # ===== INTERNAL USERINFO FUNCTIONS =====
     def get_userinfo(uid: int):
         return user_info.get("discord_users", {}).get(str(uid))
@@ -399,12 +400,24 @@ try:
             if source_type == "file":
                 audio_source = FFmpegPCMAudio(source)
             else:  # URL
-                ytdlp_opts = {"format": "bestaudio/best", "quiet": False, "no_warnings": True}
+                ytdlp_opts = {
+                    "format": "bestaudio[ext=m4a]/bestaudio/best",
+                    "quiet": True,
+                    "no_warnings": True,
+                    "default_search": "auto",
+                    "source_address": "0.0.0.0",  # fixes network instability
+                    "noplaylist": True,
+                }
+                ffmpeg_opts = {
+                    'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
+                    'options': '-vn'
+                }
+
                 with yt_dlp.YoutubeDL(ytdlp_opts) as ytdl:
                     info = ytdl.extract_info(source, download=False)
                     if "entries" in info:
                         info = info["entries"][0]
-                    audio_source = FFmpegPCMAudio(info["url"], executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe")
+                    audio_source = FFmpegPCMAudio(info["url"], **ffmpeg_opts, executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe")
             
             vc.play(audio_source, after=lambda e: asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop))
         except Exception as e:
@@ -1542,10 +1555,14 @@ try:
             Usage:
             !dvc
             """
-            vc = ctx.guild.voice_client  # get the bot's current VC in this guild
-            if vc is None:
-                await ctx.reply("I'm not connected to any voice channel here.")
-                return
+            vc = ctx.guild.voice_client
+            if not vc or not vc.is_connected():
+                if ctx.author.voice:
+                    vc = await ctx.author.voice.channel.connect()
+                else:
+                    await ctx.reply("You're not in a voice channel!")
+                    return
+
 
             try:
                 await vc.disconnect()
@@ -1594,20 +1611,26 @@ try:
                 await ctx.send("Please provide a file reference or URL.")
                 return
 
+            queue = get_queue(ctx)
+
             # Try local file first
             file_data = get_file(source)
             if file_data:
                 file_path, filename = file_data
-                get_queue(ctx).append(("file", file_path))
+                queue.append(("file", file_path))
                 await ctx.send(f"Added local file to queue: `{filename}`")
+                # Return immediately to prevent duplication
+                if not vc.is_playing() and not get_paused(ctx):
+                    await play_next(ctx)
+                return
             else:
                 # Treat as URL
-                get_queue(ctx).append(("url", source))
+                queue.append(("url", source))
                 await ctx.send(f"Added URL to queue: `{source}`")
-
-            # If nothing is playing, start playback
-            if not vc.is_playing() and not get_paused(ctx):
-                await play_next(ctx)
+                # Return immediately to prevent duplication
+                if not vc.is_playing() and not get_paused(ctx):
+                    await play_next(ctx)
+                return
 
         @bot.command(name="stvc")
         async def vcstop(ctx):
