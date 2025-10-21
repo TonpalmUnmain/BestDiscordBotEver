@@ -1,10 +1,8 @@
 print("Starting BestBotEver!!!...")
 
 import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
-
-import nacl.secret
 import discord
+from discord import FFmpegPCMAudio, FFmpegOpusAudio
 from discord.ext import commands, tasks
 from datetime import datetime, timedelta
 import json
@@ -29,6 +27,7 @@ import shutil
 import colorama
 import hashlib
 import time
+import yt_dlp
 
 try:
     # ===== SETUP =====
@@ -373,6 +372,46 @@ try:
     startmessage: str | None = None
     stopmessage: str | None = None
 
+    # ===== AUDIO =====
+    # Dictionary to hold queues per guild
+    guild_queues = {}
+
+    # Flag for pause state
+    guild_paused = {}
+
+    def get_queue(ctx):
+        return guild_queues.setdefault(ctx.guild.id, [])
+
+    def get_paused(ctx):
+        return guild_paused.setdefault(ctx.guild.id, False)
+
+    async def play_next(ctx):
+        queue = get_queue(ctx)
+        vc = ctx.guild.voice_client
+        if not vc or not queue:
+            return
+
+        # Get next item
+        item = queue.pop(0)
+        source_type, source = item
+
+        try:
+            if source_type == "file":
+                audio_source = FFmpegPCMAudio(source)
+            else:  # URL
+                ytdlp_opts = {"format": "bestaudio/best", "quiet": False, "no_warnings": True}
+                with yt_dlp.YoutubeDL(ytdlp_opts) as ytdl:
+                    info = ytdl.extract_info(source, download=False)
+                    if "entries" in info:
+                        info = info["entries"][0]
+                    audio_source = FFmpegPCMAudio(info["url"], executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe")
+            
+            vc.play(audio_source, after=lambda e: asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop))
+        except Exception as e:
+            await ctx.send(f"Failed to play {source}: {e}")
+            # Try next item
+            await play_next(ctx)
+            
     # ===== BOT SETUP =====
     if "bot" in globals():
         del globals()["bot"]
@@ -609,6 +648,7 @@ try:
     save_banned_words("whitelist", WHITELISTED_WORDS)
 
     PENDING_MOD = {}
+    
     # ===== BOT CREATION =====
     def create_bot():
         intents = discord.Intents.default()
@@ -1418,7 +1458,6 @@ try:
                     await ctx.reply("You are not in a voice channel.")
                     return
                 channel = member.voice.channel
-                logging.info(f"[DEBUG] Detected caller's channel: {channel} ({channel.id})")
 
             # Case 2: only one argument (VC ID)
             elif id_or_none is None and mode is not None:
@@ -1441,13 +1480,11 @@ try:
                             await ctx.reply("User not found or not in VC.")
                             return
                         channel = member.voice.channel
-                        logging.info(f"[DEBUG] Target user VC: {channel} ({channel.id})")
                     else:
                         channel = guild.get_channel(target_id) or await guild.fetch_channel(target_id)
                         if not isinstance(channel, discord.VoiceChannel):
                             await ctx.reply("Voice channel not found.")
                             return
-                        logging.info(f"[DEBUG] Target VC by ID: {channel} ({channel.id})")
                 except Exception as e:
                     logging.exception(f"[ERROR] Failed to resolve target: {e}")
                     await ctx.reply(f"Error resolving target: {e}")
@@ -1471,12 +1508,11 @@ try:
                             # Ensure clean state
                             if existing_vc:
                                 await existing_vc.disconnect(force=True)
-                                logging.info("[DEBUG] Disconnected existing VC before reconnecting")
 
                             logging.info(f"[INFO] Attempt {attempt}: connecting to {channel.name} ({channel.id})...")
                             vc = await channel.connect(reconnect=False)
                             logging.info(f"[SUCCESS] Connected to {channel.name}")
-                            await ctx.reply(f"✅ Connected to **{channel.name}** (attempt {attempt})")
+                            await ctx.reply(f"Connected to **{channel.name}** (attempt {attempt})")
                             return True
 
                     except discord.errors.ConnectionClosed as e:
@@ -1489,7 +1525,7 @@ try:
                         logging.exception(f"[ERROR] Unexpected connection error: {e}")
                         await asyncio.sleep(delay)
 
-                await ctx.reply("❌ Failed to connect after multiple attempts.")
+                await ctx.reply("Failed to connect after multiple attempts.")
                 return False
 
             # Run connection attempts
@@ -1498,7 +1534,109 @@ try:
             if not success:
                 logging.error(f"[FATAL] Failed to connect to {channel} after retries.")
 
+        @bot.command(name='dvc')
+        @commands.guild_only()
+        async def dvc(ctx):
+            """
+            Disconnect the bot from its current voice channel in the guild.
+            Usage:
+            !dvc
+            """
+            vc = ctx.guild.voice_client  # get the bot's current VC in this guild
+            if vc is None:
+                await ctx.reply("I'm not connected to any voice channel here.")
+                return
 
+            try:
+                await vc.disconnect()
+                await ctx.reply("Disconnected from the voice channel.")
+            except Exception as e:
+                await ctx.reply(f"Failed to disconnect: {e}")
+
+        @bot.command(name='vcplay')
+        @commands.guild_only()
+        async def vcplay(ctx, source: str = None):
+            """
+            Play an audio file or stream in the current voice channel.
+            Usage:
+            !vcplay <URL or local file path>
+            """
+            vc = ctx.guild.voice_client
+            if vc is None:
+                await ctx.reply("I'm not connected to any voice channel. Use `!jvc` first.")
+                return
+
+            if source is None:
+                await ctx.reply("Please provide a URL or local file path to play.")
+                return
+
+            # Stop current playback if any
+            if vc.is_playing():
+                vc.stop()
+
+            try:
+                # Create FFmpeg audio source
+                audio_source = FFmpegPCMAudio(source)
+                vc.play(audio_source)
+                await ctx.reply(f"Now playing: `{source}`")
+            except Exception as e:
+                await ctx.reply(f"Failed to play audio: {e}")
+                
+        @bot.command(name="plvc")
+        async def vcplay(ctx, source: str = None):
+            """Play audio from local file or URL."""
+            vc = ctx.guild.voice_client
+            if vc is None:
+                await ctx.send("Not connected to a voice channel.")
+                return
+
+            if source is None:
+                await ctx.send("Please provide a file reference or URL.")
+                return
+
+            # Try local file first
+            file_data = get_file(source)
+            if file_data:
+                file_path, filename = file_data
+                get_queue(ctx).append(("file", file_path))
+                await ctx.send(f"Added local file to queue: `{filename}`")
+            else:
+                # Treat as URL
+                get_queue(ctx).append(("url", source))
+                await ctx.send(f"Added URL to queue: `{source}`")
+
+            # If nothing is playing, start playback
+            if not vc.is_playing() and not get_paused(ctx):
+                await play_next(ctx)
+
+        @bot.command(name="stvc")
+        async def vcstop(ctx):
+            """Stop playback and clear queue."""
+            vc = ctx.guild.voice_client
+            if vc:
+                vc.stop()
+            get_queue(ctx).clear()
+            guild_paused[ctx.guild.id] = False
+            await ctx.send("Playback stopped and queue cleared.")
+
+        @bot.command(name="pavc")
+        async def vcpause(ctx):
+            """Pause playback."""
+            vc = ctx.guild.voice_client
+            if vc and vc.is_playing():
+                vc.pause()
+                guild_paused[ctx.guild.id] = True
+                await ctx.send("Playback paused.")
+
+        @bot.command(name="revc")
+        async def vcresume(ctx):
+            """Resume playback."""
+            vc = ctx.guild.voice_client
+            if vc and vc.is_paused():
+                vc.resume()
+                guild_paused[ctx.guild.id] = False
+                await ctx.send("Playback resumed.")
+                
         # ===== ERROR HANDLERS =====
         @ban_word.error
         @remove_ban_word.error

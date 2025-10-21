@@ -1,3 +1,10 @@
+## 1.15.0 Features
+- Voice channel capabilities
+  - Join/leave voice channels
+  - Play audio from URLs or local files
+  - Playback controls (pause/resume/stop)
+  - Queue system for multiple audio files
+
 # BestDiscordBotEver Function Documentation
 
 ## Command Functions
@@ -133,6 +140,37 @@
 - **Usage**: `!delfeedback [id] [reason]`
 - **Permission**: Manage Messages
 
+### Voice Commands
+
+#### !jvc
+- **Description**: Join voice channel
+- **Usage**: 
+  - `!jvc` - Join caller's VC
+  - `!jvc u <USER_ID>` - Join user's VC
+  - `!jvc a <VC_ID>` - Join specific VC
+  - `!jvc <VC_ID>` - Same as 'a'
+- **Permission**: Requires bot to have connect and speak permissions
+
+#### !dvc
+- **Description**: Disconnect from voice channel
+- **Usage**: `!dvc`
+
+#### !plvc
+- **Description**: Play audio in voice channel (Support Youtube)
+- **Usage**: `!plvc <URL or file reference>`
+
+#### !stvc
+- **Description**: Stop audio playback
+- **Usage**: `!stvc`
+
+#### !pavc
+- **Description**: Pause audio playback
+- **Usage**: `!pavc`
+
+#### !revc
+- **Description**: Resume audio playback
+- **Usage**: `!recv`
+
 ## Console Commands
 
 ### Basic Controls
@@ -188,19 +226,19 @@ banned_words.json       # Banned words list
 ```json
 {
     "config": {
-        "version": "1.14.5",
+        "version": "1.15.0",
         "author": "TonpalmUnmain",
         "command_prefix": "!",
-        "admin_role_id": "1399766498246918216",
+        "admin_role_id": "1411139316171931738",
         "default_target_channel_id": "1371357608904228924",
-        "sreenshotdir": "scs"
+        "bot_test_channel_id": "1399900695993253970"
     },
     "MCS": {
-        "mcsAdress": "YOUR_MC_SERVER_IP",
+        "mcsAdress": "multi-nor.gl.at.ply.gg",
         "mcsPort": 5355,
-        "mcsChID": "CHANNEL_ID_FOR_MC_STATUS",
+        "mcsChID": "1421497953834631319",
         "mcsDelay": 3600,
-        "mcsRoleID": "ROLE_ID_FOR_MC_NOTIFICATIONS"
+        "mcsRoleID": "1394542459538640977"
     }
 }
 ```
@@ -261,12 +299,28 @@ At this time, ```var1``` and ```var2``` is not in use, but referenced.
 
 # Quick Start Guide
 
-1. **Install Dependencies**
+1. **Set up Virtual Environment**
 ```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+2. **Install Dependencies**
+```bash
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Install requirements
 pip install -r requirements.txt
 ```
 
-2. **Configure Files**
+3. **Configure Files**
 - Copy `config.example.json` to `config.json` and fill in your values
 - Create `token.config` with your bot token
 - Ensure all directories exist:
@@ -274,7 +328,21 @@ pip install -r requirements.txt
   mkdir log userdata feedback fdump scs
   ```
 
-3. **Run the Bot**
+4.**Install FFmpeg**
+```bash
+# On Windows (using chocolatey):
+choco install ffmpeg
+
+# Or download manually:
+# 1. Download from https://ffmpeg.org/download.html
+# 2. Extract to a folder (e.g., C:\ffmpeg)
+# 3. Add to System PATH:
+#    - Open System Properties > Advanced > Environment Variables
+#    - Edit Path variable
+#    - Add new entry with path to ffmpeg\bin folder
+```
+
+5. **Run the Bot**
 ```bash
 python main.py
 ```
@@ -297,6 +365,8 @@ idna>=3.4
 multidict>=6.0.4
 yarl>=1.9.2
 wcwidth>=0.2.6
+FFmpeg     # Required for voice functionality
+youtube-dl # Required for URL audio streaming
 ```
 
 ### Internal Modules
@@ -382,7 +452,7 @@ async def process_console_command(cmd)
     """Processes console commands."""
 ```
 ---
-BestBotEver!!! 1.14.5
+BestBotEver!!! 1.15.0
 
 *Not intended to be used in other servers.*
 *Under GNU General Public License Version 3, 29 June 2007.*
