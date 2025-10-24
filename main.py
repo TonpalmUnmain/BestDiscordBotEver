@@ -32,6 +32,7 @@ from homoglyphs import Homoglyphs
 from ftfy import fix_text
 import subprocess
 from unidecode import unidecode
+from gtts import gTTS
 
 try:
     # ===== SETUP =====
@@ -65,7 +66,7 @@ try:
         if mode == "ui":
             file_path = browse_file()
             if not file_path:
-                print("No file selected.")
+                logging.info("No file selected.")
                 return
         elif mode == "dir":
             file_path = input("Enter file path: ").strip()
@@ -74,7 +75,7 @@ try:
             return
 
         if not os.path.isfile(file_path):
-            print("File not found.")
+            logging.info("File not found.")
             return
 
         # Keep original filename
@@ -91,12 +92,12 @@ try:
         }
         save_filedb(db)
 
-        print(f"File '{file_reference}' added. Original filename preserved: {original_name}")
+        logging.info(f"File '{file_reference}' added. Original filename preserved: {original_name}")
 
     def get_file(file_reference):
         db = load_filedb()
         if file_reference not in db:
-            print(f"reference '{file_reference}' not found.")
+            logging.info(f"reference '{file_reference}' not found.")
             return None
         info = db[file_reference]
         return info["dump_path"], info["filename"]
@@ -104,7 +105,7 @@ try:
     def del_file(file_reference):
         db = load_filedb()
         if file_reference not in db:
-            print(f"No such reference name '{file_reference}'.")
+            logging.info(f"No such reference name '{file_reference}'.")
             return
 
         dump_path = db[file_reference].get("dump_path")
@@ -116,7 +117,7 @@ try:
 
         del db[file_reference]
         save_filedb(db)
-        print(f"Deleted reference '{file_reference}'")
+        logging.info(f"Deleted reference '{file_reference}'")
     
     # ===== LOGGING SETUP =====
     class PTKHandler(logging.Handler):
@@ -513,7 +514,51 @@ try:
             except Exception:
                 logging.exception("Failed to schedule retry of play_next")
             return
-            
+    
+    # ===== TTS =====
+    async def say_in_vc(bot, text: str, ovr: int = 1):
+        """Speaks text in the currently connected voice channel using gTTS."""
+        try:
+            if not bot.voice_clients:
+                print("Not connected to any voice channel.")
+                return
+
+            vc = bot.voice_clients[0]
+            if not vc or not vc.is_connected():
+                print("Voice client not connected.")
+                return
+
+            logging.info(f"Generating TTS: \"{text}\" (ovr={ovr})")
+
+            # Default to English, fallback to a safe language code
+            try:
+                tts = gTTS(text=text, lang="en")
+            except Exception as e:
+                logging.info(f"Language 'en' failed ({e}), using fallback 'en-us'.")
+                tts = gTTS(text=text, lang="en-us")
+
+            now = datetime.now()
+            timestamp = now.strftime("%Y-%m-%d_%H-%M-%S")
+            tts_file = "tts_output/" + timestamp + ".mp3"
+            tts.save(tts_file)
+            print(f"Saved TTS file as {tts_file}")
+
+            source = discord.FFmpegPCMAudio(tts_file)
+
+            # Handle overlay or replace
+            if ovr == 0:
+                if vc.is_playing():
+                    vc.stop()
+                vc.play(source, after=lambda e: logging.info("Finished speaking."))
+            else:
+                logging.info("Overlay mode: playing without stopping current audio.")
+                vc.play(source, after=lambda e: logging.info("Finished speaking."))
+
+            logging.info(f"Speaking in {vc.channel.name}: {text}")
+
+        except Exception as e:
+            logging.info(f"Error in say_in_vc: {e}")
+
     # ===== BOT SETUP =====
     if "bot" in globals():
         del globals()["bot"]
@@ -707,7 +752,7 @@ try:
                     banned = set(data.get("banned_words", []))
                     whitelist = set(data.get("whitelisted_words", []))
             except (json.JSONDecodeError, OSError) as e:
-                print(f"Error loading banned words file: {e}")
+                logging.info(f"Error loading banned words file: {e}")
 
         match type.lower():
             case "banned":
@@ -1825,7 +1870,7 @@ try:
                             except asyncio.CancelledError:
                                 pass
                             except Exception as e:
-                                print("Error starting bot:", e)
+                                logging.info("Error starting bot:", e)
                             finally:
                                 bot_loop.close()
 
@@ -1836,7 +1881,7 @@ try:
                         session_id = gen_session_id()
                         logging.info(f"Session ID: {session_id}")
                     except Exception as e:
-                        print("Failed to start bot:", e)
+                        logging.info("Failed to start bot:", e)
 
                 elif command == "stop": 
                     if not bot_started:
@@ -1917,7 +1962,7 @@ try:
                     target_channel_id = int(args[0])
                     config_data["config"]["default_target_channel_id"] = str(target_channel_id)
                     save_json(CONFIG_FILE, config_data)
-                    print(f"Target channel set to {target_channel_id}")
+                    logging.info(f"Target channel set to {target_channel_id}")
 
                 elif command == "reply" and args and args[0].isdigit():
                     message_to_re = int(args[0])
@@ -1971,9 +2016,9 @@ try:
 
                                 # Send reply
                                 await target_msg.reply(msg_text, mention_author=False)
-                                print(f"Replied to message {message_to_re} in channel {ch_id}.")
+                                logging.info(f"Replied to message {message_to_re} in channel {ch_id}.")
                             except Exception as e:
-                                print("Failed to reply:", e)
+                                logging.info("Failed to reply:", e)
 
                         asyncio.run_coroutine_threadsafe(reply_to_message(), bot_loop)
                     else:
@@ -2002,7 +2047,7 @@ try:
                                     channel = await bot.fetch_channel(ch_id)
 
                                 if channel is None:
-                                    print(f"Channel {ch_id} not found.")
+                                    logging.info(f"Channel {ch_id} not found.")
                                     return
 
                                 # Replace placeholders and send files
@@ -2012,10 +2057,10 @@ try:
                                 if msg_text.strip():
                                     await channel.send(msg_text)
 
-                                print(f"Message sent to channel {ch_id}.")
+                                logging.info(f"Message sent to channel {ch_id}.")
 
                             except Exception as e:
-                                print("Failed to send message:", e)
+                                logging.info("Failed to send message:", e)
 
                         asyncio.run_coroutine_threadsafe(send_message(), bot_loop)
                     else:
@@ -2039,6 +2084,30 @@ try:
                         print("Usage: delfile <file_reference>")
                         continue
                     del_file(args[0])
+                
+                elif command == "sayinvc" and args:
+                    if len(args) >= 2 and args[-1] in ["0", "1"]:
+                        ovr = int(args[-1])
+                        text = " ".join(args[:-1])
+                    else:
+                        ovr = 1
+                        text = " ".join(args)
+
+                    if not text.strip():
+                        print("Please provide text to speak.")
+                        continue
+
+                    logging.info(f"Scheduling TTS: \"{text}\" (ovr={ovr})")
+                    fut = asyncio.run_coroutine_threadsafe(
+                        say_in_vc(bot, text, ovr),
+                        bot.loop
+                    )
+                    try:
+                        fut.result(timeout=1)
+                    except asyncio.TimeoutError:
+                        print("TTS task running asynchronously...")
+                    except Exception as e:
+                        logging.info(f"TTS failed to start: {e}")
 
     # ===== MAIN =====
     if __name__ == "__main__":
@@ -2058,7 +2127,7 @@ try:
 except Exception as e:
     os.system("cls" if os.name == "nt" else "clear")
     logging.critical("Critical error :\n" + traceback.format_exc())
-    print(f"Critical error : {e}")
+    logging.info(f"Critical error : {e}")
     input("Press Enter to exit...")
     sys.exit(1)
     

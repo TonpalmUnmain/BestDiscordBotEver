@@ -1,0 +1,10 @@
+2025-09-30 20:21:20,318 [CRITICAL] Unhandled exception:
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 734, in <module>
+    console_interface()
+    ~~~~~~~~~~~~~~~~~^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 574, in console_interface
+    if bot_started:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'bot_started' where it is not associated with a value
+

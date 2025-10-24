@@ -1,0 +1,15 @@
+2025-10-25 02:29:33,908 [INFO] logging in using static token
+2025-10-25 02:29:33,908 [INFO] Session ID: c5616dbba65041e0581ed46f56a3399848c85b182d53b854c16ebf3ae5ad1e4f
+2025-10-25 02:29:35,801 [INFO] Shard ID None has connected to Gateway (Session ID: 674dc81f8f5ef85fd50a86dd4e0fa2bf).
+2025-10-25 02:29:37,829 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 02:29:37,830 [INFO] No startmessage set.
+2025-10-25 02:29:44,996 [INFO] 1431364063283122326:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-25 02:29:44,999 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 02:29:44,999 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 02:29:45,004 [INFO] Connecting to voice...
+2025-10-25 02:29:45,005 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 02:29:45,569 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 02:29:45,790 [INFO] Voice connection complete.
+2025-10-25 02:29:45,791 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 02:29:46,330 [INFO] 1431364068601757777:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 02:29:46,398 [INFO] Command completed: jvc by p.pumpum

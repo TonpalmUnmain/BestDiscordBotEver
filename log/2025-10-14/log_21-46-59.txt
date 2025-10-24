@@ -1,0 +1,10 @@
+2025-10-14 21:47:01,101 [INFO] logging in using static token
+2025-10-14 21:47:02,544 [INFO] Shard ID None has connected to Gateway (Session ID: 126a9b66c13bd26e4144ad236349eff9).
+2025-10-14 21:47:04,557 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-14 21:47:04,914 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-14 21:47:13,877 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Good boy <@1386280922218893465>
+2025-10-14 21:47:37,087 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Goodboy <@1386280922218893465>
+2025-10-14 21:49:34,555 [INFO] Waiting for bot to shut down...
+2025-10-14 21:49:34,555 [INFO] Shutting down bot...
+2025-10-14 21:49:44,565 [ERROR] Error waiting for shutdown: 
+2025-10-14 21:49:44,565 [INFO] Bot stopped.

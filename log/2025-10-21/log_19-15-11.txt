@@ -1,0 +1,28 @@
+2025-10-21 19:15:15,700 [INFO] logging in using static token
+2025-10-21 19:15:15,700 [INFO] Session ID: c287053962014b52da75bd752e391aeba7d849227bb373efafeb12d6727852ab
+2025-10-21 19:15:17,333 [INFO] Shard ID None has connected to Gateway (Session ID: 98703100bdf74d7a776be152a6fec4b0).
+2025-10-21 19:15:19,340 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:15:19,341 [INFO] No startmessage set.
+2025-10-21 19:15:29,553 [INFO] 1430167622191808614:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wait
+2025-10-21 19:15:29,553 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:15:34,185 [INFO] 1430167641795989524:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): i jst make it connect
+2025-10-21 19:15:34,186 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:15:40,225 [INFO] 1430167666542514226:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): get back to work
+2025-10-21 19:15:45,415 [INFO] 1430167688486977668:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:15:45,416 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:15:45,418 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:15:45,418 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:15:45,424 [INFO] Connecting to voice...
+2025-10-21 19:15:45,425 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:15:45,956 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:15:46,182 [INFO] Voice connection complete.
+2025-10-21 19:15:46,183 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:15:46,599 [INFO] 1430167693818069033:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:15:46,659 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:15:48,890 [INFO] 1430167703444000838:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !dvc
+2025-10-21 19:15:48,890 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:15:48,890 [INFO] The voice handshake is being terminated for Channel ID 1418976416220971079 (Guild ID 1371357608459501640)
+2025-10-21 19:15:49,613 [INFO] 1430167706425888808:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Disconnected from the voice channel.
+2025-10-21 19:15:49,685 [INFO] Command completed: dvc by p.pumpum
+2025-10-21 19:15:55,216 [INFO] 1430167729993814056:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): wowie
+2025-10-21 19:15:56,187 [INFO] 1430167734087581746:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): very cool

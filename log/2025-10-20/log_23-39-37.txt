@@ -1,0 +1,6 @@
+2025-10-20 23:39:37,591 [CRITICAL] Critical error :
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 579, in <module>
+    BANNED_WORDS = load_banned_words()
+TypeError: load_banned_words() missing 1 required positional argument: 'type'
+

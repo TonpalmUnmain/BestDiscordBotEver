@@ -1,0 +1,24 @@
+2025-10-21 19:37:58,274 [INFO] logging in using static token
+2025-10-21 19:37:58,275 [INFO] Session ID: 175986b05107193bb70b0e3d75e1156b2f9cc33db1aab441c44a7ef48d502b40
+2025-10-21 19:37:59,888 [INFO] Shard ID None has connected to Gateway (Session ID: 7899f3ae1bae95460c61ce156196f887).
+2025-10-21 19:38:01,909 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:38:01,910 [INFO] No startmessage set.
+2025-10-21 19:38:04,623 [INFO] 1430173305989627985:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:38:04,626 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:38:04,628 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:38:04,629 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:38:04,635 [INFO] Connecting to voice...
+2025-10-21 19:38:04,635 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:38:05,256 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:38:05,486 [INFO] Voice connection complete.
+2025-10-21 19:38:05,487 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:38:05,888 [INFO] 1430173311144558776:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:38:05,930 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:38:41,182 [INFO] 1430173459375198258:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pinvc https://www.youtube.com/watch?v=VOgFZfRVaww
+2025-10-21 19:38:41,183 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:38:46,583 [INFO] 1430173473271058482:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): pls
+2025-10-21 19:38:46,583 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:38:46,974 [INFO] 1430173483677126809:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ❌ Failed to play URL: ffmpeg was not found.
+2025-10-21 19:38:47,007 [INFO] Command completed: pinvc by p.pumpum
+2025-10-21 19:38:54,249 [INFO] 1430173513838362626:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wtf
+2025-10-21 19:38:54,249 [INFO] User p.pumpum has GOD role, skipping banned word check.

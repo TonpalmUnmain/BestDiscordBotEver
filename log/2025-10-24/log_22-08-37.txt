@@ -1,0 +1,10 @@
+2025-10-24 22:08:41,931 [INFO] logging in using static token
+2025-10-24 22:08:41,931 [INFO] Session ID: c2416d61de4de2e9385f4bdad5e96093ba16de4b1a5c2a7f2ced32e11ba0aa64
+2025-10-24 22:08:43,384 [INFO] Shard ID None has connected to Gateway (Session ID: cf8e28f5dd7e2042df94f5d6df7bf510).
+2025-10-24 22:08:45,541 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-24 22:08:45,542 [INFO] No startmessage set.
+2025-10-24 22:09:50,493 [INFO] 1431298653250785462:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): Nigger Νіggеr n i g g e r n.i.g.g.e.r n!gg@r n1gg3r nіɡɡеr ＮＩＧＧＥＲ n i​g‍g​er niggér niGGeR n_ig-ge*r
+2025-10-24 22:09:50,497 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:09:51,652 [INFO] 1431298658128892117:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1260198579067420722>, missing permissions.
+2025-10-24 22:09:51,714 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-24 22:10:15,787 [INFO] 1431298759345704973:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): Νіggеr

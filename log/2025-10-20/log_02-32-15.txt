@@ -1,0 +1,7 @@
+2025-10-20 02:32:15,740 [CRITICAL] Critical error :
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 329, in <module>
+    def parse_duration(dur_str: str) -> datetime.timedelta | None:
+                                        ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timedelta'
+

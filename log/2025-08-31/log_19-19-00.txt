@@ -1,0 +1,49 @@
+2025-08-31 19:19:01,925 [INFO] logging in using static token
+2025-08-31 19:19:03,630 [INFO] Shard ID None has connected to Gateway (Session ID: c68939d5b66b1dbf45e4af916047aa6c).
+2025-08-31 19:19:05,643 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-08-31 19:19:06,022 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-08-31 19:19:06,900 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): im calling CPS
+2025-08-31 19:19:31,505 [INFO] endulix_ (913994744953196614) in #✦-chat-✦ (1371357608904228924): https://tenor.com/view/beaver-carrot-eating-gif-21665554
+2025-08-31 19:19:52,636 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !seelog current
+2025-08-31 19:19:52,638 [INFO] [p.pumpum (1260198579067420722)] Called see_log with date: current, filename: None
+2025-08-31 19:20:03,356 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !seelog recent
+2025-08-31 19:20:03,357 [INFO] [p.pumpum (1260198579067420722)] Called see_log with date: recent, filename: None
+2025-08-31 19:20:17,014 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wow
+2025-08-31 19:20:25,369 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): no one can delete message now
+2025-08-31 19:20:27,861 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wowowowow
+2025-08-31 19:20:40,729 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): 😡
+2025-08-31 19:20:43,854 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): nga
+2025-08-31 19:20:48,298 [INFO] sleepycimo (1300754808185290762) in #🤖-bot-test-🛠️ (1399900695993253970): deleted
+2025-08-31 19:20:51,174 [INFO] sleepycimo (1300754808185290762) in #🤖-bot-test-🛠️ (1399900695993253970): 😂
+2025-08-31 19:21:23,463 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !seelog current
+2025-08-31 19:21:23,465 [INFO] [p.pumpum (1260198579067420722)] Called see_log with date: current, filename: None
+2025-08-31 19:21:35,597 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !seelog recent
+2025-08-31 19:21:35,599 [INFO] [p.pumpum (1260198579067420722)] Called see_log with date: recent, filename: None
+2025-08-31 19:21:44,938 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): i mean everything is logged
+2025-08-31 19:21:51,698 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): itll still be in log
+2025-08-31 19:22:16,206 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pewurselfnga
+2025-08-31 19:22:16,265 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): https://tenor.com/view/beaver-carrot-eating-gif-21665554
+2025-08-31 19:22:26,942 [CRITICAL] Unhandled exception:
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 545, in <module>
+    console_interface()
+    ~~~~~~~~~~~~~~~~~^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 481, in console_interface
+    stop_bot_threadsafe(msg)
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 112, in stop_bot_threadsafe
+    asyncio.run_coroutine_threadsafe(stopsession(message), bot_loop)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 1003, in run_coroutine_threadsafe
+    loop.call_soon_threadsafe(callback)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 873, in call_soon_threadsafe
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 551, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+
+2025-08-31 19:22:28,917 [ERROR] Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001DA0FB1BBF0>, 28038.7114051)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001DA0FAB78C0>

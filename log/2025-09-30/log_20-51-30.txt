@@ -1,0 +1,14 @@
+2025-09-30 20:51:31,904 [INFO] logging in using static token
+2025-09-30 20:51:33,551 [INFO] Shard ID None has connected to Gateway (Session ID: 20a917153a6a538de1265bf9b54af426).
+2025-09-30 20:51:35,561 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-30 20:51:35,991 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-30 20:52:14,298 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): <@1385167797360922675>
+2025-09-30 20:53:32,492 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): พนตอนเที่ยงเดินไปกินก๋วยเตี๋ยวหน้ารรป่าว
+2025-09-30 21:00:32,109 [ERROR] Error shutting down bot: 
+2025-09-30 21:00:32,110 [INFO] Console exited by user input.
+2025-09-30 21:00:32,140 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-21' coro=<Client.close.<locals>._close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:778> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-09-30 21:00:32,140 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-20' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:659> wait_for=<Task pending name='Task-21' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:391]>
+2025-09-30 21:00:32,141 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002089EE3E660>

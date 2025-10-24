@@ -1,0 +1,78 @@
+2025-10-21 16:40:35,511 [INFO] logging in using static token
+2025-10-21 16:40:35,511 [INFO] Session ID: 08854de7e512998346a3ade971538b5e3b2824f6d9cb6d2280f244889216e5f8
+2025-10-21 16:40:36,954 [INFO] Shard ID None has connected to Gateway (Session ID: 00ea722c59cb987dd0a2a90f0625552e).
+2025-10-21 16:40:39,136 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 16:40:39,137 [INFO] No startmessage set.
+2025-10-21 16:40:42,601 [INFO] 1430128668856025200:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 16:40:42,602 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:40:42,603 [INFO] Connecting to voice...
+2025-10-21 16:40:42,604 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 16:40:43,163 [INFO] Voice handshake complete. Endpoint found: c-sin13-f1be2764.discord.media
+2025-10-21 16:40:43,367 [ERROR] Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2025-10-21 16:40:43,373 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-21 16:40:44,379 [INFO] Starting voice handshake... (connection attempt 2)
+2025-10-21 16:40:44,906 [INFO] Voice handshake complete. Endpoint found: c-sin13-f1be2764.discord.media
+2025-10-21 16:40:45,059 [ERROR] Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2025-10-21 16:40:45,061 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-21 16:40:48,072 [INFO] Starting voice handshake... (connection attempt 3)
+2025-10-21 16:40:48,578 [INFO] Voice handshake complete. Endpoint found: c-sin13-f1be2764.discord.media
+2025-10-21 16:40:48,732 [ERROR] Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2025-10-21 16:40:48,734 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-21 16:40:53,751 [INFO] Starting voice handshake... (connection attempt 4)
+2025-10-21 16:40:54,260 [INFO] Voice handshake complete. Endpoint found: c-sin13-f1be2764.discord.media
+2025-10-21 16:40:54,416 [ERROR] Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2025-10-21 16:40:54,419 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-21 16:41:01,423 [INFO] Starting voice handshake... (connection attempt 5)
+2025-10-21 16:41:01,947 [INFO] Voice handshake complete. Endpoint found: c-sin13-f1be2764.discord.media
+2025-10-21 16:41:02,097 [ERROR] Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2025-10-21 16:41:02,099 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-21 16:41:11,103 [INFO] Voice connection complete.
+2025-10-21 16:41:11,103 [INFO] Disconnecting from voice normally, close code 1000.
+2025-10-21 16:41:11,104 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-21 16:41:11,544 [INFO] 1430128789987266624:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣**.
+2025-10-21 16:41:11,637 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 16:41:23,600 [INFO] 1430128840813973555:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete sec 1
+2025-10-21 16:41:23,600 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:41:24,191 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
+2025-10-21 16:41:24,541 [INFO] 1430128844479922197:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): After finishing I will deplete myself in 1.00s, I AM STILL WATCHING.
+2025-10-21 16:41:25,599 [INFO] Bot stopped. Closing connection...

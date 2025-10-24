@@ -1,0 +1,16 @@
+2025-10-19 19:43:04,831 [INFO] logging in using static token
+2025-10-19 19:43:06,466 [INFO] Shard ID None has connected to Gateway (Session ID: 9d566c87cb48d2c61420f94bf008a594).
+2025-10-19 19:43:08,492 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 19:43:08,493 [INFO] No startmessage set.
+2025-10-19 19:43:11,836 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): tung tung is waw
+2025-10-19 19:43:19,223 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): 💔😡
+2025-10-19 19:43:30,673 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): waw
+2025-10-19 19:43:34,729 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): what are you zayin bro
+2025-10-19 19:43:38,165 [CRITICAL] Unhandled exception:
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1156, in <module>
+    try:
+    
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 907, in console_interface
+EOFError
+

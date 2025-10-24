@@ -1,0 +1,10 @@
+2025-10-14 22:53:32,588 [INFO] logging in using static token
+2025-10-14 22:53:35,408 [INFO] Shard ID None has connected to Gateway (Session ID: 3a85f593191175516fafaff436cbb71a).
+2025-10-14 22:53:37,422 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-14 22:53:37,422 [INFO] No startmessage set.
+2025-10-14 22:53:45,953 [INFO] Waiting for bot to shut down...
+2025-10-14 22:53:45,953 [INFO] Shutting down bot...
+2025-10-14 22:53:46,318 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): StopMsg
+2025-10-14 22:53:46,404 [INFO] Sent shutdown message to #💬-chat-✉️ (1371357608904228924): StopMsg
+2025-10-14 22:53:55,968 [ERROR] Error waiting for shutdown: 
+2025-10-14 22:53:55,970 [INFO] Bot stopped.

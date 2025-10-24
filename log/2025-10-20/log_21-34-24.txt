@@ -1,0 +1,15 @@
+2025-10-20 21:34:27,487 [INFO] logging in using static token
+2025-10-20 21:34:27,487 [INFO] Session ID: 22f7f0bfa428428f2f737a1fa67c39711ebec7698daec2a60d3a7144cc3e4d60
+2025-10-20 21:34:28,903 [INFO] Shard ID None has connected to Gateway (Session ID: 69081c41bef5e5097b3959646ffc2dbb).
+2025-10-20 21:34:30,920 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 21:34:30,920 [INFO] No startmessage set.
+2025-10-20 21:34:39,390 [INFO] 1429840251899088916:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listbugreport
+2025-10-20 21:34:39,854 [INFO] 1429840253774200923:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-20 21:34:39,940 [INFO] Command completed: listbugreport by p.pumpum
+2025-10-20 21:34:48,121 [INFO] 1429840288343654431:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): 😡
+2025-10-20 21:35:09,990 [INFO] 1429840379913441331:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !delbugreport 1120a02 test
+2025-10-20 21:35:10,903 [INFO] 1429840383617142899:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Bug report **#1120a02** deleted. Reason: `test`
+2025-10-20 21:35:11,069 [INFO] Command completed: delbugreport by p.pumpum
+2025-10-20 21:35:32,818 [INFO] 1429840475808075796:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !delbugreport 1120a01 test
+2025-10-20 21:35:33,259 [INFO] 1429840477892640900:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Bug report **#1120a01** deleted. Reason: `test`
+2025-10-20 21:35:33,298 [INFO] Command completed: delbugreport by p.pumpum

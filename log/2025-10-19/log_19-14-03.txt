@@ -1,0 +1,72 @@
+2025-10-19 19:14:08,536 [INFO] logging in using static token
+2025-10-19 19:14:10,256 [INFO] Shard ID None has connected to Gateway (Session ID: c41c8da4716bebbcb736a819ddc1c484).
+2025-10-19 19:14:12,277 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 19:14:12,278 [INFO] No startmessage set.
+2025-10-19 19:14:12,781 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 19:14:14,383 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): LOL LOL
+2025-10-19 19:14:15,975 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 19:14:26,287 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): uh
+2025-10-19 19:14:27,370 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): wait
+2025-10-19 19:14:29,894 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): nothing there
+2025-10-19 19:14:31,200 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bruh
+2025-10-19 19:14:34,478 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): lemme record again
+2025-10-19 19:14:35,838 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nothing there?
+2025-10-19 19:14:35,878 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): opdrfwekrp
+2025-10-19 19:14:49,261 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-19 19:15:00,435 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/gebura-libraryofruina-red-mist-library-of-ruina-lobotomy-corporation-gif-13849133530240281303
+2025-10-19 19:15:03,584 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nothing there
+2025-10-19 19:15:05,439 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🤑🤑🤑
+2025-10-19 19:16:07,460 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 19:16:11,177 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bruhh
+2025-10-19 19:16:14,795 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): why is it a file now
+2025-10-19 19:16:14,816 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): virus
+2025-10-19 19:16:16,496 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): report
+2025-10-19 19:16:18,625 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): change it to mp4
+2025-10-19 19:16:23,337 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-19 19:16:28,933 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-19 19:16:58,751 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 19:17:05,892 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-19 19:17:06,842 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ok thank you
+2025-10-19 19:17:17,745 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-19 19:17:24,041 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😂
+2025-10-19 19:17:29,311 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I'm gonna invite toaster to our animtest!1!11!
+2025-10-19 19:17:34,267 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-19 19:17:37,767 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): my first animation is a joke 😢
+2025-10-19 19:17:42,031 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wait I playing limnut rn
+2025-10-19 19:17:43,097 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): uh
+2025-10-19 19:17:46,641 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): im already in
+2025-10-19 19:17:47,123 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1173572905649578025> can u invite
+2025-10-19 19:17:48,969 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): oh
+2025-10-19 19:17:49,825 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): what
+2025-10-19 19:17:49,954 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-19 19:17:51,000 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nig
+2025-10-19 19:18:06,562 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 19:18:08,381 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): is the mafioso thing what u made
+2025-10-19 19:18:14,907 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): idk how to view it tho
+2025-10-19 19:18:17,513 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): what
+2025-10-19 19:18:30,392 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1210218568889798658> do u see the 2 dummies next to spawn
+2025-10-19 19:18:44,516 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): uh no
+2025-10-19 19:18:47,814 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): its not your anim test
+2025-10-19 19:18:49,843 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): then wwhere am i
+2025-10-19 19:18:52,421 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-19 19:18:55,426 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-19 19:18:59,262 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 19:19:00,240 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bro
+2025-10-19 19:19:00,995 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): what
+2025-10-19 19:19:11,250 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): what is animation test bro 😨😨😢😢
+2025-10-19 19:19:11,563 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ok invite me
+2025-10-19 19:19:13,289 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): plz plz plz
+2025-10-19 19:19:16,477 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1173572905649578025>
+2025-10-19 19:19:21,222 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wait
+2025-10-19 19:19:23,639 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): im logging in
+2025-10-19 19:19:29,268 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): slowcat
+2025-10-19 19:19:34,407 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): nbirtgrewtwet
+2025-10-19 19:20:08,551 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): imma login to Roblox studio while in mirror dungeon
+2025-10-19 19:20:13,229 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): hopefully it doesn't crash my pc
+2025-10-19 19:20:20,608 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i cant invite
+2025-10-19 19:20:22,772 [INFO] Waiting for bot to shut down...
+2025-10-19 19:20:22,773 [INFO] Shutting down bot...
+2025-10-19 19:20:32,785 [ERROR] Error shutting down: 
+2025-10-19 19:20:32,786 [INFO] Bot stopped.
+2025-10-19 19:20:39,374 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-20' coro=<console_interface.<locals>.shutdown() done, defined at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:969> wait_for=<Task finished name='Task-21' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

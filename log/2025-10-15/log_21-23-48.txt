@@ -1,0 +1,7 @@
+2025-10-15 21:23:48,725 [CRITICAL] Critical error :
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 125, in <module>
+    async def stopsession(message=stop_message, channel_id=target_channel_id):
+                                  ^^^^^^^^^^^^
+NameError: name 'stop_message' is not defined. Did you mean: 'stopmessage'?
+

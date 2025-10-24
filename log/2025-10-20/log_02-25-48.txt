@@ -1,0 +1,10 @@
+2025-10-20 02:25:50,661 [INFO] logging in using static token
+2025-10-20 02:25:52,040 [INFO] Shard ID None has connected to Gateway (Session ID: 639e0a0fe39f820d807a2b091b9f7b21).
+2025-10-20 02:25:54,059 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 02:25:54,060 [INFO] No startmessage set.
+2025-10-20 02:26:33,003 [INFO] 1429551316400738445:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !mkpoll "Am I tuff?" "Y" "N"
+2025-10-20 02:26:33,007 [ERROR] Error in command mkpoll by p.pumpum: Command raised an exception: TypeError: Poll.__init__() missing 1 required positional argument: 'duration'
+2025-10-20 02:31:47,395 [INFO] Waiting for bot to shut down...
+2025-10-20 02:31:47,395 [INFO] Shutting down bot...
+2025-10-20 02:31:57,408 [ERROR] Error shutting down: 
+2025-10-20 02:31:57,409 [INFO] Bot stopped.

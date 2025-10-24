@@ -1,0 +1,30 @@
+2025-10-20 21:01:59,595 [INFO] logging in using static token
+2025-10-20 21:01:59,596 [INFO] Session ID: 780e874b488d60f7edbb43f9c42a662df7a1853746348cab5593ae0dc50292a9
+2025-10-20 21:02:01,047 [INFO] Shard ID None has connected to Gateway (Session ID: ef411c8f5c058d240e858926d3323e8e).
+2025-10-20 21:02:03,057 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 21:02:03,057 [INFO] No startmessage set.
+2025-10-20 21:02:21,868 [INFO] 1429832125196144770:p.pumpum (1260198579067420722) in #❌-nsfw-🚫 (1397599131488223353): what the actual fuck
+2025-10-20 21:03:47,811 [ERROR] Attempting a reconnect in 0.14s
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1084, in _ws_connect
+    raise WSServerHandshakeError(
+    ...<5 lines>...
+    )
+aiohttp.client_exceptions.WSServerHandshakeError: 520, message='Invalid response status', url='wss://gateway-us-east1-d.discord.gg/?v=10&encoding=json&compress=zlib-stream'
+2025-10-20 21:03:49,360 [INFO] Shard ID None has successfully RESUMED session ef411c8f5c058d240e858926d3323e8e.
+2025-10-20 21:04:22,229 [INFO] 1429832630030958633:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !bugreport test
+2025-10-20 21:04:22,230 [ERROR] Error in command None by p.pumpum: Command "bugreport" is not found
+2025-10-20 21:04:22,665 [INFO] 1429832631880781895:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !bugreport test
+2025-10-20 21:04:22,666 [ERROR] Error in command None by p.pumpum: Command "bugreport" is not found

@@ -1,0 +1,17 @@
+2025-10-19 18:03:54,368 [INFO] logging in using static token
+2025-10-19 18:03:55,796 [INFO] Shard ID None has connected to Gateway (Session ID: 0a4881dc63d43d3ce7fbb2c07eafb131).
+2025-10-19 18:03:57,811 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 18:03:57,811 [INFO] No startmessage set.
+2025-10-19 18:04:10,353 [CRITICAL] Unhandled exception:
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1168, in <module>
+    console_interface()
+    ~~~~~~~~~~~~~~~~~^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1150, in console_interface
+    add_file(args[0], args[1])
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 84, in add_file
+    db[recall_name] = {
+    ~~^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+

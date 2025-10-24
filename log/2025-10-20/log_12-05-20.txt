@@ -1,0 +1,15 @@
+2025-10-20 12:05:26,540 [INFO] logging in using static token
+2025-10-20 12:05:26,540 [INFO] Session ID: 02c2e1d07ebb38a25e27b8ba84857f1b4a6bf125d818c85e780727ac0a396dd3
+2025-10-20 12:05:28,007 [INFO] Shard ID None has connected to Gateway (Session ID: 2525d408b16751746ecb3aba0e88acf3).
+2025-10-20 12:05:30,026 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 12:05:30,027 [INFO] No startmessage set.
+2025-10-20 12:05:59,119 [INFO] 1429697135259156662:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-10-20 12:06:01,916 [INFO] 1429697146592166012:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-20 12:06:01,930 [INFO] Session info sent by p.pumpum
+2025-10-20 12:06:01,931 [INFO] Command completed: sessioninfo by p.pumpum
+2025-10-20 12:07:18,257 [INFO] Waiting for bot to shut down...
+2025-10-20 12:07:18,258 [INFO] Shutting down bot...
+2025-10-20 12:07:28,258 [ERROR] Error shutting down: 
+2025-10-20 12:07:28,258 [INFO] Bot stopped.
+2025-10-20 12:10:15,010 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-216' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:1089> wait_for=<Task finished name='Task-217' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

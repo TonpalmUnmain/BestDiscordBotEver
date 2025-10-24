@@ -1,0 +1,14 @@
+2025-10-21 16:36:53,695 [INFO] logging in using static token
+2025-10-21 16:36:53,695 [INFO] Session ID: 67403a3858fcadc4300d3b3a7cad67d34b79c06c23419bb8929e37bec75163f4
+2025-10-21 16:36:55,109 [INFO] Shard ID None has connected to Gateway (Session ID: 33c48d739bde8c0901a068bdd7e7a353).
+2025-10-21 16:36:55,453 [INFO] 1430127716082126899:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): and the killer cant use any skill too i think
+2025-10-21 16:36:57,117 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 16:36:57,118 [INFO] No startmessage set.
+2025-10-21 16:37:02,404 [INFO] 1430127745144193190:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc none
+2025-10-21 16:37:02,405 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:37:02,862 [INFO] 1430127747132293120:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Provided ID must be a numeric Discord ID.
+2025-10-21 16:37:02,891 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 16:37:08,144 [INFO] 1430127769244799046:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 16:37:08,144 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:37:08,564 [INFO] 1430127771031703632:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Usage: `jvc u <USER_ID>` or `jvc a <VC_ID>` or `jvc <VC_ID>`
+2025-10-21 16:37:08,604 [INFO] Command completed: jvc by p.pumpum

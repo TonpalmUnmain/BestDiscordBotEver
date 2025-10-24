@@ -1,0 +1,29 @@
+2025-10-24 22:22:19,026 [INFO] logging in using static token
+2025-10-24 22:22:19,027 [INFO] Session ID: 5d8b097c02d87fee8792d228cb676b5e844f6efbb4f645545e21b1fb184f7dfa
+2025-10-24 22:22:20,595 [INFO] Shard ID None has connected to Gateway (Session ID: 6baa2efce4cdbfef82fca6cb5e30adc9).
+2025-10-24 22:22:22,623 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-24 22:22:22,624 [INFO] No startmessage set.
+2025-10-24 22:24:13,119 [INFO] 1431302271341301760:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): Νіggеr
+2025-10-24 22:24:13,127 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:03,577 [INFO] 1431302483103449217:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n i g g e r
+2025-10-24 22:25:03,579 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:11,384 [INFO] 1431302515898712194:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n.i.g.g.e.r
+2025-10-24 22:25:11,385 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:15,524 [INFO] 1431302532696772631:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n!gg@r
+2025-10-24 22:25:19,210 [INFO] 1431302548572078286:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n1gg3r
+2025-10-24 22:25:19,211 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:23,585 [INFO] 1431302567023087906:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nіɡɡеr
+2025-10-24 22:25:23,604 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:27,966 [INFO] 1431302585461248062:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): ＮＩＧＧＥＲ
+2025-10-24 22:25:27,975 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:32,494 [INFO] 1431302604352131154:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n i​g‍g​er
+2025-10-24 22:25:32,509 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:36,560 [INFO] 1431302621326606538:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): niggér
+2025-10-24 22:25:36,577 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:39,544 [INFO] 1431302633993535649:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): niGGeR
+2025-10-24 22:25:39,545 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:25:43,497 [INFO] 1431302650346995732:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n_ig-ge*r
+2025-10-24 22:25:43,497 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-10-24 22:26:40,063 [INFO] 1431302887841071144:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !banword nggr
+2025-10-24 22:26:40,065 [ERROR] Error in command banword by p.pumpum: Command raised an exception: TypeError: save_banned_words() missing 2 required positional arguments: 'mode' and 'data'
+2025-10-24 22:28:27,969 [INFO] Shard ID None has successfully RESUMED session 6baa2efce4cdbfef82fca6cb5e30adc9.

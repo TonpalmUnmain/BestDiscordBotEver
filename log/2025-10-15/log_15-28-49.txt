@@ -1,0 +1,55 @@
+2025-10-15 15:28:56,966 [INFO] logging in using static token
+2025-10-15 15:28:58,565 [INFO] Shard ID None has connected to Gateway (Session ID: ddb332794efb4c5d928991b12a0e51db).
+2025-10-15 15:29:00,292 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Daddy pumpum🍆💦😫
+2025-10-15 15:29:00,635 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-15 15:29:01,026 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): nigga bot is on
+2025-10-15 15:29:01,096 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-15 15:29:02,365 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): I can't timeout <@1386280922218893465>, missing permissions.
+2025-10-15 15:29:02,416 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-15 15:29:04,108 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Can i have nword pass
+2025-10-15 15:29:07,358 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🥹
+2025-10-15 15:29:11,037 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): no
+2025-10-15 15:29:25,546 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-15 15:29:25,584 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): u need to make him relaxed first
+2025-10-15 15:29:33,639 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): no shit
+2025-10-15 15:29:34,089 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🫩
+2025-10-15 15:29:40,004 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Wth
+2025-10-15 15:29:43,321 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 👍
+2025-10-15 15:29:51,187 [INFO] Make it a Quote#6660 (949479338275913799) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-15 15:29:55,970 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): !cfch current
+2025-10-15 15:29:56,382 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Target channel set to this channel: 🎮-gaming-🕹️ (ID: 1395783584253739141)
+2025-10-15 15:29:56,451 [INFO] Command completed: cfch by p.pumpum
+2025-10-15 15:29:57,876 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-15 15:30:06,750 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): yay it bot
+2025-10-15 15:30:08,829 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 🤯
+2025-10-15 15:30:11,988 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): niga
+2025-10-15 15:30:12,254 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Nigger
+2025-10-15 15:30:13,235 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): I can't timeout <@1386280922218893465>, missing permissions.
+2025-10-15 15:30:13,327 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-15 15:30:14,129 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): I can't timeout <@1210218568889798658>, missing permissions.
+2025-10-15 15:30:14,173 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-15 15:30:23,138 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): boom
+2025-10-15 15:30:24,533 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): !agreewme
+2025-10-15 15:30:24,940 [ERROR] Error in command agreewme by .toast_toaster.: You do not own this bot.
+2025-10-15 15:30:28,962 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😡
+2025-10-15 15:30:46,358 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): !agreewme <@1210218568889798658> is not tuff
+2025-10-15 15:30:47,007 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Yes, daddy <@1260198579067420722>😩. You're absolutely right about: "<@1210218568889798658> is not tuff".
+2025-10-15 15:30:47,214 [INFO] Command completed: agreewme by p.pumpum
+2025-10-15 15:31:02,583 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): good boy <@1386280922218893465>
+2025-10-15 15:31:03,035 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): ☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi <@1260198579067420722> 😩.
+2025-10-15 15:31:03,082 [INFO] Sent Goodboy response to p.pumpum
+2025-10-15 15:31:06,215 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): !agreewme skibadi
+2025-10-15 15:31:06,215 [ERROR] Error in command agreewme by .toast_toaster.: You do not own this bot.
+2025-10-15 15:31:10,636 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): How
+2025-10-15 15:31:10,983 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): U can't use it
+2025-10-15 15:31:13,861 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it author only
+2025-10-15 15:31:18,601 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): me only
+2025-10-15 15:31:19,759 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): aka pumpum only
+2025-10-15 15:31:22,308 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): jajajajaja
+2025-10-15 15:31:28,549 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-15 15:31:35,182 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-15 15:31:35,961 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): whoops
+2025-10-15 15:31:38,205 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): !pewthyself
+2025-10-15 15:31:38,205 [INFO] Bot stopped. Closing connection...
+2025-10-15 15:34:53,242 [ERROR] Error shutting down: Event loop is closed
+2025-10-15 15:34:53,262 [INFO] Bot stopped.

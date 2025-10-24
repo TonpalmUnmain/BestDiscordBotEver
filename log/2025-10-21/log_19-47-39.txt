@@ -1,0 +1,23 @@
+2025-10-21 19:47:42,619 [INFO] logging in using static token
+2025-10-21 19:47:42,619 [INFO] Session ID: a23a201092bf1f52a7ba923bedf70f7aeb6a693b952fb4e56527d0ec6164ac02
+2025-10-21 19:47:44,124 [INFO] Shard ID None has connected to Gateway (Session ID: 5b9f013f78b6c808bf45ddade172df53).
+2025-10-21 19:47:46,155 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:47:46,156 [INFO] No startmessage set.
+2025-10-21 19:47:50,150 [INFO] 1430175761578332161:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:47:50,152 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:47:50,153 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:47:50,154 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:47:50,157 [INFO] Connecting to voice...
+2025-10-21 19:47:50,157 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:47:50,737 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:47:50,956 [INFO] Voice connection complete.
+2025-10-21 19:47:50,957 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:47:51,655 [INFO] 1430175767303557190:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:47:51,777 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:48:18,595 [INFO] 1430175881208398056:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pinvc https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+2025-10-21 19:48:18,595 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:48:22,438 [INFO] 1430175897385828423:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ▶️ Now playing: `Queen – Bohemian Rhapsody (Official Video Remastered)`
+2025-10-21 19:48:22,627 [INFO] Command completed: pinvc by p.pumpum
+2025-10-21 19:48:34,573 [INFO] The voice handshake is being terminated for Channel ID 1418976416220971079 (Guild ID 1371357608459501640)
+2025-10-21 19:48:34,607 [INFO] ffmpeg process 26136 has not terminated. Waiting to terminate...
+2025-10-21 19:48:34,616 [INFO] ffmpeg process 26136 should have terminated with a return code of 1.

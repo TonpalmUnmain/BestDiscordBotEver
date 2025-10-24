@@ -1,0 +1,8 @@
+2025-10-19 15:37:27,005 [INFO] logging in using static token
+2025-10-19 15:37:28,566 [INFO] Shard ID None has connected to Gateway (Session ID: 68495141261acafe0335127bbe00aa50).
+2025-10-19 15:37:30,583 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 15:37:30,584 [INFO] No startmessage set.
+2025-10-19 15:37:38,123 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinf
+2025-10-19 15:37:38,128 [INFO] ✅ Auto-saved 34 users at 2025-10-19 15:37:38
+2025-10-19 15:37:38,582 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Manual save completed.
+2025-10-19 15:37:38,631 [INFO] Command completed: saveuinf by p.pumpum

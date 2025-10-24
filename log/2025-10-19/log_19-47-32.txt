@@ -1,0 +1,10 @@
+2025-10-19 19:47:36,767 [INFO] logging in using static token
+2025-10-19 19:47:38,251 [INFO] Shard ID None has connected to Gateway (Session ID: 514445744aede3fbb36e3dfc7cc00aec).
+2025-10-19 19:47:39,281 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): animate ur game
+2025-10-19 19:47:40,280 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 19:47:40,280 [INFO] No startmessage set.
+2025-10-19 19:47:40,603 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): !1!1!11
+2025-10-19 19:47:40,604 [ERROR] Error in command None by endulix_: Command "1!1!11" is not found
+2025-10-19 19:47:44,393 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i suck
+2025-10-19 19:47:48,861 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): no
+2025-10-19 19:47:50,369 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): when in game it look ahh

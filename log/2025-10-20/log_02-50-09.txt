@@ -1,0 +1,7 @@
+2025-10-20 02:50:12,038 [INFO] logging in using static token
+2025-10-20 02:50:13,451 [INFO] Shard ID None has connected to Gateway (Session ID: 9811eb3b6633e8665d3ff74ec30c6e15).
+2025-10-20 02:50:15,472 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 02:50:15,473 [INFO] No startmessage set.
+2025-10-20 02:50:22,909 [INFO] 1429557313878097931:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): rah
+2025-10-20 02:53:48,547 [INFO] Waiting for bot to shut down...
+2025-10-20 02:53:48,547 [INFO] Shutting down bot...

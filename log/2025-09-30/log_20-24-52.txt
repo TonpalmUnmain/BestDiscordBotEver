@@ -1,0 +1,12 @@
+2025-09-30 20:24:55,615 [INFO] logging in using static token
+2025-09-30 20:24:57,248 [INFO] Shard ID None has connected to Gateway (Session ID: 76ce91b0cd26a9e57762fb3c1a6440a6).
+2025-09-30 20:24:59,268 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-30 20:24:59,269 [ERROR] Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 210, in on_ready
+    if startmessage == "None":
+       ^^^^^^^^^^^^
+NameError: name 'startmessage' is not defined. Did you mean: 'startsession'?
+2025-09-30 20:27:16,172 [INFO] Console exitted by user input.

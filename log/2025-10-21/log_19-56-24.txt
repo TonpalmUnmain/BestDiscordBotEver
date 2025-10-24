@@ -1,0 +1,20 @@
+2025-10-21 19:56:27,401 [INFO] logging in using static token
+2025-10-21 19:56:27,401 [INFO] Session ID: 74aa05aec5af466a406270db92e8401d3fc8e38cf05943d0e1158ae2c3e4940c
+2025-10-21 19:56:28,884 [INFO] Shard ID None has connected to Gateway (Session ID: 3f7effcf805edf3172d6cfa9cf0a3ec5).
+2025-10-21 19:56:30,905 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:56:30,905 [INFO] No startmessage set.
+2025-10-21 19:56:31,987 [INFO] 1430177950430527580:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:56:31,989 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:56:31,990 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:56:31,992 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:56:31,997 [INFO] Connecting to voice...
+2025-10-21 19:56:31,998 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:56:32,573 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:56:32,844 [INFO] Voice connection complete.
+2025-10-21 19:56:32,845 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:56:33,299 [INFO] 1430177956331786393:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:56:33,410 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:56:39,997 [INFO] 1430177984030969877:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pinvc https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+2025-10-21 19:56:39,997 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:56:45,079 [INFO] 1430178005665189977:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ❌ Failed to play URL: ffmpeg was not found.
+2025-10-21 19:56:45,154 [INFO] Command completed: pinvc by p.pumpum

@@ -1,0 +1,21 @@
+2025-10-21 19:49:41,562 [INFO] logging in using static token
+2025-10-21 19:49:41,562 [INFO] Session ID: 56b935628edf2a40466267b809d60f04258ade105e1121bc5cf6eae34c9be229
+2025-10-21 19:49:43,256 [INFO] Shard ID None has connected to Gateway (Session ID: 88703349b83cf07b0b6a8889cf2c7903).
+2025-10-21 19:49:45,272 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:49:45,272 [INFO] No startmessage set.
+2025-10-21 19:49:47,894 [INFO] 1430176255931842741:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:49:47,895 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:49:47,895 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:49:47,896 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:49:47,897 [INFO] Connecting to voice...
+2025-10-21 19:49:47,897 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:49:48,419 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:49:48,654 [INFO] Voice connection complete.
+2025-10-21 19:49:48,655 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:49:49,031 [INFO] 1430176260675600394:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:49:49,084 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:49:54,248 [INFO] 1430176282536181881:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pinvc https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+2025-10-21 19:49:54,249 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:49:59,373 [INFO] ffmpeg process 24840 successfully terminated with return code of 4294967274.
+2025-10-21 19:49:59,813 [INFO] 1430176305650991205:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ▶️ Now playing: `Queen – Bohemian Rhapsody (Official Video Remastered)`
+2025-10-21 19:49:59,926 [INFO] Command completed: pinvc by p.pumpum

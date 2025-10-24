@@ -1,0 +1,32 @@
+2025-10-21 02:10:52,428 [INFO] logging in using static token
+2025-10-21 02:10:52,429 [INFO] Session ID: ad2a7f6fbc5b57e21c106a166a7946316b2c77049ac8a210be88df2ab4d196f7
+2025-10-21 02:10:53,920 [INFO] Shard ID None has connected to Gateway (Session ID: ebe90298c94cae8b1e4697ff76c5e058).
+2025-10-21 02:10:55,946 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 02:10:55,946 [INFO] No startmessage set.
+2025-10-21 02:11:04,888 [INFO] (1429909815488020542) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !help
+2025-10-21 02:11:04,891 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 02:11:04,892 [INFO] [p.pumpum (1260198579067420722)] Called help with: None
+2025-10-21 02:11:05,244 [INFO] (1429909817241374810) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-21 02:11:05,279 [INFO] Command completed: help by p.pumpum
+2025-10-21 02:11:14,086 [INFO] (1429909854235005158) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !help mcstat
+2025-10-21 02:11:14,087 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 02:11:14,088 [INFO] [p.pumpum (1260198579067420722)] Called help with: mcstat
+2025-10-21 02:11:14,541 [INFO] (1429909855937888367) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): **!mcstat [option]**
+Check Minecraft Bedrock server status. Option 'tagmcr' will mention the role.
+2025-10-21 02:11:14,640 [INFO] Command completed: help by p.pumpum
+2025-10-21 02:11:32,454 [INFO] (1429909931141890078) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !help deplete
+2025-10-21 02:11:32,455 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 02:11:32,456 [INFO] [p.pumpum (1260198579067420722)] Called help with: deplete
+2025-10-21 02:11:32,915 [INFO] (1429909933297500221) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): **!deplete <type> <value>**
+Countdown then shut down the bot. Usage: !deplete [ms|sec|min|hr|d] [value] (owner only).
+2025-10-21 02:11:32,949 [INFO] Command completed: help by p.pumpum
+2025-10-21 02:11:42,294 [INFO] (1429909972535480513) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): neck hurts
+2025-10-21 02:11:42,295 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 02:11:51,435 [INFO] (1429910010884001852) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): thats during maintainance
+2025-10-21 02:11:51,436 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 02:12:40,168 [INFO] Waiting for bot to shut down...
+2025-10-21 02:12:40,168 [INFO] Shutting down bot...
+2025-10-21 02:12:50,180 [ERROR] Error shutting down: 
+2025-10-21 02:12:50,185 [INFO] Bot stopped.
+2025-10-21 02:14:39,493 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-168' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:1475> wait_for=<Task finished name='Task-169' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

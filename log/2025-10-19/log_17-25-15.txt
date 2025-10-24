@@ -1,0 +1,22 @@
+2025-10-19 17:25:17,725 [INFO] logging in using static token
+2025-10-19 17:25:19,200 [INFO] Shard ID None has connected to Gateway (Session ID: c70606d7fdd18ce9b9cc3be183001fb8).
+2025-10-19 17:25:21,219 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 17:25:21,219 [INFO] No startmessage set.
+2025-10-19 17:25:24,783 [INFO] Waiting for bot to shut down...
+2025-10-19 17:25:24,783 [INFO] Shutting down bot...
+2025-10-19 17:25:34,793 [ERROR] Error shutting down: 
+2025-10-19 17:25:34,794 [INFO] Bot stopped.
+2025-10-19 17:26:30,906 [INFO] logging in using static token
+2025-10-19 17:26:32,366 [INFO] Shard ID None has connected to Gateway (Session ID: 2b139548222ac11467284e1e73316b65).
+2025-10-19 17:26:34,383 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 17:26:34,866 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): I am watching you.
+2025-10-19 17:26:34,978 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-19 17:26:35,365 [INFO] ✅ Auto-saved 34 users at 2025-10-19 17:26:34
+2025-10-19 17:26:35,792 [INFO] ✅ Auto-saved 34 users at 2025-10-19 17:26:34
+2025-10-19 17:27:07,312 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-19 17:37:58,406 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-7' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:882> wait_for=<Task pending name='Task-8' coro=<Client.close.<locals>._close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:780> wait_for=<Task pending name='Task-9' coro=<_wait_for_close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py:138> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>
+2025-10-19 17:37:58,406 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-8' coro=<Client.close.<locals>._close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:780> wait_for=<Task pending name='Task-9' coro=<_wait_for_close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py:138> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-10-19 17:37:58,406 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-9' coro=<_wait_for_close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py:138> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>

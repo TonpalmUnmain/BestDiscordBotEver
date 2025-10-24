@@ -1,0 +1,10 @@
+2025-10-20 12:03:20,388 [INFO] logging in using static token
+2025-10-20 12:03:22,074 [INFO] Shard ID None has connected to Gateway (Session ID: a8cde4d23ec55ff21c0d199274e2993e).
+2025-10-20 12:03:24,094 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 12:03:24,095 [INFO] No startmessage set.
+2025-10-20 12:03:48,498 [INFO] Waiting for bot to shut down...
+2025-10-20 12:03:48,498 [INFO] Shutting down bot...
+2025-10-20 12:03:58,505 [ERROR] Error shutting down: 
+2025-10-20 12:03:58,506 [INFO] Bot stopped.
+2025-10-20 12:05:18,070 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-162' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:1089> wait_for=<Task finished name='Task-163' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

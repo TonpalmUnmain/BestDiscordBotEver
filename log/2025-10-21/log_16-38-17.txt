@@ -1,0 +1,14 @@
+2025-10-21 16:38:20,662 [INFO] logging in using static token
+2025-10-21 16:38:20,662 [INFO] Session ID: a38ac9f596cfb28787d8fea114878003cf1c0815acbad7897ad2a9e8379dd39f
+2025-10-21 16:38:22,093 [INFO] Shard ID None has connected to Gateway (Session ID: 21f7caf129a66561acebfb8432cab89e).
+2025-10-21 16:38:24,109 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 16:38:24,110 [INFO] No startmessage set.
+2025-10-21 16:38:27,174 [INFO] 1430128100783558679:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 16:38:27,175 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:38:27,177 [ERROR] Error in command jvc by p.pumpum: Command raised an exception: UnboundLocalError: cannot access local variable 'id_str' where it is not associated with a value
+2025-10-21 16:38:32,167 [INFO] 1430128121708806225:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 16:38:32,167 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:38:32,169 [ERROR] Error in command jvc by p.pumpum: Command raised an exception: UnboundLocalError: cannot access local variable 'id_str' where it is not associated with a value
+2025-10-21 16:38:35,027 [INFO] 1430128133704650853:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !!!!
+2025-10-21 16:38:35,027 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:38:35,027 [ERROR] Error in command None by p.pumpum: Command "!!!" is not found

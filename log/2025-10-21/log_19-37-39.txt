@@ -1,0 +1,17 @@
+2025-10-21 19:37:39,449 [CRITICAL] Unhandled exception:
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1893, in <module>
+    bot = create_bot()
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1544, in create_bot
+    @bot.command(name='vcplay')
+     ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\TonpalmUnmain\Project\BestDiscordBotEver\venv\Lib\site-packages\discord\ext\commands\core.py", line 1553, in decorator
+    self.add_command(result)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\TonpalmUnmain\Project\BestDiscordBotEver\venv\Lib\site-packages\discord\ext\commands\bot.py", line 264, in add_command
+    super().add_command(command)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\TonpalmUnmain\Project\BestDiscordBotEver\venv\Lib\site-packages\discord\ext\commands\core.py", line 1391, in add_command
+    raise CommandRegistrationError(command.name)
+discord.ext.commands.errors.CommandRegistrationError: The command vcplay is already an existing command or alias.
+

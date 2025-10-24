@@ -1,0 +1,30 @@
+2025-10-22 00:21:15,828 [INFO] logging in using static token
+2025-10-22 00:21:15,828 [INFO] Session ID: daf68a803b743fab3059718172d6bae41ecc8c4527bb924f65db910bbe60dc27
+2025-10-22 00:21:17,305 [INFO] Shard ID None has connected to Gateway (Session ID: 5c52498057fbce5c198730c3d8544034).
+2025-10-22 00:21:19,330 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-22 00:21:19,330 [INFO] No startmessage set.
+2025-10-22 00:21:23,763 [INFO] 1430244607609802782:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:21:23,765 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:21:23,765 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:21:23,766 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:21:23,767 [INFO] Connecting to voice...
+2025-10-22 00:21:23,768 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:21:24,206 [INFO] 1430244609363279935:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Already connected to **ไบลาวโตมาวีมวีม//🗣**.
+2025-10-22 00:21:24,321 [INFO] Voice handshake complete. Endpoint found: c-sin13-f4908224.discord.media:8443
+2025-10-22 00:21:24,548 [INFO] Voice connection complete.
+2025-10-22 00:21:24,548 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:21:25,009 [INFO] 1430244612437573675:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:21:25,076 [INFO] Command completed: jvc by p.pumpum
+2025-10-22 00:21:40,210 [INFO] 1430244676639916072:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+2025-10-22 00:21:40,211 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:21:40,618 [INFO] 1430244678304792727:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Not connected to a voice channel.
+2025-10-22 00:21:40,690 [INFO] 1430244678397329588:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:21:44,660 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:21:44,720 [INFO] ffmpeg process 2072 successfully terminated with return code of 3436169992.
+2025-10-22 00:25:51,987 [INFO] Waiting for bot to shut down...
+2025-10-22 00:25:51,987 [INFO] Shutting down bot...
+2025-10-22 00:25:51,989 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:26:02,001 [ERROR] Error shutting down: 
+2025-10-22 00:26:02,006 [INFO] Bot stopped.
+2025-10-22 00:26:02,040 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-240' coro=<DiscordVoiceWebSocket.speak() running at D:\TonpalmUnmain\Project\BestDiscordBotEver\venv\Lib\site-packages\discord\gateway.py:934> cb=[_chain_future.<locals>._call_set_state() at C:\Program Files\Python314\Lib\asyncio\futures.py:400]>

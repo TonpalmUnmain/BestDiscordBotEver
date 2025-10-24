@@ -1,0 +1,9 @@
+2025-09-30 20:07:08,167 [INFO] logging in using static token
+2025-09-30 20:07:09,927 [INFO] Shard ID None has connected to Gateway (Session ID: 91eae5f4842cb5c5eeec77b91238df7f).
+2025-09-30 20:07:11,940 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-30 20:07:12,297 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-30 20:08:36,481 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): no
+2025-09-30 20:10:04,406 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): I implemented message dependent channel crossing (idk what to name it)
+2025-09-30 20:10:21,673 [INFO] p.pumpum (1260198579067420722) in #🔧-server-updates-🔧 (1411656420373565440): and also <@1386280922218893465> can now reply to them messages
+2025-09-30 20:10:34,104 [INFO] p.pumpum (1260198579067420722) in #🖥️-minecraft-server-stat-🖥️ (1421497953834631319): !mcstat
+2025-09-30 20:11:08,606 [INFO] Bot stopped. Closing connection...

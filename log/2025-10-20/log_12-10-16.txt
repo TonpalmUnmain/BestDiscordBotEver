@@ -1,0 +1,11 @@
+2025-10-20 12:10:21,374 [INFO] logging in using static token
+2025-10-20 12:10:21,374 [INFO] Session ID: 9ec735e44802e7944d44d6b141dc604f41e834040317e39f3c5b3bb967ba047e
+2025-10-20 12:10:22,782 [INFO] Shard ID None has connected to Gateway (Session ID: b1e29ed23fde10e083785c0188cf9c8e).
+2025-10-20 12:10:24,800 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 12:10:24,800 [INFO] No startmessage set.
+2025-10-20 12:17:41,519 [INFO] Shard ID None has successfully RESUMED session b1e29ed23fde10e083785c0188cf9c8e.
+2025-10-20 12:43:56,206 [INFO] Shard ID None has successfully RESUMED session b1e29ed23fde10e083785c0188cf9c8e.
+2025-10-20 12:58:46,507 [INFO] 1429710420674871437:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): canto 8-20 took 4 hours 🥹🥹😢😢
+2025-10-20 13:00:09,736 [INFO] 1429710769758539827:tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-20 13:23:53,702 [INFO] 1429716742086590526:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): 1.10.0 (I honestly don't know what I did.)
+2025-10-20 13:29:40,665 [INFO] 1429718196444987462:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): making random animation but it kinda look like pursuer

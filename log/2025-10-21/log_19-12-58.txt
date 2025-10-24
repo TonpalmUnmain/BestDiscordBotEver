@@ -1,0 +1,20 @@
+2025-10-21 19:13:02,059 [INFO] logging in using static token
+2025-10-21 19:13:02,059 [INFO] Session ID: 81f19b978a514a675afaa3e0c4cc0e32442bd7514f47a37e37a5298ccb472bb7
+2025-10-21 19:13:03,486 [INFO] Shard ID None has connected to Gateway (Session ID: 637fb214b57acf5d7fb6268a895767a4).
+2025-10-21 19:13:05,505 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:13:05,505 [INFO] No startmessage set.
+2025-10-21 19:13:17,611 [INFO] 1430167068887482368:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:13:17,614 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:13:17,615 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:13:17,616 [INFO] [DEBUG] Detected caller's channel: Room//Gaming🎮 (1418976416220971079)
+2025-10-21 19:13:17,617 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:13:17,623 [INFO] Connecting to voice...
+2025-10-21 19:13:17,623 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:13:19,294 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:13:19,558 [INFO] Voice connection complete.
+2025-10-21 19:13:19,559 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:13:20,010 [INFO] 1430167078949752863:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ✅ Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:13:20,075 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:13:23,359 [INFO] 1430167093013254215:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): yasss
+2025-10-21 19:13:23,360 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:13:27,152 [INFO] The voice handshake is being terminated for Channel ID 1418976416220971079 (Guild ID 1371357608459501640)

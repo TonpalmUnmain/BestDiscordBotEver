@@ -1,0 +1,25 @@
+2025-10-25 02:32:28,787 [INFO] logging in using static token
+2025-10-25 02:32:28,787 [INFO] Session ID: b420990e795aef6f04ba391a72aec2edc6e3df99a5715d0e180d1599c8d77559
+2025-10-25 02:32:30,867 [INFO] Shard ID None has connected to Gateway (Session ID: 747a7367a628850e2b5bc796f71cebca).
+2025-10-25 02:32:32,883 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 02:32:32,883 [INFO] No startmessage set.
+2025-10-25 02:32:34,474 [INFO] 1431364773659807897:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !dvc
+2025-10-25 02:32:34,475 [INFO] Connecting to voice...
+2025-10-25 02:32:34,476 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 02:32:35,004 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 02:32:35,234 [INFO] Voice connection complete.
+2025-10-25 02:32:35,235 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-25 02:32:35,937 [INFO] 1431364780211568760:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Disconnected from the voice channel.
+2025-10-25 02:32:36,008 [INFO] Command completed: dvc by p.pumpum
+2025-10-25 02:32:38,959 [INFO] 1431364792941019279:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-25 02:32:38,960 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 02:32:38,961 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 02:32:38,961 [INFO] Connecting to voice...
+2025-10-25 02:32:38,961 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 02:32:39,486 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 02:32:39,693 [INFO] Voice connection complete.
+2025-10-25 02:32:39,694 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 02:32:40,066 [INFO] 1431364797571666133:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 02:32:40,111 [INFO] Command completed: jvc by p.pumpum
+2025-10-25 02:32:47,814 [INFO] ffmpeg process 25644 successfully terminated with return code of 0.
+2025-10-25 02:33:02,132 [INFO] ffmpeg process 14204 successfully terminated with return code of 0.

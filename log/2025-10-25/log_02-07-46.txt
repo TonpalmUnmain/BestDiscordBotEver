@@ -1,0 +1,1 @@
+2025-10-25 02:07:46,667 [WARNING] PyNaCl is not installed, voice will NOT be supported

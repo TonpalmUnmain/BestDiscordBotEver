@@ -1,0 +1,14 @@
+2025-09-30 21:06:13,071 [INFO] logging in using static token
+2025-09-30 21:06:14,783 [INFO] Shard ID None has connected to Gateway (Session ID: 8ac53113015fca729f049ea60917f19f).
+2025-09-30 21:06:16,799 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-30 21:06:16,800 [INFO] No startmessage set.
+2025-09-30 21:06:30,366 [ERROR] Error shutting down bot: 
+2025-09-30 21:06:30,367 [INFO] Bot stopped.
+2025-09-30 21:07:41,836 [INFO] Console exited by user input.
+2025-09-30 21:07:41,861 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-8' coro=<Client.close.<locals>._close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:778> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-09-30 21:07:41,872 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-7' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:655> wait_for=<Task pending name='Task-8' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:391]>
+2025-09-30 21:07:41,872 [ERROR] Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000157ED6172F0>, 34305.5838206)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000157ED609FD0>

@@ -1,0 +1,39 @@
+2025-10-22 00:26:14,932 [INFO] logging in using static token
+2025-10-22 00:26:14,933 [INFO] Session ID: 8dbd6c1e634ab5ab1bd7a8833cfb66455fb73f97569b77be38efb03f5f9c2dfd
+2025-10-22 00:26:16,520 [INFO] Shard ID None has connected to Gateway (Session ID: d80ada809346d682841e003e13d713db).
+2025-10-22 00:26:18,546 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-22 00:26:18,546 [INFO] No startmessage set.
+2025-10-22 00:26:25,326 [INFO] 1430245872398237807:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:26:25,326 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:26:25,327 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:26:25,328 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:26:25,328 [INFO] Connecting to voice...
+2025-10-22 00:26:25,328 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:26:26,218 [INFO] Voice handshake complete. Endpoint found: c-sin13-f4908224.discord.media:8443
+2025-10-22 00:26:26,444 [INFO] Voice connection complete.
+2025-10-22 00:26:26,445 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:26:26,874 [INFO] 1430245878995878049:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:26:26,959 [INFO] Command completed: jvc by p.pumpum
+2025-10-22 00:26:33,038 [INFO] 1430245904534863885:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+2025-10-22 00:26:33,039 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:26:33,413 [INFO] 1430245906149675093:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:26:33,428 [INFO] 1430245906539614208:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:26:37,571 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:26:38,064 [INFO] 1430245925552652390:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Failed to play https://www.youtube.com/watch?v=6dMjCa0nqK0: Not connected to voice.
+2025-10-22 00:26:58,426 [INFO] 1430246011376373942:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pavc
+2025-10-22 00:26:58,427 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:26:58,798 [INFO] 1430246013028925480:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback paused.
+2025-10-22 00:26:58,833 [INFO] Command completed: pavc by p.pumpum
+2025-10-22 00:27:03,890 [INFO] 1430246034315149352:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !revc
+2025-10-22 00:27:03,890 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:27:04,301 [INFO] 1430246036038750209:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback resumed.
+2025-10-22 00:27:04,380 [INFO] Command completed: revc by p.pumpum
+2025-10-22 00:27:08,580 [INFO] 1430246053982109988:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !stvc
+2025-10-22 00:27:08,580 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:27:08,592 [INFO] ffmpeg process 21128 has not terminated. Waiting to terminate...
+2025-10-22 00:27:08,599 [INFO] ffmpeg process 21128 should have terminated with a return code of 1.
+2025-10-22 00:27:08,951 [INFO] 1430246055563362396:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback stopped and queue cleared.
+2025-10-22 00:27:08,982 [INFO] 1430246055676608652:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback stopped and queue cleared.
+2025-10-22 00:27:08,994 [INFO] Command completed: stvc by p.pumpum
+2025-10-22 00:27:30,642 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:27:31,513 [INFO] 1430246150178603058:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 2)

@@ -1,0 +1,18 @@
+2025-10-25 02:57:27,380 [INFO] logging in using static token
+2025-10-25 02:57:27,380 [INFO] Session ID: e9ce89b46fff45b4dc842ec3f891c5510597959e5f9a25768832a5522578b39e
+2025-10-25 02:57:28,928 [INFO] Shard ID None has connected to Gateway (Session ID: ddd9398a0c88c517cfd8b302719d3485).
+2025-10-25 02:57:30,941 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 02:57:30,942 [INFO] No startmessage set.
+2025-10-25 02:57:36,568 [INFO] 1431371074502787102:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-25 02:57:36,570 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 02:57:36,570 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 02:57:36,575 [INFO] Connecting to voice...
+2025-10-25 02:57:36,575 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 02:57:37,137 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 02:57:37,367 [INFO] Voice connection complete.
+2025-10-25 02:57:37,367 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 02:57:37,770 [INFO] 1431371079523500073:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 02:57:37,859 [INFO] Command completed: jvc by p.pumpum
+2025-10-25 02:57:48,377 [INFO] Scheduling TTS: "ENDU SUX" (ovr=1)
+2025-10-25 02:57:48,379 [INFO] Generating TTS: "ENDU SUX" (ovr=1)
+2025-10-25 02:57:48,380 [INFO] Error in say_in_vc: [Errno 22] Invalid argument: 'tts_output/2025-10-25 02:57:48.mp3'

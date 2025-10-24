@@ -1,0 +1,8 @@
+2025-10-25 01:49:28,508 [WARNING] PyNaCl is not installed, voice will NOT be supported
+2025-10-25 01:49:37,629 [INFO] logging in using static token
+2025-10-25 01:49:37,629 [INFO] Session ID: 6033086377160f745d5de132191852fd476801ce3897beb71b0099c14cf89b2b
+2025-10-25 01:49:39,491 [INFO] Shard ID None has connected to Gateway (Session ID: 7b6d9a9c4c949247d788695b2416e608).
+2025-10-25 01:49:41,507 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 01:49:41,508 [INFO] No startmessage set.
+2025-10-25 01:50:28,128 [INFO] 1431354177442807889:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): Νіggеr
+2025-10-25 01:50:28,146 [INFO] User p.pumpum has GOD role, not timeouted.

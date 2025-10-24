@@ -1,0 +1,3 @@
+2025-09-30 20:46:01,943 [INFO] logging in using static token
+2025-09-30 20:46:03,752 [INFO] Shard ID None has connected to Gateway (Session ID: 9aebdf5111ebc319dfec324934eed43f).
+2025-09-30 20:46:05,762 [INFO] No startmessage set.

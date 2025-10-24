@@ -1,0 +1,24 @@
+2025-10-25 02:36:13,564 [INFO] logging in using static token
+2025-10-25 02:36:13,564 [INFO] Session ID: 31d58958abe67b70fa9873f751b24331e198ea6b9a48ff4196d1741cf0ed55e6
+2025-10-25 02:36:15,745 [INFO] Shard ID None has connected to Gateway (Session ID: ae52eed33a488d4863f290fbf8b1574d).
+2025-10-25 02:36:17,788 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 02:36:17,788 [INFO] No startmessage set.
+2025-10-25 02:36:27,426 [INFO] Scheduling TTS: "I like kids" (ovr=1)
+2025-10-25 02:36:33,668 [INFO] 1431365777340109032:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-25 02:36:33,669 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 02:36:33,673 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 02:36:33,674 [INFO] Connecting to voice...
+2025-10-25 02:36:33,674 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 02:36:34,818 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 02:36:35,076 [INFO] Voice connection complete.
+2025-10-25 02:36:35,076 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 02:36:35,539 [INFO] 1431365785242304604:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 02:36:35,597 [INFO] Command completed: jvc by p.pumpum
+2025-10-25 02:36:45,694 [INFO] Scheduling TTS: "I like kids" (ovr=1)
+2025-10-25 02:36:45,696 [INFO] Generating TTS: "I like kids" (ovr=1)
+2025-10-25 02:36:45,895 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-25 02:36:45,900 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: I like kids
+2025-10-25 02:36:47,320 [INFO] Finished speaking.
+2025-10-25 02:36:47,321 [INFO] ffmpeg process 3624 successfully terminated with return code of 0.
+2025-10-25 02:37:04,669 [INFO] 1431365906868469841:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-25 02:37:10,016 [INFO] 1431365929694138420:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Bot can speak now

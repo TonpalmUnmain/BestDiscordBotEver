@@ -1,0 +1,24 @@
+2025-10-20 21:56:57,893 [INFO] logging in using static token
+2025-10-20 21:56:57,894 [INFO] Session ID: 017a63c90db0d18951b72c8994ac2f5a52f0ca6fe2534bc1be2dd88ed0e1afde
+2025-10-20 21:56:59,381 [INFO] Shard ID None has connected to Gateway (Session ID: f469beab39152219d0e0a1ead6fdfcea).
+2025-10-20 21:57:01,417 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 21:57:01,418 [INFO] No startmessage set.
+2025-10-20 21:57:23,384 [INFO] 1429845972862763008:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !featurerequest Promote endu to <@&1389188298169127042>
+2025-10-20 21:57:23,897 [INFO] 1429845975266234508:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ✅ Feature request **#1120a01** submitted. Thank you!
+2025-10-20 21:57:23,964 [INFO] Command completed: featurerequest by p.pumpum
+2025-10-20 21:57:29,203 [INFO] 1429845997521211522:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): yessss
+2025-10-20 21:57:38,441 [INFO] 1429846036104609794:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !delfeedback
+2025-10-20 21:57:38,442 [ERROR] Error in command delfeedback by p.pumpum: entry_id is a required argument that is missing.
+2025-10-20 21:57:46,238 [INFO] 1429846068975243387:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): u cant demote me
+2025-10-20 21:57:47,605 [INFO] 1429846074679623730:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): noob
+2025-10-20 21:57:53,683 [INFO] 1429846100092780594:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): i am ur leader
+2025-10-20 21:57:59,169 [INFO] 1429846123278897274:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): no
+2025-10-20 21:58:16,131 [INFO] 1429846194074550436:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !delfeedback 1120a01
+2025-10-20 21:58:16,935 [INFO] 1429846197744566312:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 🗑️ Feedback **#1120a01** marked as DELETED. Reason: `No reason provided`
+2025-10-20 21:58:16,992 [INFO] Command completed: delfeedback by p.pumpum
+2025-10-20 22:20:33,851 [INFO] Waiting for bot to shut down...
+2025-10-20 22:20:33,851 [INFO] Shutting down bot...
+2025-10-20 22:20:43,865 [ERROR] Error shutting down: 
+2025-10-20 22:20:43,865 [INFO] Bot stopped.
+2025-10-20 22:25:12,693 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-199' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:1279> wait_for=<Task finished name='Task-200' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

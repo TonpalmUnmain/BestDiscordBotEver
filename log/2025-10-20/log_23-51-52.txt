@@ -1,0 +1,20 @@
+2025-10-20 23:51:54,681 [INFO] logging in using static token
+2025-10-20 23:51:54,681 [INFO] Session ID: 50633a3a630a9ad76bd32828d57b0f6f691a3a67f36469fc257fe9903e009265
+2025-10-20 23:51:56,169 [INFO] Shard ID None has connected to Gateway (Session ID: ffe97cc8538ff0d72857fe4fb6c61061).
+2025-10-20 23:51:58,350 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 23:51:58,351 [INFO] No startmessage set.
+2025-10-20 23:52:02,235 [INFO] (1429874823126843412) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listwhitelistword
+2025-10-20 23:52:02,238 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:52:03,034 [INFO] (1429874826373369948) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 📋 Current whitelist: zenegger
+2025-10-20 23:52:03,086 [INFO] Command completed: listwhitelistword by p.pumpum
+2025-10-20 23:52:19,015 [INFO] (1429874893381570612) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !whitelistword endu
+2025-10-20 23:52:19,016 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:52:19,533 [INFO] (1429874895449227336) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ✅ Added `endu` to the whitelist.
+2025-10-20 23:52:19,597 [INFO] Command completed: whitelistword by p.pumpum
+2025-10-20 23:52:36,493 [INFO] (1429874966735618128) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !removewhitelistword endu
+2025-10-20 23:52:36,494 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:52:36,495 [ERROR] Error in command None by p.pumpum: Command "removewhitelistword" is not found
+2025-10-20 23:53:18,725 [INFO] (1429875143966199943) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !rmwhitelistword endu
+2025-10-20 23:53:18,726 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:53:19,135 [INFO] (1429875145648111688) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 🗑️ Removed `endu` from the whitelist.
+2025-10-20 23:53:19,176 [INFO] Command completed: rmwhitelistword by p.pumpum

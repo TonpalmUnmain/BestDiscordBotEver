@@ -1,0 +1,17 @@
+2025-10-20 21:53:19,710 [INFO] logging in using static token
+2025-10-20 21:53:19,710 [INFO] Session ID: e76077232d2b3c87fed916e9956600b64a7e216c1dd5cc144696c87cf36addcc
+2025-10-20 21:53:21,240 [INFO] Shard ID None has connected to Gateway (Session ID: c9a9e9ce8aa8b73f8a0c8afdefe9ba19).
+2025-10-20 21:53:23,262 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 21:53:23,262 [INFO] No startmessage set.
+2025-10-20 21:53:36,129 [INFO] 1429845019740868669:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listfeedback
+2025-10-20 21:53:36,571 [INFO] 1429845021779300452:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): No feedback found.
+2025-10-20 21:53:36,641 [INFO] Command completed: listfeedback by p.pumpum
+2025-10-20 21:53:52,401 [INFO] 1429845088065818635:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !featurerequest DEMOTE ENDU NOW
+2025-10-20 21:53:52,403 [ERROR] Error in command featurerequest by p.pumpum: Command raised an exception: TypeError: load_feedback() takes 0 positional arguments but 1 was given
+2025-10-20 21:54:03,025 [INFO] 1429845132772905031:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): no please
+2025-10-20 21:54:41,011 [INFO] Waiting for bot to shut down...
+2025-10-20 21:54:41,011 [INFO] Shutting down bot...
+2025-10-20 21:54:51,017 [ERROR] Error shutting down: 
+2025-10-20 21:54:51,017 [INFO] Bot stopped.
+2025-10-20 21:54:51,903 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-151' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:1279> wait_for=<Task finished name='Task-152' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

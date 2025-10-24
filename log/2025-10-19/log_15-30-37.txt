@@ -1,0 +1,9 @@
+2025-10-19 15:30:37,978 [ERROR] Failed to read uinfo.json: invalid JSON format.
+2025-10-19 15:30:41,083 [INFO] logging in using static token
+2025-10-19 15:30:43,969 [INFO] Shard ID None has connected to Gateway (Session ID: e31c532aa21c8a986263b9ac6c5009e6).
+2025-10-19 15:30:45,991 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 15:30:45,991 [INFO] No startmessage set.
+2025-10-19 15:30:52,320 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinf
+2025-10-19 15:30:52,321 [ERROR] Error in command saveuinf by p.pumpum: Command raised an exception: TypeError: 'NoneType' object does not support item assignment
+2025-10-19 15:32:12,642 [INFO] Waiting for bot to shut down...
+2025-10-19 15:32:12,642 [INFO] Shutting down bot...

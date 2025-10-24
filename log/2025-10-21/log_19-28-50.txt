@@ -1,0 +1,24 @@
+2025-10-21 19:28:53,651 [INFO] logging in using static token
+2025-10-21 19:28:53,651 [INFO] Session ID: 5c2cc59222ab5e07e496255fed99ab40ce72ec2e843e9f63fcb213677f574a6c
+2025-10-21 19:28:55,179 [INFO] Shard ID None has connected to Gateway (Session ID: 62e2712871675cb6337e8fcee79ef4fb).
+2025-10-21 19:28:57,203 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:28:57,204 [INFO] No startmessage set.
+2025-10-21 19:34:21,681 [INFO] 1430172370638995529:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:34:21,681 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:34:21,682 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:34:21,683 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:34:21,683 [INFO] Connecting to voice...
+2025-10-21 19:34:21,685 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:34:22,678 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:34:22,895 [INFO] Voice connection complete.
+2025-10-21 19:34:22,895 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:34:23,281 [INFO] 1430172377689493627:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:34:23,324 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:34:47,404 [INFO] 1430172478713626826:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !playinvc nothing_else_matter_testfilemp3
+2025-10-21 19:34:47,404 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:34:47,845 [INFO] 1430172480693080205:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Failed to play audio: ffmpeg was not found.
+2025-10-21 19:34:47,883 [INFO] Command completed: playinvc by p.pumpum
+2025-10-21 19:35:38,264 [INFO] 1430172692203700254:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !playinvc https://rapid.soundloadmate.com/v2?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmaWxlbmFtZSI6Ik5vdGhpbmcgRWxzZSBNYXR0ZXJzIChMaXZlIC0gTWF5IDMwLCAyMDE0IC0gU3RvY2tob2xtLCBTd2VkZW4pIC0gTWV0YWxsaWNhIiwiaWF0IjoxNzYxMDUwMDA4LCJleHAiOjE3NjEwNTM2MDgsInVybCI6IlFVRTJTRnBCVFcxdlNFOUdUSGd5TTFWV1lrbHFWRlJpWkdGVmQxaDBiM1p1U1VaVVpucEdlRVpOV2tONmRWRm9UMUoxT0dac2FYaFBNVTVzWTNCRmNtTm5hVlY0UzNNd1ZtTlhRWGw1WTFKR01taDZUVUU5UFE9PSJ9.p_ua1w2z4aH6yv_1DRHdvrOy4GY_MHYSewTmxdJaMpg
+2025-10-21 19:35:38,264 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:35:38,688 [INFO] 1430172693709193297:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): File reference `https://rapid.soundloadmate.com/v2?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmaWxlbmFtZSI6Ik5vdGhpbmcgRWxzZSBNYXR0ZXJzIChMaXZlIC0gTWF5IDMwLCAyMDE0IC0gU3RvY2tob2xtLCBTd2VkZW4pIC0gTWV0YWxsaWNhIiwiaWF0IjoxNzYxMDUwMDA4LCJleHAiOjE3NjEwNTM2MDgsInVybCI6IlFVRTJTRnBCVFcxdlNFOUdUSGd5TTFWV1lrbHFWRlJpWkdGVmQxaDBiM1p1U1VaVVpucEdlRVpOV2tONmRWRm9UMUoxT0dac2FYaFBNVTVzWTNCRmNtTm5hVlY0UzNNd1ZtTlhRWGw1WTFKR01taDZUVUU5UFE9PSJ9.p_ua1w2z4aH6yv_1DRHdvrOy4GY_MHYSewTmxdJaMpg` not found.
+2025-10-21 19:35:38,805 [INFO] Command completed: playinvc by p.pumpum

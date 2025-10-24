@@ -1,0 +1,9 @@
+2025-10-14 21:27:42,625 [INFO] logging in using static token
+2025-10-14 21:27:44,320 [INFO] Shard ID None has connected to Gateway (Session ID: 43bfe88d253c849dcdeaa1fe29462c9c).
+2025-10-14 21:27:46,329 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-14 21:27:46,833 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-14 21:27:58,441 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n1gg3r
+2025-10-14 21:27:59,919 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:28:03,820 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n1993r
+2025-10-14 21:28:04,925 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:28:45,931 [INFO] Waiting for bot to shut down...

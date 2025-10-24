@@ -1,0 +1,28 @@
+2025-10-21 19:44:11,251 [INFO] logging in using static token
+2025-10-21 19:44:11,251 [INFO] Session ID: 95f4f2ecc4a8818c1e42e515d5dd8d96e915ed25197144c85269eb03fe732c03
+2025-10-21 19:44:12,669 [INFO] Shard ID None has connected to Gateway (Session ID: 36bdde7207d91f87a47dbf12564044d5).
+2025-10-21 19:44:14,726 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 19:44:14,726 [INFO] No startmessage set.
+2025-10-21 19:44:22,110 [INFO] 1430174889423274004:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 19:44:22,112 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:44:22,112 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 19:44:22,113 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 19:44:22,115 [INFO] Connecting to voice...
+2025-10-21 19:44:22,115 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 19:44:22,663 [INFO] Voice handshake complete. Endpoint found: c-sin07-f90090a2.discord.media:8443
+2025-10-21 19:44:22,883 [INFO] Voice connection complete.
+2025-10-21 19:44:22,884 [INFO] [SUCCESS] Connected to Room//Gaming🎮
+2025-10-21 19:44:23,357 [INFO] 1430174894599049236:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **Room//Gaming🎮** (attempt 1)
+2025-10-21 19:44:23,435 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 19:44:24,653 [INFO] 1430174900076679270:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pinvc https://www.youtube.com/watch?v=VOgFZfRVaww
+2025-10-21 19:44:24,654 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:44:28,693 [INFO] 1430174917021798411:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ▶️ Now playing: `Imagine - John Lennon & The Plastic Ono Band (w The Flux Fiddlers) (Ultimate Mix 2018) - 4K REMASTER`
+2025-10-21 19:44:28,762 [INFO] Command completed: pinvc by p.pumpum
+2025-10-21 19:44:35,509 [INFO] 1430174945538998386:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): YESS
+2025-10-21 19:44:35,510 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:44:37,844 [INFO] 1430174955433103423:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): FUCK YES
+2025-10-21 19:44:37,844 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:44:51,437 [INFO] 1430175012429500446:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): <@913994744953196614> it focking work
+2025-10-21 19:44:51,438 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 19:45:34,323 [INFO] 1430175192344432761:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): jockie music better
+2025-10-21 19:45:53,763 [INFO] ffmpeg process 18952 successfully terminated with return code of 0.

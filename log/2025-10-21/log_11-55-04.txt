@@ -1,0 +1,51 @@
+2025-10-21 11:55:08,844 [INFO] logging in using static token
+2025-10-21 11:55:08,845 [INFO] Session ID: 95f5f6309e2af73c9d55b434bb76fa23fb8359e3d62bb5bdb0feb6e586e0ecd4
+2025-10-21 11:55:10,579 [INFO] Shard ID None has connected to Gateway (Session ID: 904d18d2c631778674a82db38cd5071b).
+2025-10-21 11:55:12,589 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 11:55:12,590 [INFO] No startmessage set.
+2025-10-21 11:55:19,370 [INFO] (1430056845849919600) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): negger
+2025-10-21 11:55:19,375 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:24,568 [INFO] (1430056868012888095) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): neggerneggernegger
+2025-10-21 11:55:24,571 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:26,751 [INFO] (1430056877110333493) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nogger
+2025-10-21 11:55:26,752 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:29,848 [INFO] (1430056889634258987) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nlgger
+2025-10-21 11:55:29,849 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:34,253 [INFO] (1430056908626071623) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): Nigger
+2025-10-21 11:55:34,697 [INFO] (1430056910110851146) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): <@1260198579067420722>, potential banned word detected in message by <@1340262742782771323>:
+> Nigger
+Use `!allow 1430056908626071623` to whitelist or `!ban 1430056908626071623` to block.
+2025-10-21 11:55:41,837 [INFO] (1430056940494389409) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !ban 1430056908626071623
+2025-10-21 11:55:41,837 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:42,842 [INFO] (1430056944521052201) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ❌ Message 1430056908626071623 banned. Added to banned words.
+2025-10-21 11:55:42,944 [INFO] Command completed: ban by p.pumpum
+2025-10-21 11:55:43,632 [INFO] (1430056947889209418) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): Dl
+2025-10-21 11:55:44,804 [INFO] (1430056952855138354) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:44,892 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:55:45,162 [INFO] (1430056954402963607) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): E
+2025-10-21 11:55:46,171 [INFO] (1430056958630826094) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): E
+2025-10-21 11:55:46,373 [INFO] (1430056959188402180) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:46,520 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:55:47,347 [INFO] (1430056963227783201) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:47,482 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:55:47,976 [INFO] (1430056966222385260) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): R
+2025-10-21 11:55:49,113 [INFO] (1430056971012411403) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:49,165 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:55:49,406 [INFO] (1430056972119572550) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wait
+2025-10-21 11:55:49,406 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:50,434 [INFO] (1430056976469065779) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): Bro
+2025-10-21 11:55:51,993 [INFO] (1430056983087808574) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:52,032 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:55:52,229 [INFO] (1430056983817486357) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wtf
+2025-10-21 11:55:52,230 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 11:55:55,365 [INFO] (1430056997004251157) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): What
+2025-10-21 11:55:57,657 [INFO] (1430057002079617088) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:57,788 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:55:58,260 [INFO] (1430057009352544316) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): Stip
+2025-10-21 11:55:59,467 [INFO] (1430057014259748935) BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1340262742782771323>, missing permissions.
+2025-10-21 11:55:59,529 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-21 11:56:01,298 [INFO] (1430057021696249907) tatthep0270 (1340262742782771323) in #🤖-bot-test-🛠️ (1399900695993253970): Bro
+2025-10-21 11:56:01,459 [INFO] Waiting for bot to shut down...
+2025-10-21 11:56:01,459 [INFO] Shutting down bot...
+2025-10-21 11:56:11,467 [ERROR] Error shutting down: 
+2025-10-21 11:56:11,470 [INFO] Bot stopped.

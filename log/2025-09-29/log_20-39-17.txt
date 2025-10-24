@@ -1,0 +1,9 @@
+2025-09-29 20:39:19,477 [INFO] logging in using static token
+2025-09-29 20:39:20,933 [INFO] Shard ID None has connected to Gateway (Session ID: 455deaf43380eae7efebf394b0f66f92).
+2025-09-29 20:39:22,948 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-09-29 20:39:23,358 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-09-29 20:39:28,056 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !scrsnow
+2025-09-29 20:39:36,801 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): what u doin
+2025-09-29 20:39:50,156 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): doing screen capture
+2025-09-29 20:40:00,584 [INFO] endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): why
+2025-09-29 20:40:20,060 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): i divide my screen into 4, bot, bds, tunnel, clock

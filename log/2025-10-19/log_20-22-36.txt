@@ -1,0 +1,15 @@
+2025-10-19 20:22:39,049 [INFO] logging in using static token
+2025-10-19 20:22:41,118 [INFO] Shard ID None has connected to Gateway (Session ID: 36ab38ea7aacd109b7f7900843035564).
+2025-10-19 20:22:43,174 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 20:22:43,174 [INFO] No startmessage set.
+2025-10-19 20:22:44,130 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Yeah are you cat
+2025-10-19 20:22:49,761 [INFO] Waiting for bot to shut down...
+2025-10-19 20:22:49,761 [INFO] Shutting down bot...
+2025-10-19 20:22:59,769 [ERROR] Error shutting down: 
+2025-10-19 20:22:59,770 [INFO] Bot stopped.
+2025-10-19 20:23:06,768 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-147' coro=<Client.close.<locals>._close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:780> wait_for=<Task pending name='Task-148' coro=<_wait_for_close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py:138> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-10-19 20:23:06,769 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-148' coro=<_wait_for_close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py:138> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-10-19 20:23:06,769 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-146' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:977> wait_for=<Task pending name='Task-147' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> wait_for=<Task pending name='Task-148' coro=<_wait_for_close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py:138> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

@@ -1,0 +1,23 @@
+2025-10-20 13:34:13,651 [INFO] logging in using static token
+2025-10-20 13:34:13,651 [INFO] Session ID: 046fbcbf570b6cb9f61db685cdc9739d08b54517b614277e40719204c525a0c5
+2025-10-20 13:34:15,278 [INFO] Shard ID None has connected to Gateway (Session ID: 2a4c642560e0d77c12d244587dd89b3c).
+2025-10-20 13:34:17,293 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 13:34:17,294 [INFO] No startmessage set.
+2025-10-20 13:34:45,498 [INFO] 1429719476382732298:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinfo
+2025-10-20 13:34:45,500 [ERROR] Error in command None by p.pumpum: Command "saveuinfo" is not found
+2025-10-20 13:34:52,046 [INFO] 1429719503822127165:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinf
+2025-10-20 13:34:52,442 [INFO] User info saved to userdata/uinfo_20251020_133452.json
+2025-10-20 13:34:52,442 [INFO] Auto-saved 34 users at 2025-10-20 13:34:52
+2025-10-20 13:34:52,798 [INFO] 1429719506955272282:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Manual save completed.
+2025-10-20 13:34:52,819 [INFO] Command completed: saveuinf by p.pumpum
+2025-10-20 13:34:59,738 [INFO] 1429719535820345367:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-10-20 13:35:01,722 [INFO] 1429719544427057193:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-20 13:35:01,746 [INFO] Session info sent by p.pumpum
+2025-10-20 13:35:01,746 [INFO] Command completed: sessioninfo by p.pumpum
+2025-10-20 13:45:31,649 [INFO] 1429722186628857947:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 😢
+2025-10-20 13:46:12,081 [INFO] Waiting for bot to shut down...
+2025-10-20 13:46:12,081 [INFO] Shutting down bot...
+2025-10-20 13:46:22,085 [ERROR] Error shutting down: 
+2025-10-20 13:46:22,086 [INFO] Bot stopped.
+2025-10-20 13:57:11,380 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-200' coro=<console_interface.<locals>.shutdown() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:1102> wait_for=<Task finished name='Task-201' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

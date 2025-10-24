@@ -1,0 +1,6 @@
+2025-10-20 22:42:46,859 [INFO] logging in using static token
+2025-10-20 22:42:46,859 [INFO] Session ID: 620b26af670823fbcaa390289df923ef00fc41a45963e6cb24c95b99f996464b
+2025-10-20 22:42:48,782 [INFO] Shard ID None has connected to Gateway (Session ID: ed495a2585e6c9e1b09955ff41b7dac7).
+2025-10-20 22:42:50,801 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 22:42:50,801 [INFO] No startmessage set.
+2025-10-20 22:42:56,381 [INFO] 1429857436432470026:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nlgger

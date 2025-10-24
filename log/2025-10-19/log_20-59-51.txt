@@ -1,0 +1,8 @@
+2025-10-19 20:59:57,483 [INFO] logging in using static token
+2025-10-19 20:59:59,067 [INFO] Shard ID None has connected to Gateway (Session ID: 1370b7d5bbe12fb83eb0a9699b2795f2).
+2025-10-19 21:00:01,073 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 21:00:01,074 [INFO] No startmessage set.
+2025-10-19 21:00:15,603 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): raah
+2025-10-19 21:00:26,398 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): this is an activity
+2025-10-19 21:00:31,358 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wow
+2025-10-19 21:01:32,208 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): [vivlosyap](https://cdn.discordapp.com/emojis/1423400953952075897.gif?size=48&animated=true&name=vivlosyap)

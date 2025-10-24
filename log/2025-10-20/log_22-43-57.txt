@@ -1,0 +1,13 @@
+2025-10-20 22:44:00,358 [INFO] logging in using static token
+2025-10-20 22:44:00,358 [INFO] Session ID: ab09a4175767cf0f75b8c2e9f861c6f03517a2909b40c2035bc7197b967fc6a9
+2025-10-20 22:44:01,805 [INFO] Shard ID None has connected to Gateway (Session ID: e96db2ff0bb0f0ba954ad39749be24f1).
+2025-10-20 22:44:03,826 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 22:44:03,827 [INFO] No startmessage set.
+2025-10-20 22:44:16,605 [INFO] 1429857772886950059:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nlgger
+2025-10-20 22:44:16,607 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 22:44:17,881 [INFO] 1429857778347937973:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1260198579067420722>, missing permissions.
+2025-10-20 22:44:17,928 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-20 22:53:41,338 [INFO] Waiting for bot to shut down...
+2025-10-20 22:53:41,338 [INFO] Shutting down bot...
+2025-10-20 22:53:51,342 [ERROR] Error shutting down: 
+2025-10-20 22:53:51,346 [INFO] Bot stopped.

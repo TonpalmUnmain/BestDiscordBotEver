@@ -1,0 +1,17 @@
+2025-10-19 15:32:17,387 [ERROR] Failed to read uinfo.json: invalid JSON format.
+2025-10-19 15:32:20,069 [INFO] logging in using static token
+2025-10-19 15:32:21,553 [INFO] Shard ID None has connected to Gateway (Session ID: 294212cbf15a32a3bb4397dfb07be3dd).
+2025-10-19 15:32:23,574 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 15:32:23,575 [INFO] No startmessage set.
+2025-10-19 15:33:14,059 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinf
+2025-10-19 15:33:14,070 [INFO] ✅ Auto-saved 34 users at 2025-10-19 15:33:14
+2025-10-19 15:33:14,451 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ✅ Manual save completed.
+2025-10-19 15:33:14,479 [INFO] Command completed: saveuinf by p.pumpum
+2025-10-19 15:35:44,976 [INFO] Bot stopped. Closing connection...
+2025-10-19 15:35:54,990 [ERROR] Bot shutdown timed out.
+2025-10-19 15:35:55,017 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-15' coro=<Client.close.<locals>._close() running at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:778> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-10-19 15:35:55,017 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002473B62F230>
+2025-10-19 15:35:55,018 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-14' coro=<stopsession() running at d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py:209> wait_for=<Task pending name='Task-15' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:393]>

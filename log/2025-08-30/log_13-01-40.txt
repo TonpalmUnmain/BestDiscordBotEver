@@ -1,0 +1,4 @@
+2025-08-30 13:01:43,547 [INFO] logging in using static token
+2025-08-30 13:01:45,353 [INFO] Shard ID None has connected to Gateway (Session ID: 530894e0f792e8bbd8e250947df6e706).
+2025-08-30 13:01:47,369 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-08-30 13:01:47,778 [INFO] Sent startup message to channel ID: 1371357608904228924

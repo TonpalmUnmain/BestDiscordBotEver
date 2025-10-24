@@ -1,0 +1,10 @@
+2025-10-20 21:56:02,677 [INFO] logging in using static token
+2025-10-20 21:56:02,677 [INFO] Session ID: 9d54efb59b4e26e8a98bdac97e37908ed85ee5a2660dd72636e408c7931eff3f
+2025-10-20 21:56:04,515 [INFO] Shard ID None has connected to Gateway (Session ID: 415d73ee5e954575db65664de82a7ded).
+2025-10-20 21:56:06,588 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 21:56:06,589 [INFO] No startmessage set.
+2025-10-20 21:56:21,997 [INFO] 1429845715559121007:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !featurerequest Promote endu to <@&1389188298169127042>
+2025-10-20 21:56:22,002 [ERROR] Error in command featurerequest by p.pumpum: Command raised an exception: TypeError: save_feedback() takes 1 positional argument but 2 were given
+2025-10-20 21:56:27,234 [INFO] 1429845737092677663:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): fuq u
+2025-10-20 21:56:30,467 [INFO] 1429845751046864956:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): haha
+2025-10-20 21:56:31,547 [INFO] 1429845755488899243:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): noob

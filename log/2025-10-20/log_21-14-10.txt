@@ -1,0 +1,7 @@
+2025-10-20 21:14:15,662 [INFO] logging in using static token
+2025-10-20 21:14:15,663 [INFO] Session ID: 65e7dca8eb8e539bb3299264f976edd9e27440475489439703eddaf4f450e241
+2025-10-20 21:14:17,163 [INFO] Shard ID None has connected to Gateway (Session ID: dd5006a5427d2faa4d8ef06a242fe639).
+2025-10-20 21:14:19,208 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 21:14:19,209 [INFO] No startmessage set.
+2025-10-20 21:14:28,826 [INFO] 1429835174123933706:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !bugreport test
+2025-10-20 21:14:28,829 [ERROR] Error in command None by p.pumpum: Command "bugreport" is not found

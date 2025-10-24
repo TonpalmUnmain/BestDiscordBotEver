@@ -1,0 +1,5 @@
+2025-10-19 17:58:52,034 [INFO] logging in using static token
+2025-10-19 17:58:53,570 [INFO] Shard ID None has connected to Gateway (Session ID: 501ac7116cbef74e3474fbd2070ecf93).
+2025-10-19 17:58:55,594 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 17:58:55,595 [INFO] No startmessage set.
+2025-10-19 18:00:20,144 [ERROR] Failed to read fdump/files.json: invalid JSON format.

@@ -1,0 +1,9 @@
+2025-10-20 23:50:07,561 [INFO] logging in using static token
+2025-10-20 23:50:07,561 [INFO] Session ID: b63c40aa95b8b01bdb33bcf288805165f4dfab9c8d53410bb9a5de7c08e501d3
+2025-10-20 23:50:09,132 [INFO] Shard ID None has connected to Gateway (Session ID: 83113b0c49f033728e45ff29b85ee723).
+2025-10-20 23:50:11,169 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 23:50:11,169 [INFO] No startmessage set.
+2025-10-20 23:50:23,949 [INFO] (1429874410722168832) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listwhitelistword
+2025-10-20 23:50:23,957 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:51:48,144 [INFO] Waiting for bot to shut down...
+2025-10-20 23:51:48,144 [INFO] Shutting down bot...

@@ -1,0 +1,10 @@
+2025-10-21 12:05:56,317 [INFO] logging in using static token
+2025-10-21 12:05:56,317 [INFO] Session ID: 7e897342ccba85243c1f90907201bbb3d0bb0b13970e579ee732170e18a31616
+2025-10-21 12:05:57,717 [INFO] Shard ID None has connected to Gateway (Session ID: 0d37c8ecab88cbebdefa645efe2a78cc).
+2025-10-21 12:05:59,741 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 12:05:59,742 [INFO] No startmessage set.
+2025-10-21 12:06:08,320 [INFO] 1430059568070787104:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): what
+what
+negger
+nigger
+2025-10-21 12:06:08,323 [INFO] User p.pumpum has GOD role, skipping banned word check.

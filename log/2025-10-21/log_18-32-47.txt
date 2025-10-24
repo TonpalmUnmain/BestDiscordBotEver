@@ -1,0 +1,49 @@
+2025-10-21 18:32:47,615 [WARNING] PyNaCl is not installed, voice will NOT be supported
+2025-10-21 18:32:51,546 [INFO] logging in using static token
+2025-10-21 18:32:51,546 [INFO] Session ID: 9cc1a2889d3543d102c7393dfe18473f7fc9bb1f0a752be27715a11bc19211c2
+2025-10-21 18:32:53,408 [INFO] Shard ID None has connected to Gateway (Session ID: 0b2f0c6a49b3c8c9c8101f8aad26f992).
+2025-10-21 18:32:55,448 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 18:32:55,449 [INFO] No startmessage set.
+2025-10-21 18:33:04,914 [INFO] 1430156948505886783:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 18:33:04,918 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 18:33:04,919 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 18:33:04,920 [INFO] [DEBUG] Detected caller's channel: Room//Gaming🎮 (1418976416220971079)
+2025-10-21 18:33:04,920 [INFO] [INFO] Attempt 1: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 18:33:04,920 [ERROR] [ERROR] Unexpected connection error: PyNaCl library needed in order to use voice
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1478, in attempt_connect
+    vc = await channel.connect(reconnect=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\abc.py", line 1984, in connect
+    voice: T = cls(client, self)
+               ^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\voice_client.py", line 220, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+2025-10-21 18:33:09,959 [INFO] [INFO] Attempt 2: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 18:33:09,960 [ERROR] [ERROR] Unexpected connection error: PyNaCl library needed in order to use voice
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1478, in attempt_connect
+    vc = await channel.connect(reconnect=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\abc.py", line 1984, in connect
+    voice: T = cls(client, self)
+               ^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\voice_client.py", line 220, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+2025-10-21 18:33:14,964 [INFO] [INFO] Attempt 3: connecting to Room//Gaming🎮 (1418976416220971079)...
+2025-10-21 18:33:14,965 [ERROR] [ERROR] Unexpected connection error: PyNaCl library needed in order to use voice
+Traceback (most recent call last):
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\main.py", line 1478, in attempt_connect
+    vc = await channel.connect(reconnect=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\abc.py", line 1984, in connect
+    voice: T = cls(client, self)
+               ^^^^^^^^^^^^^^^^^
+  File "d:\TonpalmUnmain\Project\BestDiscordBotEver\lib\discord\voice_client.py", line 220, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+2025-10-21 18:33:20,403 [INFO] 1430157013928640632:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ❌ Failed to connect after multiple attempts.
+2025-10-21 18:33:20,440 [ERROR] [FATAL] Failed to connect to Room//Gaming🎮 after retries.
+2025-10-21 18:33:20,440 [INFO] Command completed: jvc by p.pumpum

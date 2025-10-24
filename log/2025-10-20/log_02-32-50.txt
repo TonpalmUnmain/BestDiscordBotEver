@@ -1,0 +1,12 @@
+2025-10-20 02:32:53,414 [INFO] logging in using static token
+2025-10-20 02:32:54,911 [INFO] Shard ID None has connected to Gateway (Session ID: d02f000e1ae13c18cd24cc907740f867).
+2025-10-20 02:32:56,931 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 02:32:56,931 [INFO] No startmessage set.
+2025-10-20 02:33:00,259 [INFO] 1429552940800020480:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !mkpoll "Am I tuff?" "Y" "N" 1h
+2025-10-20 02:33:00,589 [INFO] 1429552942209564783:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-20 02:33:00,997 [INFO] Command completed: mkpoll by p.pumpum
+2025-10-20 02:33:29,663 [INFO] 1429553064070742188:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinf
+2025-10-20 02:33:30,087 [INFO] Auto-saved 34 users at 2025-10-20 02:33:29
+2025-10-20 02:33:30,478 [INFO] 1429553067573116997:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Manual save completed.
+2025-10-20 02:33:30,515 [INFO] Command completed: saveuinf by p.pumpum
+2025-10-20 02:39:22,296 [INFO] 1429554543078936726:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): y

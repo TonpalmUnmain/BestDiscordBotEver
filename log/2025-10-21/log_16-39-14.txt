@@ -1,0 +1,9 @@
+2025-10-21 16:39:19,405 [INFO] logging in using static token
+2025-10-21 16:39:19,405 [INFO] Session ID: c9bc3f185714c98b4745cf9aac6617f62349af602a17a8657a67c487ec77691e
+2025-10-21 16:39:20,869 [INFO] Shard ID None has connected to Gateway (Session ID: 5aa8bc6a092931983d94a212ae8dea5f).
+2025-10-21 16:39:22,886 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 16:39:22,887 [INFO] No startmessage set.
+2025-10-21 16:39:25,089 [INFO] 1430128343507927071:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-21 16:39:25,091 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:39:25,518 [INFO] 1430128345269403702:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Usage: `jvc u <USER_ID>` or `jvc a <VC_ID>` or `jvc <VC_ID>`
+2025-10-21 16:39:25,571 [INFO] Command completed: jvc by p.pumpum

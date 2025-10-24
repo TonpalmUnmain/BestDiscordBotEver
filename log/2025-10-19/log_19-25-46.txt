@@ -1,0 +1,43 @@
+2025-10-19 19:25:51,908 [INFO] logging in using static token
+2025-10-19 19:25:53,357 [INFO] Shard ID None has connected to Gateway (Session ID: 1ae0aaca63555346dc06468778c64163).
+2025-10-19 19:25:53,788 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): b
+2025-10-19 19:25:55,389 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 19:25:55,389 [INFO] No startmessage set.
+2025-10-19 19:25:58,569 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): the only anim i made today is a fcking joke
+2025-10-19 19:26:04,461 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): haha
+2025-10-19 19:26:05,589 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): make limbus animations
+2025-10-19 19:26:07,560 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I pro
+2025-10-19 19:26:10,863 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I master limbus style
+2025-10-19 19:26:16,749 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): how
+2025-10-19 19:26:24,633 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 4 frames and a dream
+2025-10-19 19:26:25,263 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): What anim type u use
+2025-10-19 19:26:26,195 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): it look good in studio but in real game it suck
+2025-10-19 19:26:31,679 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): its none
+2025-10-19 19:26:33,168 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): none
+2025-10-19 19:26:45,726 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-19 19:26:50,475 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): who animated my rig and left
+2025-10-19 19:26:51,100 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): why
+2025-10-19 19:26:56,513 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): toaster
+2025-10-19 19:27:04,484 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): now its just in that pose
+2025-10-19 19:27:18,057 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): BRO
+2025-10-19 19:27:22,516 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): HE BROKE THE WHOLE ANIM
+2025-10-19 19:27:24,973 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): yeah
+2025-10-19 19:27:34,042 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-19 19:28:08,684 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Who broke
+2025-10-19 19:28:11,381 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): you
+2025-10-19 19:28:12,543 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): u
+2025-10-19 19:28:17,025 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Wbat
+2025-10-19 19:28:19,657 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I click nothing
+2025-10-19 19:28:26,663 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): moon animator use cframe
+2025-10-19 19:28:36,798 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): and when you left the rig just gonna be stuck in that pose
+2025-10-19 19:28:52,603 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): now dumcat need to animate base pose again
+2025-10-19 19:28:56,312 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Bruh
+2025-10-19 19:29:02,704 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): How to fix
+2025-10-19 19:29:05,584 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Or can u
+2025-10-19 19:29:06,344 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): the fault lies with u
+2025-10-19 19:29:11,092 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Bro
+2025-10-19 19:29:19,461 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): It"s a glitch
+2025-10-19 19:29:31,697 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-19 19:29:39,128 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): stop adding toolbox
+2025-10-19 19:30:00,014 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): atleast my very pro and cool anims are still here
+2025-10-19 19:30:05,473 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😎😎😎

@@ -8,3 +8,5 @@ homoglyphs
 ftfy
 unidecode
 colorama
+gtts
+pynacl

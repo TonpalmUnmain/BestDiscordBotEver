@@ -1,0 +1,18 @@
+2025-10-24 22:28:49,451 [INFO] logging in using static token
+2025-10-24 22:28:49,451 [INFO] Session ID: 52feef1cda10d89e60762b7c9c0b54b50aac5211a64a9d5ef5d8847981902d0c
+2025-10-24 22:28:51,212 [INFO] Shard ID None has connected to Gateway (Session ID: f4764309b8992d18e58c7a5224baa837).
+2025-10-24 22:28:53,233 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-24 22:28:53,233 [INFO] No startmessage set.
+2025-10-24 22:28:55,492 [INFO] 1431303455615750177:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !banword nggr
+2025-10-24 22:28:55,904 [INFO] 1431303457511309404:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added 'nggr' to the list of fucking banned words.
+2025-10-24 22:28:55,925 [INFO] Added banned word: nggr
+2025-10-24 22:28:55,925 [INFO] Command completed: banword by p.pumpum
+2025-10-24 22:29:04,587 [INFO] 1431303493477470249:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listbanword
+2025-10-24 22:29:04,999 [INFO] 1431303495683670189:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Here's the shit we're banning:
+nggr, niga, nigga, nigger, นิกก้า, นิกเกอร์, นิกเก้อ
+2025-10-24 22:29:05,098 [INFO] Command completed: listbanword by p.pumpum
+2025-10-24 22:29:13,518 [INFO] 1431303531427528857:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !banword niggar
+2025-10-24 22:29:13,902 [INFO] 1431303533046665336:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added 'niggar' to the list of fucking banned words.
+2025-10-24 22:29:13,937 [INFO] Added banned word: niggar
+2025-10-24 22:29:13,938 [INFO] Command completed: banword by p.pumpum
+2025-10-24 22:29:31,126 [INFO] 1431303605364850799:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): All of the above work btw

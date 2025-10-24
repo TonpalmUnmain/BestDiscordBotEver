@@ -1,6 +1,6 @@
 token.config
 bot.pid
-log/
 uinfo.json
 userdata/
 test.py
+tts_output/*

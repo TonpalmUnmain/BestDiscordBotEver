@@ -1,0 +1,7 @@
+2025-10-19 15:29:45,887 [ERROR] Failed to read uinfo.json: invalid JSON format.
+2025-10-19 15:29:50,492 [INFO] logging in using static token
+2025-10-19 15:29:51,954 [INFO] Shard ID None has connected to Gateway (Session ID: 4a99215c23fcd4cf77ef945049e08e95).
+2025-10-19 15:29:53,976 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 15:29:53,977 [INFO] No startmessage set.
+2025-10-19 15:30:33,417 [INFO] Waiting for bot to shut down...
+2025-10-19 15:30:33,417 [INFO] Shutting down bot...
