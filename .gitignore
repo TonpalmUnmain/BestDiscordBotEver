@@ -3,3 +3,4 @@ bot.pid
 log/
 uinfo.json
 userdata/
+test.py
