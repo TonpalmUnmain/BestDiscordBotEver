@@ -1,0 +1,33 @@
+2025-10-25 02:59:11,252 [INFO] logging in using static token
+2025-10-25 02:59:11,252 [INFO] Session ID: bbcbbbe8749a175802f6fdce62653fc644a78f1130d691295d7a12980ef02082
+2025-10-25 02:59:12,793 [INFO] Shard ID None has connected to Gateway (Session ID: 59e27d7327abdf28669f7a12d18dc308).
+2025-10-25 02:59:14,790 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 02:59:14,791 [INFO] No startmessage set.
+2025-10-25 02:59:18,564 [INFO] 1431371502095438057:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-25 02:59:18,565 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 02:59:18,566 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 02:59:18,568 [INFO] Connecting to voice...
+2025-10-25 02:59:18,568 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 02:59:19,124 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 02:59:19,331 [INFO] Voice connection complete.
+2025-10-25 02:59:19,331 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 02:59:19,776 [INFO] 1431371507333857312:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 02:59:19,837 [INFO] Command completed: jvc by p.pumpum
+2025-10-25 02:59:33,776 [INFO] Scheduling TTS: "endu sux" (ovr=1)
+2025-10-25 02:59:33,777 [INFO] Generating TTS: "endu sux" (ovr=1)
+2025-10-25 02:59:33,963 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-25 02:59:33,973 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: endu sux
+2025-10-25 02:59:35,474 [INFO] Finished speaking.
+2025-10-25 02:59:35,474 [INFO] ffmpeg process 28724 successfully terminated with return code of 0.
+2025-10-25 02:59:50,035 [INFO] Scheduling TTS: "ENDU FUCKING SUCK" (ovr=1)
+2025-10-25 02:59:50,036 [INFO] Generating TTS: "ENDU FUCKING SUCK" (ovr=1)
+2025-10-25 02:59:50,259 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-25 02:59:50,267 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: ENDU FUCKING SUCK
+2025-10-25 02:59:51,928 [INFO] Finished speaking.
+2025-10-25 02:59:51,928 [INFO] ffmpeg process 7216 successfully terminated with return code of 0.
+2025-10-25 02:59:58,360 [INFO] Scheduling TTS: "I can prove it" (ovr=1)
+2025-10-25 02:59:58,361 [INFO] Generating TTS: "I can prove it" (ovr=1)
+2025-10-25 02:59:58,528 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-25 02:59:58,529 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: I can prove it
+2025-10-25 02:59:59,670 [INFO] Finished speaking.
+2025-10-25 02:59:59,671 [INFO] ffmpeg process 10364 successfully terminated with return code of 0.

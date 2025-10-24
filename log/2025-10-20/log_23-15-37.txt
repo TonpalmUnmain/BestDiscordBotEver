@@ -1,0 +1,9 @@
+2025-10-20 23:15:40,060 [INFO] logging in using static token
+2025-10-20 23:15:40,060 [INFO] Session ID: d7676e103cc258ea181e06b192c1cda10356d6ddbe99faa43c0d7bdcf6d54e31
+2025-10-20 23:15:41,639 [INFO] Shard ID None has connected to Gateway (Session ID: d4b91e43b0cb05a4569ca2ddaa2b35d2).
+2025-10-20 23:15:43,651 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 23:15:43,652 [INFO] No startmessage set.
+2025-10-20 23:15:54,806 [INFO] (1429865734661476373) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): neggernegger
+2025-10-20 23:15:54,812 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:16:12,613 [INFO] (1429865809420878035) p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): arnold schwarzenegger
+2025-10-20 23:16:12,638 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
