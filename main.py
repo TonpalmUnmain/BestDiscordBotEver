@@ -29,6 +29,7 @@ import hashlib
 import time
 import yt_dlp
 import shlex
+import subprocess
 
 try:
     # ===== SETUP =====
@@ -387,6 +388,26 @@ try:
     def get_paused(ctx):
         return guild_paused.setdefault(ctx.guild.id, False)
 
+    def probe_ffmpeg(input_url: str, ffmpeg_exec: str, timeout: int = 12):
+        """Run a short ffmpeg probe to capture stderr for diagnostics."""
+        cmd = [
+            ffmpeg_exec,
+            "-v", "error",
+            "-i", input_url,
+            "-t", "1",
+            "-f", "null",
+            "-"
+        ]
+        try:
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+            return proc.returncode, proc.stderr.strip()
+        except subprocess.TimeoutExpired:
+            return None, "probe timeout"
+        except FileNotFoundError:
+            return None, f"ffmpeg executable not found: {ffmpeg_exec}"
+        except Exception as e:
+            return None, f"probe exception: {e}"
+
     async def play_next(ctx):
         queue = get_queue(ctx)
         vc = ctx.guild.voice_client
@@ -396,22 +417,24 @@ try:
         item = queue.pop(0)
         source_type, source = item
 
+        import shutil
+        ffmpeg_exec = shutil.which("ffmpeg") or r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
+        logging.info(f"Using ffmpeg executable: {ffmpeg_exec}")
+
         try:
             if source_type == "file":
-                # Quote and verify path
                 if not os.path.exists(source):
                     await ctx.send(f"File not found: `{source}`")
                     return
 
-                quoted_source = shlex.quote(source)
                 ffmpeg_opts = {
                     "before_options": "-nostdin",
                     "options": "-vn"
                 }
                 audio_source = FFmpegPCMAudio(
-                    quoted_source,
+                    source,
                     **ffmpeg_opts,
-                    executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
+                    executable=ffmpeg_exec
                 )
 
             else:  # URL case
@@ -422,30 +445,72 @@ try:
                     "default_search": "auto",
                     "source_address": "0.0.0.0",
                     "noplaylist": True,
+                    "extract_flat": False,
                 }
                 ffmpeg_opts = {
                     "before_options": "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5",
                     "options": "-vn",
                 }
-                with yt_dlp.YoutubeDL(ytdlp_opts) as ytdl:
-                    info = ytdl.extract_info(source, download=False)
-                    if "entries" in info:
-                        info = info["entries"][0]
-                    audio_source = FFmpegPCMAudio(
-                        info["url"],
-                        **ffmpeg_opts,
-                        executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
-                    )
+                loop = asyncio.get_running_loop()
 
-            vc.play(
-                audio_source,
-                after=lambda e: asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop)
-            )
+                def blocker():
+                    with yt_dlp.YoutubeDL(ytdlp_opts) as ytdl:
+                        return ytdl.extract_info(source, download=False)
+
+                try:
+                    info = await asyncio.wait_for(loop.run_in_executor(None, blocker), timeout=25)
+                except asyncio.TimeoutError:
+                    await ctx.send(f"Timed out while resolving URL: `{source}`")
+                    logging.error(f"yt-dlp timed out for: {source}")
+                    return
+                except Exception as e:
+                    await ctx.send(f"Failed to resolve URL: `{e}`")
+                    logging.exception(f"yt-dlp extraction failed for {source}: {e}")
+                    return
+
+                if "entries" in info and info["entries"]:
+                    info = info["entries"][0]
+
+                stream_url = info.get("url")
+                if not stream_url:
+                    await ctx.send("Could not get a playable audio URL from yt-dlp result.")
+                    logging.error(f"No playable url in yt-dlp info for {source}: {info}")
+                    return
+
+                # --- NEW: probe ffmpeg to capture stderr for diagnostics ---
+                retcode, stderr = probe_ffmpeg(stream_url, ffmpeg_exec)
+                if retcode is None or retcode != 0:
+                    logging.error(f"ffmpeg probe failed (ret={retcode}): {stderr}")
+                    await ctx.send(f"ffmpeg probe failed. See logs for details.")
+                    return
+                # --- end probe ---
+
+                audio_source = FFmpegPCMAudio(
+                    stream_url,
+                    **ffmpeg_opts,
+                    executable=ffmpeg_exec
+                )
+
+            # play and schedule next on finish
+            def _after_play(err):
+                if err:
+                    logging.exception(f"Error during playback: {err}")
+                try:
+                    # schedule next item (safe scheduling from thread)
+                    asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop)
+                except Exception:
+                    logging.exception("Failed to schedule play_next after track end.")
+
+            vc.play(audio_source, after=_after_play)
 
         except Exception as e:
-            await ctx.send(f"Failed to play `{source}`: `{e}`")
-            logging.exception(f"FFmpeg error while playing {source}: {e}")
-            await play_next(ctx)
+            logging.exception(f"Unhandled error in play_next: {e}")
+            # don't recurse synchronously; schedule a retry safely
+            try:
+                asyncio.get_running_loop().call_later(1, lambda: asyncio.create_task(play_next(ctx)))
+            except Exception:
+                logging.exception("Failed to schedule retry of play_next")
+            return
             
     # ===== BOT SETUP =====
     if "bot" in globals():
@@ -1598,7 +1663,7 @@ try:
             """
             Play an audio file or stream in the current voice channel.
             Usage:
-            !vcplay <URL or local file path>
+            !plvc <URL or local file path>
             """
             vc = ctx.guild.voice_client
             if vc is None:
@@ -1622,7 +1687,7 @@ try:
                 await ctx.reply(f"Failed to play audio: {e}")
                 
         @bot.command(name="plvc")
-        async def vcplay(ctx, source: str = None):
+        async def plvc(ctx, source: str = None):
             """Play audio from local file or URL."""
             vc = ctx.guild.voice_client
             if vc is None:
@@ -1996,6 +2061,6 @@ except Exception as e:
 '''
 BestBotEver!!!
 A discord bot, not intended to be used in other servers.
-Under GNU General Public License Version 3, 29 June 2007.
+Under GNU General Public License Version 3.0, 29 June 2007.
 © 2025 Warat Thongsuwan (TonpalmUnmain)
 '''
