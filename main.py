@@ -28,8 +28,10 @@ import colorama
 import hashlib
 import time
 import yt_dlp
-import shlex
+from homoglyphs import Homoglyphs
+from ftfy import fix_text
 import subprocess
+from unidecode import unidecode
 
 try:
     # ===== SETUP =====
@@ -587,15 +589,16 @@ try:
     # def is_similar(a, b, threshold=0.9):
     #     return SequenceMatcher(None, a, b).ratio() >= threshold
     
-    def normalize_message(text):
-        text = unicodedata.normalize('NFKD', str(text)).encode('ASCII', 'ignore').decode('ASCII')
+    hg = Homoglyphs()
+    def normalize_message(text: str) -> str:
+        text = str(text)
+        text = unidecode(text)
+        text = unicodedata.normalize("NFKC", text).lower()
         text = re.sub(r'[\s\W_]+', '', text)
         text = ''.join(c for c in text if not unicodedata.combining(c))
         text = re.sub(r'[\u200B-\u200F\uFE00-\uFE0F\u2060-\u206F]', '', text)
         text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C')
-        text = unicodedata.normalize("NFKC", str(text)).lower()
 
-        # Extended number-to-letter replacements
         replacements = str.maketrans({
             '0': 'o',
             '1': 'i',
@@ -605,10 +608,9 @@ try:
             '5': 's',
             '6': 'g',
             '7': 't',
-            '8': 'a',
+            '8': 'b',
             '9': 'g'
         })
-        
         text = text.translate(replacements)
 
         return text
@@ -791,16 +793,18 @@ try:
             content = normalize_message(message.content)
             ctx = await bot.get_context(message)
 
-            if "commandIgnore" in message.content and commands.is_owner():
+            if "commandIgnore" in message.content and await bot.is_owner(message.author):
                 return
 
-            if any(role.id == 1411139316171931738 for role in message.author.roles):
-                logging.info(f"User {message.author} has GOD role, skipping banned word check.")
-            elif (
+            if (
                 any(word in content for word in BANNED_WORDS)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword"])
                 and not (message.author == bot.user)
             ):
+                # mi god role
+                if any(role.id == 1411139316171931738 for role in message.author.roles):
+                    logging.info(f"User {message.author} has GOD role, not timeouted.")
+                    return
                 try:
                     await message.delete()
                     await message.author.timeout(
@@ -813,7 +817,7 @@ try:
                     logging.info(f"Timed out: {message.author} for '{message.content}'")
                 except discord.Forbidden:
                     await message.channel.send(
-                        f"I can't timeout {message.author.mention}, missing permissions."
+                        f"I can't timeout {message.author.mention}, report admin abuse at 083-247-0928."
                     )
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
@@ -1147,7 +1151,7 @@ try:
                 await ctx.send(f"'{word}' is already banned, dumbass.")
             else:
                 BANNED_WORDS.add(word)
-                save_banned_words()
+                save_banned_words("banned", BANNED_WORDS)
                 await ctx.send(f"Added '{word}' to the list of fucking banned words.")
                 logging.info(f"Added banned word: {word}")
 
@@ -1159,7 +1163,7 @@ try:
             word = word.lower().strip()
             if word in BANNED_WORDS:
                 BANNED_WORDS.remove(word)
-                save_banned_words()
+                save_banned_words("banned", BANNED_WORDS)
                 await ctx.send(f"Removed '{word}' from the fucking list.")
                 logging.info(f"Removed banned word: {word}")
             else:
