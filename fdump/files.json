@@ -1,7 +1,17 @@
 {
-    "nothing_else_matter_testfilemp3": {
-        "original_path": "C:\\Users\\jimnd\\Downloads\\Nothing Else Matters (Live - May 30, 2014 - Stockholm, Sweden) - Metallica - SoundLoadMate.com.mp3",
-        "dump_path": "D:\\TonpalmUnmain\\Project\\BestDiscordBotEver\\fdump\\Nothing Else Matters (Live - May 30, 2014 - Stockholm, Sweden) - Metallica - SoundLoadMate.com.mp3",
-        "filename": "Nothing Else Matters (Live - May 30, 2014 - Stockholm, Sweden) - Metallica - SoundLoadMate.com.mp3"
+    "nelsem": {
+        "original_path": "C:\\Users\\jimnd\\Downloads\\nelsem.mp3",
+        "dump_path": "D:\\TonpalmUnmain\\Project\\BestDiscordBotEver\\fdump\\nelsem.mp3",
+        "filename": "nelsem.mp3"
+    },
+    "t1": {
+        "original_path": "C:\\Users\\Lenovo\\Desktop\\TP\\Proj\\VsCode\\FSh\\BestDiscordBotEver\\nelsem.mp3",
+        "dump_path": "C:\\Users\\Lenovo\\Desktop\\TP\\Proj\\VsCode\\FSh\\BestDiscordBotEver\\fdump\\nelsem.mp3",
+        "filename": "nelsem.mp3"
+    },
+    "t2": {
+        "original_path": "C:\\Users\\Lenovo\\Desktop\\TP\\Proj\\VsCode\\FSh\\BestDiscordBotEver\\test_tone.mp3",
+        "dump_path": "C:\\Users\\Lenovo\\Desktop\\TP\\Proj\\VsCode\\FSh\\BestDiscordBotEver\\fdump\\test_tone.mp3",
+        "filename": "test_tone.mp3"
     }
 }

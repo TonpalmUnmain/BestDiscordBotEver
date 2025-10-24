@@ -28,6 +28,7 @@ import colorama
 import hashlib
 import time
 import yt_dlp
+import shlex
 
 try:
     # ===== SETUP =====
@@ -392,37 +393,58 @@ try:
         if not vc or not queue:
             return
 
-        # Get next item
         item = queue.pop(0)
         source_type, source = item
 
         try:
             if source_type == "file":
-                audio_source = FFmpegPCMAudio(source)
-            else:  # URL
+                # Quote and verify path
+                if not os.path.exists(source):
+                    await ctx.send(f"File not found: `{source}`")
+                    return
+
+                quoted_source = shlex.quote(source)
+                ffmpeg_opts = {
+                    "before_options": "-nostdin",
+                    "options": "-vn"
+                }
+                audio_source = FFmpegPCMAudio(
+                    quoted_source,
+                    **ffmpeg_opts,
+                    executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
+                )
+
+            else:  # URL case
                 ytdlp_opts = {
                     "format": "bestaudio[ext=m4a]/bestaudio/best",
                     "quiet": True,
                     "no_warnings": True,
                     "default_search": "auto",
-                    "source_address": "0.0.0.0",  # fixes network instability
+                    "source_address": "0.0.0.0",
                     "noplaylist": True,
                 }
                 ffmpeg_opts = {
-                    'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
-                    'options': '-vn'
+                    "before_options": "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5",
+                    "options": "-vn",
                 }
-
                 with yt_dlp.YoutubeDL(ytdlp_opts) as ytdl:
                     info = ytdl.extract_info(source, download=False)
                     if "entries" in info:
                         info = info["entries"][0]
-                    audio_source = FFmpegPCMAudio(info["url"], **ffmpeg_opts, executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe")
-            
-            vc.play(audio_source, after=lambda e: asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop))
+                    audio_source = FFmpegPCMAudio(
+                        info["url"],
+                        **ffmpeg_opts,
+                        executable=r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
+                    )
+
+            vc.play(
+                audio_source,
+                after=lambda e: asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop)
+            )
+
         except Exception as e:
-            await ctx.send(f"Failed to play {source}: {e}")
-            # Try next item
+            await ctx.send(f"Failed to play `{source}`: `{e}`")
+            logging.exception(f"FFmpeg error while playing {source}: {e}")
             await play_next(ctx)
             
     # ===== BOT SETUP =====
