@@ -1,0 +1,26 @@
+2025-10-21 23:58:29,424 [INFO] logging in using static token
+2025-10-21 23:58:29,425 [INFO] Session ID: 765817c1f9d2479a6cae35b860ae1fbd6589c163f6e142d5483fe4265440fe03
+2025-10-21 23:58:31,483 [INFO] Shard ID None has connected to Gateway (Session ID: b06a4a3d2860f09c079e7c1ba142a7b1).
+2025-10-21 23:58:33,505 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 23:58:33,505 [INFO] No startmessage set.
+2025-10-21 23:58:35,652 [INFO] 1430238859844784199:p.pumpum (1260198579067420722) in #📣-sub-announcement-📣 (1419216320293241002): !jvc
+2025-10-21 23:58:35,653 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 23:58:35,654 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-21 23:58:35,654 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-21 23:58:35,655 [INFO] Connecting to voice...
+2025-10-21 23:58:35,655 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-21 23:58:36,189 [INFO] Voice handshake complete. Endpoint found: c-sin13-f4908224.discord.media:8443
+2025-10-21 23:58:36,433 [INFO] Voice connection complete.
+2025-10-21 23:58:36,434 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-21 23:58:36,904 [INFO] 1430238865142321197:BestBotEver!!!#9403 (1386280922218893465) in #📣-sub-announcement-📣 (1419216320293241002): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-21 23:58:36,974 [INFO] Command completed: jvc by p.pumpum
+2025-10-21 23:59:47,125 [INFO] 1430239160064675943:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+2025-10-21 23:59:47,125 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 23:59:47,521 [INFO] 1430239161687871568:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=fJ9rUzIMcZQ`
+2025-10-21 23:59:53,964 [INFO] 1430239188753846364:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Failed to play https://www.youtube.com/watch?v=fJ9rUzIMcZQ: C:\Program Files\FFmpeg\bin\ffmpeg.exe was not found.
+2025-10-21 23:59:54,000 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:00:18,175 [INFO] Waiting for bot to shut down...
+2025-10-22 00:00:18,176 [INFO] Shutting down bot...
+2025-10-22 00:00:18,178 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:00:28,186 [ERROR] Error shutting down: 
+2025-10-22 00:00:28,189 [INFO] Bot stopped.

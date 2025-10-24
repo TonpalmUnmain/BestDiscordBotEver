@@ -1,0 +1,18 @@
+2025-10-21 00:11:21,174 [INFO] logging in using static token
+2025-10-21 00:11:21,174 [INFO] Session ID: 9e14ee398b4db3c7a4770d456baf644a188fbbd6e415c1a7054dd8d20de6ce78
+2025-10-21 00:11:22,666 [INFO] Shard ID None has connected to Gateway (Session ID: 630ea576cd9d567efa38e62bc7757984).
+2025-10-21 00:11:24,678 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 00:11:25,027 [INFO] (1429879695545208983) BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): 1.13.1
+2025-10-21 00:11:25,153 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-21 00:11:25,557 [INFO] User info saved to userdata/2025-10-21_00-11-25-9e14ee398b4db3c7a4770d456baf644a188fbbd6e415c1a7054dd8d20de6ce78.json
+2025-10-21 00:11:25,557 [INFO] Auto-saved 34 users at 2025-10-21 00:11:25
+2025-10-21 00:11:25,934 [INFO] User info saved to userdata/2025-10-21_00-11-25-9e14ee398b4db3c7a4770d456baf644a188fbbd6e415c1a7054dd8d20de6ce78.json
+2025-10-21 00:11:25,934 [INFO] Auto-saved 34 users at 2025-10-21 00:11:25
+2025-10-21 00:12:00,312 [INFO] (1429879843448950854) p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): <@1386280922218893465> Good boy
+2025-10-21 00:12:00,313 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-21 00:12:00,765 [INFO] (1429879845374005329) BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): ☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi <@1260198579067420722> 😩.
+2025-10-21 00:12:00,839 [INFO] Sent Goodboy response to p.pumpum
+2025-10-21 00:46:55,219 [INFO] Shard ID None has successfully RESUMED session 630ea576cd9d567efa38e62bc7757984.
+2025-10-21 00:54:14,530 [INFO] Shard ID None session has been invalidated.
+2025-10-21 00:56:27,569 [ERROR] Error shutting down: Event loop is closed
+2025-10-21 00:56:27,603 [INFO] Bot stopped.

@@ -1,0 +1,20 @@
+2025-10-20 23:05:22,367 [INFO] logging in using static token
+2025-10-20 23:05:22,420 [INFO] Session ID: fb99ddb8bd8b2e4d9e0d44050f5a7d85f1b9893a3afe9d0630d3daea7d717bfc
+2025-10-20 23:05:24,097 [INFO] Shard ID None has connected to Gateway (Session ID: d8ceb38f1c46ce92fc717e743797f09a).
+2025-10-20 23:05:26,125 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 23:05:26,512 [INFO] 1429863094900752427:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Bot 1.12.0
+2025-10-20 23:05:26,572 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-20 23:05:27,067 [INFO] User info saved to userdata/2025-10-20_23-05-27-fb99ddb8bd8b2e4d9e0d44050f5a7d85f1b9893a3afe9d0630d3daea7d717bfc.json
+2025-10-20 23:05:27,067 [INFO] Auto-saved 34 users at 2025-10-20 23:05:26
+2025-10-20 23:05:27,450 [INFO] User info saved to userdata/2025-10-20_23-05-27-fb99ddb8bd8b2e4d9e0d44050f5a7d85f1b9893a3afe9d0630d3daea7d717bfc.json
+2025-10-20 23:05:27,450 [INFO] Auto-saved 34 users at 2025-10-20 23:05:26
+2025-10-20 23:06:15,588 [INFO] 1429863300786819193:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): negger
+2025-10-20 23:06:16,900 [INFO] 1429863306281353417:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): I can't timeout <@1260198579067420722>, missing permissions.
+2025-10-20 23:06:16,972 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-20 23:06:27,386 [INFO] 1429863350321549394:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): arnold schwarzenegger
+2025-10-20 23:06:27,387 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.
+2025-10-20 23:06:37,902 [INFO] 1429863394499887206:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): niggerniggernigger
+2025-10-20 23:06:39,074 [INFO] 1429863399377862656:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): I can't timeout <@1260198579067420722>, missing permissions.
+2025-10-20 23:06:39,102 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-20 23:06:45,325 [INFO] 1429863425546256384:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): neggerneggernegger
+2025-10-20 23:06:45,326 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.

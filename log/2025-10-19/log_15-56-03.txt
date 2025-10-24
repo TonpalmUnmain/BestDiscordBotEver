@@ -1,0 +1,26 @@
+2025-10-19 15:56:03,636 [WARNING] uinfo.json not found, creating new file...
+2025-10-19 15:56:25,907 [INFO] logging in using static token
+2025-10-19 15:56:27,773 [INFO] Shard ID None has connected to Gateway (Session ID: 5017653958715acda028812b29535008).
+2025-10-19 15:56:29,813 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 15:56:30,139 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): I'm back!!!!! uwu
+2025-10-19 15:56:30,255 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-19 15:56:30,639 [INFO] ✅ Auto-saved 34 users at 2025-10-19 15:56:30
+2025-10-19 15:56:31,034 [INFO] ✅ Auto-saved 34 users at 2025-10-19 15:56:30
+2025-10-19 15:56:42,707 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Shut the fuck up
+2025-10-19 15:57:01,771 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): fuq u
+2025-10-19 15:57:26,424 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !saveuinf
+2025-10-19 15:57:26,826 [INFO] ✅ Auto-saved 34 users at 2025-10-19 15:57:26
+2025-10-19 15:57:27,227 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Manual save completed.
+2025-10-19 15:57:27,255 [INFO] Command completed: saveuinf by p.pumpum
+2025-10-19 15:57:42,673 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !mcstat
+2025-10-19 15:57:43,464 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 🟢 **Minecraft Bedrock Server is ONLINE**
+Address: multi-nor.gl.at.ply.gg:5355
+Players: 1
+Latency: 430.5 ms
+2025-10-19 15:57:43,492 [INFO] Command completed: mcstat by p.pumpum
+2025-10-19 16:22:29,251 [INFO] sonata_.101 (1395312518569918664) in #🗣️-ranting-👀 (1405556665058857070): Yes, GIVE ME MORE RARE MY LITTLE PONY CARDS <:soju_freaky:1389242183311167561>
+2025-10-19 16:34:40,440 [INFO] Shard ID None has successfully RESUMED session 5017653958715acda028812b29535008.
+2025-10-19 17:21:35,543 [INFO] Waiting for bot to shut down...
+2025-10-19 17:21:35,543 [INFO] Shutting down bot...
+2025-10-19 17:21:45,548 [ERROR] Error shutting down: 
+2025-10-19 17:21:45,548 [INFO] Bot stopped.

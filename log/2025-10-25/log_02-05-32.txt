@@ -1,0 +1,14 @@
+2025-10-25 02:05:32,316 [WARNING] userdata\uinfo_latest.json not found, creating new file...
+2025-10-25 02:05:32,517 [WARNING] PyNaCl is not installed, voice will NOT be supported
+2025-10-25 02:05:54,300 [INFO] logging in using static token
+2025-10-25 02:05:54,323 [INFO] Session ID: 4fa49d4d4f75c38f0a89436f0d0b39221d94406dfed4b33d74d9818bb382d498
+2025-10-25 02:05:55,947 [INFO] Shard ID None has connected to Gateway (Session ID: a618e96aeea9946f65d85dbb79bcf780).
+2025-10-25 02:05:58,003 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 02:05:58,004 [INFO] No startmessage set.
+2025-10-25 02:06:19,173 [INFO] 1431358164397330564:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): <@1386280922218893465> good boy
+2025-10-25 02:06:19,592 [INFO] 1431358166544814080:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): ☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi <@1260198579067420722> 😩.
+2025-10-25 02:06:19,667 [INFO] Sent Goodboy response to p.pumpum
+2025-10-25 02:27:53,255 [INFO] Waiting for bot to shut down...
+2025-10-25 02:27:53,255 [INFO] Shutting down bot...
+2025-10-25 02:28:03,260 [ERROR] Error shutting down: 
+2025-10-25 02:28:03,261 [INFO] Bot stopped.

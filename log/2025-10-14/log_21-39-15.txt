@@ -1,0 +1,65 @@
+2025-10-14 21:40:10,191 [INFO] logging in using static token
+2025-10-14 21:40:11,682 [INFO] Shard ID None has connected to Gateway (Session ID: 823526f5ae06872cc64de829216d4c6e).
+2025-10-14 21:40:13,701 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-14 21:40:14,076 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-14 21:40:51,408 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !version
+2025-10-14 21:41:03,026 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): nigga
+2025-10-14 21:41:04,364 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:41:09,061 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): N199R
+2025-10-14 21:41:14,663 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): N1993r
+2025-10-14 21:41:14,717 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): nigger
+2025-10-14 21:41:15,817 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:41:16,207 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:41:22,167 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): nigger
+2025-10-14 21:41:23,569 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:41:24,434 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): Nigga
+2025-10-14 21:41:25,731 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:41:29,167 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): I made it more polite
+2025-10-14 21:41:31,951 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): Niggggerrree
+2025-10-14 21:41:45,810 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): I deleted it
+2025-10-14 21:41:47,146 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): lol
+2025-10-14 21:41:51,083 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): why
+2025-10-14 21:41:56,488 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://cdn.discordapp.com/attachments/1376362777761026098/1425341940010061875/IMG_3856.gif
+2025-10-14 21:42:05,986 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): bc im a good person
+2025-10-14 21:42:10,416 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): no
+2025-10-14 21:42:12,528 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): u bad
+2025-10-14 21:42:25,817 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !agreewme TonpalmUnmain is a good person.
+2025-10-14 21:42:32,658 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): see
+2025-10-14 21:42:39,033 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): !agreewme a
+2025-10-14 21:42:39,033 [ERROR] Ignoring exception in command agreewme
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\core.py", line 925, in prepare
+    if not await self.can_run(ctx):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\core.py", line 1288, in can_run
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\utils.py", line 727, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\core.py", line 2377, in predicate
+    raise NotOwner('You do not own this bot.')
+discord.ext.commands.errors.NotOwner: You do not own this bot.
+2025-10-14 21:42:41,488 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Good boy <@1386280922218893465>
+2025-10-14 21:42:43,610 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 😡
+2025-10-14 21:42:48,922 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): author only
+2025-10-14 21:42:52,804 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): pay me
+2025-10-14 21:42:55,024 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): fuck neggers
+2025-10-14 21:43:05,605 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !banword negger
+2025-10-14 21:43:06,070 [INFO] Added banned word: negger
+2025-10-14 21:43:10,546 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): fuck naggers
+2025-10-14 21:43:13,379 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): nigga123
+2025-10-14 21:43:14,664 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:43:19,872 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): fuck niigers
+2025-10-14 21:43:23,446 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): niiggers
+2025-10-14 21:43:29,133 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): niggerres
+2025-10-14 21:43:30,189 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-14 21:43:37,557 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): nagger is a legit word unfortunately
+2025-10-14 21:43:39,290 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): so tung 🥹
+2025-10-14 21:44:08,041 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): nagger
+2025-10-14 21:45:20,804 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !pewthyself
+2025-10-14 21:45:20,804 [INFO] Bot stopped. Closing connection...

@@ -1,0 +1,44 @@
+2025-10-14 21:23:07,014 [INFO] logging in using static token
+2025-10-14 21:23:08,934 [INFO] Shard ID None has connected to Gateway (Session ID: 3f935098016c64aba3dbb0624e831050).
+2025-10-14 21:23:10,954 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-14 21:23:11,393 [INFO] Sent startup message to channel ID: 1399900695993253970
+2025-10-14 21:23:25,480 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !cfch current
+2025-10-14 21:24:04,967 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !n1993r
+2025-10-14 21:24:04,968 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 260, in on_message
+    if any(word in content for word in BANNED_WORDS) and ctx.command and ctx.command.name not in ["banword", "rmbanword"]:
+                                                         ^^^
+UnboundLocalError: cannot access local variable 'ctx' where it is not associated with a value
+2025-10-14 21:24:11,220 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n1993r
+2025-10-14 21:24:11,220 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 260, in on_message
+    if any(word in content for word in BANNED_WORDS) and ctx.command and ctx.command.name not in ["banword", "rmbanword"]:
+                                                         ^^^
+UnboundLocalError: cannot access local variable 'ctx' where it is not associated with a value
+2025-10-14 21:24:19,251 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): n1gger
+2025-10-14 21:24:19,252 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 260, in on_message
+    if any(word in content for word in BANNED_WORDS) and ctx.command and ctx.command.name not in ["banword", "rmbanword"]:
+                                                         ^^^
+UnboundLocalError: cannot access local variable 'ctx' where it is not associated with a value
+2025-10-14 21:24:22,354 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nigger
+2025-10-14 21:24:22,354 [ERROR] Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 260, in on_message
+    if any(word in content for word in BANNED_WORDS) and ctx.command and ctx.command.name not in ["banword", "rmbanword"]:
+                                                         ^^^
+UnboundLocalError: cannot access local variable 'ctx' where it is not associated with a value
+2025-10-14 21:24:27,975 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): wtf
+2025-10-14 21:24:38,679 [INFO] p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pewthyself
+2025-10-14 21:24:39,077 [INFO] Bot stopped. Closing connection...

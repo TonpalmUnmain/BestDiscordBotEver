@@ -1,0 +1,203 @@
+2025-10-22 00:15:35,417 [INFO] logging in using static token
+2025-10-22 00:15:35,418 [INFO] Session ID: 4564c266177747d167d5c44341f9d21d553c8daae3d7f6c935188927b6fded81
+2025-10-22 00:15:36,840 [INFO] Shard ID None has connected to Gateway (Session ID: a21c85388e92c0d739846e324a862659).
+2025-10-22 00:15:38,856 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-22 00:15:38,856 [INFO] No startmessage set.
+2025-10-22 00:15:48,728 [INFO] 1430243193168855131:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:15:48,728 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:15:48,729 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:15:48,729 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:15:48,730 [INFO] Connecting to voice...
+2025-10-22 00:15:48,730 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:15:49,245 [INFO] Voice handshake complete. Endpoint found: c-sin13-f4908224.discord.media:8443
+2025-10-22 00:15:49,458 [INFO] Voice connection complete.
+2025-10-22 00:15:49,458 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:15:49,863 [INFO] 1430243198109880533:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:15:49,924 [INFO] Command completed: jvc by p.pumpum
+2025-10-22 00:15:54,756 [INFO] 1430243218364301385:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+2025-10-22 00:15:54,757 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:15:55,186 [INFO] 1430243220104810528:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:16:00,849 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:16:02,300 [INFO] ffmpeg process 10832 successfully terminated with return code of 3436169992.
+2025-10-22 00:19:02,945 [INFO] 1430244007715410003:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:19:02,946 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:19:02,947 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:19:03,251 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:19:03,329 [INFO] 1430244009590263952:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Already connected to **ไบลาวโตมาวีมวีม//🗣**.
+2025-10-22 00:19:03,372 [INFO] [INFO] Already in channel ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:19:03,372 [INFO] Command completed: jvc by p.pumpum
+2025-10-22 00:19:04,115 [INFO] 1430244012824199312:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:19:10,278 [INFO] 1430244038614847588:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+YouTube
+2025-10-22 00:19:10,278 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:19:10,625 [INFO] 1430244040175255723:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Not connected to a voice channel.
+2025-10-22 00:19:10,631 [INFO] 1430244040250490941:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:19:10,640 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:19:31,512 [INFO] 1430244127768838155:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:19:31,512 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:19:31,512 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:19:31,513 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:19:31,513 [INFO] Connecting to voice...
+2025-10-22 00:19:31,513 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:19:32,980 [INFO] 1430244133574017096:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:19:37,009 [INFO] 1430244150837641298:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+2025-10-22 00:19:37,009 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:19:37,405 [INFO] 1430244152502649014:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:19:37,418 [INFO] 1430244152263704607:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:19:42,127 [INFO] 1430244172312481884:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Failed to play https://www.youtube.com/watch?v=6dMjCa0nqK0: Not connected to voice.
+2025-10-22 00:19:42,165 [INFO] ffmpeg process 10976 has not terminated. Waiting to terminate...
+2025-10-22 00:19:42,189 [INFO] ffmpeg process 10976 should have terminated with a return code of 1.
+2025-10-22 00:19:42,189 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:20:01,516 [INFO] Timed out connecting to voice
+2025-10-22 00:20:01,516 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:20:01,516 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:20:31,518 [ERROR] [ERROR] Unexpected connection error: 
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\utils.py", line 727, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 1513, in attempt_connect
+    vc = await channel.connect(reconnect=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\abc.py", line 2149, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+        reconnect=reconnect, timeout=timeout, self_deaf=self_deaf, self_mute=self_mute, resume=False
+    )
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2025-10-22 00:20:36,876 [INFO] [INFO] Attempt 2: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:20:36,876 [INFO] Connecting to voice...
+2025-10-22 00:20:36,877 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:20:37,417 [INFO] Voice handshake complete. Endpoint found: c-sin13-f4908224.discord.media:8443
+2025-10-22 00:20:37,629 [INFO] Voice connection complete.
+2025-10-22 00:20:37,630 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:20:38,194 [INFO] 1430244407097168065:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 2)
+2025-10-22 00:20:38,311 [INFO] Command completed: jvc by p.pumpum
+2025-10-22 00:21:25,932 [INFO] 1430244607609802782:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:21:25,932 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:21:25,933 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:21:26,231 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:21:26,370 [INFO] 1430244609363279935:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Already connected to **ไบลาวโตมาวีมวีม//🗣**.
+2025-10-22 00:21:26,407 [INFO] [INFO] Already in channel ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:21:26,407 [INFO] Command completed: jvc by p.pumpum
+2025-10-22 00:21:27,173 [INFO] 1430244612437573675:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:21:42,375 [INFO] 1430244676639916072:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+2025-10-22 00:21:42,375 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:21:42,781 [INFO] 1430244678304792727:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Not connected to a voice channel.
+2025-10-22 00:21:42,855 [INFO] 1430244678397329588:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:21:42,899 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:26:27,489 [INFO] 1430245872398237807:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-22 00:26:27,489 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:26:27,489 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-22 00:26:27,490 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:26:27,491 [INFO] Connecting to voice...
+2025-10-22 00:26:27,491 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:26:29,040 [INFO] 1430245878995878049:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-22 00:26:35,205 [INFO] 1430245904534863885:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=6dMjCa0nqK0
+2025-10-22 00:26:35,205 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:26:35,586 [INFO] 1430245906149675093:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:26:35,597 [INFO] 1430245906539614208:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=6dMjCa0nqK0`
+2025-10-22 00:26:40,230 [INFO] 1430245925552652390:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Failed to play https://www.youtube.com/watch?v=6dMjCa0nqK0: Not connected to voice.
+2025-10-22 00:26:40,265 [INFO] ffmpeg process 11540 has not terminated. Waiting to terminate...
+2025-10-22 00:26:40,268 [INFO] ffmpeg process 11540 should have terminated with a return code of 1.
+2025-10-22 00:26:40,269 [INFO] Command completed: plvc by p.pumpum
+2025-10-22 00:26:57,497 [INFO] Timed out connecting to voice
+2025-10-22 00:26:57,497 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:26:57,498 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-22 00:27:00,604 [INFO] 1430246011376373942:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !pavc
+2025-10-22 00:27:00,604 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:27:00,604 [INFO] Command completed: pavc by p.pumpum
+2025-10-22 00:27:00,975 [INFO] 1430246013028925480:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback paused.
+2025-10-22 00:27:06,063 [INFO] 1430246034315149352:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !revc
+2025-10-22 00:27:06,063 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:27:06,063 [INFO] Command completed: revc by p.pumpum
+2025-10-22 00:27:06,471 [INFO] 1430246036038750209:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback resumed.
+2025-10-22 00:27:10,748 [INFO] 1430246053982109988:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !stvc
+2025-10-22 00:27:10,748 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-22 00:27:11,118 [INFO] 1430246055563362396:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback stopped and queue cleared.
+2025-10-22 00:27:11,155 [INFO] 1430246055676608652:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Playback stopped and queue cleared.
+2025-10-22 00:27:11,211 [INFO] Command completed: stvc by p.pumpum
+2025-10-22 00:27:27,505 [ERROR] [ERROR] Unexpected connection error: 
+Traceback (most recent call last):
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\utils.py", line 727, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 1513, in attempt_connect
+    vc = await channel.connect(reconnect=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\abc.py", line 2149, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+        reconnect=reconnect, timeout=timeout, self_deaf=self_deaf, self_mute=self_mute, resume=False
+    )
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2025-10-22 00:27:32,509 [INFO] [INFO] Attempt 2: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-22 00:27:32,510 [INFO] Connecting to voice...
+2025-10-22 00:27:32,510 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-22 00:27:33,049 [INFO] Voice handshake complete. Endpoint found: c-sin13-f4908224.discord.media:8443
+2025-10-22 00:27:33,268 [INFO] Voice connection complete.
+2025-10-22 00:27:33,269 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-22 00:27:33,683 [INFO] 1430246150178603058:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 2)
+2025-10-22 00:27:33,736 [INFO] Command completed: jvc by p.pumpum

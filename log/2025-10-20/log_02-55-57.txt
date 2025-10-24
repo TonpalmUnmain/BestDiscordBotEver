@@ -1,0 +1,5 @@
+2025-10-20 02:56:03,295 [INFO] logging in using static token
+2025-10-20 02:56:04,804 [INFO] Shard ID None has connected to Gateway (Session ID: 1cfbd8535f1bcc54538c45fc93c8372a).
+2025-10-20 02:56:06,825 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 02:56:06,825 [INFO] No startmessage set.
+2025-10-20 02:58:15,829 [INFO] 1429559299079929979:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Bot Version : 1.9 Added Poll Command, Internal Fixes (I just rewrote it lol)
