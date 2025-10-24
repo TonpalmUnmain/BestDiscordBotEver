@@ -1,0 +1,17 @@
+2025-10-21 02:08:56,414 [CRITICAL] Unhandled exception:
+Traceback (most recent call last):
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 1648, in <module>
+    bot = create_bot()
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 720, in create_bot
+    @bot.command(name="help")
+     ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\core.py", line 1521, in decorator
+    self.add_command(result)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\bot.py", line 253, in add_command
+    super().add_command(command)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\commands\core.py", line 1356, in add_command
+    raise CommandRegistrationError(command.name)
+discord.ext.commands.errors.CommandRegistrationError: The command help is already an existing command or alias.
+

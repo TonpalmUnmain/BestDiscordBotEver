@@ -1,0 +1,55 @@
+2025-10-21 15:49:27,442 [INFO] logging in using static token
+2025-10-21 15:49:27,442 [INFO] Session ID: b54473b2c69f07f3b919c240f9989400bedf373f962557190b817ddf6436ef62
+2025-10-21 15:49:28,954 [INFO] Shard ID None has connected to Gateway (Session ID: 38359816357df1f4c7641ce215979215).
+2025-10-21 15:49:30,976 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 15:49:30,976 [INFO] No startmessage set.
+2025-10-21 16:09:24,982 [INFO] 1430120786470895686:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): <@1173572905649578025>  toasty toaster's server is full
+2025-10-21 16:09:54,276 [INFO] 1430120909053890612:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): join me
+2025-10-21 16:09:55,664 [INFO] 1430120914929975397:p.pumpum (1260198579067420722) in #📣announcements-📣 (1375102539803918456): pls help me add features by doing !featurerequest <ur idea> or report bugs at !bugreport <bug>
+2025-10-21 16:09:55,664 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:10:14,401 [INFO] 1430120993430569022:p.pumpum (1260198579067420722) in #📣announcements-📣 (1375102539803918456): !featurerequest endu must dance naked
+2025-10-21 16:10:14,401 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:10:14,870 [INFO] 1430120995699822602:BestBotEver!!!#9403 (1386280922218893465) in #📣announcements-📣 (1375102539803918456): Feature request **#114801** submitted. Thank you!
+2025-10-21 16:10:15,006 [INFO] Command completed: featurerequest by p.pumpum
+2025-10-21 16:10:28,677 [INFO] 1430121053677686804:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-21 16:10:35,220 [INFO] 1430121081095847966:p.pumpum (1260198579067420722) in #📣announcements-📣 (1375102539803918456): !bugreport endu is too ass
+2025-10-21 16:10:35,221 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:10:35,661 [INFO] 1430121082966511656:BestBotEver!!!#9403 (1386280922218893465) in #📣announcements-📣 (1375102539803918456): Bug report **#114802** submitted. Thank you!
+2025-10-21 16:10:35,710 [INFO] Command completed: bugreport by p.pumpum
+2025-10-21 16:12:38,516 [INFO] 1430121598299406396:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i waiting in line its only 1 position
+2025-10-21 16:12:42,065 [INFO] 1430121613164285973:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): p
+2025-10-21 16:12:47,943 [INFO] 1430121637654822994:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): p
+2025-10-21 16:12:48,584 [INFO] 1430121640490041355:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): p
+2025-10-21 16:12:50,481 [INFO] 1430121648492646492:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): rejoin
+2025-10-21 16:12:52,197 [INFO] 1430121655635808276:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): or wait
+2025-10-21 16:12:58,281 [INFO] 1430121680956821636:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-21 16:12:59,660 [INFO] 1430121686866460714:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wait a bit
+2025-10-21 16:17:38,536 [INFO] 1430122856544731226:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): im lagging
+2025-10-21 16:17:39,738 [INFO] 1430122861707657248:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): idk why
+2025-10-21 16:17:51,819 [INFO] 1430122912270258206:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): prob internet
+2025-10-21 16:21:04,083 [INFO] 1430123718805291059:sleepycimo (1300754808185290762) in #🤖-bot-test-🛠️ (1399900695993253970): <@913994744953196614> can just ban this guy btw
+2025-10-21 16:21:12,697 [INFO] 1430123754591359079:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): nein
+2025-10-21 16:21:12,697 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:21:15,323 [INFO] 1430123765869707284:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): pls dond
+2025-10-21 16:21:15,324 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:21:27,555 [INFO] 1430123817249931264:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): 😛
+2025-10-21 16:21:32,008 [INFO] 1430123835855998986:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): its for testing
+2025-10-21 16:21:32,008 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:21:33,851 [INFO] 1430123843401285653:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): pls
+2025-10-21 16:21:33,851 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:21:44,145 [INFO] 1430123886757941318:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): 🤔
+2025-10-21 16:22:14,790 [INFO] 1430124015355301898:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): its easier to look for <msg> in console than to look in log with 10000 message
+2025-10-21 16:22:14,790 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:23:48,343 [INFO] 1430124407753281638:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): you sweaty
+2025-10-21 16:23:53,539 [INFO] 1430124429555404800:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): no
+2025-10-21 16:24:06,936 [INFO] 1430124485746495558:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): btw the chase theme is from battle cat
+2025-10-21 16:24:19,372 [INFO] 1430124537919574177:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete 1s
+2025-10-21 16:24:19,373 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:24:19,785 [ERROR] Error in command deplete by p.pumpum: value is a required argument that is missing.
+2025-10-21 16:24:25,556 [INFO] 1430124563517149185:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): mfer
+2025-10-21 16:24:25,556 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:24:46,739 [INFO] 1430124652700897340:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete sec 1
+2025-10-21 16:24:46,739 [INFO] User p.pumpum has GOD role, skipping banned word check.
+2025-10-21 16:24:46,740 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
+2025-10-21 16:24:47,319 [INFO] 1430124654772879380:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): After finishing I will deplete myself in 1.00s, I AM STILL WATCHING.
+2025-10-21 16:24:48,401 [INFO] Bot stopped. Closing connection...

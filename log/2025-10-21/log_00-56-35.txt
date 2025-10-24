@@ -1,0 +1,8 @@
+2025-10-21 01:08:14,002 [INFO] logging in using static token
+2025-10-21 01:08:14,002 [INFO] Session ID: 089309058c4d7757771fe9af8285b4047cb5594d717bc1f4d68167871563feda
+2025-10-21 01:08:15,547 [INFO] Shard ID None has connected to Gateway (Session ID: ef85696ec7b534d445aee3d63609a174).
+2025-10-21 01:08:17,562 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-21 01:08:17,563 [INFO] No startmessage set.
+2025-10-21 01:41:53,512 [INFO] Shard ID None has successfully RESUMED session ef85696ec7b534d445aee3d63609a174.
+2025-10-21 01:55:59,714 [INFO] (1429906013774942218) p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): thats during maintainance
+2025-10-21 01:55:59,716 [INFO] User p.pumpum is TonpalmUnmain, ignoring banned word.

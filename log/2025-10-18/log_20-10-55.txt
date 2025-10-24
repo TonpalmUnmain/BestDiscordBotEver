@@ -1,0 +1,287 @@
+2025-10-18 20:13:32,177 [INFO] logging in using static token
+2025-10-18 20:13:34,283 [INFO] Shard ID None has connected to Gateway (Session ID: 27031bee4cbc446e77f5a71dc8476951).
+2025-10-18 20:13:36,327 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-18 20:13:36,327 [INFO] No startmessage set.
+2025-10-18 20:33:04,557 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !mcstat
+2025-10-18 20:33:05,578 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): 🟢 **Minecraft Bedrock Server is ONLINE**
+Address: multi-nor.gl.at.ply.gg:5355
+Players: 0
+Latency: 499.9 ms
+2025-10-18 20:33:05,618 [INFO] Command completed: mcstat by p.pumpum
+2025-10-18 20:33:11,614 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !mcstat tagmcr
+2025-10-18 20:33:12,256 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): <@&1394542459538640977>
+🟢 **Minecraft Bedrock Server is ONLINE**
+Address: multi-nor.gl.at.ply.gg:5355
+Players: 0
+Latency: 252.2 ms
+2025-10-18 20:33:12,386 [INFO] Command completed: mcstat by p.pumpum
+2025-10-18 20:33:21,960 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): why ping so ass
+2025-10-18 20:33:24,929 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 😢😢😢
+2025-10-18 20:33:27,672 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): fuq u
+2025-10-18 20:33:36,365 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): <@1340262742782771323> mod เสดแล้ว
+2025-10-18 20:33:38,487 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-18 20:34:05,387 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): mod ได้แล้วนะค่ะ
+2025-10-18 20:34:12,879 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): ค่ะ
+2025-10-18 20:36:11,150 [INFO] p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): เยี่ยมคะ
+2025-10-18 20:36:47,377 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): <@913994744953196614> i done upgrading your anims
+2025-10-18 20:36:51,315 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 😎
+2025-10-18 20:36:57,220 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wowie
+2025-10-18 20:37:08,342 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhhh
+2025-10-18 20:37:13,765 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): what
+2025-10-18 20:37:16,870 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): u just add lil shaky
+2025-10-18 20:37:22,393 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): no
+2025-10-18 20:37:28,151 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i also fix some pose
+2025-10-18 20:37:33,005 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wow
+2025-10-18 20:37:37,139 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): dumcat so pro
+2025-10-18 20:37:41,356 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-18 20:38:11,799 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i add the bounce so it look more powerful
+2025-10-18 20:38:15,957 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): kinda
+2025-10-18 20:38:19,567 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): so it look like a punch
+2025-10-18 20:38:41,243 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): is this the style u want in ur game or smth
+2025-10-18 20:38:47,483 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-18 20:38:56,638 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I pro
+2025-10-18 20:39:02,648 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): but i dont know how slashes works
+2025-10-18 20:39:10,684 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but I can't do with weapon
+2025-10-18 20:39:15,134 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): oh
+2025-10-18 20:39:19,593 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): hard
+2025-10-18 20:39:29,760 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): can i practice in your game
+2025-10-18 20:39:32,141 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): lemme try
+2025-10-18 20:39:35,011 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): sure
+2025-10-18 20:39:46,604 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i will copy my sword rig
+2025-10-18 20:39:59,437 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wait
+2025-10-18 20:40:06,415 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): now u make it look like jjs more than limnut
+2025-10-18 20:40:16,167 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): why
+2025-10-18 20:40:20,845 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): idk
+2025-10-18 20:40:25,667 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it doesn't give
+2025-10-18 20:40:30,508 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): limbussy feeling
+2025-10-18 20:40:38,368 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): how do i make it like limbussy
+2025-10-18 20:40:46,643 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): maybe its the bonce
+2025-10-18 20:40:50,153 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): o
+2025-10-18 20:40:51,043 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wait
+2025-10-18 20:40:56,943 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i put the bounce to linear
+2025-10-18 20:41:01,531 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): change it to none
+2025-10-18 20:41:03,260 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): oh yea
+2025-10-18 20:41:05,020 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-18 20:41:30,914 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it looks more limbussy now
+2025-10-18 20:41:38,716 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): oh
+2025-10-18 20:41:49,670 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but for skills I don't think bouncing really matter
+2025-10-18 20:41:57,138 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cuz in limbus it only screen shaking
+2025-10-18 20:42:01,565 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): no bouncy
+2025-10-18 20:42:02,327 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wait
+2025-10-18 20:42:06,803 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i accidenly left
+2025-10-18 20:42:10,497 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): noob
+2025-10-18 20:42:49,410 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 🙁
+2025-10-18 20:45:25,739 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): also if ur game have m1 system u need to make anim really quick
+2025-10-18 20:45:28,713 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): so make it choppier
+2025-10-18 20:45:34,568 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): remove some frames
+2025-10-18 20:45:35,807 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): oh
+2025-10-18 20:45:39,967 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-10-18 20:45:57,800 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 1 is startup, 2 is prepare, 3 is landing, 4 is wait for next
+2025-10-18 20:46:02,027 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): This is for heavy skills
+2025-10-18 20:46:18,324 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 1. is startup 2. is landing
+2025-10-18 20:46:22,418 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): this for m1
+2025-10-18 20:46:23,654 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): ig
+2025-10-18 20:49:54,770 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-18 20:50:05,939 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): are u making a 90° swing
+2025-10-18 20:50:13,388 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-18 20:50:23,495 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 45°
+2025-10-18 20:50:31,856 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): very heavy!!1!11
+2025-10-18 20:54:15,010 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): limpussy
+2025-10-18 20:54:25,023 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wha
+2025-10-18 20:54:37,543 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://vt.tiktok.com/ZSUXWGnB5/
+2025-10-18 20:54:42,222 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): u can use this for reference
+2025-10-18 20:54:47,202 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): even tho it made in jjs
+2025-10-18 21:14:01,483 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-18 21:21:50,522 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1173572905649578025> how many slashes u make
+2025-10-18 21:21:57,940 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): 3
+2025-10-18 21:22:07,093 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i forgot to save
+2025-10-18 21:22:13,616 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): im redoing the second one
+2025-10-18 21:22:18,746 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): o
+2025-10-18 21:33:36,035 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): what u think about this dash thing I made
+2025-10-18 21:33:52,767 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wowie
+2025-10-18 21:33:57,993 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): the launch thing is good
+2025-10-18 21:34:10,187 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I use quad in out
+2025-10-18 21:34:15,721 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): oh
+2025-10-18 21:34:19,824 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): now it looks very limbussy
+2025-10-18 21:34:27,067 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): wowie
+2025-10-18 21:34:33,841 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): the poses kinda azz tho
+2025-10-18 21:34:35,201 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😢😢
+2025-10-18 21:36:07,274 [INFO] toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): yeah fr 😂
+2025-10-18 21:36:18,953 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): startup so azz
+2025-10-18 21:36:22,472 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🥹🥹😢😢
+2025-10-18 21:36:44,462 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): lemme think!1!1!11
+2025-10-18 21:38:06,029 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/saihate-station-shion-tatsunami-saihate-station-shion-shion-tatsunami-shion-saihate-station-gif-9185142630512994618
+2025-10-18 21:56:03,071 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <@1173572905649578025> I have to go
+2025-10-18 21:56:10,872 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <:monkethink:1405561721933926530>
+2025-10-19 00:22:26,462 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): B
+2025-10-19 00:25:10,029 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 00:31:24,406 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Ok
+2025-10-19 02:40:28,913 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 04:56:10,552 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 06:27:29,047 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 07:11:10,165 [INFO] Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): **Your group is on a 17 day streak!** 🔥 Here are yesterday's results:
+👑 1/6: <@1300754808185290762>
+6/6: <@913994744953196614>
+X/6: <@1340262742782771323>
+2025-10-19 07:42:27,367 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 10:16:21,320 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): [OguriAnxious](https://cdn.discordapp.com/emojis/1384293320964182099.webp?size=48&name=OguriAnxious)
+2025-10-19 10:22:48,872 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): <@&1398881214684991598> today word is yi sang
+2025-10-19 10:22:54,710 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/yi-sang-limbus-company-ideal-yisang-gif-11549128930648982001
+2025-10-19 10:22:55,508 [INFO] Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): cimosl and Toaster are playing
+2025-10-19 10:23:29,269 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 10:37:39,347 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/get-ideal-not-ideal-yi-sang-limbus-company-ideal-gif-2610900207344769450
+2025-10-19 10:42:36,190 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 10:49:36,054 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 10:49:50,096 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Today's word is so *ideal*
+2025-10-19 10:49:59,519 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): fly broken wings
+2025-10-19 10:50:24,111 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I know you are skibidi
+2025-10-19 10:51:03,278 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): All I need is a gyatt to get me edging
+2025-10-19 10:51:03,758 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): wtf
+2025-10-19 10:51:21,032 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): mili never sang ts 🥹🥹😢😢
+2025-10-19 10:51:25,976 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): sang...
+2025-10-19 10:51:29,374 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): yi sang?
+2025-10-19 10:52:37,540 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I'm rice
+2025-10-19 10:58:49,176 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Rizz up my gyatt
+I know you have got some rizz
+All i need is a gyatt to get me edging
+2025-10-19 10:58:59,373 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Mili's peak
+2025-10-19 10:59:03,622 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🥹🥹🥹
+2025-10-19 11:02:28,752 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Rice?
+2025-10-19 11:02:39,940 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 🍚🚿
+2025-10-19 11:07:54,292 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): next walpurgis is LoR theme btw
+2025-10-19 11:07:57,717 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😛😛😢
+2025-10-19 11:14:59,831 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 11:15:44,540 [INFO] Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): ราชาrage bait is playing
+2025-10-19 11:15:55,438 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): When will it come???
+2025-10-19 11:23:36,392 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): november
+2025-10-19 11:24:05,225 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): the IDs for the walpurgis would prob be one of the offices from loR
+2025-10-19 11:24:32,944 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but idc I got 400 shards for solemn lament
+2025-10-19 11:24:34,951 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🤑🤑😛😛
+2025-10-19 11:32:28,699 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Wnat is that
+2025-10-19 11:33:02,428 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Btw shard will get convert to thread if they update season pass
+2025-10-19 11:33:33,690 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): And they dont tell you the date for new season
+2025-10-19 11:33:50,243 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): mid december
+2025-10-19 11:33:53,508 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I think
+2025-10-19 11:33:58,466 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): when ryoshu canto is out
+2025-10-19 11:34:06,440 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): It's either December or early 2026
+2025-10-19 11:34:20,984 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/yi-sang-yi-sang-limbus-company-limbus-company-netzach-lobotomy-corporation-gif-11849089351361920297
+2025-10-19 11:39:30,544 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): i gonna build sinking team!!1!!1
+2025-10-19 11:39:35,448 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but no wild hunt 😢😢
+2025-10-19 11:39:42,038 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Why
+2025-10-19 11:39:47,401 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): U have spicebush?
+2025-10-19 11:39:58,696 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I gonna use sl instead of spicebush
+2025-10-19 11:40:13,919 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Why
+2025-10-19 11:40:24,175 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Is it better than spicebush
+2025-10-19 11:40:30,862 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): And why do u need sinking team
+2025-10-19 11:40:41,706 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): solemn lament pretty flexible in everything
+2025-10-19 11:40:46,984 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but spicebush only good for bosses
+2025-10-19 11:40:48,368 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): and md
+2025-10-19 11:40:58,163 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I noticed I have alot of sinking unit
+2025-10-19 11:41:21,693 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): and sinking kinda op
+2025-10-19 11:41:51,873 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): My spicebush does 91 dmg with no other sinking teamate in canto
+2025-10-19 11:41:58,502 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): But i dont have sinking unit
+2025-10-19 11:42:08,778 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😔
+2025-10-19 11:42:12,524 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): So i dont use him
+2025-10-19 11:42:21,786 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I kinda want sinking team too
+2025-10-19 11:42:29,088 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Cuz spicebush cool and op
+2025-10-19 11:42:42,901 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): solemn lament cool too
+2025-10-19 11:42:53,943 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but wild hunt is like a must have in every sinking
+2025-10-19 11:43:04,678 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): and I only have like 100 heath shards
+2025-10-19 11:44:51,976 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Shyt
+2025-10-19 11:44:59,525 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I convert heath shard to thread
+2025-10-19 11:45:08,289 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 11:45:25,736 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I converted mersault shards to thread before thumbsault release 😢😢😢
+2025-10-19 11:46:36,383 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): sinking is good but bleed is ez to get
+2025-10-19 11:46:49,342 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I'm prob gonna get bleed next season
+2025-10-19 11:46:54,147 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): cuz can't shard bloodfiends yet
+2025-10-19 11:47:36,529 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): every status good tbh
+2025-10-19 11:47:40,381 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): except tremor
+2025-10-19 11:48:11,045 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): isnt thumbsault tremor
+2025-10-19 11:48:19,779 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): burn tremor
+2025-10-19 11:48:25,586 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): i want a rupture n sinking team
+2025-10-19 11:48:28,304 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): he more good in burn team
+2025-10-19 11:48:29,622 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): but i only have bleed rn
+2025-10-19 11:48:41,950 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): i have liu yi sang n thumbsault
+2025-10-19 11:48:46,529 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): for the burn team
+2025-10-19 11:48:54,139 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I have most liu ids
+2025-10-19 11:48:57,939 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but no thumb
+2025-10-19 11:49:03,562 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I use to speedrun md
+2025-10-19 11:50:09,989 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): in canto storylines I just use any id I want
+2025-10-19 11:50:11,828 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): no team
+2025-10-19 11:50:13,676 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 😢😢😢
+2025-10-19 11:50:52,194 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I have alot of burn IDs but burn kinda suck outside of md
+2025-10-19 11:52:03,978 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): im on canto 3 😡 😡
+2025-10-19 11:52:14,814 [INFO] sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): w bleed team
+2025-10-19 11:59:08,150 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Im using burn team
+2025-10-19 11:59:13,684 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Burn team good
+2025-10-19 11:59:17,611 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-10-19 11:59:19,919 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): My bleed team suc
+2025-10-19 11:59:34,890 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): burn team so good in mirror dun
+2025-10-19 12:00:11,559 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): My burn id is carrying my acc
+2025-10-19 12:00:41,560 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): So i do burn team
+2025-10-19 12:01:35,514 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): sinking pro
+2025-10-19 12:02:18,651 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://www.prydwen.gg/limbus-company/team-database/
+2025-10-19 12:02:22,183 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): team comps btw
+2025-10-19 12:03:20,033 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): What team is that
+2025-10-19 12:03:22,823 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Sinking?
+2025-10-19 12:03:26,290 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I cant see
+2025-10-19 12:03:28,798 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): My internet suc
+2025-10-19 12:04:07,421 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): And how u activate support passive
+2025-10-19 12:04:38,417 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): every team
+2025-10-19 12:04:47,386 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): every status
+2025-10-19 12:06:06,061 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): either use skills that have same sin like 3 times or have the required ego resources
+2025-10-19 12:06:08,887 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): idk
+2025-10-19 12:08:52,176 [INFO] Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): Ja Morant is playing
+2025-10-19 12:11:13,215 [INFO] endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/yi-sang-limbus-company-ideal-yisang-gif-11549128930648982001
+2025-10-19 12:12:39,369 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 12:23:31,438 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): Is this tuff
+2025-10-19 12:24:08,840 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): 
+2025-10-19 12:24:11,660 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): What is this diddy blud doing
+2025-10-19 12:24:24,066 [INFO] tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): Does he think he is Einstein
+2025-10-19 12:50:45,522 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 12:58:12,752 [INFO] 7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 12:58:20,314 [INFO] 7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): I already craft it
+2025-10-19 12:58:34,563 [INFO] 7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): Diamond full armor🗿
+2025-10-19 12:58:44,351 [INFO] tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-19 12:58:53,577 [INFO] tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): <:Tuff_emoji:1382989105327112253>
+2025-10-19 12:58:53,979 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #⚙️-commands-🤖 (1386878389196951563): 🔴 **Minecraft Bedrock Server is OFFLINE**
+2025-10-19 12:58:54,100 [ERROR] mcstat command failed: timed out
+2025-10-19 12:58:54,100 [INFO] Command completed: mcstat by tatthep0270
+2025-10-19 12:58:57,238 [INFO] tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): Nihhhhrgrrrrrrr
+2025-10-19 12:59:07,289 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): Bro
+2025-10-19 12:59:12,701 [INFO] tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): NNNNNNNNIIIIIIIGGGGGGGREEEEERRRRRRR
+2025-10-19 12:59:16,040 [INFO] tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): <:Tuff_emoji:1382989105327112253> <:Tuff_emoji:1382989105327112253>
+2025-10-19 12:59:23,669 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): I just woke up
+2025-10-19 12:59:29,457 [INFO] tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): cla
+2025-10-19 12:59:40,129 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-19 12:59:49,569 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #⚙️-commands-🤖 (1386878389196951563): 🔴 **Minecraft Bedrock Server is OFFLINE**
+2025-10-19 12:59:49,630 [ERROR] mcstat command failed: timed out
+2025-10-19 12:59:49,630 [INFO] Command completed: mcstat by p.pumpum
+2025-10-19 12:59:52,914 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): Nein
+2025-10-19 13:00:07,355 [INFO] tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-19 13:02:29,643 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): Its on
+2025-10-19 13:02:34,458 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): It just too slow
+2025-10-19 13:02:40,767 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): Lemme change tmo
+2025-10-19 13:08:27,305 [INFO] p.pumpum (1260198579067420722) in #📣-sub-announcement-📣 (1419216320293241002): https://www.instagram.com/reel/DP89w8Rkydk/?igsh=bXduM25jdm14a2pw
+2025-10-19 13:08:31,577 [INFO] p.pumpum (1260198579067420722) in #📣-sub-announcement-📣 (1419216320293241002): Should i
+2025-10-19 13:48:23,960 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Bro I open limbus company and don voice scared me
+2025-10-19 13:48:27,133 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Like
+2025-10-19 13:48:30,580 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): LIMBUS COMPANYYY
+2025-10-19 13:48:36,204 [INFO] .toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 😭😭😭
+2025-10-19 14:03:10,074 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 14:56:56,409 [INFO] 7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-19 14:57:06,241 [INFO] 7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): Our iron farm😎
+2025-10-19 15:06:05,795 [INFO] sonata_.101 (1395312518569918664) in #🎮-gaming-🕹️ (1395783584253739141): <:joseph_sigma:1386326827836112986>
+2025-10-19 15:07:00,710 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 15:13:39,080 [INFO] tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-19 15:13:39,918 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #⚙️-commands-🤖 (1386878389196951563): 🟢 **Minecraft Bedrock Server is ONLINE**
+Address: multi-nor.gl.at.ply.gg:5355
+Players: 2
+Latency: 451.7 ms
+2025-10-19 15:13:39,949 [INFO] Command completed: mcstat by tatthep0270
+2025-10-19 15:23:07,904 [INFO] Shard ID None has successfully RESUMED session 27031bee4cbc446e77f5a71dc8476951.
+2025-10-19 15:23:28,203 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): I WILL REACH 100l
+2025-10-19 15:25:08,751 [INFO] Waiting for bot to shut down...
+2025-10-19 15:25:08,768 [INFO] Shutting down bot...
+2025-10-19 15:25:09,130 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): UPDATE
+2025-10-19 15:25:09,204 [INFO] Sent shutdown message to #💬-chat-✉️ (1371357608904228924): UPDATE

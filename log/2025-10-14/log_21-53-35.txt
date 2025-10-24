@@ -1,0 +1,12 @@
+2025-10-14 21:53:45,092 [INFO] logging in using static token
+2025-10-14 21:53:46,464 [INFO] Shard ID None has connected to Gateway (Session ID: 87826e07d5bda5b3c8000e880a6fb8b2).
+2025-10-14 21:53:48,474 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-14 21:53:48,885 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-14 21:53:59,365 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Good boy <@1386280922218893465>
+2025-10-14 21:54:33,312 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): best feature yet
+2025-10-14 21:55:54,760 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): ikr
+2025-10-14 21:55:57,298 [INFO] endulix_ (913994744953196614) in #💬-chat-✉️ (1371357608904228924): https://tenor.com/view/jungle-pocket-pokke-uma-musume-uma-musume-pretty-derby-whira-gif-12702119496115110964
+2025-10-14 22:38:58,734 [INFO] Waiting for bot to shut down...
+2025-10-14 22:38:58,734 [INFO] Shutting down bot...
+2025-10-14 22:39:08,746 [ERROR] Error waiting for shutdown: 
+2025-10-14 22:39:08,747 [INFO] Bot stopped.

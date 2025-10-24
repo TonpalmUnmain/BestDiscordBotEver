@@ -1,0 +1,36 @@
+2025-10-15 21:34:17,471 [INFO] logging in using static token
+2025-10-15 21:34:19,232 [INFO] Shard ID None has connected to Gateway (Session ID: e2abac15135f72dc4503f5b30c0afff3).
+2025-10-15 21:34:21,261 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-15 21:34:21,596 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): BestBotEver!!! Version 1.6
+2025-10-15 21:34:21,655 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-15 21:35:28,964 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): m!p glimpse of us
+2025-10-15 21:35:29,363 [INFO] Jockie Music#8158 (411916947773587456) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-15 21:37:10,251 [INFO] Jockie Music#8158 (411916947773587456) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-15 21:38:49,018 [INFO] Jockie Music#8158 (411916947773587456) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-15 21:49:27,406 [INFO] p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): !mcstat
+2025-10-15 21:49:28,267 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #⚙️-commands-🤖 (1386878389196951563): 🟢 **Minecraft Bedrock Server is ONLINE**
+Address: multi-nor.gl.at.ply.gg:5355
+Players: 0
+Latency: 418.1 ms
+2025-10-15 21:49:28,310 [INFO] Command completed: mcstat by p.pumpum
+2025-10-15 21:52:31,816 [INFO] tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): 1.6still sucka
+2025-10-15 21:53:16,593 [INFO] tatthep0270 (1340262742782771323) in #เกมsteamฟรีแนะนำpls (1428032992797790349): Pls
+2025-10-15 21:53:59,015 [INFO] sleepycimo (1300754808185290762) in #เกมsteamฟรีแนะนำpls (1428032992797790349): limbus company
+2025-10-15 21:54:06,704 [INFO] tatthep0270 (1340262742782771323) in #เกมsteamฟรีแนะนำpls (1428032992797790349): Fuck no
+2025-10-15 21:55:20,080 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !version
+2025-10-15 21:55:20,517 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Bot version: 1.6
+My papi is: TonpalmUnmain
+2025-10-15 21:55:20,608 [INFO] Command completed: version by p.pumpum
+2025-10-15 22:05:18,846 [INFO] endulix_ (913994744953196614) in #เกมsteamฟรีแนะนำpls (1428032992797790349): blue archive
+2025-10-15 22:05:33,484 [INFO] sleepycimo (1300754808185290762) in #เกมsteamฟรีแนะนำpls (1428032992797790349): pedo game
+2025-10-15 22:05:36,817 [INFO] sleepycimo (1300754808185290762) in #เกมsteamฟรีแนะนำpls (1428032992797790349): 😡💔
+2025-10-15 22:05:38,690 [INFO] endulix_ (913994744953196614) in #เกมsteamฟรีแนะนำpls (1428032992797790349): no
+2025-10-15 22:05:47,124 [INFO] endulix_ (913994744953196614) in #เกมsteamฟรีแนะนำpls (1428032992797790349): https://tenor.com/view/blue-archive-chibi-tsukiyuki-miyako-blue-archive-gif-12697874785628085971
+2025-10-15 22:46:56,361 [INFO] Shard ID None has successfully RESUMED session e2abac15135f72dc4503f5b30c0afff3.
+2025-10-16 00:10:07,120 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-16 00:10:21,427 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): FINALLY ELDER MOSSRIPPER
+2025-10-16 00:10:38,174 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): 5 DAYS OF GEIMDING FOR THIS FUCKING ROD
+2025-10-16 00:29:05,976 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): <@1300754808185290762>  can I have some exalted relics pls 🥺
+2025-10-16 00:29:13,938 [INFO] tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): For the rod
+2025-10-16 00:30:34,329 [INFO] tritoniscool. (1179654613738201129) in #เกมsteamฟรีแนะนำpls (1428032992797790349): Loli bait
+2025-10-16 00:32:04,315 [INFO] tritoniscool. (1179654613738201129) in #Free exalted relics pls (1428072955513929859): 🥺

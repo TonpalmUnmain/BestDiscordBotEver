@@ -1,0 +1,17 @@
+2025-10-19 22:37:17,678 [INFO] logging in using static token
+2025-10-19 22:37:19,214 [INFO] Shard ID None has connected to Gateway (Session ID: bdcebfd5b0c1b41854dcd0dc053367b4).
+2025-10-19 22:37:21,227 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-19 22:37:21,597 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Bot 1.8.3
+2025-10-19 22:37:21,717 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-10-19 22:37:22,167 [INFO] Auto-saved 34 users at 2025-10-19 22:37:21
+2025-10-19 22:49:08,142 [INFO] toastedkwitty (1173572905649578025) in #💬-chat-✉️ (1371357608904228924): 👩‍🦲
+2025-10-19 23:35:39,794 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): n1993r
+2025-10-19 23:36:24,191 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): เขียนบอทจน neck hurt
+2025-10-19 23:36:27,849 [INFO] p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): ปวดคอ
+2025-10-20 01:22:19,183 [INFO] Shard ID None has successfully RESUMED session bdcebfd5b0c1b41854dcd0dc053367b4.
+2025-10-20 02:21:05,403 [INFO] Waiting for bot to shut down...
+2025-10-20 02:21:05,403 [INFO] Shutting down bot...
+2025-10-20 02:21:05,793 [INFO] BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Updates
+2025-10-20 02:21:05,903 [INFO] Sent shutdown message to #💬-chat-✉️ (1371357608904228924): Updates
+2025-10-20 02:21:15,412 [ERROR] Error shutting down: 
+2025-10-20 02:21:15,412 [INFO] Bot stopped.

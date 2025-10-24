@@ -1,0 +1,25 @@
+2025-10-20 17:31:00,004 [INFO] logging in using static token
+2025-10-20 17:31:00,004 [INFO] Session ID: 6aefdc0a3d4d76dba37cf8a96bee6f843902c41bec77c32afd54e872ea160656
+2025-10-20 17:31:01,503 [INFO] Shard ID None has connected to Gateway (Session ID: 77d95d1ddd9390f94fc0623b42ac3d7e).
+2025-10-20 17:31:03,538 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-20 17:31:03,539 [INFO] No startmessage set.
+2025-10-20 17:36:04,460 [INFO] 1429780206092292116:tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): <:Tuff_emoji:1382989105327112253>
+2025-10-20 18:36:03,930 [INFO] 1429795303216648284:tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): NlGG3R
+2025-10-20 18:37:23,872 [INFO] 1429795638840787025:7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): <@&1394541728584699935>
+2025-10-20 18:37:38,329 [INFO] 1429795699347816509:tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): ตั้งนานมึงไม่เล่น
+2025-10-20 18:37:51,905 [INFO] 1429795756423778374:tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): <:Tuff_emoji:1382989105327112253>
+2025-10-20 18:38:03,242 [INFO] 1429795803983118396:7jooer (1385167797360922675) in #🎮-gaming-🕹️ (1395783584253739141): เล่นป่าว<@1340262742782771323>
+2025-10-20 18:39:53,161 [INFO] 1429796264672886847:tatthep0270 (1340262742782771323) in #🎮-gaming-🕹️ (1395783584253739141): ไม่
+2025-10-20 18:49:38,126 [INFO] 1429798718273491016:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Some mf play rasputin in a supee
+2025-10-20 19:09:13,147 [INFO] 1429803646983344148:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): Thanks for pointing out
+2025-10-20 19:09:28,713 [INFO] 1429803711835799613:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): I will be using fuzzy matching in 1.12.0
+2025-10-20 19:10:27,525 [INFO] 1429803958876115045:tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): arnold schwarzenegger
+2025-10-20 19:14:16,556 [INFO] Shard ID None has successfully RESUMED session 77d95d1ddd9390f94fc0623b42ac3d7e.
+2025-10-20 20:05:18,614 [INFO] 1429817761814544395:tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): I escaped skybox with inf speed hacks
+2025-10-20 20:52:46,922 [INFO] 1429829709071650816:tritoniscool. (1179654613738201129) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-20 21:01:31,277 [INFO] Waiting for bot to shut down...
+2025-10-20 21:01:31,278 [INFO] Shutting down bot...
+2025-10-20 21:01:41,289 [ERROR] Error shutting down: 
+2025-10-20 21:01:41,289 [INFO] Bot stopped.
+2025-10-20 21:01:45,773 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-516' coro=<console_interface.<locals>.shutdown() running at C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py:1133> wait_for=<Task finished name='Task-517' coro=<Client.close.<locals>._close() done, defined at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py:774> result=None> cb=[_chain_future.<locals>._call_set_state() at C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\futures.py:391]>

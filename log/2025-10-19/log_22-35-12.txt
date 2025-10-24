@@ -1,0 +1,7 @@
+2025-10-19 22:35:12,398 [CRITICAL] Critical error :
+Traceback (most recent call last):
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\main.py", line 173, in <module>
+    SAVE_DIR = config_data["config"]["sreenshotdir"] or "scs"
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'sreenshotdir'
+
