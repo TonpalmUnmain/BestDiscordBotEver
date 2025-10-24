@@ -4,3 +4,4 @@ uinfo.json
 userdata/
 test.py
 tts_output/*
+venv/
