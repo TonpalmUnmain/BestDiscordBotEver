@@ -53,6 +53,8 @@ echo ======================================
 echo Installing Python requirements...
 echo ======================================
 
+venv\Scripts\activate.bat
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
@@ -61,5 +63,10 @@ echo Setup complete!
 echo To activate the environment later, run:
 echo     call venv\Scripts\activate
 echo ======================================
+echo *
+echo A discord bot, not intended to be used in other servers.
+echo Under GNU General Public License Version 3.0, 29 June 2007.
+echo © 2025 Warat Thongsuwan (TonpalmUnmain)
+
 
 pause
