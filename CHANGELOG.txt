@@ -1,0 +1,8 @@
+rem :
+local ffmpeg
+
+added :
+browse for ffmpeg
+config for ffmpeg
+everything for you, ffmpeg
+i would blow job you if you give me ffmpeg directory

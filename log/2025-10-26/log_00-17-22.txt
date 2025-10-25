@@ -1,0 +1,2 @@
+2025-10-26 00:17:22,544 [INFO] FFmpeg found in PATH: C:\Program Files\FFmpeg\bin\ffmpeg.EXE
+2025-10-26 00:17:22,566 [INFO] FFmpeg found in PATH: C:\Program Files\FFmpeg\bin\ffmpeg.EXE
