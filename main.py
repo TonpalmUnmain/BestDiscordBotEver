@@ -643,7 +643,8 @@ try:
         text = ''.join(c for c in text if not unicodedata.combining(c))
         text = re.sub(r'[\u200B-\u200F\uFE00-\uFE0F\u2060-\u206F]', '', text)
         text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C')
-
+        text = re.sub(r'[\s\W_]+', '', text)
+        
         replacements = str.maketrans({
             '0': 'o',
             '1': 'i',
@@ -835,21 +836,39 @@ try:
                 f"{message.id}:{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
 
-            content = normalize_message(message.content)
+            if message.author == bot.user:
+                return
+
             ctx = await bot.get_context(message)
 
             if "commandIgnore" in message.content and await bot.is_owner(message.author):
                 return
 
+            # === Normalize ===
+            content = normalize_message(message.content)
+            content = re.sub(r'[^a-z0-9]', '', content)  # remove symbols inside words
+            content = re.sub(r'(.)\1{2,}', r'\1', content)  # collapse stretched letters
+
+            # === Detection ===
+            banned = load_banned_words("banned")
+            whitelist = {normalize_message(w) for w in load_banned_words("whitelist")}
+
+            def is_banned(text: str) -> bool:
+                # check against all banned words but skip whitelisted ones
+                for word in banned:
+                    if word in text and not any(white in text for white in whitelist):
+                        return True
+                return False
+
             if (
-                any(word in content for word in BANNED_WORDS)
+                is_banned(content)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword"])
-                and not (message.author == bot.user)
             ):
-                # mi god role
+                # GOD role immunity
                 if any(role.id == 1411139316171931738 for role in message.author.roles):
                     logging.info(f"User {message.author} has GOD role, not timeouted.")
                     return
+
                 try:
                     await message.delete()
                     await message.author.timeout(
@@ -867,7 +886,7 @@ try:
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
                     logging.error(f"Error: {e}")
-
+                    
             if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
                 try:
                     await message.channel.send(f"☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {message.author.mention} 😩.")
