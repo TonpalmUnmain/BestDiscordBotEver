@@ -1,0 +1,45 @@
+2025-10-25 14:55:38,760 [INFO] logging in using static token
+2025-10-25 14:55:38,760 [INFO] Session ID: 7541b7cfd43e303881e2824a3bcbbf710e76a90bdb5c5693f639031a6bab0faa
+2025-10-25 14:55:40,497 [INFO] Shard ID None has connected to Gateway (Session ID: 1b8f8dce0672cd6beb8b4e16b15c9c96).
+2025-10-25 14:55:42,515 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 14:55:42,516 [INFO] No startmessage set.
+2025-10-25 14:56:11,769 [INFO] 1431551912578125897:tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): M!p mango phonk
+2025-10-25 14:56:12,050 [INFO] 1431551913564045362:Jockie Music#8158 (411916947773587456) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-25 14:57:58,876 [INFO] 1431552361738010664:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): +่อแ
+2025-10-25 14:57:59,710 [INFO] 1431552365185732680:Jockie Music#8158 (411916947773587456) in #⚙️-commands-🤖 (1386878389196951563): 
+2025-10-25 14:58:03,866 [INFO] 1431552382432448564:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): !jvc
+2025-10-25 14:58:03,867 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 14:58:03,867 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 14:58:03,868 [INFO] Connecting to voice...
+2025-10-25 14:58:03,868 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 14:58:04,446 [INFO] Voice handshake complete. Endpoint found: c-sin02-48e22775.discord.media:2053
+2025-10-25 14:58:04,765 [INFO] Voice connection complete.
+2025-10-25 14:58:04,765 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 14:58:05,328 [INFO] 1431552388770041936:BestBotEver!!!#9403 (1386280922218893465) in #⚙️-commands-🤖 (1386878389196951563): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 14:58:05,440 [INFO] Command completed: jvc by p.pumpum
+2025-10-25 14:58:21,876 [INFO] 1431552458286432286:tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): อยากรุ้เอาไว้ทำไร
+2025-10-25 14:58:44,980 [INFO] Scheduling TTS: "skibidi" (ovr=1)
+2025-10-25 14:58:44,982 [INFO] Generating TTS: "skibidi" (ovr=1)
+2025-10-25 14:58:44,984 [INFO] Error in say_in_vc: [Errno 2] No such file or directory: 'tts_output/2025-10-25_14-58-44.mp3'
+2025-10-25 14:58:53,432 [INFO] 1431552590637695106:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): เข้ส
+2025-10-25 14:58:54,643 [INFO] 1431552595616464997:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): า
+2025-10-25 14:59:01,840 [INFO] 1431552625794486313:tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): เพื่อ
+2025-10-25 14:59:09,732 [INFO] Scheduling TTS: "i like kids" (ovr=1)
+2025-10-25 14:59:09,734 [INFO] Generating TTS: "i like kids" (ovr=1)
+2025-10-25 14:59:09,736 [INFO] Error in say_in_vc: [Errno 2] No such file or directory: 'tts_output/2025-10-25_14-59-09.mp3'
+2025-10-25 14:59:18,403 [INFO] 1431552695285846121:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): แปป
+2025-10-25 14:59:20,358 [INFO] 1431552703489769553:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): พัง
+2025-10-25 15:00:58,286 [INFO] Scheduling TTS: "test" (ovr=1)
+2025-10-25 15:00:58,288 [INFO] Generating TTS: "test" (ovr=1)
+2025-10-25 15:00:59,262 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-25 15:00:59,277 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: test
+2025-10-25 15:01:01,873 [INFO] Finished speaking.
+2025-10-25 15:01:01,887 [INFO] ffmpeg process 11020 successfully terminated with return code of 0.
+2025-10-25 15:01:22,006 [INFO] Scheduling TTS: "skibdi skibidi hawk tuah hawk" (ovr=1)
+2025-10-25 15:01:22,008 [INFO] Generating TTS: "skibdi skibidi hawk tuah hawk" (ovr=1)
+2025-10-25 15:01:22,250 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-25 15:01:22,252 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: skibdi skibidi hawk tuah hawk
+2025-10-25 15:01:25,074 [INFO] Finished speaking.
+2025-10-25 15:01:25,074 [INFO] ffmpeg process 9336 successfully terminated with return code of 0.
+2025-10-25 15:01:36,665 [INFO] 1431553275274072065:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): ได้ละ
+2025-10-25 15:01:40,955 [INFO] 1431553293208911952:tatthep0270 (1340262742782771323) in #⚙️-commands-🤖 (1386878389196951563): อยากรุ้จริงๆ
