@@ -1,0 +1,19 @@
+2025-10-25 21:09:38,966 [INFO] logging in using static token
+2025-10-25 21:09:38,966 [INFO] Session ID: dc90533a25ca29925dc54b297da8b1e91ce76c8f6b2df7c8e7aa100b0b638179
+2025-10-25 21:09:40,412 [INFO] Shard ID None has connected to Gateway (Session ID: 7cc35bf82591cb60d5323344c2ce7b50).
+2025-10-25 21:09:42,427 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 21:09:42,429 [INFO] No startmessage set.
+2025-10-25 21:10:14,012 [INFO] 1431646038409740298:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-25 21:10:14,838 [WARNING] OCR failed: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-10-25 21:10:35,374 [INFO] 1431646128364847165:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): neageaegar
+2025-10-25 21:10:36,831 [INFO] 1431646134492729554:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): nenareggae
+2025-10-25 21:10:38,117 [INFO] 1431646139446464655:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): neaggegr
+2025-10-25 21:11:17,404 [INFO] 1431646304634802288:toastedkwitty (1173572905649578025) in #🤖-bot-test-🛠️ (1399900695993253970): did it not work <:monkethink:1405561721933926530>
+2025-10-25 21:11:25,141 [INFO] 1431646337010761810:toastedkwitty (1173572905649578025) in #🤖-bot-test-🛠️ (1399900695993253970): 😂
+2025-10-25 21:11:27,744 [INFO] 1431646348029202442:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): 😂
+2025-10-25 21:11:43,083 [INFO] 1431646410423533668:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): not now
+2025-10-25 21:11:43,221 [INFO] 1431646412441124874:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): noob pumkin
+2025-10-25 21:12:00,054 [INFO] 1431646483538640996:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): tesseract lib is not py specific
+2025-10-25 21:12:27,378 [INFO] 1431646598143807638:endulix_ (913994744953196614) in #🤖-bot-test-🛠️ (1399900695993253970): <:monkethink:1405561721933926530>
+2025-10-25 21:25:27,857 [INFO] 1431649871844212756:sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): nnnnnnnnnnnnnnnnnnnnnnnniiiiiiiiiiiiiiiiiiiiiiigggggggggggggggggggeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrr
+2025-10-25 21:34:48,300 [INFO] Shard ID None has successfully RESUMED session 7cc35bf82591cb60d5323344c2ce7b50.
