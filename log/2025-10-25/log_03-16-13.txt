@@ -1,0 +1,101 @@
+2025-10-25 03:16:20,783 [INFO] logging in using static token
+2025-10-25 03:16:20,784 [INFO] Session ID: 351483cf16c2432318aa6b1708f2659f89ad33d9477b45e62487cfadef0e97a7
+2025-10-25 03:16:22,329 [INFO] Shard ID None has connected to Gateway (Session ID: 0657529b92e961652dcac03e8f6bf4ec).
+2025-10-25 03:16:24,347 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-25 03:16:24,347 [INFO] No startmessage set.
+2025-10-25 03:16:55,790 [INFO] 1431375934597894316:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-25 03:16:55,791 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-25 03:16:55,792 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-25 03:16:55,793 [INFO] Connecting to voice...
+2025-10-25 03:16:55,793 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-25 03:16:56,366 [INFO] Voice handshake complete. Endpoint found: c-sin09-f029ceff.discord.media:2083
+2025-10-25 03:16:56,614 [INFO] Voice connection complete.
+2025-10-25 03:16:56,615 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-25 03:16:57,166 [INFO] 1431375940138700840:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-25 03:16:57,246 [INFO] Command completed: jvc by p.pumpum
+2025-10-25 03:16:59,145 [INFO] 1431375948678168646:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !dvc
+2025-10-25 03:16:59,146 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-25 03:16:59,802 [INFO] 1431375951362654309:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Disconnected from the voice channel.
+2025-10-25 03:16:59,835 [INFO] Command completed: dvc by p.pumpum
+2025-10-25 04:24:45,830 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 06:19:45,212 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 06:35:50,484 [INFO] 1431425992752103554:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): derby playtest 26 october
+2025-10-25 06:35:52,280 [INFO] 1431426000322822164:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 🤑
+2025-10-25 07:13:15,623 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 08:04:54,489 [INFO] 1431448407515332628:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): should I get
+2025-10-25 08:04:57,693 [INFO] 1431448420752822403:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): rupture meta team
+2025-10-25 08:11:11,953 [INFO] 1431449989409669141:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): **Your group is on a 23 day streak!** 🔥 Here are yesterday's results:
+👑 5/6: <@1179654613738201129>
+6/6: <@913994744953196614>
+X/6: <@1340262742782771323>
+2025-10-25 08:11:56,906 [INFO] 1431450178845413426:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): endu is playing
+2025-10-25 10:27:13,013 [INFO] 1431484220559331368:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): Ja Morant is playing
+2025-10-25 10:35:58,000 [INFO] 1431486422870917212:tatthep0270 (1340262742782771323) in #💬-chat-✉️ (1371357608904228924): Bro
+2025-10-25 10:54:51,448 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 11:20:09,819 [INFO] 1431497545565077666:tritoniscool. (1179654613738201129) in #💬-chat-✉️ (1371357608904228924): Ni1gg3urt
+2025-10-25 11:21:00,274 [INFO] 1431497756459139136:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): ราชาrage bait is playing
+2025-10-25 11:50:44,618 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 12:29:07,246 [INFO] 1431514899477037116:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !banword niiggeurt
+2025-10-25 12:29:07,592 [INFO] 1431514900957495377:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Added 'niiggeurt' to the list of fucking banned words.
+2025-10-25 12:29:07,650 [INFO] Added banned word: niiggeurt
+2025-10-25 12:29:07,651 [INFO] Command completed: banword by p.pumpum
+2025-10-25 12:29:17,425 [INFO] 1431514942091165766:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !banword miggurt
+2025-10-25 12:29:17,879 [INFO] 1431514943987126373:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Added 'miggurt' to the list of fucking banned words.
+2025-10-25 12:29:18,058 [INFO] Added banned word: miggurt
+2025-10-25 12:29:18,058 [INFO] Command completed: banword by p.pumpum
+2025-10-25 12:29:27,951 [INFO] 1431514986265444362:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !rmword miggurt
+2025-10-25 12:29:28,324 [INFO] 1431514987909615729:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Removed 'miggurt' from the fucking list.
+2025-10-25 12:29:28,399 [INFO] Removed banned word: miggurt
+2025-10-25 12:29:28,399 [INFO] Command completed: rmword by p.pumpum
+2025-10-25 12:29:34,578 [INFO] 1431515013998317641:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !banword niggurt
+2025-10-25 12:29:34,975 [INFO] 1431515015646810142:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Added 'niggurt' to the list of fucking banned words.
+2025-10-25 12:29:35,074 [INFO] Added banned word: niggurt
+2025-10-25 12:29:35,074 [INFO] Command completed: banword by p.pumpum
+2025-10-25 12:55:24,382 [INFO] 1431521514435514399:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): what should i add
+2025-10-25 12:56:18,733 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 13:35:46,403 [INFO] 1431531673341792266:p.pumpum (1260198579067420722) in #💬-chat-✉️ (1371357608904228924): !featurerequest image manipulation via pillow or pygame
+2025-10-25 13:35:47,250 [INFO] 1431531676835774514:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): Feature request **#116001** submitted. Thank you!
+2025-10-25 13:35:47,332 [INFO] Command completed: featurerequest by p.pumpum
+2025-10-25 13:45:18,767 [INFO] 1431534073951817828:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/don-quixote-limbus-company-don-quixote-limbus-don-quixote-limbus-company-limbus-gif-10431762783776233571
+2025-10-25 13:47:14,249 [INFO] 1431534557525442560:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): ราชาrage bait is playing
+2025-10-25 13:56:03,870 [INFO] 1431536779705716810:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): <:monkethink:1405561721933926530>
+2025-10-25 14:01:31,971 [INFO] 1431538155915579414:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): <:monkethink:1405561721933926530>
+2025-10-25 14:04:33,889 [INFO] 1431538918993690737:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): nigfga
+2025-10-25 14:07:45,771 [INFO] 1431539723318329374:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-10-25 14:21:57,373 [ERROR] Attempting a reconnect in 1.82s
+Traceback (most recent call last):
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jimnd\Desktop\BestDiscordBotEver\venv\Lib\site-packages\aiohttp\client.py", line 1100, in _ws_connect
+    raise WSServerHandshakeError(
+    ...<5 lines>...
+    )
+aiohttp.client_exceptions.WSServerHandshakeError: 520, message='Invalid response status', url='wss://gateway-us-east1-c.discord.gg/?v=10&encoding=json&compress=zlib-stream'
+2025-10-25 14:22:04,567 [INFO] Shard ID None has successfully RESUMED session 0657529b92e961652dcac03e8f6bf4ec.
+2025-10-25 14:37:03,129 [INFO] 1431547094472065087:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): !banword nigfga
+2025-10-25 14:37:03,627 [INFO] 1431547096812752896:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Added 'nigfga' to the list of fucking banned words.
+2025-10-25 14:37:03,775 [INFO] Added banned word: nigfga
+2025-10-25 14:37:03,775 [INFO] Command completed: banword by p.pumpum
+2025-10-25 14:37:30,199 [INFO] 1431547208372846694:sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): nigġa
+2025-10-25 14:37:31,550 [INFO] 1431547213926109225:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): I can't timeout <@1300754808185290762>, report admin abuse at 083-247-0928.
+2025-10-25 14:37:31,614 [ERROR] Bot doesn't have permission to timeout this user.
+2025-10-25 14:37:36,182 [INFO] 1431547233295138906:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): uhh
+2025-10-25 14:37:44,088 [INFO] 1431547266631467079:sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): wht
+2025-10-25 14:44:00,990 [INFO] 1431548847083225262:tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Chiggen niggen
+2025-10-25 14:44:16,928 [INFO] 1431548914338762783:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): nigcga
+2025-10-25 14:44:32,638 [INFO] 1431548979967037472:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): lemme check log
+2025-10-25 14:44:36,185 [INFO] 1431548994680782859:tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): Niggoer
+2025-10-25 14:44:56,122 [INFO] 1431549078432649286:tritoniscool. (1179654613738201129) in #🎮-gaming-🕹️ (1395783584253739141): NIGGGGGGGGEERRRRRRRR
+2025-10-25 14:45:18,055 [INFO] 1431549170656739379:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): this wont work lol
+2025-10-25 14:46:37,722 [INFO] 1431549504712212520:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): ill check that
+2025-10-25 14:53:46,863 [INFO] 1431551304815218798:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): NIGGGGGGGGEERRRRRRRR
