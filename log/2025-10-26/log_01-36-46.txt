@@ -1,0 +1,84 @@
+2025-10-26 01:36:50,967 [INFO] logging in using static token
+2025-10-26 01:36:50,968 [INFO] Session ID: f976b0ce0e4b9a0f620c7e76d0e731a8b8a09e24be4c451674888dec8f2b684c
+2025-10-26 01:36:52,496 [INFO] Shard ID None has connected to Gateway (Session ID: 1d1b4590dea07df688307c527d7b28a1).
+2025-10-26 01:36:54,524 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-10-26 01:36:54,524 [INFO] No startmessage set.
+2025-10-26 01:37:08,973 [INFO] 1431713215435243722:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !jvc
+2025-10-26 01:37:08,977 [INFO] [COMMAND] jvc called by p.pumpum | mode=None | id=None
+2025-10-26 01:37:08,978 [INFO] [INFO] Attempt 1: connecting to ไบลาวโตมาวีมวีม//🗣 (1375101122246873120)...
+2025-10-26 01:37:08,979 [INFO] Connecting to voice...
+2025-10-26 01:37:08,979 [INFO] Starting voice handshake... (connection attempt 1)
+2025-10-26 01:37:09,485 [INFO] Voice handshake complete. Endpoint found: singapore11006.discord.media:443
+2025-10-26 01:37:09,740 [INFO] Voice connection complete.
+2025-10-26 01:37:09,741 [INFO] [SUCCESS] Connected to ไบลาวโตมาวีมวีม//🗣
+2025-10-26 01:37:10,210 [INFO] 1431713220552560742:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Connected to **ไบลาวโตมาวีมวีม//🗣** (attempt 1)
+2025-10-26 01:37:10,275 [INFO] Command completed: jvc by p.pumpum
+2025-10-26 01:37:18,020 [INFO] 1431713253033119845:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc t1
+2025-10-26 01:37:18,524 [INFO] 1431713255331729419:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added local file to queue: `nelsem.mp3`
+2025-10-26 01:37:18,593 [INFO] Using ffmpeg executable: C:\ProgramData\chocolatey\bin\ffmpeg.EXE
+2025-10-26 01:37:18,932 [INFO] 1431713257277886585:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): File not found: `C:\Users\Lenovo\Desktop\TP\Proj\VsCode\FSh\BestDiscordBotEver\fdump\nelsem.mp3`
+2025-10-26 01:37:18,956 [INFO] Command completed: plvc by p.pumpum
+2025-10-26 01:38:49,791 [INFO] 1431713638011506899:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !plvc https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+2025-10-26 01:38:49,795 [INFO] reference 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ' not found.
+2025-10-26 01:38:50,231 [INFO] 1431713639676776491:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Added URL to queue: `https://www.youtube.com/watch?v=fJ9rUzIMcZQ`
+2025-10-26 01:38:50,285 [INFO] Using ffmpeg executable: C:\ProgramData\chocolatey\bin\ffmpeg.EXE
+2025-10-26 01:38:55,685 [INFO] Command completed: plvc by p.pumpum
+2025-10-26 01:39:13,914 [INFO] Scheduling TTS: "123" (ovr=1)
+2025-10-26 01:39:13,916 [INFO] Generating TTS: "123" (ovr=1)
+2025-10-26 01:39:14,101 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-26 01:39:14,103 [INFO] Error in say_in_vc: Already playing audio.
+2025-10-26 01:39:14,106 [INFO] ffmpeg process 11276 has not terminated. Waiting to terminate...
+2025-10-26 01:39:14,108 [INFO] ffmpeg process 11276 should have terminated with a return code of 1.
+2025-10-26 01:39:40,650 [INFO] Scheduling TTS: "audio ovr=0" (ovr=1)
+2025-10-26 01:39:40,652 [INFO] Generating TTS: "audio ovr=0" (ovr=1)
+2025-10-26 01:39:40,846 [INFO] Overlay mode: playing without stopping current audio.
+2025-10-26 01:39:40,848 [INFO] Error in say_in_vc: Already playing audio.
+2025-10-26 01:39:40,851 [INFO] ffmpeg process 3536 has not terminated. Waiting to terminate...
+2025-10-26 01:39:40,853 [INFO] ffmpeg process 3536 should have terminated with a return code of 1.
+2025-10-26 01:40:18,123 [INFO] Scheduling TTS: "aaa" (ovr=0)
+2025-10-26 01:40:18,126 [INFO] Generating TTS: "aaa" (ovr=0)
+2025-10-26 01:40:18,288 [INFO] Speaking in ไบลาวโตมาวีมวีม//🗣: aaa
+2025-10-26 01:40:18,305 [INFO] ffmpeg process 6308 has not terminated. Waiting to terminate...
+2025-10-26 01:40:18,778 [INFO] ffmpeg process 6308 should have terminated with a return code of 1.
+2025-10-26 01:40:19,409 [INFO] Finished speaking.
+2025-10-26 01:40:19,410 [INFO] ffmpeg process 11732 successfully terminated with return code of 0.
+2025-10-26 01:40:29,535 [INFO] Disconnected from voice by force... potentially reconnecting.
+2025-10-26 01:40:29,590 [INFO] The voice handshake is being terminated for Channel ID 1375101122246873120 (Guild ID 1371357608459501640)
+2025-10-26 01:40:29,591 [INFO] Reconnect was unsuccessful, disconnecting from voice normally...
+2025-10-26 01:40:31,260 [INFO] 1431714063800340635:tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): Nejeieiee
+2025-10-26 01:40:38,391 [INFO] 1431714093668237432:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): n
+2025-10-26 01:40:50,889 [INFO] 1431714146121941023:tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): Help me sleep
+2025-10-26 01:41:06,191 [INFO] 1431714210403844157:tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): https://tenor.com/view/phonk-sleep-gif-15514853187801550530
+2025-10-26 01:41:41,634 [INFO] 1431714358852980850:p.pumpum (1260198579067420722) in #⚙️-commands-🤖 (1386878389196951563): sleep now or i will come to youer house
+2025-10-26 01:42:01,753 [INFO] 1431714443305291858:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !bugreport TTS while AUDIO
+2025-10-26 01:42:02,174 [INFO] 1431714445054185595:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Bug report **#117101** submitted. Thank you!
+2025-10-26 01:42:02,216 [INFO] Command completed: bugreport by p.pumpum
+2025-10-26 01:42:38,711 [INFO] 1431714598175768760:tritoniscool. (1179654613738201129) in #⚙️-commands-🤖 (1386878389196951563): Ok migga
+2025-10-26 01:43:51,571 [INFO] 1431714903403659435:tritoniscool. (1179654613738201129) in #❌-nsfw-🚫 (1397599131488223353): 
+2025-10-26 01:44:08,301 [INFO] 1431714974249521172:tritoniscool. (1179654613738201129) in #❌-nsfw-🚫 (1397599131488223353): https://tenor.com/view/ishowspeed-try-not-to-laugh-gif-7682731162751353849
+2025-10-26 02:13:19,093 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 04:22:00,259 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 05:49:48,181 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 06:22:22,526 [INFO] 1431784987367178382:endulix_ (913994744953196614) in #❌-nsfw-🚫 (1397599131488223353): https://tenor.com/view/my-mom-is-kinda-homeless-ishowspeed-speeding-please-speed-i-need-this-ishowspeed-trying-not-to-laugh-gif-16620227105127147208
+2025-10-26 07:03:22,260 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 08:18:24,875 [INFO] 1431814189902594140:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): **Your group is on a 24 day streak!** 🔥 Here are yesterday's results:
+👑 5/6: <@1179654613738201129>
+6/6: <@913994744953196614> <@1340262742782771323>
+2025-10-26 08:19:02,702 [INFO] 1431814347990237205:Wordle#2092 (1211781489931452447) in #🎮-gaming-🕹️ (1395783584253739141): endu is playing
+2025-10-26 08:21:31,030 [INFO] 1431814971112554596:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/limbus-company-jia-xichun-xichun-bald-baby-xichun-gif-9297494328590942147
+2025-10-26 08:27:29,118 [INFO] 1431816472413343838:sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/%E3%83%9E%E3%83%81%E3%82%AB%E3%83%8D%E3%83%95%E3%82%AF%E3%82%AD%E3%82%BF%E3%83%AB-matikanefukukitaru-uma-musume-uma-musume-gif-13659029660496601450
+2025-10-26 08:28:01,650 [INFO] 1431816609583992833:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/horse-uma-musume-uma-matikanetannhauser-mambo-gif-11614099360576799259
+2025-10-26 10:27:49,105 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 11:50:16,897 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 12:51:25,999 [INFO] 1431882897979080704:tritoniscool. (1179654613738201129) in #🗣️-ranting-👀 (1405556665058857070): 2 weeks in China
+2025-10-26 13:28:54,926 [INFO] Shard ID None has successfully RESUMED session 1d1b4590dea07df688307c527d7b28a1.
+2025-10-26 13:35:58,792 [INFO] 1431894109173579776:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !help
+2025-10-26 13:35:58,794 [INFO] [p.pumpum (1260198579067420722)] Called help with: None
+2025-10-26 13:35:59,330 [INFO] 1431894111031660559:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-26 13:35:59,418 [INFO] Command completed: help by p.pumpum
+2025-10-26 13:36:23,772 [INFO] 1431894213846368267:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listfeedback feature
+2025-10-26 13:36:24,201 [INFO] 1431894215792787577:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): No feedback found.
+2025-10-26 13:36:24,259 [INFO] Command completed: listfeedback by p.pumpum
+2025-10-26 13:36:31,192 [INFO] 1431894244846600304:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !listfeedback
+2025-10-26 13:36:31,699 [INFO] 1431894247266713712:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-10-26 13:36:31,818 [INFO] Command completed: listfeedback by p.pumpum
