@@ -932,7 +932,35 @@ try:
                     logging.error("[EDIT] Bot doesn't have permission to timeout this sneaky dumb fuck.")
                 except Exception as e:
                     logging.error(f"[EDIT] Error: {e}")
+                    
+        @bot.event
+        async def on_member_join(member):
+            channel = bot.get_channel(target_channel_id)
+            if channel:
+                # Get the mentions
+                guild_owner_mention = member.guild.owner.mention
+                bot_mention = bot.user.mention
+                bot_owner_user = await bot.fetch_user("1260198579067420722")
+                bot_owner_mention = bot_owner_user.mention
 
+                # Make the embed
+                embed = discord.Embed(
+                    title="🎉 Welcome!",
+                    description=(
+                        f"Welcome to the server, {member.mention}! 🎈\n\n"
+                        f"👽 {guild_owner_mention} (Server Owner)\n"
+                        f"🤖 {bot_mention} (Bot)\n"
+                        f"😎 {bot_owner_mention} (Bot Owner)\n\n"
+                        f"Of course this is written by {bot_owner_mention}."
+                        f" Enjoy your stay!"
+                    ),
+                    color=discord.Color.green()
+                )
+                embed.set_thumbnail(url=member.avatar.url if member.avatar else member.default_avatar.url)
+                embed.set_footer(text=f"BestBotEver v.{VERSION}")
+
+                await channel.send(embed=embed)
+                
         @bot.command(name="help")
         async def help_cmd(ctx, command_name: str = None):
             """Show command list or details for a specific command."""
