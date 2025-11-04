@@ -42,6 +42,46 @@ try:
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
     colorama.init()
 
+    # ===== PLACEHOLDER =====
+    MESSAGES_FILE = "messages.json"
+
+    def get_bot_message(category_or_key: str, key: str | None = None, **kwargs) -> str:
+        """Get bot message from messages.json.
+        Usage:
+          get_bot_message("startup")                             -> direct key under "bot"
+          get_bot_message("responses", "np", mention="@me")      -> nested category + key
+          get_bot_message("moderation.timeout_message", None, ...) -> dot-path in category_or_key
+        """
+        try:
+            messages = load_json(MESSAGES_FILE) or {}
+            bot_msgs = messages.get("bot", {})
+
+            # If user passed a single dotted path like "moderation.timeout_message"
+            if key is None and "." in category_or_key:
+                parts = category_or_key.split(".")
+                msg = bot_msgs
+                for p in parts[:-1]:
+                    msg = msg[p]
+                return msg[parts[-1]].format(**kwargs)
+
+            # Single key directly under "bot"
+            if key is None:
+                val = bot_msgs.get(category_or_key)
+                if isinstance(val, str):
+                    return val.format(**kwargs)
+                # if it's a dict, error
+                raise KeyError
+
+            # category + key form
+            parts = category_or_key.split(".")
+            msg = bot_msgs
+            for p in parts:
+                msg = msg[p]
+            return msg[key].format(**kwargs)
+
+        except Exception as e:
+            logging.error(f"Message not found: {category_or_key}{'.' + key if key else ''} -> {e}")
+            return f"MESSAGE_NOT_FOUND:{category_or_key}{'.' + key if key else ''}"
 
     # ===== FILE HANDLING =====
     DUMP_DIR = "fdump"
@@ -841,9 +881,6 @@ try:
 
             ctx = await bot.get_context(message)
 
-            if "commandIgnore" in message.content and await bot.is_owner(message.author):
-                return
-
             # === Normalize ===
             content = normalize_message(message.content)
             content = re.sub(r'[^a-z0-9]', '', content)  # remove symbols inside words
@@ -876,12 +913,12 @@ try:
                         reason="You said a banned word."
                     )
                     await message.channel.send(
-                        f"{message.author.mention} has been timed out for using a banned word."
+                        get_bot_message("moderation", "timeout_message", mention=message.author.mention)
                     )
                     logging.info(f"Timed out: {message.author} for '{message.content}'")
                 except discord.Forbidden:
                     await message.channel.send(
-                        f"I can't timeout {message.author.mention}, report admin abuse at 083-247-0928."
+                        get_bot_message("moderation", "timeout_no_permission")
                     )
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
@@ -889,15 +926,15 @@ try:
                     
             if any(word in content.lower() for word in ["goodboy", "good boy"]) and bot.user.mentioned_in(message):
                 try:
-                    await message.channel.send(f"☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {message.author.mention} 😩.")
+                    await message.channel.send(get_bot_message("responses", "goodboy", mention=message.author.mention))
                     logging.info(f"Sent Goodboy response to {message.author}")
                 except Exception as e:
                     logging.error(f"Error sending good boy response: {e}")
 
             if any(word in content.lower() for word in ["badboy", "bad boy"]) and bot.user.mentioned_in(message):
                 try:
-                    await message.channel.send(f"ヾ(≧へ≦)〃, Fuck you {message.author.mention}.")
-                    logging.info(f"Sent Goodboy response to {message.author}")
+                    await message.channel.send(get_bot_message("responses", "badboy", mention=message.author.mention))
+                    logging.info(f"Sent Badboy response to {message.author}")
                 except Exception as e:
                     logging.error(f"Error sending 'Insulting' response: {e}")
 
@@ -925,11 +962,11 @@ try:
                 try:
                     await after.delete()
                     await after.author.timeout(timedelta(minutes=5), reason="You tried to sneak in a banned word by editing, you dumb fuck.")
-                    await after.channel.send(f"{after.author.mention} has been timed out for editing in a fucking banned word.")
+                    await after.channel.send(get_bot_message("moderation", "timeout_edit", mention=after.author.mention))
                     logging.info(f"[EDIT] Timed out: {after.author} for '{after.content}'")
                 except discord.Forbidden:
-                    await after.channel.send(f"I can't ban {after.author.mention}, but they tried to be sneaky.")
-                    logging.error("[EDIT] Bot doesn't have permission to timeout this sneaky dumb fuck.")
+                    await after.channel.send(get_bot_message("moderation", "timeout_no_permission"))
+                    logging.error("[EDIT] Bot doesn't have permission to timeout this sneaky user.")
                 except Exception as e:
                     logging.error(f"[EDIT] Error: {e}")
                     
@@ -1240,11 +1277,11 @@ try:
             """Add a word to the banned-words list (admin only)."""
             word = word.lower().strip()
             if word in BANNED_WORDS:
-                await ctx.send(f"'{word}' is already banned, dumbass.")
+                await ctx.send(get_bot_message("moderation", "banned_word_exists", word=word))
             else:
                 BANNED_WORDS.add(word)
                 save_banned_words("banned", BANNED_WORDS)
-                await ctx.send(f"Added '{word}' to the list of fucking banned words.")
+                await ctx.send(get_bot_message("moderation", "banned_word_added", word=word))
                 logging.info(f"Added banned word: {word}")
 
         @bot.command(name="rmword")
@@ -1256,19 +1293,20 @@ try:
             if word in BANNED_WORDS:
                 BANNED_WORDS.remove(word)
                 save_banned_words("banned", BANNED_WORDS)
-                await ctx.send(f"Removed '{word}' from the fucking list.")
+                await ctx.send(get_bot_message("moderation", "banned_word_removed", word=word))
                 logging.info(f"Removed banned word: {word}")
             else:
-                await ctx.send(f"'{word}' isn't even banned, idiot.")
+                await ctx.send(get_bot_message("moderation", "banned_word_not_exists", word=word))
 
         @bot.command(name="listbanword")
         @commands.has_permissions(administrator=True)
         async def list_ban_words(ctx):
             """List all currently banned words (admin only)."""
             if BANNED_WORDS:
-                await ctx.send("Here's the shit we're banning:\n" + ", ".join(sorted(BANNED_WORDS)))
+                words = ", ".join(sorted(BANNED_WORDS))
+                await ctx.send(get_bot_message("moderation", "banned_list", words=words))
             else:
-                await ctx.send("No banned words, go wild.")
+                await ctx.send(get_bot_message("moderation", "no_banned_words"))
                 
         @bot.command()
         @commands.is_owner()
@@ -1277,7 +1315,7 @@ try:
             word = word.lower()
             WHITELISTED_WORDS.add(word)
             save_banned_words("whitelist", WHITELISTED_WORDS)
-            await ctx.send(f"Added `{word}` to the whitelist.")
+            await ctx.send(get_bot_message("whitelist", "added", word=word))
 
 
         @bot.command()
@@ -1288,9 +1326,9 @@ try:
             if word in WHITELISTED_WORDS:
                 WHITELISTED_WORDS.remove(word)
                 save_banned_words("whitelist", WHITELISTED_WORDS)
-                await ctx.send(f"Removed `{word}` from the whitelist.")
+                await ctx.send(get_bot_message("whitelist", "removed", word=word))
             else:
-                await ctx.send(f"`{word}` is not in the whitelist.")
+                await ctx.send(get_bot_message("whitelist", "not_exists", word=word))
 
 
         @bot.command()
@@ -1299,27 +1337,28 @@ try:
             """List all words in the whitelist (owner only)."""
             if WHITELISTED_WORDS:
                 words = ", ".join(sorted(WHITELISTED_WORDS))
-                await ctx.send(f"Current whitelist: {words}")
+                await ctx.send(get_bot_message("whitelist", "current", words=words))
             else:
-                await ctx.send("The whitelist is currently empty.")
+                await ctx.send(get_bot_message("whitelist", "empty"))
                 
+
         @bot.command(name="forgive")
         @commands.has_permissions(moderate_members=True)
         async def forgive(ctx, member: discord.Member):
             """Remove a timeout from a member (requires moderate_members permission)."""
             try:
                 await member.edit(timed_out_until=None)
-                await ctx.send(f"{member.mention} has been forgiven and their timeout has been lifted, don't say that again dumb fuck.")
+                await ctx.send(get_bot_message("moderation", "timeout_removed", mention=member.mention))
             except discord.Forbidden:
-                await ctx.send("Shit, I don't have permission to forgive this user.")
+                await ctx.send(get_bot_message("moderation", "timeout_no_permission"))
             except discord.HTTPException as e:
-                await ctx.send(f"Something went wrong while forgiving. DEBUG: {e}")
+                await ctx.send(get_bot_message("errors", "failed_to_send", error=e))
 
         @bot.command(name="pewthyself")
         @commands.is_owner()
         async def sessionend(ctx):
             """Shut down the bot gracefully (owner only)."""
-            await stopsession(f"Ight {ctx.author.mention}... I'm out. 💀")
+            await stopsession(get_bot_message("shutdown", mention=ctx.author.mention))
 
         @bot.command(name="version")
         async def version_command(ctx):
@@ -1358,12 +1397,12 @@ try:
             units = {"ms": 0.001, "sec": 1, "min": 60, "hr": 3600, "d": 86400}
             type = type.lower()
             if type not in units:
-                await ctx.send("Invalid type. Use ms, sec, min, hr, or d.")
+                await ctx.send(get_bot_message("errors", "invalid_duration"))
                 return
             seconds = value * units[type]
-            await ctx.send(f"After finishing I will deplete myself in {seconds:.2f}s, I AM STILL WATCHING.")
+            await ctx.send(get_bot_message("responses", "deplete_countdown", seconds=seconds))
             await asyncio.sleep(seconds)
-            await stopsession(f"Ight {ctx.author.mention}... I'm out. 💀")
+            await stopsession(get_bot_message("shutdown", mention=ctx.author.mention))
 
         @bot.command(name="cfch")
         @commands.has_permissions(administrator=True)
@@ -1640,208 +1679,202 @@ try:
             !jvc a <VC_ID>           -> join VC by ID (alone)
             !jvc <VC_ID>             -> same as 'a'
             """
-
             guild = ctx.guild
             existing_vc = guild.voice_client
             channel = None
 
             logging.info(f"[COMMAND] jvc called by {ctx.author} | mode={mode} | id={id_or_none}")
 
-            # Case 1: no args → join caller's VC
+            # Case 1: no args -> join caller's VC
             if mode is None and id_or_none is None:
                 member = ctx.author
                 if not member.voice or not member.voice.channel:
-                    await ctx.reply("You are not in a voice channel.")
+                    await ctx.reply(get_bot_message("voice", "not_in_vc"))
                     return
                 channel = member.voice.channel
 
-            # Case 2: only one argument (VC ID)
+            # Normalize provided args
             elif id_or_none is None and mode is not None:
                 id_str = mode
-                mode_flag = 'a'
+                mode_flag = "a"
             else:
                 id_str = id_or_none
-                mode_flag = (mode or '').lower()
+                mode_flag = (mode or "").lower()
 
+            # Resolve channel if an ID was provided
             if not channel:
                 if not id_str or not id_str.isdigit():
-                    await ctx.reply("Provide a valid numeric ID.")
+                    await ctx.reply(get_bot_message("voice", "invalid_id"))
                     return
                 target_id = int(id_str)
 
                 try:
-                    if mode_flag == 'u':
+                    if mode_flag == "u":
                         member = guild.get_member(target_id) or await guild.fetch_member(target_id)
                         if not member or not member.voice or not member.voice.channel:
-                            await ctx.reply("User not found or not in VC.")
+                            await ctx.reply(get_bot_message("voice", "user_not_found"))
                             return
                         channel = member.voice.channel
                     else:
-                        channel = guild.get_channel(target_id) or await guild.fetch_channel(target_id)
+                        channel = guild.get_channel(target_id) or await bot.fetch_channel(target_id)
                         if not isinstance(channel, discord.VoiceChannel):
-                            await ctx.reply("Voice channel not found.")
+                            await ctx.reply(get_bot_message("voice", "vc_not_found"))
                             return
                 except Exception as e:
-                    logging.exception(f"[ERROR] Failed to resolve target: {e}")
-                    await ctx.reply(f"Error resolving target: {e}")
+                    logging.exception(f"[ERROR] Failed to resolve target for jvc: {e}")
+                    await ctx.reply(get_bot_message("errors", "failed_to_send", error=str(e)))
                     return
 
-            # Connection logic with debug and retries
-            async def attempt_connect(max_retries=3, delay=5):
+            # Connection logic with retries and informative messages
+            async def attempt_connect(max_retries: int = 3, delay: int = 5) -> bool:
                 nonlocal existing_vc
                 for attempt in range(1, max_retries + 1):
                     try:
+                        # Already in target channel
                         if existing_vc and existing_vc.channel.id == channel.id:
-                            await ctx.reply(f"Already connected to **{channel.name}**.")
+                            await ctx.reply(get_bot_message("voice", "already_connected", channel=channel.name))
                             logging.info(f"[INFO] Already in channel {channel.name}")
                             return True
-                        elif existing_vc:
+
+                        # Move if connected elsewhere
+                        if existing_vc:
                             await existing_vc.move_to(channel)
-                            await ctx.reply(f"Moved to **{channel.name}**.")
+                            await ctx.reply(get_bot_message("voice", "moved_to", channel=channel.name))
                             logging.info(f"[INFO] Moved to {channel.name}")
                             return True
-                        else:
-                            # Ensure clean state
-                            if existing_vc:
-                                await existing_vc.disconnect(force=True)
 
-                            logging.info(f"[INFO] Attempt {attempt}: connecting to {channel.name} ({channel.id})...")
-                            vc = await channel.connect(reconnect=False)
-                            logging.info(f"[SUCCESS] Connected to {channel.name}")
-                            await ctx.reply(f"Connected to **{channel.name}** (attempt {attempt})")
-                            return True
+                        # Connect anew
+                        logging.info(f"[INFO] Attempt {attempt}: connecting to {channel.name} ({channel.id})...")
+                        vc = await channel.connect(reconnect=False)
+                        await ctx.reply(get_bot_message("voice", "connected_to", channel=channel.name, attempt=attempt))
+                        logging.info(f"[SUCCESS] Connected to {channel.name}")
+                        return True
 
                     except discord.errors.ConnectionClosed as e:
-                        logging.error(f"[ERROR] Voice WebSocket closed (code={e.code}). Retrying in {delay}s...")
+                        logging.error(f"[ERROR] Voice WebSocket closed (code={getattr(e, 'code', 'N/A')}). Retrying in {delay}s...")
                         await asyncio.sleep(delay)
                     except discord.ClientException as e:
-                        logging.error(f"[ERROR] ClientException: {e}. Retrying in {delay}s...")
+                        logging.error(f"[ERROR] ClientException while connecting: {e}. Retrying in {delay}s...")
                         await asyncio.sleep(delay)
                     except Exception as e:
-                        logging.exception(f"[ERROR] Unexpected connection error: {e}")
+                        logging.exception(f"[ERROR] Unexpected connection error on attempt {attempt}: {e}")
                         await asyncio.sleep(delay)
 
-                await ctx.reply("Failed to connect after multiple attempts.")
+                # final failure
+                await ctx.reply(get_bot_message("voice", "connection_failed"))
                 return False
 
-            # Run connection attempts
             success = await attempt_connect()
-
             if not success:
-                logging.error(f"[FATAL] Failed to connect to {channel} after retries.")
+                logging.error(f"[FATAL] jvc failed to connect to channel {channel} after retries.")
+            return
+        
 
         @bot.command(name='dvc')
         @commands.guild_only()
         async def dvc(ctx):
-            """
-            Disconnect the bot from its current voice channel in the guild.
-            Usage:
-            !dvc
-            """
+            """Disconnect the bot from its current voice channel in the guild. Usage: !dvc"""
             vc = ctx.guild.voice_client
             if not vc or not vc.is_connected():
-                if ctx.author.voice:
-                    vc = await ctx.author.voice.channel.connect()
-                else:
-                    await ctx.reply("You're not in a voice channel!")
-                    return
-
+                await ctx.reply(get_bot_message("voice", "not_connected"))
+                return
 
             try:
                 await vc.disconnect()
-                await ctx.reply("Disconnected from the voice channel.")
+                await ctx.reply(get_bot_message("voice", "disconnected"))
+                logging.info(f"[VOICE] Disconnected from voice in guild {ctx.guild.id}")
             except Exception as e:
-                await ctx.reply(f"Failed to disconnect: {e}")
+                logging.exception(f"[VOICE] Failed to disconnect: {e}")
+                await ctx.reply(get_bot_message("errors", "failed_to_send", error=str(e)))
 
         @bot.command(name='vcplay')
         @commands.guild_only()
         async def vcplay(ctx, source: str = None):
-            """
-            Play an audio file or stream in the current voice channel.
-            Usage:
-            !plvc <URL or local file path>
-            """
-            vc = ctx.guild.voice_client
-            if vc is None:
-                await ctx.reply("I'm not connected to any voice channel. Use `!jvc` first.")
-                return
+            """Alias to plvc — play an audio file or stream in the current voice channel."""
+            await plvc(ctx, source)
 
-            if source is None:
-                await ctx.reply("Please provide a URL or local file path to play.")
-                return
-
-            # Stop current playback if any
-            if vc.is_playing():
-                vc.stop()
-
-            try:
-                # Create FFmpeg audio source
-                audio_source = FFmpegPCMAudio(source)
-                vc.play(audio_source)
-                await ctx.reply(f"Now playing: `{source}`")
-            except Exception as e:
-                await ctx.reply(f"Failed to play audio: {e}")
-                
         @bot.command(name="plvc")
+        @commands.guild_only()
         async def plvc(ctx, source: str = None):
-            """Play audio from local file or URL."""
+            """Play audio from local file or URL. Adds to queue and triggers playback."""
             vc = ctx.guild.voice_client
             if vc is None:
-                await ctx.send("Not connected to a voice channel.")
+                await ctx.reply(get_bot_message("voice", "not_connected"))
                 return
 
             if source is None:
-                await ctx.send("Please provide a file reference or URL.")
+                await ctx.reply(get_bot_message("voice", "invalid_id"))
                 return
 
             queue = get_queue(ctx)
 
-            # Try local file first
+            # Try local file reference
             file_data = get_file(source)
             if file_data:
                 file_path, filename = file_data
                 queue.append(("file", file_path))
-                await ctx.send(f"Added local file to queue: `{filename}`")
-                # Return immediately to prevent duplication
-                if not vc.is_playing() and not get_paused(ctx):
-                    await play_next(ctx)
-                return
-            else:
-                # Treat as URL
-                queue.append(("url", source))
-                await ctx.send(f"Added URL to queue: `{source}`")
-                # Return immediately to prevent duplication
+                await ctx.reply(get_bot_message("voice", "file_queued", filename=filename))
+                logging.info(f"[VOICE] Queued local file {filename} for guild {ctx.guild.id}")
                 if not vc.is_playing() and not get_paused(ctx):
                     await play_next(ctx)
                 return
 
+            # Treat as URL
+            queue.append(("url", source))
+            await ctx.reply(get_bot_message("voice", "url_queued", source=source))
+            logging.info(f"[VOICE] Queued URL {source} for guild {ctx.guild.id}")
+            if not vc.is_playing() and not get_paused(ctx):
+                await play_next(ctx)
+            return
+
         @bot.command(name="stvc")
+        @commands.guild_only()
         async def vcstop(ctx):
             """Stop playback and clear queue."""
             vc = ctx.guild.voice_client
-            if vc:
-                vc.stop()
+            if vc and vc.is_playing():
+                try:
+                    vc.stop()
+                except Exception:
+                    logging.exception("Error stopping playback")
             get_queue(ctx).clear()
             guild_paused[ctx.guild.id] = False
-            await ctx.send("Playback stopped and queue cleared.")
+            await ctx.send(get_bot_message("voice", "playback_stopped"))
+            logging.info(f"[VOICE] Stopped playback and cleared queue in guild {ctx.guild.id}")
 
         @bot.command(name="pavc")
+        @commands.guild_only()
         async def vcpause(ctx):
             """Pause playback."""
             vc = ctx.guild.voice_client
             if vc and vc.is_playing():
-                vc.pause()
-                guild_paused[ctx.guild.id] = True
-                await ctx.send("Playback paused.")
+                try:
+                    vc.pause()
+                    guild_paused[ctx.guild.id] = True
+                    await ctx.send(get_bot_message("voice", "playback_paused"))
+                    logging.info(f"[VOICE] Paused playback in guild {ctx.guild.id}")
+                except Exception as e:
+                    logging.exception(f"[VOICE] Failed to pause: {e}")
+                    await ctx.send(get_bot_message("errors", "failed_to_send", error=str(e)))
+            else:
+                await ctx.send(get_bot_message("voice", "not_connected"))
 
         @bot.command(name="revc")
+        @commands.guild_only()
         async def vcresume(ctx):
             """Resume playback."""
             vc = ctx.guild.voice_client
             if vc and vc.is_paused():
-                vc.resume()
-                guild_paused[ctx.guild.id] = False
-                await ctx.send("Playback resumed.")
+                try:
+                    vc.resume()
+                    guild_paused[ctx.guild.id] = False
+                    await ctx.send(get_bot_message("voice", "playback_resumed"))
+                    logging.info(f"[VOICE] Resumed playback in guild {ctx.guild.id}")
+                except Exception as e:
+                    logging.exception(f"[VOICE] Failed to resume: {e}")
+                    await ctx.send(get_bot_message("errors", "failed_to_send", error=str(e)))
+            else:
+                await ctx.send(get_bot_message("voice", "not_connected"))
                 
         # ===== ERROR HANDLERS =====
         @ban_word.error
@@ -1850,14 +1883,13 @@ try:
         async def perm_error(ctx, error):
             if isinstance(error, commands.MissingPermissions):
                 logging.warning(f"Permission denied: {ctx.author} tried to use admin command.")
-                await ctx.send("You don't have permission, bro. Sit down.")
+                await ctx.send(get_bot_message("errors", "no_permission"))
 
         @sessionend.error
         @deplete.error
         async def privileged_error(ctx, error):
             if isinstance(error, commands.MissingRole):
-                await ctx.send("*I, the creator of this bot, have the right to end it. You don't, stoobid.*")
-                await ctx.send("-THE GREATEST BOT CREATOR THAT EVER LIVED")
+                await ctx.send(get_bot_message("errors", "no_permission"))
         
         @bot.listen("on_command_completion")
         async def log_command_done(ctx):
@@ -1901,7 +1933,7 @@ try:
                     try:
                         global startmessage
                         if not args:
-                            startmessage = "I am watching you."   # default
+                            startmessage = get_bot_message("startup")
                         elif args[0].lower() == "none":
                             startmessage = None                   # skip
                         else:
@@ -1939,7 +1971,7 @@ try:
                     manual_shutdown = True
 
                     if not args:
-                        stop_message = "My papi or ISP or MEA is shutting me down nooo."
+                        stop_message = get_bot_message("shutdown")
                     elif args[0].lower() == "none":
                         stop_message = None
                     else:
