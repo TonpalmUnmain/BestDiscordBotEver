@@ -1,0 +1,98 @@
+[
+    {
+        "id": "117201",
+        "type": "feature",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "make external build",
+        "timestamp": "2025-10-26T16:27:15.529286",
+        "status": "ACTIVE",
+        "delete_reason": null,
+        "deleted_by": null
+    },
+    {
+        "id": "117202",
+        "type": "feature",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "built in reaction role server (mkreactrole <embed_colour> <role_n> <role> <reaction>;;;)",
+        "timestamp": "2025-10-26T16:31:16.508465",
+        "status": "ACTIVE",
+        "delete_reason": null,
+        "deleted_by": null
+    },
+    {
+        "id": "117203",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "multiple consecutive char",
+        "timestamp": "2025-10-27T05:39:40.634065",
+        "deleted": false,
+        "delete_reason": null
+    },
+    {
+        "id": "117204",
+        "type": "feature",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "more strict moderation",
+        "timestamp": "2025-10-27T07:38:04.083380",
+        "status": "ACTIVE",
+        "delete_reason": null,
+        "deleted_by": null
+    },
+    {
+        "id": "117205",
+        "type": "feature",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "mod attachment name",
+        "timestamp": "2025-10-28T12:33:21.708955",
+        "status": "ACTIVE",
+        "delete_reason": null,
+        "deleted_by": null
+    },
+    {
+        "id": "117206",
+        "type": "feature",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "strengere Wortmoderation",
+        "timestamp": "2025-10-29T00:09:19.765118",
+        "status": "ACTIVE",
+        "delete_reason": null,
+        "deleted_by": null
+    },
+    {
+        "id": "117207",
+        "type": "feature",
+        "version": "1.17.2",
+        "reporter": {
+            "name": "p.pumpum",
+            "id": 1260198579067420722
+        },
+        "content": "more support on Unicode, possibly via command",
+        "timestamp": "2025-10-29T05:15:13.098974",
+        "status": "ACTIVE",
+        "delete_reason": null,
+        "deleted_by": null
+    }
+]
