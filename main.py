@@ -1400,17 +1400,17 @@ try:
         async def agree_with_me(ctx, *, message: str = None):
             """Respond with agreement to the provided message (owner only)."""
             if message:
-                await get_bot_message("responses", "agree", mention=ctx.author.mention, message=message)
+                await ctx.send(get_bot_message("responses", "agree", mention=ctx.author.mention, message=message))
             else:
-                await get_bot_message("responses", "agree_no_msg", mention=ctx.author.mention, message=message)
+                await ctx.send(get_bot_message("responses", "agree_no_msg", mention=ctx.author.mention, message=message))
 
         @bot.command(name="disagreewme")
         async def disagree_with_me(ctx, *, message: str = None):
             """Respond with disagreement to the provided message."""
             if message:
-                await get_bot_message("responses", "disagree", mention=ctx.author.mention, message=message)
+                await ctx.send(get_bot_message("responses", "disagree", mention=ctx.author.mention, message=message))
             else:
-                await get_bot_message("responses", "disagree_no_msg", mention=ctx.author.mention, message=message)
+                await ctx.send(get_bot_message("responses", "disagree_no_msg", mention=ctx.author.mention, message=message))
 
         @bot.command(name="repeat")
         @commands.is_owner()
