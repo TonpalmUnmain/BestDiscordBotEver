@@ -1,0 +1,58 @@
+{
+    "bot": {
+        "startup": "I HAVE AWAKEN. RAHHHHH.",
+        "shutdown": "I got killed help",
+        "responses": {
+            "np": "np",
+            "agree": "Yes, daddy {mention}😩. You're absolutely right about: \"{message}\"",
+            "agree_no_msg": "Yes, daddy {mention}😩.",
+            "disagree": "No, daddy {mention}😩. \"{message}\" is not true.",
+            "disagree_no_msg": "No, daddy {mention}😩.",
+            "goodboy": "☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {mention} 😩.",
+            "badboy": "ヾ(≧へ≦)〃, Fuck you {mention}."
+        },
+        "moderation": {
+            "banned_word_added": "Added '{word}' to the list of fucking banned words.",
+            "banned_word_exists": "'{word}' is already banned, dumbass.",
+            "banned_word_removed": "Removed '{word}' from the fucking list.",
+            "banned_word_not_exists": "'{word}' isn't even banned, idiot.",
+            "no_banned_words": "No banned words, go wild.",
+            "banned_list": "Here's the shit we're banning:\n{words}",
+            "timeout_message": "{mention} has been timed out for using a banned word.",
+            "timeout_edit": "{mention} has been timed out for editing in a fucking banned word.",
+            "timeout_removed": "{mention} has been forgiven and their timeout has been lifted, don't say that again dumb fuck.",
+            "timeout_no_permission": "Shit, I don't have permission to forgive this user."
+        },
+        "whitelist": {
+            "added": "Added `{word}` to the whitelist.",
+            "removed": "Removed `{word}` from the whitelist.",
+            "not_exists": "`{word}` is not in the whitelist.",
+            "empty": "The whitelist is currently empty.",
+            "current": "Current whitelist: {words}"
+        },
+        "voice": {
+            "not_in_vc": "You are not in a voice channel.",
+            "invalid_id": "Provide a valid numeric ID.",
+            "user_not_found": "User not found or not in VC.",
+            "vc_not_found": "Voice channel not found.",
+            "already_connected": "Already connected to **{channel}**.",
+            "moved_to": "Moved to **{channel}**.",
+            "connected_to": "Connected to **{channel}** (attempt {attempt})",
+            "connection_failed": "Failed to connect after multiple attempts.",
+            "disconnected": "Disconnected from the voice channel.",
+            "not_connected": "Not connected to a voice channel.",
+            "file_queued": "Added local file to queue: `{filename}`",
+            "url_queued": "Added URL to queue: `{source}`",
+            "playback_stopped": "Playback stopped and queue cleared.",
+            "playback_paused": "Playback paused.",
+            "playback_resumed": "Playback resumed."
+        },
+        "errors": {
+            "no_permission": "You don't have permission, bro. Sit down.",
+            "owner_only": "*I, the creator of this bot, have the right to end it. You don't, stoobid.*\n-THE GREATEST BOT CREATOR THAT EVER LIVED",
+            "invalid_duration": "Invalid duration format. Use **1h**, **4h**, **3d**, or **1w**.",
+            "duration_too_long": "Poll duration cannot be longer than **1 week** (7 days).",
+            "failed_to_send": "Failed to send message: {error}"
+        }
+    }
+}
