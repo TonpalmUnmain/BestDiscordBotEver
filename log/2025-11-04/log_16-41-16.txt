@@ -1,0 +1,40 @@
+2025-11-04 16:41:19,315 [INFO] logging in using static token
+2025-11-04 16:41:19,315 [INFO] Session ID: ce0eb4e64ae48ec1acb56076ce64576e92063bb29405dd2c276aa728b8174a86
+2025-11-04 16:41:20,811 [INFO] Shard ID None has connected to Gateway (Session ID: 4dd790d030040eb956dbf2418e9d0462).
+2025-11-04 16:41:22,837 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-04 16:41:22,838 [INFO] No startmessage set.
+2025-11-04 16:41:24,282 [INFO] 1435202264284401704:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): people are too good
+2025-11-04 16:41:32,153 [INFO] 1435202297247301633:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): im rage quitting if i lose this roun
+2025-11-04 16:41:33,976 [INFO] 1435202304918683649:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): no
+2025-11-04 16:41:36,735 [INFO] 1435202315509305404:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !debug_var read startmessage
+2025-11-04 16:41:37,183 [INFO] [p.pumpum (1260198579067420722)] Called debug_var with mode=read args=('startmessage',)
+2025-11-04 16:41:37,517 [INFO] 1435202319502278718:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Type: `NoneType`
+Value:
+```json
+null
+```
+2025-11-04 16:41:37,560 [INFO] Command completed: debug_var by p.pumpum
+2025-11-04 16:42:04,772 [INFO] 1435202433864433704:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !debug_var read bot
+2025-11-04 16:42:04,787 [INFO] [p.pumpum (1260198579067420722)] Called debug_var with mode=read args=('bot',)
+2025-11-04 16:42:05,232 [INFO] 1435202435470856285:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Type: `Bot`
+Value:
+```json
+"<discord.ext.commands.bot.Bot object at 0x0000028740D85C70>"
+```
+2025-11-04 16:42:05,286 [INFO] Command completed: debug_var by p.pumpum
+2025-11-04 16:42:36,633 [INFO] 1435202567545163796:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !debug_var read DUMP_DIR
+2025-11-04 16:42:36,646 [INFO] [p.pumpum (1260198579067420722)] Called debug_var with mode=read args=('DUMP_DIR',)
+2025-11-04 16:42:37,075 [INFO] 1435202569461825647:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Type: `str`
+Value:
+```json
+"fdump"
+```
+2025-11-04 16:42:37,273 [INFO] Command completed: debug_var by p.pumpum
+2025-11-04 16:42:48,084 [INFO] 1435202615687516160:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete sec 1
+2025-11-04 16:42:48,097 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
+2025-11-04 16:42:48,098 [WARNING] messages.json not found, creating new file...
+2025-11-04 16:42:48,099 [ERROR] Message not found: responses.deplete_countdown -> 'responses'
+2025-11-04 16:42:48,480 [INFO] 1435202617398661161:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:responses.deplete_countdown
+2025-11-04 16:42:49,524 [WARNING] messages.json not found, creating new file...
+2025-11-04 16:42:49,525 [ERROR] Message not found: shutdown -> 
+2025-11-04 16:42:49,526 [INFO] Bot stopped. Closing connection...

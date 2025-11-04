@@ -9,19 +9,20 @@
             "disagree": "No, daddy {mention}😩. \"{message}\" is not true.",
             "disagree_no_msg": "No, daddy {mention}😩.",
             "goodboy": "☆*: .｡. o(≧▽≦)o .｡.:*☆, thanks papi {mention} 😩.",
-            "badboy": "ヾ(≧へ≦)〃, Fuck you {mention}."
+            "badboy": "ヾ(≧へ≦)〃, Fuck you {mention}.",
+            "deplete_countdown": "Shutting down in {seconds} second(s)."
         },
         "moderation": {
             "banned_word_added": "Added '{word}' to the list of fucking banned words.",
             "banned_word_exists": "'{word}' is already banned, dumbass.",
-            "banned_word_removed": "Removed '{word}' from the fucking list.",
+            "banned_word_removed": "Removed '{word}' from the list.",
             "banned_word_not_exists": "'{word}' isn't even banned, idiot.",
             "no_banned_words": "No banned words, go wild.",
             "banned_list": "Here's the shit we're banning:\n{words}",
             "timeout_message": "{mention} has been timed out for using a banned word.",
             "timeout_edit": "{mention} has been timed out for editing in a fucking banned word.",
             "timeout_removed": "{mention} has been forgiven and their timeout has been lifted, don't say that again dumb fuck.",
-            "timeout_no_permission": "Shit, I don't have permission to forgive this user."
+            "timeout_no_permission": "Cannot timeout {mention}, report admin abuse at (+66) 083 247 0928."
         },
         "whitelist": {
             "added": "Added `{word}` to the whitelist.",
@@ -46,6 +47,13 @@
             "playback_stopped": "Playback stopped and queue cleared.",
             "playback_paused": "Playback paused.",
             "playback_resumed": "Playback resumed."
+        },
+        "translation": {
+            "added_trans":"Added translation: `{a}` → `{b}`.",
+            "del_trans":"Removed translation `{a}`.",
+            "trans_not_found":"No translation found for `{a}`.",
+            "none_set":"No custom translation set.",
+            "list_trans":"**Current Translations:**\n{message}"
         },
         "errors": {
             "no_permission": "You don't have permission, bro. Sit down.",

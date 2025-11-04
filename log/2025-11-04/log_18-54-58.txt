@@ -1,0 +1,41 @@
+2025-11-04 18:55:01,602 [INFO] logging in using static token
+2025-11-04 18:55:01,602 [INFO] Session ID: 4ced436a8f966a85aa5b65b1bf29c66df5279f111ca869bedb6de92877113605
+2025-11-04 18:55:03,074 [INFO] Shard ID None has connected to Gateway (Session ID: 652ccd48d1601710646900371f1874c4).
+2025-11-04 18:55:05,087 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-04 18:55:05,088 [INFO] No startmessage set.
+2025-11-04 18:55:16,045 [INFO] 1435235952611295382:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete sec 1
+2025-11-04 18:55:16,478 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
+2025-11-04 18:55:16,851 [INFO] 1435235955890982913:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Shutting down in 1 second(s).
+2025-11-04 18:55:17,947 [INFO] Bot stopped. Closing connection...
+2025-11-04 18:55:28,292 [ERROR] Error shutting down: Event loop is closed
+2025-11-04 18:55:28,302 [INFO] Bot stopped.
+2025-11-04 18:55:31,768 [INFO] logging in using static token
+2025-11-04 18:55:31,768 [INFO] Session ID: 8ca8e66ccd9fbd4853ae55a638cf70b3cc1d4b85df2d9fde6d96d11ceb47c6cf
+2025-11-04 18:55:33,404 [INFO] Shard ID None has connected to Gateway (Session ID: ba1b20a292d1ee4d9e3b32ee4d4966ed).
+2025-11-04 18:55:35,418 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-04 18:55:35,831 [INFO] 1435236035746336778:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): I HAVE AWAKEN. RAHHHHH.
+2025-11-04 18:55:35,842 [INFO] Sent startup message to channel ID: 1371357608904228924
+2025-11-04 18:55:36,260 [INFO] User info saved to userdata/2025-11-04_18-55-36-8ca8e66ccd9fbd4853ae55a638cf70b3cc1d4b85df2d9fde6d96d11ceb47c6cf.json
+2025-11-04 18:55:36,262 [INFO] Auto-saved 36 users at 2025-11-04 18:55:35
+2025-11-04 18:55:36,816 [INFO] User info saved to userdata/2025-11-04_18-55-36-8ca8e66ccd9fbd4853ae55a638cf70b3cc1d4b85df2d9fde6d96d11ceb47c6cf.json
+2025-11-04 18:55:36,816 [INFO] Auto-saved 36 users at 2025-11-04 18:55:35
+2025-11-04 18:56:49,196 [INFO] 1435236343486742601:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): I have this technique
+2025-11-04 18:56:57,813 [INFO] 1435236379800899624:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): u send the vid somewhere like in line or smth
+2025-11-04 18:57:00,957 [INFO] 1435236392832729178:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): then u go on phone
+2025-11-04 18:57:03,323 [INFO] 1435236402349609111:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): download the vid
+2025-11-04 18:57:05,973 [INFO] 1435236413862973510:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): and send on discord
+2025-11-04 18:57:06,858 [INFO] 1435236417726054600:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Oh
+2025-11-04 18:57:06,884 [ERROR] Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000017F26E362D0>, 40012.515)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000017F26E446E0>
+2025-11-04 18:57:06,885 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-88' coro=<Client.close.<locals>._close() running at D:\TonpalmUnmain\Project\BestDiscordBotEver\.venv\Lib\site-packages\discord\client.py:801> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2025-11-04 18:57:06,885 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at D:\TonpalmUnmain\Project\BestDiscordBotEver\.venv\Lib\site-packages\discord\client.py:504> wait_for=<Task pending name='Task-88' coro=<Client.close.<locals>._close() done, defined at D:\TonpalmUnmain\Project\BestDiscordBotEver\.venv\Lib\site-packages\discord\client.py:797> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>>
+2025-11-04 18:57:09,964 [INFO] 1435236430262702193:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it work
+2025-11-04 18:57:10,712 [INFO] 1435236433752494101:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I went on capcut
+2025-11-04 18:57:22,797 [INFO] 1435236484457300068:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): send the vid on phone
+2025-11-04 18:57:24,718 [INFO] 1435236492506038342:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): it will work
+2025-11-04 18:57:25,928 [INFO] 1435236497530949693:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): somehow
+2025-11-04 18:57:26,272 [INFO] 1435236498839437484:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I gonna try
+2025-11-04 18:57:34,790 [INFO] 1435236534545678399:endulix_ (913994744953196614) in #🎮-gaming-🕹️ (1395783584253739141): but if the vid too long it might not work

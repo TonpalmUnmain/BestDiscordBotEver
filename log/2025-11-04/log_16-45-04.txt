@@ -1,0 +1,17 @@
+2025-11-04 16:45:06,355 [INFO] logging in using static token
+2025-11-04 16:45:06,355 [INFO] Session ID: 41001cf19d3454d2fbb499960c4a5ff2b30c3fd5fd897fb1acb6b8308ada2c1a
+2025-11-04 16:45:08,113 [INFO] Shard ID None has connected to Gateway (Session ID: efec77ebb13a249cbc46f1ec4f33a436).
+2025-11-04 16:45:08,435 [INFO] 1435203204404084808:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): too fast
+2025-11-04 16:45:09,259 [INFO] 1435203207620988989:toastedkwitty (1173572905649578025) in #🎮-gaming-🕹️ (1395783584253739141): i quit
+2025-11-04 16:45:09,602 [INFO] 1435203209206698094:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i suck
+2025-11-04 16:45:10,136 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-04 16:45:10,136 [INFO] No startmessage set.
+2025-11-04 16:45:10,482 [INFO] 1435203212889297027:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i quit
+2025-11-04 16:45:15,609 [INFO] 1435203234146025554:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete sec 1
+2025-11-04 16:45:16,066 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
+2025-11-04 16:45:16,067 [WARNING] messages.json not found, creating new file...
+2025-11-04 16:45:16,067 [ERROR] Message not found: responses.deplete_countdown -> 'responses'
+2025-11-04 16:45:16,511 [INFO] 1435203238113706017:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:responses.deplete_countdown
+2025-11-04 16:45:17,731 [WARNING] messages.json not found, creating new file...
+2025-11-04 16:45:17,732 [ERROR] Message not found: shutdown -> 
+2025-11-04 16:45:17,733 [INFO] Bot stopped. Closing connection...

@@ -1,0 +1,3 @@
+2025-11-04 19:34:03,833 [INFO] logging in using static token
+2025-11-04 19:34:03,833 [INFO] Session ID: 69789462da5a00b1b1346a13ac0a50d009da947dd6a429ce6f03c70216649d1d
+2025-11-04 19:34:05,557 [INFO] Shard ID None has connected to Gateway (Session ID: 34a750b4c3323f0a16d5e2e08133440e).

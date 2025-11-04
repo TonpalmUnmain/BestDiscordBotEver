@@ -43,7 +43,7 @@ try:
     colorama.init()
 
     # ===== PLACEHOLDER =====
-    MESSAGES_FILE = "messages.json"
+    MESSAGES_FILE = "message.json"
 
     def get_bot_message(category_or_key: str, key: str | None = None, **kwargs) -> str:
         """Get bot message from messages.json.
@@ -675,8 +675,26 @@ try:
     #     return SequenceMatcher(None, a, b).ratio() >= threshold
     
     hg = Homoglyphs()
+    custom_translations = {}
+    
     def normalize_message(text: str) -> str:
         text = str(text)
+
+        def is_thai(text: str) -> bool:
+            return all('\u0E00' <= c <= '\u0E7F' or c.isspace() for c in text if c.strip())
+        
+        if is_thai(text):
+            return text.strip()
+
+        # --- Convert regional indicator emojis 🇦-🇿 into letters A-Z ---
+        def regional_to_letter(char):
+            code = ord(char)
+            if 0x1F1E6 <= code <= 0x1F1FF:
+                return chr(code - 0x1F1E6 + ord('a'))
+            return char
+
+        text = ''.join(regional_to_letter(c) for c in text)
+
         text = unidecode(text)
         text = unicodedata.normalize("NFKC", text).lower()
         text = re.sub(r'[\s\W_]+', '', text)
@@ -698,6 +716,8 @@ try:
             '9': 'g'
         })
         text = text.translate(replacements)
+        for a, b in custom_translations.items():
+            text = text.replace(a, b)
 
         return text
 
@@ -782,9 +802,10 @@ try:
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
 
-    def load_banned_words(type: str):
+    def load_banwjson(type: str):
         banned = set()
         whitelist = set()
+        translations = {}
 
         if os.path.exists(BANNED_WORDS_FILE):
             try:
@@ -792,6 +813,7 @@ try:
                     data = json.load(f)
                     banned = set(data.get("banned_words", []))
                     whitelist = set(data.get("whitelisted_words", []))
+                    translations = dict(data.get("translation", {}))
             except (json.JSONDecodeError, OSError) as e:
                 logging.info(f"Error loading banned words file: {e}")
 
@@ -800,10 +822,13 @@ try:
                 return banned
             case "whitelist":
                 return whitelist
+            case "translation":
+                return translations
             case _:
                 return banned
 
-    def save_banned_words(mode: str, data: set):
+
+    def save_banwjson(type: str, data):
         # load existing data if the file exists
         if os.path.exists(BANNED_WORDS_FILE):
             try:
@@ -817,23 +842,28 @@ try:
         # ensure keys exist
         current.setdefault("banned_words", [])
         current.setdefault("whitelisted_words", [])
+        current.setdefault("translation", {})
 
         # update the appropriate key
-        if mode.lower() == "banned":
+        t = type.lower()
+        if t == "banned":
             current["banned_words"] = sorted(list(data))
-        elif mode.lower() == "whitelist":
+        elif t == "whitelist":
             current["whitelisted_words"] = sorted(list(data))
+        elif t == "translation":
+            # expect `data` to be a dict
+            current["translation"] = dict(data)
         else:
-            raise ValueError("mode must be 'banned' or 'whitelist'")
+            raise ValueError("mode must be 'banned', 'whitelist', or 'translation'")
 
         # write back to file
         with open(BANNED_WORDS_FILE, "w", encoding="utf-8") as f:
             json.dump(current, f, ensure_ascii=False, indent=4)
 
-    BANNED_WORDS = load_banned_words("banned")
-    WHITELISTED_WORDS = load_banned_words("whitelist")
-    save_banned_words("banned", BANNED_WORDS)
-    save_banned_words("whitelist", WHITELISTED_WORDS)
+    BANNED_WORDS = load_banwjson("banned")
+    WHITELISTED_WORDS = load_banwjson("whitelist")
+    save_banwjson("banned", BANNED_WORDS)
+    save_banwjson("whitelist", WHITELISTED_WORDS)
 
     PENDING_MOD = {}
     
@@ -887,8 +917,8 @@ try:
             content = re.sub(r'(.)\1{2,}', r'\1', content)  # collapse stretched letters
 
             # === Detection ===
-            banned = load_banned_words("banned")
-            whitelist = {normalize_message(w) for w in load_banned_words("whitelist")}
+            banned = load_banwjson("banned")
+            whitelist = {normalize_message(w) for w in load_banwjson("whitelist")}
 
             def is_banned(text: str) -> bool:
                 # check against all banned words but skip whitelisted ones
@@ -918,7 +948,7 @@ try:
                     logging.info(f"Timed out: {message.author} for '{message.content}'")
                 except discord.Forbidden:
                     await message.channel.send(
-                        get_bot_message("moderation", "timeout_no_permission")
+                        get_bot_message("moderation", "timeout_no_permission", mention=ctx.author.mention)
                     )
                     logging.error("Bot doesn't have permission to timeout this user.")
                 except Exception as e:
@@ -1280,7 +1310,7 @@ try:
                 await ctx.send(get_bot_message("moderation", "banned_word_exists", word=word))
             else:
                 BANNED_WORDS.add(word)
-                save_banned_words("banned", BANNED_WORDS)
+                save_banwjson("banned", BANNED_WORDS)
                 await ctx.send(get_bot_message("moderation", "banned_word_added", word=word))
                 logging.info(f"Added banned word: {word}")
 
@@ -1292,7 +1322,7 @@ try:
             word = word.lower().strip()
             if word in BANNED_WORDS:
                 BANNED_WORDS.remove(word)
-                save_banned_words("banned", BANNED_WORDS)
+                save_banwjson("banned", BANNED_WORDS)
                 await ctx.send(get_bot_message("moderation", "banned_word_removed", word=word))
                 logging.info(f"Removed banned word: {word}")
             else:
@@ -1314,7 +1344,7 @@ try:
             """Add a word to the whitelist (owner only)."""
             word = word.lower()
             WHITELISTED_WORDS.add(word)
-            save_banned_words("whitelist", WHITELISTED_WORDS)
+            save_banwjson("whitelist", WHITELISTED_WORDS)
             await ctx.send(get_bot_message("whitelist", "added", word=word))
 
 
@@ -1325,7 +1355,7 @@ try:
             word = word.lower()
             if word in WHITELISTED_WORDS:
                 WHITELISTED_WORDS.remove(word)
-                save_banned_words("whitelist", WHITELISTED_WORDS)
+                save_banwjson("whitelist", WHITELISTED_WORDS)
                 await ctx.send(get_bot_message("whitelist", "removed", word=word))
             else:
                 await ctx.send(get_bot_message("whitelist", "not_exists", word=word))
@@ -1370,17 +1400,17 @@ try:
         async def agree_with_me(ctx, *, message: str = None):
             """Respond with agreement to the provided message (owner only)."""
             if message:
-                await ctx.send(f"Yes, daddy {ctx.author.mention}😩. You're absolutely right about: \"{message}\".")
+                await get_bot_message("responses", "agree", mention=ctx.author.mention, message=message)
             else:
-                await ctx.send(f"Yes, daddy {ctx.author.mention}😩.")
+                await get_bot_message("responses", "agree_no_msg", mention=ctx.author.mention, message=message)
 
         @bot.command(name="disagreewme")
         async def disagree_with_me(ctx, *, message: str = None):
             """Respond with disagreement to the provided message."""
             if message:
-                await ctx.send(f"No, daddy {ctx.author.mention}😩. \"{message}\" is not true.")
+                await get_bot_message("responses", "disagree", mention=ctx.author.mention, message=message)
             else:
-                await ctx.send(f"No, daddy {ctx.author.mention}😩.")
+                await get_bot_message("responses", "disagree_no_msg", mention=ctx.author.mention, message=message)
 
         @bot.command(name="repeat")
         @commands.is_owner()
@@ -1403,6 +1433,8 @@ try:
             await ctx.send(get_bot_message("responses", "deplete_countdown", seconds=seconds))
             await asyncio.sleep(seconds)
             await stopsession(get_bot_message("shutdown", mention=ctx.author.mention))
+            global manual_shutdown
+            manual_shutdown = True
 
         @bot.command(name="cfch")
         @commands.has_permissions(administrator=True)
@@ -1650,7 +1682,7 @@ try:
 
         #     _, content = PENDING_MOD.pop(message_id)
         #     WHITELISTED_WORDS.add(normalize_message(content))
-        #     save_banned_words("whitelist", WHITELISTED_WORDS)
+        #     save_banwjson("whitelist", WHITELISTED_WORDS)
         #     await ctx.send(f"Message {message_id} allowed. Added to whitelist.")
 
 
@@ -1664,7 +1696,7 @@ try:
 
         #     _, content = PENDING_MOD.pop(message_id)
         #     BANNED_WORDS.add(normalize_message(content))
-        #     save_banned_words("banned", BANNED_WORDS)
+        #     save_banwjson("banned", BANNED_WORDS)
         #     await ctx.send(f"Message {message_id} banned. Added to banned words.")
 
         @bot.command(name='jvc')
@@ -1875,6 +1907,174 @@ try:
                     await ctx.send(get_bot_message("errors", "failed_to_send", error=str(e)))
             else:
                 await ctx.send(get_bot_message("voice", "not_connected"))
+                
+        @bot.command(name="debug_var")
+        @commands.is_owner()
+        async def debug_var(ctx, mode: str = None, *args):
+            """Read or edit an in-memory variable. Usage: !debug_var read <path> | !debug_var edit <path> <json_or_text>"""
+            logging.info(f"[{ctx.author} ({ctx.author.id})] Called debug_var with mode={mode} args={args}")
+
+            if not mode:
+                await ctx.send("Usage: `!debug_var read <path>` or `!debug_var edit <path> <value>`")
+                return
+
+            mode = mode.lower()
+
+            def resolve(path: str):
+                """Resolve a dotted path against module globals (and nested dict/attr/list)."""
+                parts = path.split(".")
+                g = globals()
+                if parts[0] in g:
+                    obj = g[parts[0]]
+                else:
+                    return None, f"Root name `{parts[0]}` not found"
+                for p in parts[1:]:
+                    if obj is None:
+                        return None, f"Reached None while resolving `{p}`"
+                    if isinstance(obj, dict):
+                        if p in obj:
+                            obj = obj[p]
+                        else:
+                            return None, f"Key `{p}` not found in dict"
+                    elif isinstance(obj, (list, tuple)):
+                        try:
+                            idx = int(p)
+                            obj = obj[idx]
+                        except Exception:
+                            return None, f"Invalid index `{p}` for list/tuple"
+                    else:
+                        if hasattr(obj, p):
+                            obj = getattr(obj, p)
+                        else:
+                            return None, f"Attribute `{p}` not found on {type(obj).__name__}"
+                return obj, None
+
+            if mode == "read":
+                if not args:
+                    await ctx.send("Usage: `!debug_var read <path>`")
+                    return
+                path = args[0]
+                val, err = resolve(path)
+                if err:
+                    await ctx.send(f"Error: {err}")
+                    return
+
+                val_type = type(val).__name__
+                try:
+                    payload = json.dumps(val, default=str, ensure_ascii=False, indent=2)
+                except Exception:
+                    payload = str(val)
+
+                # keep message short if huge
+                max_len = 1800
+                if len(payload) > max_len:
+                    truncated = payload[:max_len] + "\n... (truncated)"
+                    await ctx.send(f"Type: `{val_type}`\nValue (truncated):\n```json\n{truncated}\n```")
+                else:
+                    await ctx.send(f"Type: `{val_type}`\nValue:\n```json\n{payload}\n```")
+                return
+
+            if mode == "edit":
+                if len(args) < 2:
+                    await ctx.send("Usage: `!debug_var edit <path> <json_or_text>`")
+                    return
+                path = args[0]
+                new_raw = " ".join(args[1:]).strip()
+
+                # attempt JSON parse, fallback to string
+                try:
+                    new_val = json.loads(new_raw)
+                except Exception:
+                    new_val = new_raw
+
+                # find parent container and key/name
+                if "." in path:
+                    parent_path, last = path.rsplit(".", 1)
+                    parent, err = resolve(parent_path)
+                    if err:
+                        await ctx.send(f"Error resolving parent `{parent_path}`: {err}")
+                        return
+                else:
+                    parent = globals()
+                    last = path
+
+                # set value
+                try:
+                    if isinstance(parent, dict):
+                        parent[last] = new_val
+                    elif hasattr(parent, last):
+                        setattr(parent, last, new_val)
+                    else:
+                        # allow creating new global
+                        if parent is globals():
+                            globals()[last] = new_val
+                        else:
+                            await ctx.send(f"Cannot set `{last}` on parent of type {type(parent).__name__}")
+                            return
+                except Exception as e:
+                    await ctx.send(f"Failed to set value: {e}")
+                    logging.exception("debug_var edit failed")
+                    return
+
+                # persistence hooks for known datastructures
+                try:
+                    if path.startswith("config_data") or (path == "config_data"):
+                        save_json(CONFIG_FILE, config_data)
+                    if path.startswith("BANNED_WORDS") or path.startswith("WHITELISTED_WORDS") or path.startswith("banned_words.json"):
+                        # sync sets if needed
+                        if isinstance(BANNED_WORDS, set):
+                            save_banwjson("banned", BANNED_WORDS)
+                        if isinstance(WHITELISTED_WORDS, set):
+                            save_banwjson("whitelist", WHITELISTED_WORDS)
+                    if path.startswith("user_info") or path == "user_info":
+                        save_json(USER_INFO_FILE, user_info)
+                except Exception:
+                    logging.exception("debug_var persistence hook failed")
+
+                # reply with new value and type
+                try:
+                    payload = json.dumps(new_val, default=str, ensure_ascii=False, indent=2)
+                except Exception:
+                    payload = str(new_val)
+                val_type = type(new_val).__name__
+                if len(payload) > 1800:
+                    payload = payload[:1800] + "\n... (truncated)"
+                await ctx.send(f"Set `{path}` -> Type: `{val_type}`\n```json\n{payload}\n```")
+                logging.info(f"debug_var: set {path} to {new_val}")
+                return
+
+            await ctx.send("Unknown mode. Use `read` or `edit`.")
+            
+        @bot.command(name="add_translation")
+        @commands.has_permissions(administrator=True)
+        async def add_translation(ctx, a: str, b: str):
+            """Add a normalization rule: replaces <a> with <b> in messages."""
+            a, b = a.lower(), b.lower()
+            custom_translations[a] = b
+            save_banwjson("translation", custom_translations)
+            await ctx.send(get_bot_message("translation", "added_trans", a=a, b=b))
+
+        @bot.command(name="del_translation")
+        @commands.has_permissions(administrator=True)
+        async def del_translation(ctx, a: str):
+            """Delete an existing translation rule"""
+            a = a.lower()
+            if a in custom_translations:
+                del custom_translations[a]
+                save_banwjson("translation", custom_translations)
+                await ctx.send(get_bot_message("translation", "del_trans", a=a))
+            else:
+                await ctx.send(get_bot_message("translation", "trans_not_found", a=a))
+
+        @bot.command(name="list_translations")
+        @commands.has_permissions(administrator=True)
+        async def list_translations(ctx):
+            """List all translation rules"""
+            if not custom_translations:
+                await ctx.send(get_bot_message("translation", "none_set"))
+                return
+            msg = "\n".join(f"`{a}` → `{b}`" for a, b in custom_translations.items())
+            await ctx.send(get_bot_message("translation", "list_trans", message=msg))     
                 
         # ===== ERROR HANDLERS =====
         @ban_word.error
