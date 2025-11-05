@@ -913,7 +913,9 @@ try:
                 return
 
             ctx = await bot.get_context(message)
-
+            app_info = await bot.application_info()
+            owner = app_info.owner
+            
             # === Normalize ===
             content = normalize_message(message.content)
             content = re.sub(r'[^a-z0-9]', '', content)  # remove symbols inside words
@@ -924,7 +926,7 @@ try:
             whitelist = {normalize_message(w) for w in load_banwjson("whitelist")}
 
             user = message.author
-            if (user.id in silenced_users or any(r.id in silenced_roles for r in user.roles)) and not user.guild_permissions.administrator:
+            if (user.id in silenced_users or any(r.id in silenced_roles for r in user.roles)) and user.id != owner.id:
                 try:
                     await message.delete()
                     now = time.time()
