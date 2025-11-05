@@ -35,6 +35,12 @@ from unidecode import unidecode
 from gtts import gTTS
 
 try:
+    global DEBUGB
+    DEBUGB = False
+    def debug(txt: str, id: str):
+        if DEBUGB == True:
+            print("Debug Print ", id, ": ",txt)
+        
     # ===== SETUP =====
     if hasattr(sys.stdout, "buffer"):
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -918,9 +924,10 @@ try:
             
             # === Normalize ===
             content = normalize_message(message.content)
-            content = re.sub(r'[^a-z0-9]', '', content)  # remove symbols inside words
-            content = re.sub(r'(.)\1{2,}', r'\1', content)  # collapse stretched letters
-
+            content = re.sub(r'[^a-z0-9]', '', content)
+            content = re.sub(r'(.)\1{2,}', r'\1', content)
+            debug(content, "Content (Before Moderation)")
+            
             # === Detection ===
             banned = load_banwjson("banned")
             whitelist = {normalize_message(w) for w in load_banwjson("whitelist")}
@@ -938,8 +945,6 @@ try:
                 except discord.Forbidden:
                     print(f"Cannot delete message or send warning in {message.channel}")
                 return
-
-            await bot.process_commands(message)
         
             def is_banned(text: str) -> bool:
                 # check against all banned words but skip whitelisted ones
@@ -2225,41 +2230,52 @@ try:
                     sys.exit(0)
 
                 if command == "start":
+                    global startmessage, session_id
+
                     if bot_started:
                         print("Bot already running.")
                         continue
-                        
-                    try:
-                        global startmessage
-                        if not args:
-                            startmessage = get_bot_message("startup")
-                        elif args[0].lower() == "none":
-                            startmessage = None                   # skip
-                        else:
-                            startmessage = " ".join(args)         # var
 
-                        bot = create_bot()  # NEW bot each time
-                        bot_loop = asyncio.new_event_loop()  # NEW loop each time
-                        asyncio.set_event_loop(bot_loop)
+                    try:
+                        full_args = " ".join(args).strip()
+
+                        debug_flag = False
+                        if "{" in full_args and "}" in full_args:
+                            start_part, debug_part = full_args.split("{", 1)
+                            startmessage = start_part.strip() or None
+                            debug_value = debug_part.split("}", 1)[0].strip().lower()
+                            debug_flag = debug_value in ["true", "1", "yes", "on"]
+                        else:
+                            startmessage = full_args or None
+
+                        if startmessage and startmessage.lower() == "none":
+                            startmessage = None
+
+                        global DEBUGB
+                        DEBUGB = debug_flag
+
+                        bot = create_bot()
+                        bot_loop = asyncio.new_event_loop()
 
                         def run_bot():
+                            asyncio.set_event_loop(bot_loop)
                             try:
                                 bot_loop.run_until_complete(bot.start(token))
                             except asyncio.CancelledError:
                                 pass
                             except Exception as e:
-                                logging.info("Error starting bot:", e)
+                                logging.exception("Error starting bot")
                             finally:
                                 bot_loop.close()
 
                         threading.Thread(target=run_bot, daemon=True).start()
                         bot_started = True
-                        print("Bot started.")
-                        global session_id
+                        print(f"Bot started. Debug: {DEBUGB}")
                         session_id = gen_session_id()
                         logging.info(f"Session ID: {session_id}")
+
                     except Exception as e:
-                        logging.info("Failed to start bot:", e)
+                        logging.exception("Failed to start bot")
 
                 elif command == "stop": 
                     if not bot_started:
@@ -2287,22 +2303,19 @@ try:
                                     logging.info(f"Sent shutdown message to #{channel} ({channel.id}): {stop_message}")
                                 else:
                                     logging.warning(f"Could not find channel with ID {target_channel_id}")
-
-                            # Cancel all background tasks except current
                             for task in asyncio.all_tasks(bot_loop):
                                 if task is not asyncio.current_task(bot_loop):
                                     task.cancel()
                             
-                            await bot.close()  # Properly close connection
+                            await bot.close()
                             logging.info("Bot shutdown complete.")
                         except Exception as e:
                             logging.error(f"Error during shutdown: {e}")
                     try:
-                    # Run shutdown safely in the bot's loop
                         fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
 
                         logging.info("Waiting for bot to shut down...")
-                        fut.result(timeout=10)  # Wait max 10s for shutdown
+                        fut.result(timeout=10)
                     except asyncio.CancelledError:
                         logging.info("CancelledError during shutdown. No threat.")
                     except Exception as e:

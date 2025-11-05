@@ -1,0 +1,13 @@
+2025-11-05 20:51:35,934 [INFO] logging in using static token
+2025-11-05 20:51:35,934 [INFO] Session ID: fbbdb71092174d31d7b3cfcfd9ac8f1f702657040ad411d23bf9b387e2bc5354
+2025-11-05 20:51:37,674 [INFO] Shard ID None has connected to Gateway (Session ID: 2bf85b403c926422b648bc6bf4ba65fd).
+2025-11-05 20:51:39,696 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-05 20:51:39,697 [INFO] No startmessage set.
+2025-11-05 20:51:47,667 [INFO] 1435627672720904304:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !debug_var read DEBUGB
+2025-11-05 20:51:48,444 [INFO] [p.pumpum (1260198579067420722)] Called debug_var with mode=read args=('DEBUGB',)
+2025-11-05 20:51:48,779 [INFO] 1435627677540159569:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Type: `bool`
+Value:
+```json
+true
+```
+2025-11-05 20:51:48,809 [INFO] Command completed: debug_var by p.pumpum
