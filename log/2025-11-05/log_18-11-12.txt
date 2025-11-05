@@ -1,0 +1,56 @@
+2025-11-05 18:11:14,893 [INFO] logging in using static token
+2025-11-05 18:11:14,893 [INFO] Session ID: a7185b14439bc0a8e9c78f53d0377836dcdbb64869bfcc2c7b9635a435ea2321
+2025-11-05 18:11:16,423 [INFO] Shard ID None has connected to Gateway (Session ID: ac8855b9442cfa180b9819cfdef66021).
+2025-11-05 18:11:18,435 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-05 18:11:18,435 [INFO] No startmessage set.
+2025-11-05 18:11:37,005 [INFO] 1435587360665632801:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !fsilence <@1432038603516543157>
+2025-11-05 18:11:51,754 [INFO] 1435587423513084005:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): User <@1432038603516543157> has been silenced.
+2025-11-05 18:11:51,814 [INFO] Command completed: fsilence by p.pumpum
+2025-11-05 18:11:52,179 [ERROR] Error in command fsilence by p.pumpum: Command raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2025-11-05 18:11:56,236 [INFO] 1435587442311823460:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): ra
+2025-11-05 18:11:56,609 [ERROR] Message not found: silence.warn -> 'warn'
+2025-11-05 18:11:56,956 [INFO] 1435587445336051732:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:silence.warn
+2025-11-05 18:11:59,068 [INFO] 1435587454026387458:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): fdf
+2025-11-05 18:12:03,209 [INFO] 1435587471315308716:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): lgl
+2025-11-05 18:12:03,599 [ERROR] Message not found: silence.warn -> 'warn'
+2025-11-05 18:12:04,028 [INFO] 1435587474998034564:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:silence.warn
+2025-11-05 18:12:05,868 [INFO] 1435587482715422750:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): lgl
+2025-11-05 18:12:09,246 [INFO] 1435587496841842822:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): lfl
+2025-11-05 18:12:09,675 [ERROR] Message not found: silence.warn -> 'warn'
+2025-11-05 18:12:10,034 [INFO] 1435587500109336738:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:silence.warn
+2025-11-05 18:12:11,442 [INFO] 1435587506128158781:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): lfl
+2025-11-05 18:12:13,117 [INFO] 1435587513145360444:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): afsafs
+2025-11-05 18:12:13,728 [INFO] 1435587515661811742:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): afas
+2025-11-05 18:12:14,432 [INFO] 1435587517939454054:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): a
+2025-11-05 18:12:14,906 [ERROR] Message not found: silence.warn -> 'warn'
+2025-11-05 18:12:15,331 [INFO] 1435587522251067412:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:silence.warn
+2025-11-05 18:12:15,331 [INFO] 1435587522037289011:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): afs
+2025-11-05 18:12:16,033 [INFO] 1435587524960456799:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:16,558 [INFO] 1435587527594606602:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:17,047 [INFO] 1435587529595162694:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:17,674 [INFO] 1435587532124586065:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:18,294 [INFO] 1435587534758481991:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:18,732 [INFO] 1435587536675278918:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): ss
+2025-11-05 18:12:19,210 [INFO] 1435587538688544868:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): sa
+2025-11-05 18:12:20,636 [ERROR] Message not found: silence.warn -> 'warn'
+2025-11-05 18:12:20,678 [INFO] 1435587544808165420:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): f
+2025-11-05 18:12:20,994 [INFO] 1435587546112327790:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:silence.warn
+2025-11-05 18:12:21,043 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587522251067412 responded with 429. Retrying in 0.32 seconds.
+2025-11-05 18:12:21,266 [INFO] 1435587547286868059:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): as
+2025-11-05 18:12:21,766 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587522251067412 responded with 429. Retrying in 0.61 seconds.
+2025-11-05 18:12:21,766 [INFO] 1435587549317038202:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:22,307 [INFO] 1435587551443554416:bottestatonpalmunmain (1432038603516543157) in #🤖-bot-test-🛠️ (1399900695993253970): s
+2025-11-05 18:12:22,341 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587549317038202 responded with 429. Retrying in 0.30 seconds.
+2025-11-05 18:12:22,350 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587544808165420 responded with 429. Retrying in 0.30 seconds.
+2025-11-05 18:12:22,698 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587522251067412 responded with 429. Retrying in 0.66 seconds.
+2025-11-05 18:12:22,962 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587549317038202 responded with 429. Retrying in 0.40 seconds.
+2025-11-05 18:12:22,992 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587544808165420 responded with 429. Retrying in 0.38 seconds.
+2025-11-05 18:12:23,689 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587522251067412 responded with 429. Retrying in 0.67 seconds.
+2025-11-05 18:12:23,692 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587549317038202 responded with 429. Retrying in 0.67 seconds.
+2025-11-05 18:12:24,735 [WARNING] We are being rate limited. DELETE https://discord.com/api/v10/channels/1399900695993253970/messages/1435587549317038202 responded with 429. Retrying in 0.62 seconds.
+2025-11-05 18:12:25,862 [ERROR] Message not found: silence.warn -> 'warn'
+2025-11-05 18:12:27,849 [INFO] 1435587574948298854:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): MESSAGE_NOT_FOUND:silence.warn
+2025-11-05 18:12:45,989 [INFO] 1435587650995097680:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !unsilence <@1432038603516543157>
+2025-11-05 18:12:48,071 [INFO] 1435587659610456145:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): <@1432038603516543157> can now speak again.
+2025-11-05 18:12:48,115 [INFO] Command completed: unsilence by p.pumpum
+2025-11-05 18:12:48,515 [ERROR] Error in command unsilence by p.pumpum: Command raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message

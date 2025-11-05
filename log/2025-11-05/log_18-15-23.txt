@@ -1,0 +1,6 @@
+2025-11-05 18:15:27,323 [INFO] logging in using static token
+2025-11-05 18:15:27,324 [INFO] Session ID: 230f557504fecbb3c60739fa89b581041f98ca1bb2ca26fb79c475bbf56e54c2
+2025-11-05 18:15:28,948 [INFO] Shard ID None has connected to Gateway (Session ID: 0ceef13a96535dfb04fbe505bf33e187).
+2025-11-05 18:15:30,958 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-05 18:15:30,958 [INFO] No startmessage set.
+2025-11-05 18:16:17,790 [INFO] 1435588539411595355:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): <@913994744953196614> use !fsilence <mention> to silence somone !unsilence <mention> to unsilence !listsilenced to list

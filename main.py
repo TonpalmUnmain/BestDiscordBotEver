@@ -262,7 +262,10 @@ try:
 
     token = open("token.config", "r").read().strip()
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
-
+    silenced_users = set()
+    silenced_roles = set()
+    recent_warnings = {}
+    
     # ===== VERSION INFO =====
     VERSION = config_data["config"]["version"]
     AUTHOR = config_data["config"]["author"]
@@ -920,6 +923,22 @@ try:
             banned = load_banwjson("banned")
             whitelist = {normalize_message(w) for w in load_banwjson("whitelist")}
 
+            user = message.author
+            if (user.id in silenced_users or any(r.id in silenced_roles for r in user.roles)) and not user.guild_permissions.administrator:
+                try:
+                    await message.delete()
+                    now = time.time()
+                    last_warn = recent_warnings.get(user.id, 0)
+                    if now - last_warn >= 5:  # Anti-spam: 5 sec cooldown
+                        recent_warnings[user.id] = now
+                        warn_msg = get_bot_message("silence", "warn", mention=user.mention)
+                        await message.channel.send(warn_msg, delete_after=3)
+                except discord.Forbidden:
+                    print(f"Cannot delete message or send warning in {message.channel}")
+                return
+
+            await bot.process_commands(message)
+        
             def is_banned(text: str) -> bool:
                 # check against all banned words but skip whitelisted ones
                 for word in banned:
@@ -2075,6 +2094,84 @@ try:
                 return
             msg = "\n".join(f"`{a}` → `{b}`" for a, b in custom_translations.items())
             await ctx.send(get_bot_message("translation", "list_trans", message=msg))     
+                
+
+        @bot.command(name="fsilence")
+        @commands.has_permissions(administrator=True)
+        async def fsilence(ctx, target: discord.Member | discord.Role = None):
+            """Force silence a user or role."""
+            if not target:
+                return await ctx.send(get_bot_message("silence", "none_provided"))
+
+            guild = ctx.guild
+
+            muted_role = discord.utils.get(guild.roles, name="Muted")
+            if muted_role is None:
+                muted_role = await guild.create_role(name="Muted", reason="For fsilence command")
+
+            for channel in guild.channels:
+                overwrite = channel.overwrites_for(muted_role)
+                overwrite.send_messages = False
+                overwrite.speak = False
+                overwrite.add_reactions = False
+                await channel.set_permissions(muted_role, overwrite=overwrite)
+
+            if isinstance(target, discord.Member):
+                await target.add_roles(muted_role)
+                silenced_users.add(target.id)
+                await ctx.send(get_bot_message("silence", "muted", mention=target.mention))
+
+            elif isinstance(target, discord.Role):
+                for channel in guild.channels:
+                    overwrite = channel.overwrites_for(target)
+                    overwrite.send_messages = False
+                    overwrite.speak = False
+                    overwrite.add_reactions = False
+                    await channel.set_permissions(target, overwrite=overwrite)
+                silenced_roles.add(target.id)
+                await ctx.send(get_bot_message("silence", "r_muted", mention=target.mention))
+
+            else:
+                await ctx.send(get_bot_message("silence", "invalid"))
+
+        @bot.command(name="unsilence")
+        @commands.has_permissions(administrator=True)
+        async def unsilence(ctx, target: discord.Member | discord.Role = None):
+            """Remove silence."""
+            if not target:
+                return await ctx.send(get_bot_message("silence", "none_provided"))
+
+            guild = ctx.guild
+            muted_role = discord.utils.get(guild.roles, name="Muted")
+
+            if isinstance(target, discord.Member):
+                if muted_role in target.roles:
+                    await target.remove_roles(muted_role)
+                silenced_users.discard(target.id)
+                await ctx.send(get_bot_message("unsilence", "unmuted", mention=target.mention))
+
+            elif isinstance(target, discord.Role):
+                for channel in guild.channels:
+                    overwrite = channel.overwrites_for(target)
+                    overwrite.send_messages = None
+                    overwrite.speak = None
+                    overwrite.add_reactions = None
+                    await channel.set_permissions(target, overwrite=overwrite)
+                silenced_roles.discard(target.id)
+                await ctx.send(get_bot_message("unsilence", "r_unmuted", mention=target.mention))
+
+        @bot.command(name="listsilenced")
+        @commands.has_permissions(administrator=True)
+        async def listsilenced(ctx):
+            """List silenced users and roles."""
+            guild = ctx.guild
+            if not silenced_users and not silenced_roles:
+                return await ctx.send(get_bot_message("silence", "none_active"))
+
+            users = [guild.get_member(uid).mention for uid in silenced_users if guild.get_member(uid)]
+            roles = [guild.get_role(rid).mention for rid in silenced_roles if guild.get_role(rid)]
+            msg = get_bot_message("silence", "list", users=", ".join(users) or "None", roles=", ".join(roles) or "None")
+            await ctx.send(msg)
                 
         # ===== ERROR HANDLERS =====
         @ban_word.error

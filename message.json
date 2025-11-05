@@ -55,6 +55,21 @@
             "none_set":"No custom translation set.",
             "list_trans":"**Current Translations:**\n{message}"
         },
+        "silence": {
+            "none_provided": "Please provide a user or role ID or mention.",
+            "none_found": "User not found.",
+            "muted": "User {mention} has been silenced.",
+            "r_none_found": "Role not found.",
+            "r_muted": "The role {mention} has been silenced.",
+            "invalid": "Invalid type. Use `user` or `role`.",
+            "none_active": "No users or roles are currently silenced.",
+            "list": "**Currently Silenced:**\nUsers: {users}\nRoles: {roles}",
+            "warn": "{mention} By my troth, thou speak’st more wind than wit — silence, ere thou blow’st us all away!"
+        },
+        "unsilence": {
+            "unmuted": "{mention} can now speak again.",
+            "r_unmuted": "The role {mention} can now speak again."
+        },
         "errors": {
             "no_permission": "You don't have permission, bro. Sit down.",
             "owner_only": "*I, the creator of this bot, have the right to end it. You don't, stoobid.*\n-THE GREATEST BOT CREATOR THAT EVER LIVED",
