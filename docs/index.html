@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BestDiscordBotEver — Info</title>
+  <style>
+    :root{--bg:#0f1720;--card:#0b1220;--accent:#2dd4bf;--muted:#9aa6b2;--text:#e6eef6}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#071025 0%,#071827 100%);color:var(--text);margin:0;padding:32px;display:flex;align-items:center;justify-content:center;min-height:100vh}
+    .wrap{max-width:900px;width:100%;background:var(--card);border-radius:12px;padding:28px;box-shadow:0 6px 30px rgba(2,6,23,.6)}
+    h1{margin:0 0 8px;font-size:1.6rem;color:var(--accent)}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .card{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+    a.btn{display:inline-block;background:var(--accent);color:#042028;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    ul.meta{padding-left:1.1rem;color:var(--muted);margin:8px 0 0}
+    footer{margin-top:14px;color:var(--muted);font-size:.9rem}
+    .meta-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .stat{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:var(--muted);font-size:.9rem}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="title">
+    <header>
+      <h1 id="title">BestDiscordBotEver — Info Center</h1>
+      <p class="lead">Quick links and basic project information for the bot operator.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Documentation & Policies</h2>
+        <p>Official resources:</p>
+        <p>
+          <a class="btn" href="./privacy_policy.html" target="_blank" rel="noopener">Privacy Policy</a>
+          &nbsp;
+          <a class="btn" href="./terms_of_service.html" target="_blank" rel="noopener">Terms of Service</a>
+        </p>
+
+        <h3 style="margin-top:14px">Other resources</h3>
+        <ul class="meta">
+          <li><a style="color:var(--accent)" href="./README.md" target="_blank" rel="noopener">README.md (project docs)</a></li>
+          <li><a style="color:var(--accent)" href="./messages.json" target="_blank" rel="noopener">messages.json (bot messages)</a></li>
+          <li><a style="color:var(--accent)" href="./config.json" target="_blank" rel="noopener">config.json (configuration)</a></li>
+        </ul>
+
+        <h3 style="margin-top:14px">Repository</h3>
+        <p id="repo-desc" style="color:var(--muted)">Loading repository data…</p>
+        <div class="meta-row" id="repo-stats" aria-hidden="true"></div>
+        <p style="margin-top:12px"><a style="color:var(--accent)" id="repo-link" href="https://github.com/TonpalmUnmain/BestDiscordBotEver" target="_blank" rel="noopener">View on GitHub</a></p>
+      </div>
+
+      <aside class="card" aria-label="Project summary">
+        <h2>Project Summary</h2>
+        <ul class="meta">
+          <li><strong>Project:</strong> BestDiscordBotEver</li>
+          <li><strong>Author:</strong> TonpalmUnmain</li>
+          <li><strong>Version:</strong> <span id="cfg-version">—</span></li>
+          <li><strong>Default channel:</strong> <span id="cfg-channel">—</span></li>
+          <li><strong>Admin role:</strong> <span id="cfg-admin">—</span></li>
+          <li><strong>Last updated (repo):</strong> <span id="repo-updated">—</span></li>
+        </ul>
+
+        <h4 style="margin-top:12px">Quick features</h4>
+        <ul class="meta">
+          <li>Moderation (banned words, timeouts)</li>
+          <li>Voice playback and queue</li>
+          <li>File management and console interface</li>
+          <li>Minecraft Bedrock server monitoring</li>
+        </ul>
+
+        <footer>
+          <p>Contact: <strong>TonpalmUnmain</strong></p>
+        </footer>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    // Load local config.json (served via HTTP). If opening file://, run a simple server:
+    // python -m http.server 8000 (run from web/ if you want web/ as root)
+    (async function () {
+      const cfgEl = id => document.getElementById(id);
+      // load config.json (local to web/)
+      try {
+        const cfgResp = await fetch('./config.json');
+        if (cfgResp.ok) {
+          const cfg = await cfgResp.json();
+          const c = cfg.config || {};
+          cfgEl('cfg-version').textContent = c.version || '—';
+          cfgEl('cfg-channel').textContent = c.default_target_channel_id || '—';
+          cfgEl('cfg-admin').textContent = c.admin_role_id || '—';
+        } else {
+          cfgEl('cfg-version').textContent = 'config.json not found';
+        }
+      } catch (e) {
+        cfgEl('cfg-version').textContent = 'error loading config.json';
+        console.warn('config.json load failed', e);
+      }
+
+      // fetch GitHub repo info
+      const api = 'https://api.github.com/repos/TonpalmUnmain/BestDiscordBotEver';
+      try {
+        const r = await fetch(api);
+        if (r.ok) {
+          const data = await r.json();
+          const desc = (data.description || 'No description').replace(/</g,'&lt;');
+          document.getElementById('repo-desc').textContent = desc;
+          const stats = document.getElementById('repo-stats');
+          stats.innerHTML = '';
+          const makeStat = (label, val) => {
+            const el = document.createElement('div');
+            el.className = 'stat';
+            el.textContent = label + ': ' + val;
+            return el;
+          };
+          stats.appendChild(makeStat('⭐ Stars', data.stargazers_count ?? '—'));
+          stats.appendChild(makeStat('🍴 Forks', data.forks_count ?? '—'));
+          stats.appendChild(makeStat('👀 Watchers', data.watchers_count ?? '—'));
+          const updated = data.updated_at ? new Date(data.updated_at).toLocaleString() : '—';
+          document.getElementById('repo-updated').textContent = updated;
+          document.getElementById('repo-link').href = data.html_url || document.getElementById('repo-link').href;
+          stats.style.display = 'flex';
+        } else {
+          document.getElementById('repo-desc').textContent = 'Failed to fetch repo info';
+        }
+      } catch (e) {
+        document.getElementById('repo-desc').textContent = 'Error fetching GitHub API';
+        console.warn('GitHub API fetch failed', e);
+      }
+    })();
+  </script>
+</body>
+</html>
