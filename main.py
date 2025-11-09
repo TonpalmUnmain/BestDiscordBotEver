@@ -1294,6 +1294,7 @@ try:
                         f"**Discord.py:** `{discord_ver}`\n"
                         f"**Libraries:** {libs}\n"
                         f"**Bot Version:** `{VERSION}`"
+                        f"**Message Version:** `{get_bot_message("v")}`"
                     ),
                     inline=False,
                 )
@@ -1421,7 +1422,7 @@ try:
         @bot.command(name="version")
         async def version_command(ctx):
             """Show the bot version."""
-            await ctx.send(f"Bot version: {VERSION}")
+            await ctx.send(f"Bot version: {VERSION}\nMessage.json Version {get_bot_message("v")}")
 
         @bot.command(name="agreewme")
         @commands.is_owner()
