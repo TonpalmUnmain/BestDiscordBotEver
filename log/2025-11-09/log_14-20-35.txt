@@ -1,0 +1,137 @@
+2025-11-09 14:20:41,148 [INFO] logging in using static token
+2025-11-09 14:20:41,175 [INFO] Session ID: 70ede725b7d903ff5cb7f3bc11f498c6cc4f06a7db36824b16be066ee7378189
+2025-11-09 14:20:43,004 [INFO] Shard ID None has connected to Gateway (Session ID: 54cc7a630f940fb7ffb4bc82c261db99).
+2025-11-09 14:20:45,019 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
+2025-11-09 14:20:45,019 [INFO] No startmessage set.
+2025-11-09 15:11:24,751 [INFO] 1436991554786037760:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !sessioninfo
+2025-11-09 15:11:28,055 [INFO] 1436991568568385597:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): 
+2025-11-09 15:11:28,115 [INFO] Session info sent by p.pumpum
+2025-11-09 15:11:28,115 [INFO] Command completed: sessioninfo by p.pumpum
+2025-11-09 15:12:32,752 [INFO] 1436991839818485913:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !debug_var bot
+2025-11-09 15:12:33,182 [INFO] [p.pumpum (1260198579067420722)] Called debug_var with mode=bot args=()
+2025-11-09 15:12:33,591 [INFO] 1436991843429646336:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Unknown mode. Use `read` or `edit`.
+2025-11-09 15:12:33,612 [INFO] Command completed: debug_var by p.pumpum
+2025-11-09 15:12:44,377 [INFO] 1436991888396914729:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !debug_var read bot
+2025-11-09 15:12:44,807 [INFO] [p.pumpum (1260198579067420722)] Called debug_var with mode=read args=('bot',)
+2025-11-09 15:12:45,293 [INFO] 1436991892410597417:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Type: `Bot`
+Value:
+```json
+"<discord.ext.commands.bot.Bot object at 0x000001F505A207D0>"
+```
+2025-11-09 15:12:45,421 [INFO] Command completed: debug_var by p.pumpum
+2025-11-09 15:30:26,474 [INFO] 1436996343385165824:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Ok wildhunt isnt bad
+2025-11-09 15:30:33,445 [INFO] 1436996372741099580:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I just dont know how his passive work
+2025-11-09 15:30:38,318 [INFO] 1436996393238659175:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): I read his skill
+2025-11-09 15:30:54,327 [INFO] 1436996460121165835:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Now im gonna try using him again
+2025-11-09 15:45:33,245 [INFO] 1437000146541084704:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): idk
+2025-11-09 15:45:38,927 [INFO] 1437000170687434853:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Should i shard wildhunt
+2025-11-09 15:47:34,479 [INFO] 1437000655356170262:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): <@913994744953196614>
+2025-11-09 15:47:46,909 [INFO] 1437000707449557062:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): Help
+2025-11-09 15:48:11,976 [INFO] 1437000812478992446:p.pumpum (1260198579067420722) in #📚-school-🎒 (1401077358051721278): A: Good evening everybody, Today we are going to show you our very interesting science experiment.
+[Judge QA (START)]
+Judge: So what kind of experiment are you going to show us today?
+ฺB: Today’s experiment is about iodine.
+A: The materials that we have to use is water bottle,Betadine,and 
+Vitamin c tablet
+A: First add a few drop of Betadine into the water bottle.
+B: Then add the vitamin c tablet.
+A: Next, mix it gently.
+B: The liquid will become more transparent.
+Judge: How does that work.
+B: Betadine or povidone-iodine solution is brown because of iodine.
+When you add vitamin C or ascorbic acid, it reduces iodine to iodide, its a colorless form.
+So the brown color disappears and the water becomes transparent.
+[Judge QA]
+
+<@1385167797360922675> <@1340262742782771323>
+2025-11-09 15:48:28,635 [INFO] 1437000882221744158:p.pumpum (1260198579067420722) in #📚-school-🎒 (1401077358051721278): แก้ให้ละ
+2025-11-09 15:52:59,529 [INFO] Shard ID None has successfully RESUMED session 54cc7a630f940fb7ffb4bc82c261db99.
+2025-11-09 15:55:41,468 [INFO] 1437002696681848882:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bro???
+2025-11-09 15:57:10,157 [INFO] 1437003069421256767:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-11-09 15:57:33,267 [INFO] 1437003166838296606:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): i lost
+2025-11-09 15:57:34,954 [INFO] 1437003173821681767:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): oh wait
+2025-11-09 15:57:38,739 [INFO] 1437003189697249321:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): it is force defeat
+2025-11-09 15:58:23,371 [INFO] 1437003376918401085:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): why no one play
+2025-11-09 15:58:27,601 [INFO] 1437003394576285727:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): is there any test coming
+2025-11-09 15:58:52,024 [INFO] 1437003497131479061:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): or should i go outside
+2025-11-09 15:59:16,014 [INFO] 1437003597786124460:sleepycimo (1300754808185290762) in #🎮-gaming-🕹️ (1395783584253739141): go outside
+2025-11-09 15:59:38,046 [INFO] 1437003690233036883:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ok
+2025-11-09 15:59:46,965 [INFO] 1437003727570599957:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 15:59:48,745 [INFO] 1437003735158095882:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 15:59:48,822 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 15:59:52,724 [INFO] 1437003751155044373:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): what???
+2025-11-09 15:59:58,723 [INFO] 1437003776367267931:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 16:00:00,444 [INFO] 1437003784214548531:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:00:00,521 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:00:02,935 [INFO] 1437003794452975697:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bro??
+2025-11-09 16:00:05,702 [INFO] 1437003805769338933:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): why cant u send gif
+2025-11-09 16:00:10,488 [INFO] 1437003826283675739:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 16:00:12,437 [INFO] 1437003834474893434:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:00:12,554 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:00:13,787 [INFO] 1437003839869030420:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ass
+2025-11-09 16:00:17,397 [INFO] 1437003854741901432:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): what??
+2025-11-09 16:00:25,864 [INFO] 1437003890359930922:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 16:00:28,315 [INFO] 1437003899675349013:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:00:28,888 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:00:37,133 [INFO] 1437003937948373033:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/grass-mowing-grass-cutting-gif-26074155
+2025-11-09 16:00:38,387 [ERROR] Message not found: moderation.timeout_no_permission -> 'mention'
+2025-11-09 16:00:38,769 [INFO] 1437003944948793384:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): MESSAGE_NOT_FOUND:moderation.timeout_no_permission
+2025-11-09 16:00:38,858 [ERROR] [EDIT] Bot doesn't have permission to timeout this sneaky user.
+2025-11-09 16:00:39,033 [INFO] 1437003945896706058:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:00:39,162 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:00:44,294 [INFO] 1437003968013271131:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): bro?
+2025-11-09 16:01:16,213 [INFO] 1437004101945786438:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/silverio-grass-rolling-tiago-gif-2482240554089046080
+2025-11-09 16:01:26,865 [INFO] 1437004146686427289:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): im just trying to send touchgrass gif
+2025-11-09 16:01:38,286 [INFO] 1437004194468069448:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): why the bot timeout me
+2025-11-09 16:01:48,313 [INFO] 1437004236218044520:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-11-09 16:01:53,704 [INFO] 1437004259148173342:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): there is no nword in the link too
+2025-11-09 16:02:02,502 [INFO] 1437004296070762567:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 16:02:04,092 [INFO] 1437004302836043826:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:02:04,178 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:02:53,226 [INFO] 1437004508634022000:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 16:02:54,956 [INFO] 1437004516166996119:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:02:55,020 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:03:06,163 [INFO] 1437004563075829760:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): this bot hate grass
+2025-11-09 16:03:14,331 [INFO] 1437004597423247471:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/grass-mowing-grass-cutting-gif-26074153
+2025-11-09 16:03:15,269 [ERROR] Error: 404 Not Found (error code: 10008): Unknown Message
+2025-11-09 16:03:15,345 [ERROR] Message not found: moderation.timeout_no_permission -> 'mention'
+2025-11-09 16:03:15,817 [INFO] 1437004603517435985:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): MESSAGE_NOT_FOUND:moderation.timeout_no_permission
+2025-11-09 16:03:15,903 [ERROR] [EDIT] Bot doesn't have permission to timeout this sneaky user.
+2025-11-09 16:03:34,870 [INFO] 1437004683515531384:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touch-grass-grass-edit-discord-mod-take-a-shower-grass-gif-4150619048381921111
+2025-11-09 16:07:02,173 [INFO] 1437005553040752790:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): wait
+2025-11-09 16:09:02,494 [INFO] 1437006057380642847:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): normalized = httpstenorcomviewtouchinggrasstouchgifzizigggg
+2025-11-09 16:09:02,935 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-11-09 16:09:19,455 [INFO] 1437006128817901578:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): igg
+2025-11-09 16:09:25,942 [INFO] 1437006156106174504:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): zigg
+2025-11-09 16:09:31,984 [INFO] 1437006180823334982:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): touchingg
+2025-11-09 16:09:33,978 [INFO] 1437006189769523240:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): httpstenorcomviewtouchinggrasstouchgifzizigggg
+2025-11-09 16:09:34,439 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-11-09 16:09:38,422 [INFO] 1437006208438505512:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): touchinggrass
+2025-11-09 16:09:38,800 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-11-09 16:09:43,465 [INFO] 1437006229556826213:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): touchgifzizigggg
+2025-11-09 16:09:53,517 [INFO] 1437006271281758349:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): 
+2025-11-09 16:09:55,982 [INFO] 1437006282048409780:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): try search grass and send the first one
+2025-11-09 16:10:00,190 [INFO] 1437006299203375175:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): https://tenor.com/view/touching-grass-touch-gif-21219969
+2025-11-09 16:10:02,012 [INFO] 1437006307080146956:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:10:02,130 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:10:13,584 [INFO] 1437006355897782344:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): problem is with touchinggrass
+2025-11-09 16:10:13,999 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-11-09 16:10:23,070 [INFO] 1437006395567509637:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): !listbanword
+2025-11-09 16:10:24,029 [INFO] 1437006399736385536:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Here's the shit we're banning:
+nehga, nggr, niga, nigeh, nigfga, nigga, niggar, niggeh, nigger, niggir, niggurt, niggy, nihgah, nihger, niiggeurt, นิกก้า, นิกเกอร์, นิกเก้อ
+2025-11-09 16:10:24,171 [INFO] Command completed: listbanword by p.pumpum
+2025-11-09 16:10:28,296 [INFO] 1437006417541337138:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): touchinggrass
+2025-11-09 16:10:30,207 [INFO] 1437006425107861516:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:10:30,544 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:10:43,737 [INFO] 1437006482431283200:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): ngg
+2025-11-09 16:10:49,419 [INFO] 1437006506141679687:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): touchingg
+2025-11-09 16:10:50,388 [INFO] 1437006510290112582:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): nggr
+2025-11-09 16:10:50,865 [INFO] User p.pumpum has GOD role, not timeouted.
+2025-11-09 16:10:54,919 [INFO] 1437006529151635607:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): yes
+2025-11-09 16:10:56,348 [INFO] 1437006535279644807:.toast_toaster. (1210218568889798658) in #🎮-gaming-🕹️ (1395783584253739141): nggr
+2025-11-09 16:10:58,086 [INFO] 1437006542544044192:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Cannot timeout <@1210218568889798658>, report admin abuse at (+66) 083 247 0928.
+2025-11-09 16:10:58,207 [ERROR] Bot doesn't have permission to timeout this user.
+2025-11-09 16:11:10,749 [INFO] 1437006595161853953:p.pumpum (1260198579067420722) in #🎮-gaming-🕹️ (1395783584253739141): !deplete sec 1
+2025-11-09 16:11:11,124 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
+2025-11-09 16:11:11,529 [INFO] 1437006598865162373:BestBotEver!!!#9403 (1386280922218893465) in #🎮-gaming-🕹️ (1395783584253739141): Shutting down in 1 second(s).
+2025-11-09 16:11:12,637 [INFO] Bot stopped. Closing connection...
