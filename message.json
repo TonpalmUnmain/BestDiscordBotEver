@@ -1,4 +1,7 @@
 {
+    "config": {
+        "version" : "1"
+    },
     "bot": {
         "startup": "I HAVE AWAKEN. RAHHHHH.",
         "shutdown": "I got killed help",

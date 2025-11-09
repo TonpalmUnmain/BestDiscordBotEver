@@ -62,6 +62,9 @@ try:
             messages = load_json(MESSAGES_FILE) or {}
             bot_msgs = messages.get("bot", {})
 
+            if category_or_key == "v":
+                return "Version "+ messages.get("config", {}).get("version", "Not Specified")
+            
             # If user passed a single dotted path like "moderation.timeout_message"
             if key is None and "." in category_or_key:
                 parts = category_or_key.split(".")
@@ -75,7 +78,6 @@ try:
                 val = bot_msgs.get(category_or_key)
                 if isinstance(val, str):
                     return val.format(**kwargs)
-                # if it's a dict, error
                 raise KeyError
 
             # category + key form
@@ -2212,7 +2214,7 @@ try:
         
         os.system("cls" if os.name == "nt" else "clear")
         
-        print(f"BestBotEver!!! {VERSION}")
+        print(f"BestBotEver!!! {VERSION} (Message {get_bot_message("v")})")
         print("© 2025 TonpalmUnmain")
         print("Under GNU general public license v3.0")
         print(f"{datetime.now().strftime('%Y-%m-%d')}")
