@@ -262,7 +262,7 @@ try:
 
     config_data = load_json(CONFIG_FILE)
     if not config_data:
-        exit(1)
+        sys.exit(1)
 
     user_info = load_json(USER_INFO_FILE, default={"discord_users": {}, "last_saved": None})
     if not user_info or "discord_users" not in user_info:
