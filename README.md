@@ -1,460 +1,208 @@
-## 1.15.0 Features
-- Voice channel capabilities
-  - Join/leave voice channels
-  - Play audio from URLs or local files
-  - Playback controls (pause/resume/stop)
-  - Queue system for multiple audio files
+# BestDiscordBotEver — v1.19.3
 
-# BestDiscordBotEver Function Documentation
-
-## Command Functions
-
-### General Commands
-
-#### !help
-- **Description**: Shows command list or details for specific command
-- **Usage**: `!help [command_name]`
-- **Logging**: `[{author} ({author.id})] Called help with: {command_name}`
-
-#### !repeat
-- **Description**: Repeats the given message verbatim
-- **Usage**: `!repeat [message]`
-- **Logging**: `[{author} ({author.id})] Called repeat with message: {message}`
-- **Permission**: Owner only
-
-#### !thx
-- **Description**: Replies with "np"
-- **Usage**: `!thx`
-- **Logging**: `[{author} ({author.id})] Called thx`
-
-#### !agreewme
-- **Description**: Agrees with provided message
-- **Usage**: `!agreewme [message]`
-- **Response**: "Yes, daddy @user😩. You're absolutely right about: [message]"
-- **Permission**: Owner only
-
-#### !disagreewme
-- **Description**: Disagrees with provided message
-- **Usage**: `!disagreewme [message]`
-- **Response**: "No, daddy @user😩. [message] is not true."
-
-### Admin Commands
-
-#### !banword
-- **Description**: Adds word to banned list
-- **Usage**: `!banword [word]`
-- **Logging**: Added banned word: {word}
-- **Permission**: Administrator
-
-#### !rmword
-- **Description**: Removes word from banned list
-- **Usage**: `!rmword [word]`
-- **Logging**: Removed banned word: {word}
-- **Permission**: Administrator + Admin Role
-
-#### !listbanword
-- **Description**: Lists all banned words
-- **Usage**: `!listbanword`
-- **Permission**: Administrator
-
-#### !whitelistword
-- **Description**: Adds word to whitelist
-- **Usage**: `!whitelistword [word]`
-- **Permission**: Owner only
-
-#### !rmwhitelistword
-- **Description**: Removes word from whitelist
-- **Usage**: `!rmwhitelistword [word]`
-- **Permission**: Owner only
-
-#### !listwhitelistword
-- **Description**: Lists all whitelisted words
-- **Usage**: `!listwhitelistword`
-- **Permission**: Owner only
-
-#### !forgive
-- **Description**: Removes timeout from user
-- **Usage**: `!forgive @user`
-- **Permission**: Moderate Members
-
-#### !pewthyself
-- **Description**: Shuts down the bot
-- **Usage**: `!pewthyself`
-- **Permission**: Owner only
-
-#### !deplete
-- **Description**: Sets delayed shutdown
-- **Usage**: `!deplete [type] [value]`
-- **Types**: ms, sec, min, hr, d
-- **Permission**: Owner only
-
-#### !seelog
-- **Description**: Views log files
-- **Usage**: 
-  - `!seelog recent`
-  - `!seelog [date] [filename]`
-- **Permission**: Administrator
-
-### Minecraft Commands
-
-#### !mcstat
-- **Description**: Checks Minecraft server status
-- **Usage**: `!mcstat [tagmcr]`
-- **Options**: tagmcr - mentions role
-
-### User Management
-
-#### !userinfo
-- **Description**: Views/edits user information
-- **Usage**: 
-  - `!userinfo view`
-  - `!userinfo edit [key] [value]`
-  - `!userinfo roles`
-
-#### !editvar
-- **Description**: Edits user variables
-- **Usage**: `!editvar [ID|dispname] [var1] [var2]`
-- **Permission**: Administrator
-
-#### !saveuinf
-- **Description**: Manually saves user information
-- **Usage**: `!saveuinf`
-- **Permission**: Administrator
-
-### Feedback System
-
-#### !bugreport
-- **Description**: Submits bug report
-- **Usage**: `!bugreport [text]`
-
-#### !featurerequest
-- **Description**: Submits feature request
-- **Usage**: `!featurerequest [text]`
-
-#### !listfeedback
-- **Description**: Lists feedback entries
-- **Usage**: `!listfeedback [type]`
-
-#### !delfeedback
-- **Description**: Deletes/marks feedback as deleted
-- **Usage**: `!delfeedback [id] [reason]`
-- **Permission**: Manage Messages
-
-### Voice Commands
-
-#### !jvc
-- **Description**: Join voice channel
-- **Usage**: 
-  - `!jvc` - Join caller's VC
-  - `!jvc u <USER_ID>` - Join user's VC
-  - `!jvc a <VC_ID>` - Join specific VC
-  - `!jvc <VC_ID>` - Same as 'a'
-- **Permission**: Requires bot to have connect and speak permissions
-
-#### !dvc
-- **Description**: Disconnect from voice channel
-- **Usage**: `!dvc`
-
-#### !plvc
-- **Description**: Play audio in voice channel (Support Youtube)
-- **Usage**: `!plvc <URL or file reference>`
-
-#### !stvc
-- **Description**: Stop audio playback
-- **Usage**: `!stvc`
-
-#### !pavc
-- **Description**: Pause audio playback
-- **Usage**: `!pavc`
-
-#### !revc
-- **Description**: Resume audio playback
-- **Usage**: `!recv`
-
-## Console Commands
-
-### Basic Controls
-- `start [msg]` - Starts bot with optional message
-- `stop [msg]` - Stops bot with optional message
-- `exit` - Exits console interface
-
-### Channel Management
-- `targch [channel_id]` - Sets target channel
-
-### Message Controls
-- `sendmsg [text] {channel_id}` - Sends message
-- `reply [message_id] [text] {channel_id}` - Replies to message
-
-### File Management
-- `addfile ui [reference]` - Adds file via UI
-- `addfile dir [reference]` - Adds file via path
-- `getfile [reference]` - Gets file info
-- `delfile [reference]` - Removes file
-
-## Logging System
-All actions are logged with:
-- Timestamp
-- Action type
-- User information
-- Command details
-- Channel information
-- Message content
-
-Format: `YYYY-MM-DD HH:MM:SS [LEVEL] message`
-
-## Error Handling
-All commands include:
-- Permission checking
-- Input validation
-- Error logging
-- User feedback
-
-## File Structure
-```
-/log/YYYY-MM-DD/          # Daily logs
-/userdata/                # User information
-/feedback/                # Feedback storage
-/fdump/                   # File storage
-config.json              # Configuration
-token.config            # Bot token
-banned_words.json       # Banned words list
-```
-
-## Configuration Files
-
-### config.json
-```json
-{
-    "config": {
-        "version": "1.15.0",
-        "author": "TonpalmUnmain",
-        "command_prefix": "!",
-        "admin_role_id": "1411139316171931738",
-        "default_target_channel_id": "1371357608904228924",
-        "bot_test_channel_id": "1399900695993253970"
-    },
-    "MCS": {
-        "mcsAdress": "multi-nor.gl.at.ply.gg",
-        "mcsPort": 5355,
-        "mcsChID": "1421497953834631319",
-        "mcsDelay": 3600,
-        "mcsRoleID": "1394542459538640977"
-    }
-}
-```
-
-### banned_words.json
-```json
-{
-    "banned_words": [
-        "word1",
-        "word2"
-    ],
-    "whitelist": [
-        "allowed1",
-        "allowed2"
-    ]
-}
-```
-
-### token.config
-Contains the bot token in plain text:
-```
-YOUR_BOT_TOKEN_HERE
-```
-
-### userdata/uinfo.json
-```json
-{
-    "discord_users": {
-        "user_id": {
-            "id": "user_id",
-            "dispname": "display_name",
-            "username": "username#0000",
-            "joined_at": "YYYY-MM-DD HH:MM:SS",
-            "created_at": "YYYY-MM-DD HH:MM:SS",
-            "roles": "role1, role2",
-            "var1": "custom_value1",
-            "var2": "custom_value2"
-        }
-    },
-    "last_saved": "YYYY-MM-DD HH:MM:SS"
-}
-```
-At this time, ```var1``` and ```var2``` is not in use, but referenced.
-
-### fdump/files.json
-```json
-{
-    "reference_name": {
-        "original_path": "C:/original/path/to/file",
-        "dump_path": "fdump/filename",
-        "filename": "original_filename"
-    }
-}
-```
+Lightweight Discord bot with moderation, voice playback, file management, Minecraft monitoring and a small console control UI.
 
 ---
 
+## Quick Start
 
-# Quick Start Guide
-
-1. **Set up Virtual Environment**
-```bash
-# Create virtual environment
+1. Create & activate virtual environment
+```powershell
+# Windows (from project root)
 python -m venv venv
-
-# Activate virtual environment
-# On Windows:
 venv\Scripts\activate
-# On Unix/MacOS:
-source venv/bin/activate
 ```
 
-2. **Install Dependencies**
-```bash
-# Upgrade pip
+2. Install dependencies
+```powershell
 python -m pip install --upgrade pip
-
-# Install requirements
 pip install -r requirements.txt
 ```
 
-3. **Configure Files**
-- Copy `config.example.json` to `config.json` and fill in your values
-- Create `token.config` with your bot token
-- Ensure all directories exist:
-  ```bash
-  mkdir log userdata feedback fdump scs
-  ```
-*"scs" is not yet implemented.*
-
-4.**Install FFmpeg**
-```bash
-# On Windows (using chocolatey):
+3. Install FFmpeg (required for voice)
+- Chocolatey:
+```powershell
 choco install ffmpeg
+```
+- Or download from https://ffmpeg.org and add the `ffmpeg\bin` folder to PATH. You may also set `ffmpeg_dir` in `config.json`.
 
-# Or download manually:
-# 1. Download from https://ffmpeg.org/download.html
-# 2. Extract to a folder (e.g., C:\ffmpeg)
-# 3. Add to System PATH:
-#    - Open System Properties > Advanced > Environment Variables
-#    - Edit Path variable
-#    - Add new entry with path to ffmpeg\bin folder
+4. Configure
+- Copy `config.example.json` -> `config.json` and update fields (bot token must be placed in `token.config`).
+- Ensure folders exist:
+```powershell
+mkdir log userdata feedback fdump tts_output
 ```
 
-5. **Run the Bot**
-```bash
+5. Run
+```powershell
 python main.py
 ```
 
-## Packages and Modules
-
-### Required Packages
-```
-discord.py>=2.3.2
-mcstatus>=10.0.3
-prompt_toolkit>=3.0.39
-colorama>=0.4.6
-psutil>=5.9.5
-GPUtil>=1.4.0
-aiohttp>=3.8.5
-async-timeout>=4.0.3
-attrs>=23.1.0
-dnspython>=2.4.2
-idna>=3.4
-multidict>=6.0.4
-yarl>=1.9.2
-wcwidth>=0.2.6
-FFmpeg     # Required for voice functionality
-youtube-dl # Required for URL audio streaming
+To serve the docs (web folder) use:
+```powershell
+cd web
+python -m http.server 8000
+# open http://localhost:8000/index.html
 ```
 
-### Internal Modules
-- **discord**: Core bot functionality and Discord API interactions
-- **logging**: Comprehensive logging system
-- **asyncio**: Asynchronous I/O operations
-- **json**: Configuration and data storage
-- **datetime**: Timestamp management
-- **os/sys**: System operations and file handling
-- **threading**: Console input handling
-- **tkinter**: File browser interface
-- **colorama**: Console color formatting
-
-## Internal Functions
-
-### Core System Functions
-```python
-def load_json(file_path, default=None)
-    """Loads JSON file with error handling and default values."""
-
-def save_json(file_path, data)
-    """Saves data to JSON file with error handling."""
-
-def normalize_message(content)
-    """Normalizes message content for consistency."""
-
-class PTKHandler(logging.Handler)
-    """Custom logging handler for prompt_toolkit."""
-```
-
-### File Management
-```python
-def browse_file()
-    """Opens file browser dialog."""
-
-def load_filedb()
-    """Loads file database from fdump/files.json."""
-
-def save_filedb(data)
-    """Saves file database to fdump/files.json."""
-
-def add_file(mode, file_reference)
-    """Adds file to dump directory with reference."""
-
-def get_file(file_reference)
-    """Retrieves file information by reference."""
-
-def del_file(file_reference)
-    """Deletes file and its reference."""
-```
-
-### User Management
-```python
-def load_userinfo()
-    """Loads user information from latest userinfo file."""
-
-def save_userinfo(data, session_id)
-    """Saves user information with session ID."""
-
-def set_userinfo(uid, dispname, var1=None, var2=None, roles=None)
-    """Sets or updates user information."""
-
-def update_user_var(uid_or_name, var1=None, var2=None)
-    """Updates user variables by ID or display name."""
-```
-
-### Minecraft Server
-```python
-async def check_server_status()
-    """Checks Minecraft server status."""
-
-@tasks.loop(seconds=3600)
-async def auto_check_server()
-    """Automated server status checking."""
-```
-
-### Console Interface
-```python
-def console_input()
-    """Handles console input in separate thread."""
-
-async def process_console_command(cmd)
-    """Processes console commands."""
-```
 ---
-BestBotEver!!! 1.15.0
 
-*Not intended to be used in other servers.*
-*Under GNU General Public License Version 3, 29 June 2007.*
-*© 2025 Warat Thongsuwan (TonpalmUnmain)*
+## Version / Project Info
+- Version: 1.19.3
+- Author: TonpalmUnmain
+- License: GNU GPL v3.0
+
+---
+
+## File / Config Summary
+
+Example `config.json` (current project defaults):
+```json
+{
+  "config": {
+    "version": "1.19.3",
+    "author": "TonpalmUnmain",
+    "default_target_channel_id": "1371357608904228924",
+    "admin_role_id": "1411139316171931738",
+    "command_prefix": "!",
+    "bot_test_channel_id": "1399900695993253970",
+    "ffmpeg_dir": ""
+  },
+  "MCS": {
+    "mcsAdress": "multi-nor.gl.at.ply.gg",
+    "mcsPort": 5355,
+    "mcsChID": 1421497953834631319,
+    "mcsDelay": 3600,
+    "mcsRoleID": "1394542459538640977"
+  }
+}
+```
+
+Other important files:
+- `token.config` — bot token (plain text)
+- `messages.json` — all bot user-visible message templates
+- `banned_words.json` — banned / whitelisted words and translations
+- `fdump/files.json` — file reference database
+- `userdata/` — saved user snapshots
+- `log/YYYY-MM-DD/` — runtime logs
+- `web/` — static docs (privacy, terms, index)
+
+---
+
+## Requirements
+
+Install from `requirements.txt`. Key packages:
+- discord.py
+- mcstatus
+- prompt_toolkit
+- yt-dlp
+- colorama
+- psutil
+- GPUtil
+- aiohttp
+- ffmpeg (system binary)
+
+---
+
+## Features (high level)
+- Moderation: banned words, whitelist, automatic timeouts, manual forgive.
+- Voice: join/move/disconnect, play local files or URLs (yt-dlp + ffmpeg), queue, pause/resume/stop, TTS (gTTS).
+- File management: add/list/get/delete file references stored in `fdump/`.
+- Feedback system: bug reports / feature requests saved per-version.
+- Minecraft Bedrock server status monitor and notifier.
+- Console control: start/stop/send/reply/addfile/dump commands.
+- Debugging: `!debug_var` to read/edit in-memory variables (owner only).
+- Message templates configurable in `messages.json`.
+- Web docs (privacy + terms) in `web/`.
+
+---
+
+## Commands
+
+General
+- `!help [command]` — command list / details
+- `!repeat <message>` — owner only
+- `!thx` — replies "np"
+- `!version` — show bot version
+
+Moderation / Admin
+- `!banword <word>` — add banned word (admin)
+- `!rmword <word>` — remove banned word (admin)
+- `!listbanword` — list banned words (admin)
+- `!whitelistword <word>` — add whitelist (owner)
+- `!rmwhitelistword <word>` — remove whitelist (owner)
+- `!listwhitelistword` — list whitelist (owner)
+- `!forgive @user` — remove timeout (moderate_members)
+- `!cfch <channel_id|current>` — set default target channel (admin)
+- `!seelog recent|YYYY-MM-DD filename` — view logs (admin)
+
+Voice
+- `!jvc` — join caller's voice channel
+- `!jvc u <USER_ID>` — join user's VC
+- `!jvc a <VC_ID>` or `!jvc <VC_ID>` — join VC by ID
+- `!dvc` — disconnect
+- `!plvc <URL|file_ref>` — enqueue and play (local file refs read from fdump DB)
+- `!vcplay` — alias to `plvc`
+- `!stvc` — stop + clear queue
+- `!pavc` — pause
+- `!revc` — resume
+- `!sayinvc <text> [ovr]` — TTS into VC (console command)
+
+Feedback / Polls
+- `!bugreport <text>` — submit bug
+- `!featurerequest <text>` — submit feature
+- `!listfeedback [type]` — list feedback
+- `!delfeedback <id> [reason]` — mark or hard-delete feedback (manage_messages)
+
+Debug / Tools
+- `!debug_var read <path>` — read in-memory variable + returns its type (owner)
+- `!debug_var edit <path> <json_or_text>` — edit variable (owner)
+- `!sessioninfo` — system / session diagnostics (owner)
+- `!saveuinf` — force userinfo save (admin)
+
+Console commands (local console):
+- `start [msg]` `stop [msg]` `exit` `targch <id>` `sendmsg <text> {channel}` `reply <msg_id> <text> {channel}` `addfile ui|dir <ref>` `getfile <ref>` `delfile <ref>`
+
+---
+
+## Message templates
+
+All bot messages are stored in `messages.json`. Use placeholders like `{mention}`, `{word}`, `{channel}`, `{seconds}`. Editing `messages.json` changes all bot responses without code edits.
+
+---
+
+## Banned words & translations
+
+`banned_words.json` supports:
+- `banned_words` — list of banned tokens
+- `whitelisted_words` — whitelist tokens (prevents moderation)
+- `translation` — custom normalize translations used in message normalization
+
+Use bot commands to modify these lists.
+
+---
+
+## Web docs
+
+- `web/index.html` — project index (reads local `config.json` and GitHub repo metadata)
+- `web/privacy_policy.html`, `web/terms_of_service.html` — policy pages
+
+Run a static server from `web/` to browse (see Quick Start).
+
+---
+
+## Security & Privacy
+
+- Token must be stored in `token.config` (keep secret).
+- All data stored locally on the host (logs, user snapshots, fdump). Operator controls retention & security.
+- See `web/privacy_policy.html` for details.
+
+---
+
+## Development notes
+
+- Use `DEBUGB` flag (console start with `{true}`) to enable debug() prints.
+- `messages.json` and `config.json` must be valid JSON — malformed files will prevent the bot from starting.
+- FFmpeg executable path auto-detected; set `ffmpeg_dir` in `config.json` if required.
+
+---
