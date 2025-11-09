@@ -12,3 +12,4 @@ gtts
 pynacl
 pytesseract
 pillow
+conintf-ptk

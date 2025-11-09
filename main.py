@@ -34,6 +34,7 @@ import subprocess
 from unidecode import unidecode
 from gtts import gTTS
 from typing import Optional
+from conintf_ptk import ConsoleInterface
 
 try:
     global DEBUGB
@@ -2155,299 +2156,245 @@ try:
             
     # ===== CONSOLE INTERFACE =====
     def console_interface():
+        """Console UI using conintf_ptk.ConsoleInterface (replaces previous prompt_toolkit loop)."""
         global target_channel_id, config_data
-        global bot_started, bot, bot_loop
-        
-        os.system("cls" if os.name == "nt" else "clear")
-        
-        print(f"BestBotEver!!! {VERSION} (Message {get_bot_message("v")})")
-        print("© 2025 TonpalmUnmain")
-        print("Under GNU general public license v3.0")
-        print(f"{datetime.now().strftime('%Y-%m-%d')}")
-        print("------------------------------------------")
-        print("Console ready. Commands: start [msg], stop [msg], targch [channel_id], exit")
-        with patch_stdout():
-            while True:
-                cmd = prompt("console> ").strip().split()
-                if not cmd:
-                    continue
-                command, *args = cmd
+        global bot_started, bot, bot_loop, token, startmessage, DEBUGB, session_id, manual_shutdown, stop_message
 
-                if command[0] == "&":
-                    print("Console isn't closed, proceeding to exit.")
-                    sys.exit(0)
+        def _banner():
+            ver = globals().get("VERSION", "—")
+            return f"BestBotEver!!! {ver}\n© 2025 TonpalmUnmain\nUnder GNU general public license v3.0\n{datetime.now().strftime('%Y-%m-%d')}\n------------------------------------------\nConsole ready. Commands: start [msg], stop [msg], targch [channel_id], exit"
 
-                if command == "start":
-                    global startmessage, session_id
+        console = ConsoleInterface(name="BestDiscordBotEver", version=str(globals().get("VERSION", "—")), prompt="console> ", banner=_banner)
 
-                    if bot_started:
-                        print("Bot already running.")
-                        continue
+        # START
+        async def _cmd_start(args):
+            nonlocal console
+            global bot_started, bot, bot_loop, startmessage, DEBUGB, session_id
+            if bot_started:
+                print("Bot already running.")
+                return
+            full_args = " ".join(args).strip()
+            debug_flag = False
+            if "{" in full_args and "}" in full_args:
+                start_part, debug_part = full_args.split("{", 1)
+                startmessage = start_part.strip() or None
+                debug_value = debug_part.split("}", 1)[0].strip().lower()
+                debug_flag = debug_value in ("true", "1", "yes", "on")
+            else:
+                startmessage = full_args or None
+            if startmessage and startmessage.lower() == "none":
+                startmessage = None
+            DEBUGB = debug_flag
+            try:
+                bot = create_bot()
+                bot_loop = asyncio.new_event_loop()
 
+                def run_bot():
+                    asyncio.set_event_loop(bot_loop)
                     try:
-                        full_args = " ".join(args).strip()
-
-                        debug_flag = False
-                        if "{" in full_args and "}" in full_args:
-                            start_part, debug_part = full_args.split("{", 1)
-                            startmessage = start_part.strip() or None
-                            debug_value = debug_part.split("}", 1)[0].strip().lower()
-                            debug_flag = debug_value in ["true", "1", "yes", "on"]
-                        else:
-                            startmessage = full_args or None
-
-                        if startmessage and startmessage.lower() == "none":
-                            startmessage = None
-
-                        global DEBUGB
-                        DEBUGB = debug_flag
-
-                        bot = create_bot()
-                        bot_loop = asyncio.new_event_loop()
-
-                        def run_bot():
-                            asyncio.set_event_loop(bot_loop)
-                            try:
-                                bot_loop.run_until_complete(bot.start(token))
-                            except asyncio.CancelledError:
-                                pass
-                            except Exception as e:
-                                logging.exception("Error starting bot")
-                            finally:
-                                bot_loop.close()
-
-                        threading.Thread(target=run_bot, daemon=True).start()
-                        bot_started = True
-                        print(f"Bot started. Debug: {DEBUGB}")
-                        session_id = gen_session_id()
-                        logging.info(f"Session ID: {session_id}")
-
-                    except Exception as e:
-                        logging.exception("Failed to start bot")
-
-                elif command == "stop": 
-                    if not bot_started:
-                        print("Bot is not running.")
-                        continue
-
-                    global manual_shutdown, stop_message
-                    manual_shutdown = True
-
-                    if not args:
-                        stop_message = get_bot_message("shutdown")
-                    elif args[0].lower() == "none":
-                        stop_message = None
-                    else:
-                        stop_message = " ".join(args)
-
-                    async def shutdown():
-                        try:
-                            logging.info("Shutting down bot...")
-
-                            if stop_message and target_channel_id:
-                                channel = bot.get_channel(target_channel_id)
-                                if channel:
-                                    await channel.send(stop_message)
-                                    logging.info(f"Sent shutdown message to #{channel} ({channel.id}): {stop_message}")
-                                else:
-                                    logging.warning(f"Could not find channel with ID {target_channel_id}")
-                            for task in asyncio.all_tasks(bot_loop):
-                                if task is not asyncio.current_task(bot_loop):
-                                    task.cancel()
-                            
-                            await bot.close()
-                            logging.info("Bot shutdown complete.")
-                        except Exception as e:
-                            logging.error(f"Error during shutdown: {e}")
-                    try:
-                        fut = asyncio.run_coroutine_threadsafe(shutdown(), bot_loop)
-
-                        logging.info("Waiting for bot to shut down...")
-                        fut.result(timeout=10)
+                        bot_loop.run_until_complete(bot.start(token))
                     except asyncio.CancelledError:
-                        logging.info("CancelledError during shutdown. No threat.")
-                    except Exception as e:
-                        logging.error(f"Error shutting down: {e}")
+                        pass
+                    except Exception:
+                        logging.exception("Error starting bot")
+                    finally:
+                        try:
+                            bot_loop.close()
+                        except Exception:
+                            pass
 
-                    bot_started = False
-                    logging.info("Bot stopped.")
+                threading.Thread(target=run_bot, daemon=True).start()
+                bot_started = True
+                session_id = gen_session_id()
+                print(f"Bot started. Debug: {DEBUGB}")
+                logging.info(f"Session ID: {session_id}")
+            except Exception:
+                logging.exception("Failed to start bot")
+                print("Failed to start bot (see logs).")
 
-                elif command == "exit":
-                    if bot_started and bot_loop:
-                        while True:
-                            decision = input("Bot isn't shutdown, exit? (y/n/f(fuq u)): ").strip().lower()
-                            if decision in ("y", ""):
-                                try:
-                                    fut = asyncio.run_coroutine_threadsafe(stopsession(), bot_loop)
-                                    fut.result(timeout=10)
-                                    print("Bot shutdown complete.")
-                                except asyncio.TimeoutError:
-                                    logging.error("Bot shutdown timed out.")
-                                except Exception as e:
-                                    logging.error(f"Error shutting down bot: {e}")
-                                finally:
-                                    sys.exit(0)
-                            elif decision == "f":
-                                print("Committing suicide...")
-                                sys.exit(0)
-                            elif decision == "n":
-                                break
-                            else:
-                                logging.info("Pick something.")
-                    else:
-                        sys.exit(0)
+        # STOP
+        async def _cmd_stop(args):
+            global bot_started, bot_loop, manual_shutdown, stop_message, target_channel_id
+            if not bot_started:
+                print("Bot is not running.")
+                return
+            manual_shutdown = True
+            if not args:
+                stop_message = get_bot_message("shutdown") if callable(get_bot_message) else None
+            elif args[0].lower() == "none":
+                stop_message = None
+            else:
+                stop_message = " ".join(args)
+            async def _shutdown():
+                try:
+                    logging.info("Shutting down bot...")
+                    if stop_message and target_channel_id:
+                        channel = bot.get_channel(target_channel_id)
+                        if channel:
+                            await channel.send(stop_message)
+                            logging.info(f"Sent shutdown message to #{channel} ({channel.id}): {stop_message}")
+                    for t in asyncio.all_tasks(loop=bot_loop):
+                        if t is not asyncio.current_task(loop=bot_loop):
+                            t.cancel()
+                    await bot.close()
+                    logging.info("Bot shutdown complete.")
+                except Exception:
+                    logging.exception("Error during shutdown")
+            try:
+                fut = asyncio.run_coroutine_threadsafe(_shutdown(), bot_loop)
+                fut.result(timeout=10)
+            except Exception:
+                logging.exception("Error shutting down bot")
+            bot_started = False
+            print("Bot stopped.")
 
-                elif command == "targch" and args and args[0].isdigit():
-                    target_channel_id = int(args[0])
-                    config_data["config"]["default_target_channel_id"] = str(target_channel_id)
-                    save_json(CONFIG_FILE, config_data)
-                    logging.info(f"Target channel set to {target_channel_id}")
+        # EXIT
+        async def _cmd_exit(args):
+            if bot_started and bot_loop:
+                # attempt graceful stop
+                await _cmd_stop([])
+            print("Exiting console.")
+            # allow caller to stop process
+            os._exit(0)
 
-                elif command == "reply" and args and args[0].isdigit():
-                    message_to_re = int(args[0])
-                    if len(args) < 2:
-                        print("Usage: reply <message_id> <message>")
-                        continue
+        # TARGCH
+        async def _cmd_targch(args):
+            global target_channel_id, config_data
+            if not args or not args[0].isdigit():
+                print("Usage: targch <channel_id>")
+                return
+            target_channel_id = int(args[0])
+            config_data["config"]["default_target_channel_id"] = str(target_channel_id)
+            save_json(CONFIG_FILE, config_data)
+            logging.info(f"Target channel set to {target_channel_id}")
+            print(f"Target channel set to {target_channel_id}")
 
-                    raw_msg = " ".join(args[1:])
+        # REPLY
+        async def _cmd_reply(args):
+            if not args or not args[0].isdigit():
+                print("Usage: reply <message_id> <message> [{override_channel_id}]")
+                return
+            message_id = int(args[0])
+            raw_msg = " ".join(args[1:]).strip()
+            possible_override = None
+            if raw_msg.endswith("}") and "{" in raw_msg:
+                m = re.search(r"\{(\d+)\}$", raw_msg)
+                if m:
+                    possible_override = int(m.group(1))
+                    raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
+            if not bot_started or not bot_loop:
+                print("Bot is not running.")
+                return
+            async def _reply():
+                try:
+                    ch_id = possible_override or target_channel_id
+                    channel = bot.get_channel(ch_id) or await bot.fetch_channel(ch_id)
+                    target_msg = await channel.fetch_message(message_id)
+                    msg_text = replace_placeholders(raw_msg)
+                    await target_msg.reply(msg_text, mention_author=False)
+                    logging.info(f"Replied to {message_id} in {ch_id}")
+                    print("Reply sent.")
+                except Exception:
+                    logging.exception("Failed to reply")
+                    print("Failed to reply (see logs).")
+            asyncio.run_coroutine_threadsafe(_reply(), bot_loop)
 
-                    override_channel_id = None
-                    possible_override = None
+        # SENDMSG
+        async def _cmd_sendmsg(args):
+            if not args:
+                print("Usage: sendmsg <message> [{channel_id}]")
+                return
+            raw_msg = " ".join(args)
+            possible_override = None
+            if raw_msg.endswith("}") and "{" in raw_msg:
+                m = re.search(r"\{(\d+)\}$", raw_msg)
+                if m:
+                    possible_override = int(m.group(1))
+                    raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
+            if not bot_started or not bot_loop:
+                print("Bot is not running.")
+                return
+            async def _send():
+                try:
+                    ch_id = possible_override or target_channel_id
+                    channel = bot.get_channel(ch_id) or await bot.fetch_channel(ch_id)
+                    msg_text = replace_placeholders(raw_msg)
+                    if msg_text.strip():
+                        await channel.send(msg_text)
+                    logging.info(f"Message sent to {ch_id}")
+                    print("Message sent.")
+                except Exception:
+                    logging.exception("Failed to send message")
+                    print("Failed to send message (see logs).")
+            asyncio.run_coroutine_threadsafe(_send(), bot_loop)
 
-                    # Check if last arg is {something}
-                    if raw_msg.endswith("}"):
-                        match = re.search(r"\{(\d+)\}$", raw_msg)
-                        if match:
-                            possible_override = int(match.group(1))
+        # FILE HANDLERS (sync wrappers)
+        async def _cmd_addfile(args):
+            if len(args) != 2:
+                print("Usage: addfile <ui|dir> <file_reference>")
+                return
+            add_file(args[0], args[1])
+            print("File added.")
 
-                    if bot_started and bot_loop:
-                        async def reply_to_message():
-                            nonlocal raw_msg, override_channel_id, possible_override
-                            try:
-                                ch_id = target_channel_id
-                                msg_text = raw_msg
+        async def _cmd_getfile(args):
+            if len(args) != 1:
+                print("Usage: getfile <file_reference>")
+                return
+            get_file(args[0])
+            print("getfile executed (check output).")
 
-                                if possible_override:
-                                    # Try to fetch the channel
-                                    channel = bot.get_channel(possible_override)
-                                    if channel is None:
-                                        try:
-                                            channel = await bot.fetch_channel(possible_override)
-                                        except:
-                                            channel = None
+        async def _cmd_delfile(args):
+            if len(args) != 1:
+                print("Usage: delfile <file_reference>")
+                return
+            del_file(args[0])
+            print("File deleted (if existed).")
 
-                                    if channel:
-                                        override_channel_id = possible_override
-                                        ch_id = override_channel_id
-                                        # remove the {id} from the text
-                                        msg_text = raw_msg[: raw_msg.rfind("{")].strip()
+        # SAYINVC
+        async def _cmd_sayinvc(args):
+            if not args:
+                print("Usage: sayinvc <text> [ovr]")
+                return
+            if args[-1] in ("0", "1"):
+                ovr = int(args[-1])
+                text = " ".join(args[:-1])
+            else:
+                ovr = 1
+                text = " ".join(args)
+            if not text.strip():
+                print("Please provide text to speak.")
+                return
+            if not bot_started or not bot_loop:
+                print("Bot is not running.")
+                return
+            fut = asyncio.run_coroutine_threadsafe(say_in_vc(bot, text, ovr), bot_loop)
+            try:
+                fut.result(timeout=1)
+                print("TTS scheduled.")
+            except asyncio.TimeoutError:
+                print("TTS task running asynchronously...")
+            except Exception:
+                logging.exception("TTS failed to start")
+                print("TTS failed (see logs).")
 
-                                # Apply placeholder replacement
-                                msg_text = replace_placeholders(msg_text)
+        # register commands
+        console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
+        console.add_command("stop", _cmd_stop, "Stop the bot: stop [message|none]")
+        console.add_command("exit", _cmd_exit, "Exit console (will stop bot if running)")
+        console.add_command("targch", _cmd_targch, "Set default target channel id")
+        console.add_command("reply", _cmd_reply, "Reply to a message: reply <message_id> <message> {channel_id}")
+        console.add_command("sendmsg", _cmd_sendmsg, "Send message: sendmsg <message> {channel_id}")
+        console.add_command("addfile", _cmd_addfile, "Add file reference: addfile <ui|dir> <ref>")
+        console.add_command("getfile", _cmd_getfile, "Get file by reference: getfile <ref>")
+        console.add_command("delfile", _cmd_delfile, "Delete file reference: delfile <ref>")
+        console.add_command("sayinvc", _cmd_sayinvc, "TTS into VC: sayinvc <text> [ovr]")
 
-                                # Fetch target channel
-                                channel = bot.get_channel(ch_id)
-                                if channel is None:
-                                    channel = await bot.fetch_channel(ch_id)
-
-                                # Fetch the message to reply to
-                                target_msg = await channel.fetch_message(message_to_re)
-
-                                # Send reply
-                                await target_msg.reply(msg_text, mention_author=False)
-                                logging.info(f"Replied to message {message_to_re} in channel {ch_id}.")
-                            except Exception as e:
-                                logging.info("Failed to reply:", e)
-
-                        asyncio.run_coroutine_threadsafe(reply_to_message(), bot_loop)
-                    else:
-                        print("Bot is not running.")
-
-                elif command == "sendmsg" and args:
-                    raw_msg = " ".join(args)
-
-                    override_channel_id = None
-                    possible_override = None
-
-                    # Check if last arg is {channel_id}
-                    if raw_msg.endswith("}"):
-                        match = re.search(r"\{(\d+)\}$", raw_msg)
-                        if match:
-                            possible_override = int(match.group(1))
-                            # remove {id} from the text
-                            raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
-
-                    if bot_started and bot_loop:
-                        async def send_message():
-                            try:
-                                ch_id = possible_override or target_channel_id
-                                channel = bot.get_channel(ch_id)
-                                if channel is None:
-                                    channel = await bot.fetch_channel(ch_id)
-
-                                if channel is None:
-                                    logging.info(f"Channel {ch_id} not found.")
-                                    return
-
-                                # Replace placeholders and send files
-                                msg_text = await replace_placeholders(channel, raw_msg)
-
-                                # Send remaining text if any
-                                if msg_text.strip():
-                                    await channel.send(msg_text)
-
-                                logging.info(f"Message sent to channel {ch_id}.")
-
-                            except Exception as e:
-                                logging.info("Failed to send message:", e)
-
-                        asyncio.run_coroutine_threadsafe(send_message(), bot_loop)
-                    else:
-                        print("Bot is not running.")
-
-                
-                elif command == "addfile":
-                    if len(args) != 2:
-                        print("Usage: addfile <ui|dir> <file_reference>")
-                        continue
-                    add_file(args[0], args[1])
-
-                elif command == "getfile":
-                    if len(args) != 1:
-                        print("Usage: getfile <file_reference>")
-                        continue
-                    get_file(args[0])
-
-                elif command == "delfile":
-                    if len(args) != 1:
-                        print("Usage: delfile <file_reference>")
-                        continue
-                    del_file(args[0])
-                
-                elif command == "sayinvc" and args:
-                    if len(args) >= 2 and args[-1] in ["0", "1"]:
-                        ovr = int(args[-1])
-                        text = " ".join(args[:-1])
-                    else:
-                        ovr = 1
-                        text = " ".join(args)
-
-                    if not text.strip():
-                        print("Please provide text to speak.")
-                        continue
-
-                    logging.info(f"Scheduling TTS: \"{text}\" (ovr={ovr})")
-                    fut = asyncio.run_coroutine_threadsafe(
-                        say_in_vc(bot, text, ovr),
-                        bot.loop
-                    )
-                    try:
-                        fut.result(timeout=1)
-                    except asyncio.TimeoutError:
-                        print("TTS task running asynchronously...")
-                    except Exception as e:
-                        logging.info(f"TTS failed to start: {e}")
-
+        # start console (blocking)
+        try:
+            asyncio.run(console.start())
+        except Exception:
+            logging.exception("Console terminated unexpectedly")
+            
     # ===== MAIN =====
     if __name__ == "__main__":
         try:
