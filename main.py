@@ -782,40 +782,6 @@ try:
         output.append(text[last_end:])
         return "".join(output).strip()
 
-    # def contains_banned(content: str, banned_words: set, whitelist: set = None) -> bool:
-    #     if whitelist is None:
-    #         whitelist = set()
-
-    #     # normalize the message
-    #     content = normalize_message(content)
-
-    #     # remove whitelisted parts
-    #     for safe in whitelist:
-    #         content = content.replace(normalize_message(safe), "")
-
-    #     tokens = re.findall(r"[a-zก-๙]+", content)
-
-    #     for word in banned_words:
-    #         w = re.escape(normalize_message(word))
-
-    #         # direct substring
-    #         if w in content:
-    #             return True
-
-    #         # repeated/glued patterns — allow 2–5 repetitions
-    #         if re.search(rf"(?:{w}){{2,5}}", content):
-    #             return True
-
-    #         # fuzzy match per token
-    #         if any(is_similar(token, word) for token in tokens):
-    #             return True
-
-    #         # full content fuzzy
-    #         if is_similar(content, word):
-    #             return True
-
-    #     return False
-
     # ===== BANNED WORDS =====
     BANNED_WORDS_FILE = "banned_words.json"
 
@@ -1706,33 +1672,6 @@ try:
 
             save_feedback(data)
             await ctx.reply(f"Feedback **#{entry_id}** marked as DELETED. Reason: `{entry_reason}`")
-            
-        # @bot.command()
-        # @commands.is_owner()
-        # async def allow(ctx, message_id: int):
-        #     """Mark a pending message as safe, add to whitelist."""
-        #     if message_id not in PENDING_MOD:
-        #         await ctx.send(f"Message {message_id} not pending.")
-        #         return
-
-        #     _, content = PENDING_MOD.pop(message_id)
-        #     WHITELISTED_WORDS.add(normalize_message(content))
-        #     save_banwjson("whitelist", WHITELISTED_WORDS)
-        #     await ctx.send(f"Message {message_id} allowed. Added to whitelist.")
-
-
-        # @bot.command()
-        # @commands.is_owner()
-        # async def ban(ctx, message_id: int):
-        #     """Mark a pending message as violating, add to banned words."""
-        #     if message_id not in PENDING_MOD:
-        #         await ctx.send(f"Message {message_id} not pending.")
-        #         return
-
-        #     _, content = PENDING_MOD.pop(message_id)
-        #     BANNED_WORDS.add(normalize_message(content))
-        #     save_banwjson("banned", BANNED_WORDS)
-        #     await ctx.send(f"Message {message_id} banned. Added to banned words.")
 
         @bot.command(name='jvc')
         @commands.guild_only()
