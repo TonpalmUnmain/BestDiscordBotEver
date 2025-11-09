@@ -955,7 +955,7 @@ try:
 
             if (
                 is_banned(content)
-                and not (ctx.command and ctx.command.name in ["banword", "rmword"])
+                and not (ctx.command and ctx.command.name in ["banword", "rmword","whitelistword","rmwhitelistword"])
             ):
                 # GOD role immunity
                 if any(role.id == 1411139316171931738 for role in message.author.roles):
