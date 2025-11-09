@@ -33,6 +33,7 @@ from ftfy import fix_text
 import subprocess
 from unidecode import unidecode
 from gtts import gTTS
+from typing import Optional
 
 try:
     global DEBUGB
@@ -49,7 +50,7 @@ try:
     colorama.init()
 
     # ===== PLACEHOLDER =====
-    MESSAGES_FILE = "message.json"
+    MESSAGES_FILE = "messages.json"
 
     def get_bot_message(category_or_key: str, key: str | None = None, **kwargs) -> str:
         """Get bot message from messages.json.
@@ -268,7 +269,15 @@ try:
     if not user_info or "discord_users" not in user_info:
         user_info = {"discord_users": {}, "last_saved": None}
 
-    token = open("token.config", "r").read().strip()
+    try:
+        with open("token.config", "r", encoding="utf-8") as tf:
+            token = tf.read().strip()
+            if not token:
+                logging.critical("token.config is empty.")
+                sys.exit(1)
+    except FileNotFoundError:
+        logging.critical("token.config not found. Create the file with your bot token.")
+        sys.exit(1)
     target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
     silenced_users = set()
     silenced_roles = set()
@@ -662,25 +671,22 @@ try:
         return session_id
 
     # ===== UTILS =====
-    def parse_duration(dur_str: str) -> timedelta | None:
-        match = re.match(r"^(\d+)([hdw])$", dur_str.lower())
-        if not match:
+    def parse_duration(dur_str: str) -> Optional[timedelta]:
+        """Support ms, s/sec, m/min, h/hr, d, w (returns timedelta or None)."""
+        s = dur_str.strip().lower()
+        m = re.match(r"^(\d+)\s*(ms|s|sec|m|min|h|hr|d|w)$", s)
+        if not m:
             return None
-
-        value, unit = match.groups()
+        value, unit = m.groups()
         value = int(value)
-        if unit == "s":
-            return timedelta(seconds=value)
-        elif unit == "m":
-            return timedelta(minutes=value)
-        elif unit == "h":
-            return timedelta(hours=value)
-        elif unit == "d":
-            return timedelta(days=value)
-        elif unit == "w":
-            return timedelta(weeks=value)
-        else:
-            return None
+        units = {
+            "ms": 0.001, "s": 1, "sec": 1,
+            "m": 60, "min": 60,
+            "h": 3600, "hr": 3600,
+            "d": 86400, "w": 604800
+        }
+        seconds = value * units.get(unit, 0)
+        return timedelta(seconds=seconds)
     
     # def is_similar(a, b, threshold=0.9):
     #     return SequenceMatcher(None, a, b).ratio() >= threshold
@@ -2524,7 +2530,7 @@ except Exception as e:
     logging.info(f"Critical error : {e}")
     input("Press Enter to exit...")
     sys.exit(1)
-    
+
 '''
 BestBotEver!!!
 A discord bot, not intended to be used in other servers.
