@@ -2318,7 +2318,7 @@ try:
                 try:
                     ch_id = possible_override or target_channel_id
                     channel = bot.get_channel(ch_id) or await bot.fetch_channel(ch_id)
-                    msg_text = replace_placeholders(raw_msg)
+                    msg_text = replace_placeholders(None, raw_msg)
                     if msg_text.strip():
                         await channel.send(msg_text)
                     logging.info(f"Message sent to {ch_id}")
