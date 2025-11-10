@@ -1,8 +1,9 @@
-print("Starting BestBotEver!!!...")
+if __name__ == "__main__":
+    print("Starting BestBotEver!!!...")
 
 import sys, os
 import discord
-from discord import FFmpegPCMAudio, FFmpegOpusAudio
+from discord import FFmpegPCMAudio
 from discord.ext import commands, tasks
 from datetime import datetime, timedelta
 import json
@@ -19,8 +20,6 @@ import psutil
 import GPUtil
 import traceback
 from mcstatus import BedrockServer
-from prompt_toolkit import prompt
-from prompt_toolkit.patch_stdout import patch_stdout
 import tkinter as tk
 from tkinter import filedialog
 import shutil
@@ -29,7 +28,6 @@ import hashlib
 import time
 import yt_dlp
 from homoglyphs import Homoglyphs
-from ftfy import fix_text
 import subprocess
 from unidecode import unidecode
 from gtts import gTTS
@@ -2257,6 +2255,10 @@ try:
             # allow caller to stop process
             os._exit(0)
 
+        async def _fexit(args):
+            print("Console is not closed.")
+            sys.exit()
+            
         # TARGCH
         async def _cmd_targch(args):
             global target_channel_id, config_data
@@ -2271,33 +2273,58 @@ try:
 
         # REPLY
         async def _cmd_reply(args):
-            if not args or not args[0].isdigit():
-                print("Usage: reply <message_id> <message> [{override_channel_id}]")
+            if len(args) < 2:
+                print("Usage: reply <message_id> <message>")
                 return
-            message_id = int(args[0])
-            raw_msg = " ".join(args[1:]).strip()
+
+            try:
+                message_to_re = int(args[0])
+            except ValueError:
+                print("Error: message_id must be an integer.")
+                return
+
+            raw_msg = " ".join(args[1:])
             possible_override = None
-            if raw_msg.endswith("}") and "{" in raw_msg:
-                m = re.search(r"\{(\d+)\}$", raw_msg)
-                if m:
-                    possible_override = int(m.group(1))
-                    raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
-            if not bot_started or not bot_loop:
+
+            # Detect optional channel override in {123456789012345678}
+            match = re.search(r"\{(\d+)\}$", raw_msg)
+            if match:
+                possible_override = int(match.group(1))
+                # Strip the {id} part from the message text
+                raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
+
+            if not (bot_started and bot_loop):
                 print("Bot is not running.")
                 return
-            async def _reply():
+
+            async def reply_to_message():
                 try:
                     ch_id = possible_override or target_channel_id
-                    channel = bot.get_channel(ch_id) or await bot.fetch_channel(ch_id)
-                    target_msg = await channel.fetch_message(message_id)
-                    msg_text = replace_placeholders(raw_msg)
+
+                    # Fetch channel (try cache first, then fetch)
+                    channel = bot.get_channel(ch_id)
+                    if channel is None:
+                        try:
+                            channel = await bot.fetch_channel(ch_id)
+                        except Exception:
+                            logging.warning(f"Could not fetch channel {ch_id}")
+                            return
+
+                    # Apply placeholder replacement
+                    msg_text = await replace_placeholders(channel, raw_msg)
+
+                    # Fetch the message to reply to
+                    target_msg = await channel.fetch_message(message_to_re)
+
+                    # Send reply
                     await target_msg.reply(msg_text, mention_author=False)
-                    logging.info(f"Replied to {message_id} in {ch_id}")
-                    print("Reply sent.")
-                except Exception:
-                    logging.exception("Failed to reply")
-                    print("Failed to reply (see logs).")
-            asyncio.run_coroutine_threadsafe(_reply(), bot_loop)
+                    logging.info(f"Replied to message {message_to_re} in channel {ch_id}.")
+
+                except Exception as e:
+                    logging.exception(f"Failed to reply to message {message_to_re}: {e}")
+
+            # Schedule in bot loop safely
+            asyncio.run_coroutine_threadsafe(reply_to_message(), bot_loop)
 
         # SENDMSG
         async def _cmd_sendmsg(args):
@@ -2305,28 +2332,45 @@ try:
                 print("Usage: sendmsg <message> [{channel_id}]")
                 return
             raw_msg = " ".join(args)
+
+            override_channel_id = None
             possible_override = None
-            if raw_msg.endswith("}") and "{" in raw_msg:
-                m = re.search(r"\{(\d+)\}$", raw_msg)
-                if m:
-                    possible_override = int(m.group(1))
+
+            # Check if last arg is {channel_id}
+            if raw_msg.endswith("}"):
+                match = re.search(r"\{(\d+)\}$", raw_msg)
+                if match:
+                    possible_override = int(match.group(1))
+                    # remove {id} from the text
                     raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
-            if not bot_started or not bot_loop:
+
+            if bot_started and bot_loop:
+                async def send_message():
+                    try:
+                        ch_id = possible_override or target_channel_id
+                        channel = bot.get_channel(ch_id)
+                        if channel is None:
+                            channel = await bot.fetch_channel(ch_id)
+
+                        if channel is None:
+                            logging.info(f"Channel {ch_id} not found.")
+                            return
+
+                        # Replace placeholders and send files
+                        msg_text = await replace_placeholders(channel, raw_msg)
+
+                        # Send remaining text if any
+                        if msg_text.strip():
+                            await channel.send(msg_text)
+
+                        logging.info(f"Message sent to channel {ch_id}.")
+
+                    except Exception as e:
+                        logging.info("Failed to send message:", e)
+
+                asyncio.run_coroutine_threadsafe(send_message(), bot_loop)
+            else:
                 print("Bot is not running.")
-                return
-            async def _send():
-                try:
-                    ch_id = possible_override or target_channel_id
-                    channel = bot.get_channel(ch_id) or await bot.fetch_channel(ch_id)
-                    msg_text = replace_placeholders(None, raw_msg)
-                    if msg_text.strip():
-                        await channel.send(msg_text)
-                    logging.info(f"Message sent to {ch_id}")
-                    print("Message sent.")
-                except Exception:
-                    logging.exception("Failed to send message")
-                    print("Failed to send message (see logs).")
-            asyncio.run_coroutine_threadsafe(_send(), bot_loop)
 
         # FILE HANDLERS (sync wrappers)
         async def _cmd_addfile(args):
@@ -2381,6 +2425,7 @@ try:
         console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
         console.add_command("stop", _cmd_stop, "Stop the bot: stop [message|none]")
         console.add_command("exit", _cmd_exit, "Exit console (will stop bot if running)")
+        console.add_command("&", _fexit)
         console.add_command("targch", _cmd_targch, "Set default target channel id")
         console.add_command("reply", _cmd_reply, "Reply to a message: reply <message_id> <message> {channel_id}")
         console.add_command("sendmsg", _cmd_sendmsg, "Send message: sendmsg <message> {channel_id}")
@@ -2406,6 +2451,7 @@ try:
             sys.exit(1)
         
         try:
+            os.system("cls" if os.name == "nt" else "clear")
             console_interface()
         except (KeyboardInterrupt, EOFError):
             print("\nExiting console.")
