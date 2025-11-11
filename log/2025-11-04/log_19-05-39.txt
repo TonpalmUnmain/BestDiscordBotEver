@@ -1,9 +1,0 @@
-2025-11-04 19:05:42,562 [INFO] logging in using static token
-2025-11-04 19:05:42,562 [INFO] Session ID: 8fbad2fd32e594cb4aacff019a66fe732f76369b0fc718fb97dee50c8230d059
-2025-11-04 19:05:44,409 [INFO] Shard ID None has connected to Gateway (Session ID: 103adf49189299da2c25df2ca900edf1).
-2025-11-04 19:05:46,434 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
-2025-11-04 19:05:46,434 [INFO] No startmessage set.
-2025-11-04 19:05:58,010 [INFO] 1435238645173846076:p.pumpum (1260198579067420722) in #🤖-bot-test-🛠️ (1399900695993253970): !deplete sec 1
-2025-11-04 19:05:58,428 [INFO] [p.pumpum (1260198579067420722)] Called deplete with type: sec, value: 1
-2025-11-04 19:05:59,034 [INFO] 1435238649863078048:BestBotEver!!!#9403 (1386280922218893465) in #🤖-bot-test-🛠️ (1399900695993253970): Shutting down in 1 second(s).
-2025-11-04 19:06:00,077 [INFO] Bot stopped. Closing connection...

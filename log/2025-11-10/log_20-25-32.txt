@@ -1,8 +1,0 @@
-2025-11-10 20:25:36,010 [INFO] logging in using static token
-2025-11-10 20:25:36,011 [INFO] Session ID: 5917d1e12a5cbd8c62245c391657fddaf2496da1161b211ac3d6215a66d8fac8
-2025-11-10 20:25:37,489 [INFO] Shard ID None has connected to Gateway (Session ID: ffad43c3ca1e758c6e74c31aaf698677).
-2025-11-10 20:25:39,501 [INFO] Logged in as BestBotEver!!!#9403 (ID: 1386280922218893465)
-2025-11-10 20:25:39,502 [INFO] No startmessage set.
-2025-11-10 20:26:30,673 [INFO] Shutting down bot...
-2025-11-10 20:26:31,203 [INFO] 1437433250799812669:BestBotEver!!!#9403 (1386280922218893465) in #💬-chat-✉️ (1371357608904228924): I got killed help
-2025-11-10 20:26:31,410 [INFO] Sent shutdown message to #💬-chat-✉️ (1371357608904228924): I got killed help
