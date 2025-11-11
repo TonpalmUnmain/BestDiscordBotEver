@@ -11,6 +11,7 @@ import unicodedata
 import re
 import asyncio
 import logging
+from logging.handlers import TimedRotatingFileHandler
 import threading
 import platform
 import socket
@@ -181,6 +182,18 @@ try:
             except Exception:
                 self.handleError(record)
 
+    class RotationHandler(TimedRotatingFileHandler):
+        """Custom handler that runs upload_log.bat after rotation."""
+
+        def doRollover(self):
+            super().doRollover()
+            # Run upload_log.bat after rotation
+            try:
+                subprocess.Popen("upload_log.bat", cwd=os.getcwd())
+                logging.info("Triggered log upload batch file.")
+            except Exception as e:
+                logging.warning(f"Failed to run upload_log.bat: {e}")
+
     log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
     os.makedirs(log_dir, exist_ok=True)
 
@@ -188,7 +201,7 @@ try:
     log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
 
     # Create handlers manually
-    file_handler = logging.FileHandler(log_file, encoding="utf-8")
+    file_handler = RotationHandler(log_file, when="h", interval=6, backupCount=14, encoding="utf-8")
     console_handler = PTKHandler()
 
     # Formatter (you can adjust the format)
