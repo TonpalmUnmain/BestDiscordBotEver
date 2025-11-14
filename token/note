@@ -1,0 +1,2 @@
+decrypt token.config.enc token.config
+# place token.config to root
