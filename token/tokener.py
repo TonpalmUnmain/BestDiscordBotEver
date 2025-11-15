@@ -5,9 +5,7 @@ from cryptography.fernet import Fernet, InvalidToken
 from conintf_ptk import ConsoleInterface
 import asyncio
 import getpass
-# ==========================
-# Helpers
-# ==========================
+
 def password_to_key(password: str) -> bytes:
     sha = hashlib.sha256(password.encode()).digest()
     return base64.urlsafe_b64encode(sha)
@@ -54,7 +52,6 @@ def encrypt_file(path, password, dest=None):
 
     return out_path, None
 
-# Async helper to get password without blocking the event loop
 async def ask_password(prompt_text: str = "Password: ") -> str:
     """
     Prompt for a password using getpass in a thread to avoid blocking the event loop.
@@ -65,9 +62,6 @@ async def ask_password(prompt_text: str = "Password: ") -> str:
     loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, getpass.getpass, prompt_text)
 
-# ==========================
-# Console commands
-# ==========================
 def _banner():
     return "ENCRYPT ZUKA BLYATT"
 
@@ -82,7 +76,6 @@ async def encrypt(args):
     file_path = args[0]
     dest = args[1] if len(args) > 1 else None
 
-    # Use async helper instead of console.prompt (console.prompt is a string)
     password = await ask_password("Password: ")
     
     out_path, err = encrypt_file(file_path, password, dest)
@@ -103,7 +96,6 @@ async def decrypt(args):
     file_path = args[0]
     dest = args[1]
 
-    # Use async helper instead of console.prompt
     password = await ask_password("Password: ")
 
     key = password_to_key(password)

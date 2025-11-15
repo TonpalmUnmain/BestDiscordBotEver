@@ -285,8 +285,13 @@ try:
         with open("token.config", "r", encoding="utf-8") as tf:
             token = tf.read().strip()
             if not token:
-                logging.critical("token.config is empty.")
-                sys.exit(1)
+                logging.info("token.config is empty.")
+                print("Would you like to try and decrypt the token (IF YOU ARE TONPALMUNMAIN, IF NOT FUCK OFF AND MAKE A NEW ONE)")
+                result = input(">>>")
+                if result == "y" or None:
+                    os.system("\.venv\Scripts\activate")
+                    print("USE> decrypt token.config.enc token.config")
+                    os.system("python token/tokener.py")
     except FileNotFoundError:
         logging.critical("token.config not found. Create the file with your bot token.")
         sys.exit(1)
