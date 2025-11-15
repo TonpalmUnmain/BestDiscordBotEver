@@ -994,6 +994,13 @@ try:
             if ctx.valid:
                 return
 
+            message = after
+            bmessage = before
+            
+            logging.info(
+                f"{message.id}:{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}) Edited from ({bmessage.content}) to {message.content}"
+            )
+                        
             content = normalize_message(after.content)
             if (
                 any(word in content for word in BANNED_WORDS)
@@ -1012,6 +1019,35 @@ try:
                 except Exception as e:
                     logging.error(f"[EDIT] Error: {e}")
                     
+        @bot.event
+        async def on_voice_state_update(member, before, after):
+            if before.channel is None and after.channel is not None:
+                logging.info(f"{member} joined {after.channel.name}")
+            if before.channel is not None and after.channel is None:
+                logging.info(f"{member} left {before.channel.name}")
+            if before.channel != after.channel and before.channel and after.channel:
+                logging.info(f"{member} moved from {before.channel.name} to {after.channel.name}")
+            if before.self_mute != after.self_mute:
+                if after.self_mute:
+                    logging.info(f"{member} muted themselves")
+                else:
+                    logging.info(f"{member} unmuted themselves")
+            if before.self_deaf != after.self_deaf:
+                if after.self_deaf:
+                    logging.info(f"{member} deafened themselves")
+                else:
+                    logging.info(f"{member} undeafened themselves")
+            if before.mute != after.mute:
+                if after.mute:
+                    logging.info(f"{member} was SERVER MUTED")
+                else:
+                    logging.info(f"{member} was SERVER UNMUTED")
+            if before.deaf != after.deaf:
+                if after.deaf:
+                    logging.info(f"{member} was SERVER DEAFENED")
+                else:
+                    logging.info(f"{member} was SERVER UNDEAFENED")     
+                           
         @bot.event
         async def on_member_join(member):
             channel = bot.get_channel(target_channel_id)
@@ -1039,7 +1075,96 @@ try:
                 embed.set_footer(text=f"BestBotEver v.{VERSION}")
 
                 await channel.send(embed=embed)
+        async def on_member_remove(member):
+            logging.info(f"{member} left the server")
+
+        @bot.event
+        async def on_member_update(before, after):
+            if before.communication_disabled_until != after.communication_disabled_until:
                 
+                if after.communication_disabled_until is not None:
+                    until = after.communication_disabled_until.isoformat()
+                    logging.info(f"{after} was timed out until {until}")
+
+                elif before.communication_disabled_until is not None and after.communication_disabled_until is None:
+                    logging.info(f"{after} timeout ended")
+
+        @bot.event
+        async def on_reaction_add(reaction, user):
+            logging.info(f"{user} added {reaction.emoji} in #{reaction.message.channel}")
+
+        @bot.event
+        async def on_reaction_remove(reaction, user):
+            logging.info(f"{user} removed {reaction.emoji}")
+
+        @bot.event
+        async def on_reaction_clear(message, reactions):
+            logging.info(f"Reactions cleared in #{message.channel}")
+            
+        @bot.event
+        async def on_guild_channel_create(channel):
+            logging.info(f"Channel created: {channel} ({channel.id})")
+
+        @bot.event
+        async def on_guild_channel_delete(channel):
+            logging.info(f"Channel deleted: {channel} ({channel.id})")
+
+        @bot.event
+        async def on_guild_channel_update(before, after):
+            logging.info(f"Channel updated: {before} > {after}")
+            
+        @bot.event
+        async def on_guild_role_create(role):
+            logging.info(f"Role created: {role}")
+
+        @bot.event
+        async def on_guild_role_delete(role):
+            logging.info(f"Role deleted: {role}")
+
+        @bot.event
+        async def on_guild_role_update(before, after):
+            logging.info(f"Role updated: {before.name}")
+
+        @bot.event
+        async def on_thread_create(thread):
+            logging.info(f"Thread created: {thread.name}")
+
+        @bot.event
+        async def on_thread_delete(thread):
+            logging.info(f"Thread deleted: {thread.name}")
+
+        @bot.event
+        async def on_thread_update(before, after):
+            logging.info(f"Thread updated: {before.name}")
+
+        @bot.event
+        async def on_thread_join(thread):
+            logging.info(f"Bot joined thread: {thread.name}")
+
+        @bot.event
+        async def on_invite_create(invite):
+            logging.info(f"Invite created: {invite.code}")
+
+        @bot.event
+        async def on_invite_delete(invite):
+            logging.info(f"Invite deleted: {invite.code}")
+
+        @bot.event
+        async def on_member_ban(guild, user):
+            logging.info(f"{user} was banned from {guild.name}")
+
+        @bot.event
+        async def on_member_unban(guild, user):
+            logging.info(f"{user} was unbanned from {guild.name}")
+
+        @bot.event
+        async def on_guild_emojis_update(guild, before, after):
+            logging.info(f"Emoji update in {guild.name}")
+
+        @bot.event
+        async def on_guild_stickers_update(guild, before, after):
+            logging.info(f"Sticker update in {guild.name}")
+    
         @bot.command(name="help")
         async def help_cmd(ctx, command_name: str = None):
             """Show command list or details for a specific command."""
