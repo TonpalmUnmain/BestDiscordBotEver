@@ -636,6 +636,26 @@ try:
         except Exception as e:
             logging.info(f"Error in say_in_vc: {e}")
 
+    # ===== MISC =====
+    async def fetch_app_emojis(bot: commands.Bot):
+        route = discord.http.Route(
+            "GET",
+            "/applications/{application_id}/emojis",
+            application_id=bot.application_id
+        )
+
+        data = await bot.http.request(route)
+
+        emojis_by_name = {}
+        emojis_by_id = {}
+
+        for e in data:
+            emoji = discord.PartialEmoji.from_dict(e)
+            emojis_by_name[e["name"]] = emoji
+            emojis_by_id[int(e["id"])] = emoji
+
+        return emojis_by_name, emojis_by_id
+    
     # ===== BOT SETUP =====
     if "bot" in globals():
         del globals()["bot"]
@@ -2564,6 +2584,79 @@ try:
                 logging.exception("TTS failed to start")
                 print("TTS failed (see logs).")
 
+        async def _add_reaction(args):
+            if len(args) != 3:
+                print("Usage: react <channel_id> <message_id> <emoji>")
+                return
+
+            channel_id, message_id, emoji_arg = args
+
+            # Fetch the channel
+            try:
+                channel = bot.get_channel(int(channel_id))
+                if channel is None:
+                    print(f"Channel {channel_id} not found")
+                    return
+            except Exception as e:
+                print("Invalid channel ID:", e)
+                return
+
+            # Fetch the message
+            try:
+                message = await channel.fetch_message(int(message_id))
+            except Exception as e:
+                print("Could not fetch message:", e)
+                return
+
+            # ----------------------------
+            # Handle the emoji
+            # ----------------------------
+
+            # 1. raw emoji "<:name:id>"
+            if isinstance(emoji_arg, str) and emoji_arg.startswith("<:"):
+                try:
+                    await message.add_reaction(emoji_arg)
+                except Exception as e:
+                    print("Failed to add raw emoji:", e)
+                return
+
+            # 2. emoji name
+            if isinstance(emoji_arg, str) and not emoji_arg.isdigit():
+                emoji = bot.app_emojis_by_name.get(emoji_arg)
+                if emoji is None:
+                    print(f"Emoji name '{emoji_arg}' not found")
+                    return
+                try:
+                    await message.add_reaction(emoji)
+                except Exception as e:
+                    print("Failed to add emoji:", e)
+                return
+
+            # 3. emoji ID
+            try:
+                emoji_id = int(emoji_arg)
+            except ValueError:
+                print("Invalid emoji input")
+                return
+
+            emoji = bot.app_emojis_by_id.get(emoji_id)
+            if emoji is None:
+                print(f"Emoji ID '{emoji_id}' not found")
+                return
+            try:
+                await message.add_reaction(emoji)
+            except Exception as e:
+                print("Failed to add emoji:", e)
+                
+        def _react(args):
+            """
+            Synchronous console wrapper for _add_reaction
+            """
+            if not hasattr(bot, "loop") or bot.loop is None:
+                print("Bot loop not available.")
+                return
+            bot.loop.create_task(_add_reaction(args))
+
         # register commands
         console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
         console.add_command("stop", _cmd_stop, "Stop the bot: stop [message|none]")
@@ -2576,6 +2669,7 @@ try:
         console.add_command("getfile", _cmd_getfile, "Get file by reference: getfile <ref>")
         console.add_command("delfile", _cmd_delfile, "Delete file reference: delfile <ref>")
         console.add_command("sayinvc", _cmd_sayinvc, "TTS into VC: sayinvc <text> [ovr]")
+        console.add_command("react", _react, "Add reaction to message: react <channel_id> <message_id> <emoji_name|emoji_id>")
 
         # start console (blocking)
         try:
