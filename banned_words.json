@@ -141,5 +141,10 @@
         "training",
         "zenegger"
     ],
-    "translation": {}
+    "translation": {
+        "|": "i",
+        "[\\]": "n",
+        "| \\ |": "n",
+        "|/|": "n"
+    }
 }

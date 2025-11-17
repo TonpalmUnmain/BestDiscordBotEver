@@ -2183,33 +2183,41 @@ try:
             
         @bot.command(name="add_translation")
         @commands.has_permissions(administrator=True)
-        async def add_translation(ctx, *args):
+        async def add_translation(ctx, *, raw_args: str = None):
             """Add a normalization rule.
             Usage:
               !add_translation a="str" b="strrr"
               OR
               !add_translation <from> <to>
+            The raw_args capture prevents discord.py's argument parser from choking on quotes/backslashes.
             """
-            if not args:
+            if not raw_args:
                 await ctx.send("Usage: `!add_translation a=\"str\" b=\"strrr\"` or `!add_translation <from> <to>`")
                 return
+
+            def _unescape(s: str) -> str:
+                try:
+                    return bytes(s, "utf-8").decode("unicode_escape")
+                except Exception:
+                    # fallback: remove backslash escapes like \" or \\ but keep text
+                    return re.sub(r'\\(.)', r'\1', s)
 
             a_val = None
             b_val = None
 
-            joined = " ".join(args)
-
-            # Try key="value" style first
-            m_a = re.search(r'a\s*=\s*"([^"]+)"', joined)
-            m_b = re.search(r'b\s*=\s*"([^"]+)"', joined)
+            # key="value" style supporting escaped chars inside quotes
+            m_a = re.search(r'a\s*=\s*"((?:\\.|[^"\\])*)"', raw_args)
+            m_b = re.search(r'b\s*=\s*"((?:\\.|[^"\\])*)"', raw_args)
             if m_a and m_b:
-                a_val = m_a.group(1)
-                b_val = m_b.group(1)
+                a_val = _unescape(m_a.group(1))
+                b_val = _unescape(m_b.group(1))
 
-            # Fallback: positional arguments (first token = a, rest = b)
-            if (a_val is None or b_val is None) and len(args) >= 2:
-                a_val = args[0]
-                b_val = " ".join(args[1:])
+            # Fallback: positional args (split into two parts)
+            if (a_val is None or b_val is None):
+                parts = raw_args.strip().split(None, 1)
+                if len(parts) >= 2:
+                    a_val = parts[0]
+                    b_val = parts[1]
 
             if not a_val or not b_val:
                 await ctx.send("Invalid arguments. Usage: `!add_translation a=\"str\" b=\"strrr\"` or `!add_translation <from> <to>`")
