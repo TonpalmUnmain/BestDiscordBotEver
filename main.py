@@ -34,6 +34,7 @@ from unidecode import unidecode
 from gtts import gTTS
 from typing import Optional
 from conintf_ptk import ConsoleInterface
+import WinTmp
 
 try:
     global DEBUGB
@@ -1392,6 +1393,24 @@ try:
                 except Exception:
                     libs = "Unavailable"
 
+                cpu_temp_str = "N/A"
+                gpu_temp_str = "N/A"
+                try:
+                    cpu_temps = WinTmp.CPU_Temps()
+                    if cpu_temps:
+                        avg_cpu_temp = sum(cpu_temps) / len(cpu_temps)
+                        cpu_temp_str = f"{avg_cpu_temp:.1f}°C"
+                except Exception as e:
+                    logging.warning(f"Failed to get CPU temps: {e}")
+
+                try:
+                    gpu_temps = WinTmp.GPU_Temps()
+                    if gpu_temps:
+                        avg_gpu_temp = sum(gpu_temps) / len(gpu_temps)
+                        gpu_temp_str = f"{avg_gpu_temp:.1f}°C"
+                except Exception as e:
+                    logging.warning(f"Failed to get GPU temps: {e}")
+
                 embed = discord.Embed(
                     title="Session Information",
                     color=discord.Color.blurple(),
@@ -1437,6 +1456,13 @@ try:
                     value=f"**Cores:** `{cpu_count}`\n**Frequency:** `{cpu_freq.current:.2f} MHz`\n**Usage:** `{cpu_usage}%`",
                     inline=False,
                 )
+                
+                embed.add_field(
+                    name="Temperature",
+                    value=f"**CPU:** `{cpu_temp_str}`\n**GPU:** `{gpu_temp_str}`",
+                    inline=False,
+                )
+                                
                 embed.add_field(
                     name="Memory",
                     value=(
