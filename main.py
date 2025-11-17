@@ -2183,12 +2183,44 @@ try:
             
         @bot.command(name="add_translation")
         @commands.has_permissions(administrator=True)
-        async def add_translation(ctx, a: str, b: str):
-            """Add a normalization rule: replaces <a> with <b> in messages."""
-            a, b = a.lower(), b.lower()
-            custom_translations[a] = b
+        async def add_translation(ctx, *args):
+            """Add a normalization rule.
+            Usage:
+              !add_translation a="str" b="strrr"
+              OR
+              !add_translation <from> <to>
+            """
+            if not args:
+                await ctx.send("Usage: `!add_translation a=\"str\" b=\"strrr\"` or `!add_translation <from> <to>`")
+                return
+
+            a_val = None
+            b_val = None
+
+            joined = " ".join(args)
+
+            # Try key="value" style first
+            m_a = re.search(r'a\s*=\s*"([^"]+)"', joined)
+            m_b = re.search(r'b\s*=\s*"([^"]+)"', joined)
+            if m_a and m_b:
+                a_val = m_a.group(1)
+                b_val = m_b.group(1)
+
+            # Fallback: positional arguments (first token = a, rest = b)
+            if (a_val is None or b_val is None) and len(args) >= 2:
+                a_val = args[0]
+                b_val = " ".join(args[1:])
+
+            if not a_val or not b_val:
+                await ctx.send("Invalid arguments. Usage: `!add_translation a=\"str\" b=\"strrr\"` or `!add_translation <from> <to>`")
+                return
+
+            a_key = a_val.lower()
+            b_value = b_val.lower()
+
+            custom_translations[a_key] = b_value
             save_banwjson("translation", custom_translations)
-            await ctx.send(get_bot_message("translation", "added_trans", a=a, b=b))
+            await ctx.send(get_bot_message("translation", "added_trans", a=a_key, b=b_value))
 
         @bot.command(name="del_translation")
         @commands.has_permissions(administrator=True)
