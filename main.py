@@ -1489,7 +1489,32 @@ try:
             except Exception as e:
                 await ctx.send("Error retrieving session info.")
                 logging.error(f"Error: {e}")
-
+                
+        @bot.command(name="eval")
+        @commands.is_owner()
+        async def eval_str(ctx, *, code: str = None):
+            """Evaluate Python code (owner only). Usage: !eval <code>"""
+            if not code:
+                await ctx.send("Usage: `!eval <code>`")
+                return
+            
+            try:
+                result = eval(code, {"__builtins__": {}}, {
+                    "bot": bot,
+                    "ctx": ctx,
+                    "discord": discord,
+                    "asyncio": asyncio,
+                    "logging": logging,
+                    "config_data": config_data,
+                    "user_info": user_info,
+                    "BANNED_WORDS": BANNED_WORDS,
+                })
+                await ctx.send(f"Result: `{result}`")
+                logging.info(f"[EVAL] {ctx.author} evaluated: {code}")
+            except Exception as e:
+                await ctx.send(f"Error: `{type(e).__name__}: {e}`")
+                logging.error(f"[EVAL] Error by {ctx.author}: {e}")
+                
         @bot.command(name="banword")
         @commands.has_permissions(administrator=True)
         async def ban_word(ctx, *, word: str):
@@ -2723,6 +2748,25 @@ try:
                 return
             bot.loop.create_task(_add_reaction(args))
 
+        def _eval(args):
+            if len(args) > 1:
+                print("Calm down, only 1.")
+            elif len(args) == 1:
+                try:
+                    eval(args[0], {"__builtins__": {}}, {
+                        "bot": bot,
+                        "discord": discord,
+                        "asyncio": asyncio,
+                        "logging": logging,
+                        "config_data": config_data,
+                        "user_info": user_info,
+                        "BANNED_WORDS": BANNED_WORDS,
+                    })
+                except Exception as e:
+                    logging.info(f"EVAL failed: {e}")
+            else:
+                print("??!")
+                
         # register commands
         console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
         console.add_command("stop", _cmd_stop, "Stop the bot: stop [message|none]")
@@ -2736,7 +2780,8 @@ try:
         console.add_command("delfile", _cmd_delfile, "Delete file reference: delfile <ref>")
         console.add_command("sayinvc", _cmd_sayinvc, "TTS into VC: sayinvc <text> [ovr]")
         console.add_command("react", _react, "Add reaction to message: react <channel_id> <message_id> <emoji_name|emoji_id>")
-
+        console.add_command("eval",_eval,"Eveluate string: eval STR")
+        
         # start console (blocking)
         try:
             asyncio.run(console.start())
