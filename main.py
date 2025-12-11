@@ -908,8 +908,10 @@ try:
 
         else:
             print("Invalid status type. Use: play, watch, listen, compete, stream")
+            return
 
         await bot.change_presence(activity=activity)
+
 
     # ===== BOT CREATION =====
     def create_bot():
@@ -2797,6 +2799,21 @@ try:
                     logging.info(f"EVAL failed: {e}")
             else:
                 print("??!")
+        
+        async def _statusset(args):
+            if len(args) < 2:
+                print("Wrong args!")
+                return
+
+            status = args[0]
+            TEXT = " ".join(args[1:]).strip('"')   # join + remove surrounding quotes
+
+            config_data["config"]["stattype"] = status
+            config_data["config"]["stattext"] = TEXT
+            save_json(CONFIG_FILE, config_data)
+            
+            await setstat(status, TEXT)
+            logging.info(f"Set status text to {TEXT} ({status}).")
                 
         # register commands
         console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
@@ -2812,6 +2829,7 @@ try:
         console.add_command("sayinvc", _cmd_sayinvc, "TTS into VC: sayinvc <text> [ovr]")
         console.add_command("react", _react, "Add reaction to message: react <channel_id> <message_id> <emoji_name|emoji_id>")
         console.add_command("eval",_eval,"Eveluate string: eval STR")
+        console.add_command("statset", _statusset, "Set status text: <type> <text>")
         
         # start console (blocking)
         try:
