@@ -888,6 +888,29 @@ try:
 
     PENDING_MOD = {}
     
+    async def setstat(stat: str, text: str):
+        stat = stat.lower()
+
+        if stat in ["play", "game"]:
+            activity = discord.Game(text)
+
+        elif stat == "watch":
+            activity = discord.Activity(type=discord.ActivityType.watching, name=text)
+
+        elif stat == "listen":
+            activity = discord.Activity(type=discord.ActivityType.listening, name=text)
+
+        elif stat == "compete":
+            activity = discord.Activity(type=discord.ActivityType.competing, name=text)
+
+        elif stat == "stream":
+            activity = discord.Streaming(name=text, url=text)
+
+        else:
+            print("Invalid status type. Use: play, watch, listen, compete, stream")
+
+        await bot.change_presence(activity=activity)
+
     # ===== BOT CREATION =====
     def create_bot():
         intents = discord.Intents.default()
@@ -903,7 +926,15 @@ try:
         async def on_ready():
             global startmessage
             logging.info(f"Logged in as {bot.user} (ID: {bot.user.id})")
-
+            
+            stattype = config_data["config"]["stattype"]
+            stattext = config_data["config"]["stattext"]
+            
+            try:
+                await setstat(stattype, stattext)
+            except:
+                logging.error("Invalid status")
+            
             if startmessage is None:
                 logging.info("No startmessage set.")
                 return
@@ -920,7 +951,7 @@ try:
                 auto_save_users.start()
                 
             await auto_save_users()
-
+                
         @bot.event
         async def on_message(message):
             logging.info(
