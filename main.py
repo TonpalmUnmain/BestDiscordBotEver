@@ -888,6 +888,31 @@ try:
 
     PENDING_MOD = {}
     
+    async def setstat(stat: str, text: str):
+        stat = stat.lower()
+
+        if stat in ["play", "game"]:
+            activity = discord.Game(text)
+
+        elif stat == "watch":
+            activity = discord.Activity(type=discord.ActivityType.watching, name=text)
+
+        elif stat == "listen":
+            activity = discord.Activity(type=discord.ActivityType.listening, name=text)
+
+        elif stat == "compete":
+            activity = discord.Activity(type=discord.ActivityType.competing, name=text)
+
+        elif stat == "stream":
+            activity = discord.Streaming(name=text, url=text)
+
+        else:
+            print("Invalid status type. Use: play, watch, listen, compete, stream")
+            return
+
+        await bot.change_presence(activity=activity)
+
+
     # ===== BOT CREATION =====
     def create_bot():
         intents = discord.Intents.default()
@@ -903,7 +928,15 @@ try:
         async def on_ready():
             global startmessage
             logging.info(f"Logged in as {bot.user} (ID: {bot.user.id})")
-
+            
+            stattype = config_data["config"]["stattype"]
+            stattext = config_data["config"]["stattext"]
+            
+            try:
+                await setstat(stattype, stattext)
+            except:
+                logging.error("Invalid status")
+            
             if startmessage is None:
                 logging.info("No startmessage set.")
                 return
@@ -920,7 +953,7 @@ try:
                 auto_save_users.start()
                 
             await auto_save_users()
-
+                
         @bot.event
         async def on_message(message):
             logging.info(
@@ -1489,7 +1522,32 @@ try:
             except Exception as e:
                 await ctx.send("Error retrieving session info.")
                 logging.error(f"Error: {e}")
-
+                
+        @bot.command(name="eval")
+        @commands.is_owner()
+        async def eval_str(ctx, *, code: str = None):
+            """Evaluate Python code (owner only). Usage: !eval <code>"""
+            if not code:
+                await ctx.send("Usage: `!eval <code>`")
+                return
+            
+            try:
+                result = eval(code, {"__builtins__": {}}, {
+                    "bot": bot,
+                    "ctx": ctx,
+                    "discord": discord,
+                    "asyncio": asyncio,
+                    "logging": logging,
+                    "config_data": config_data,
+                    "user_info": user_info,
+                    "BANNED_WORDS": BANNED_WORDS,
+                })
+                await ctx.send(f"Result: `{result}`")
+                logging.info(f"[EVAL] {ctx.author} evaluated: {code}")
+            except Exception as e:
+                await ctx.send(f"Error: `{type(e).__name__}: {e}`")
+                logging.error(f"[EVAL] Error by {ctx.author}: {e}")
+                
         @bot.command(name="banword")
         @commands.has_permissions(administrator=True)
         async def ban_word(ctx, *, word: str):
@@ -2723,6 +2781,40 @@ try:
                 return
             bot.loop.create_task(_add_reaction(args))
 
+        def _eval(args):
+            if len(args) > 1:
+                print("Calm down, only 1.")
+            elif len(args) == 1:
+                try:
+                    eval(args[0], {"__builtins__": {}}, {
+                        "bot": bot,
+                        "discord": discord,
+                        "asyncio": asyncio,
+                        "logging": logging,
+                        "config_data": config_data,
+                        "user_info": user_info,
+                        "BANNED_WORDS": BANNED_WORDS,
+                    })
+                except Exception as e:
+                    logging.info(f"EVAL failed: {e}")
+            else:
+                print("??!")
+        
+        async def _statusset(args):
+            if len(args) < 2:
+                print("Wrong args!")
+                return
+
+            status = args[0]
+            TEXT = " ".join(args[1:]).strip('"')   # join + remove surrounding quotes
+
+            config_data["config"]["stattype"] = status
+            config_data["config"]["stattext"] = TEXT
+            save_json(CONFIG_FILE, config_data)
+            
+            await setstat(status, TEXT)
+            logging.info(f"Set status text to {TEXT} ({status}).")
+                
         # register commands
         console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
         console.add_command("stop", _cmd_stop, "Stop the bot: stop [message|none]")
@@ -2736,7 +2828,9 @@ try:
         console.add_command("delfile", _cmd_delfile, "Delete file reference: delfile <ref>")
         console.add_command("sayinvc", _cmd_sayinvc, "TTS into VC: sayinvc <text> [ovr]")
         console.add_command("react", _react, "Add reaction to message: react <channel_id> <message_id> <emoji_name|emoji_id>")
-
+        console.add_command("eval",_eval,"Eveluate string: eval STR")
+        console.add_command("statset", _statusset, "Set status text: <type> <text>")
+        
         # start console (blocking)
         try:
             asyncio.run(console.start())
