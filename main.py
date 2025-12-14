@@ -1,3 +1,5 @@
+#BestBotEver!!! 2
+
 if __name__ == "__main__":
     print("Starting BestBotEver!!!...")
 
@@ -67,22 +69,19 @@ try:
             if category_or_key == "v":
                 return "Version "+ messages.get("config", {}).get("version", "Not Specified")
             
-            # If user passed a single dotted path like "moderation.timeout_message"
             if key is None and "." in category_or_key:
                 parts = category_or_key.split(".")
                 msg = bot_msgs
                 for p in parts[:-1]:
                     msg = msg[p]
                 return msg[parts[-1]].format(**kwargs)
-
-            # Single key directly under "bot"
+            
             if key is None:
                 val = bot_msgs.get(category_or_key)
                 if isinstance(val, str):
                     return val.format(**kwargs)
                 raise KeyError
 
-            # category + key form
             parts = category_or_key.split(".")
             msg = bot_msgs
             for p in parts:
@@ -101,7 +100,7 @@ try:
     def browse_file():
         root = tk.Tk()
         root.withdraw()
-        root.attributes('-topmost', True)  # bring window to front
+        root.attributes('-topmost', True)
         return filedialog.askopenfilename(title="Select a file")
 
     def load_filedb():
@@ -128,13 +127,11 @@ try:
             logging.info("File not found.")
             return
 
-        # Keep original filename
         original_name = os.path.basename(file_path)
         dest_path = os.path.join(DUMP_DIR, original_name)
 
         shutil.copy2(file_path, dest_path)
 
-        # Save reference in JSON, but do NOT rename file
         db[file_reference] = {
             "original_path": os.path.abspath(file_path),
             "dump_path": os.path.abspath(dest_path),
@@ -177,7 +174,6 @@ try:
             try:
                 msg = self.format(record)
                 with self.lock:
-                    # patch_stdout print ensures prompt redraws correctly
                     from prompt_toolkit import print_formatted_text
                     print_formatted_text(msg)
             except Exception:
@@ -188,7 +184,6 @@ try:
 
         def doRollover(self):
             super().doRollover()
-            # Run upload_log.bat after rotation
             try:
                 subprocess.Popen("upload_log.bat", cwd=os.getcwd())
                 logging.info("Triggered log upload batch file.")
@@ -198,19 +193,15 @@ try:
     log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
     os.makedirs(log_dir, exist_ok=True)
 
-    # Log file path
     log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
 
-    # Create handlers manually
     file_handler = RotationHandler(log_file, when="h", interval=6, backupCount=14, encoding="utf-8")
     console_handler = PTKHandler()
 
-    # Formatter (you can adjust the format)
     formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
     file_handler.setFormatter(formatter)
     console_handler.setFormatter(formatter)
 
-    # Configure root logger
     logging.basicConfig(level=logging.INFO, handlers=[file_handler, console_handler])
 
     log = logging.getLogger(__name__)
@@ -224,12 +215,10 @@ try:
 
         files = [f for f in os.listdir(folder) if f.endswith(".json")]
         if not files:
-            # No file found — create a default one
             return os.path.join(folder, "uinfo_latest.json")
 
-        # Sort chronologically (filenames start with date)
         files.sort()
-        return os.path.join(folder, files[-1])  # most recent
+        return os.path.join(folder, files[-1])
 
     USER_INFO_FILE = get_latest_userinfo_file()
 
@@ -259,14 +248,11 @@ try:
         return load_json(USER_INFO_FILE, default={"discord_users": {}, "last_saved": None})
 
     def save_userinfo(data, session_id):
-        # Ensure userdata folder exists
         os.makedirs("userdata", exist_ok=True)
 
-        # Format: YYYY-MM-DD_HH-MM-SS-sessionID
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         file_path = f"userdata/{timestamp}-{session_id}.json"
 
-        # Save JSON data
         try:
             with open(file_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
@@ -341,11 +327,8 @@ try:
         if "discord_users" not in user_info:
             user_info["discord_users"] = {}
 
-        # First try by ID
         if str(uid_or_name) in user_info["discord_users"]:
             user_data = user_info["discord_users"][str(uid_or_name)]
-        else:
-            # Try by display name
             user_data = None
             for u in user_info["discord_users"].values():
                 if u.get("dispname") == uid_or_name:
@@ -372,18 +355,16 @@ try:
             user_info["discord_users"] = {}
 
         for guild in bot.guilds:
-            async for member in guild.fetch_members(limit=None):  # Fetch all members
+            async for member in guild.fetch_members(limit=None): 
                 if member.bot:
                     continue
 
                 roles = [r.name for r in member.roles if r.name != "@everyone"]
-
-                # Keep existing var1/var2 if present
                 old_data = user_info["discord_users"].get(str(member.id), {})
                 user_info["discord_users"][str(member.id)] = {
                     "id": str(member.id),
                     "dispname": member.display_name,
-                    "username": str(member),  # full username with #1234
+                    "username": str(member),
                     "joined_at": str(member.joined_at) if member.joined_at else "Unknown",
                     "created_at": str(member.created_at),
                     "roles": ", ".join(roles),
@@ -395,7 +376,6 @@ try:
         save_userinfo(user_info, session_id=session_id)
         logging.info(f"Auto-saved {len(user_info.get('discord_users', {}))} users at {now}")
 
-    # ===== FEEDBACK SETUP =====
     FEEDBACK_DIR = "feedback"
     FEEDBACK_FILE = f"{FEEDBACK_DIR}/{VERSION}_feedback.json"
 
@@ -439,7 +419,7 @@ try:
     def format_version_prefix(version: str) -> str:
         return version.replace(".", "")
     
-    # ===== MINECRAFT SERVER MONITORING SETUP =====
+    # ===== MCS =====
     BEDROCK_HOST = config_data["MCS"]["mcsAdress"] or "multi-nor.gl.at.ply.gg"
     BEDROCK_PORT = config_data["MCS"]["mcsPort"] or 5355
     ServerUpdateChannelID = config_data["MCS"]["mcsChID"] or 1421497953834631319
@@ -457,10 +437,7 @@ try:
     stopmessage: str | None = None
 
     # ===== AUDIO =====
-    # Dictionary to hold queues per guild
     guild_queues = {}
-
-    # Flag for pause state
     guild_paused = {}
 
     def get_queue(ctx):
@@ -518,7 +495,7 @@ try:
                     executable=ffmpeg_exec
                 )
 
-            else:  # URL case
+            else:
                 ytdlp_opts = {
                     "format": "bestaudio[ext=m4a]/bestaudio/best",
                     "quiet": True,
@@ -558,13 +535,11 @@ try:
                     logging.error(f"No playable url in yt-dlp info for {source}: {info}")
                     return
 
-                # --- NEW: probe ffmpeg to capture stderr for diagnostics ---
                 retcode, stderr = probe_ffmpeg(stream_url, ffmpeg_exec)
                 if retcode is None or retcode != 0:
                     logging.error(f"ffmpeg probe failed (ret={retcode}): {stderr}")
                     await ctx.send(f"ffmpeg probe failed. See logs for details.")
                     return
-                # --- end probe ---
 
                 audio_source = FFmpegPCMAudio(
                     stream_url,
@@ -572,12 +547,10 @@ try:
                     executable=ffmpeg_exec
                 )
 
-            # play and schedule next on finish
             def _after_play(err):
                 if err:
                     logging.exception(f"Error during playback: {err}")
                 try:
-                    # schedule next item (safe scheduling from thread)
                     asyncio.run_coroutine_threadsafe(play_next(ctx), bot.loop)
                 except Exception:
                     logging.exception("Failed to schedule play_next after track end.")
@@ -586,7 +559,6 @@ try:
 
         except Exception as e:
             logging.exception(f"Unhandled error in play_next: {e}")
-            # don't recurse synchronously; schedule a retry safely
             try:
                 asyncio.get_running_loop().call_later(1, lambda: asyncio.create_task(play_next(ctx)))
             except Exception:
@@ -607,8 +579,7 @@ try:
                 return
 
             logging.info(f"Generating TTS: \"{text}\" (ovr={ovr})")
-
-            # Default to English, fallback to a safe language code
+            
             try:
                 tts = gTTS(text=text, lang="en")
             except Exception as e:
@@ -622,8 +593,7 @@ try:
             print(f"Saved TTS file as {tts_file}")
 
             source = discord.FFmpegPCMAudio(tts_file)
-
-            # Handle overlay or replace
+            
             if ovr == 0:
                 if vc.is_playing():
                     vc.stop()
@@ -725,10 +695,7 @@ try:
         }
         seconds = value * units.get(unit, 0)
         return timedelta(seconds=seconds)
-    
-    # def is_similar(a, b, threshold=0.9):
-    #     return SequenceMatcher(None, a, b).ratio() >= threshold
-    
+
     hg = Homoglyphs()
     custom_translations = {}
     
@@ -741,7 +708,6 @@ try:
         if is_thai(text):
             return text.strip()
 
-        # --- Convert regional indicator emojis 🇦-🇿 into letters A-Z ---
         def regional_to_letter(char):
             code = ord(char)
             if 0x1F1E6 <= code <= 0x1F1FF:
@@ -850,7 +816,6 @@ try:
 
 
     def save_banwjson(type: str, data):
-        # load existing data if the file exists
         if os.path.exists(BANNED_WORDS_FILE):
             try:
                 with open(BANNED_WORDS_FILE, "r", encoding="utf-8") as f:
@@ -860,24 +825,20 @@ try:
         else:
             current = {}
 
-        # ensure keys exist
         current.setdefault("banned_words", [])
         current.setdefault("whitelisted_words", [])
         current.setdefault("translation", {})
 
-        # update the appropriate key
         t = type.lower()
         if t == "banned":
             current["banned_words"] = sorted(list(data))
         elif t == "whitelist":
             current["whitelisted_words"] = sorted(list(data))
         elif t == "translation":
-            # expect `data` to be a dict
             current["translation"] = dict(data)
         else:
             raise ValueError("mode must be 'banned', 'whitelist', or 'translation'")
 
-        # write back to file
         with open(BANNED_WORDS_FILE, "w", encoding="utf-8") as f:
             json.dump(current, f, ensure_ascii=False, indent=4)
 
@@ -983,7 +944,7 @@ try:
                     await message.delete()
                     now = time.time()
                     last_warn = recent_warnings.get(user.id, 0)
-                    if now - last_warn >= 5:  # Anti-spam: 5 sec cooldown
+                    if now - last_warn >= 5:
                         recent_warnings[user.id] = now
                         warn_msg = get_bot_message("silence", "warn", mention=user.mention)
                         await message.channel.send(warn_msg, delete_after=3)
@@ -992,7 +953,6 @@ try:
                 return
         
             def is_banned(text: str) -> bool:
-                # check against all banned words but skip whitelisted ones
                 for word in banned:
                     if word in text and not any(white in text for white in whitelist):
                         return True
@@ -1002,7 +962,6 @@ try:
                 is_banned(content)
                 and not (ctx.command and ctx.command.name in ["banword", "rmword","whitelistword","rmwhitelistword"])
             ):
-                # GOD role immunity
                 if any(role.id == 1411139316171931738 for role in message.author.roles):
                     logging.info(f"User {message.author} has GOD role, not timeouted.")
                     return
@@ -1111,13 +1070,11 @@ try:
         async def on_member_join(member):
             channel = bot.get_channel(target_channel_id)
             if channel:
-                # Get the mentions
                 guild_owner_mention = member.guild.owner.mention
                 bot_mention = bot.user.mention
                 bot_owner_user = await bot.fetch_user("1260198579067420722")
                 bot_owner_mention = bot_owner_user.mention
 
-                # Make the embed
                 embed = discord.Embed(
                     title="🎉 Welcome!",
                     description=(
@@ -1353,7 +1310,6 @@ try:
         async def session_info(ctx):
             """Show diagnostic session/system information (owner only)."""
             try:
-                # Date, Time, and Session ID
                 dtc = datetime.now()
                 dtc_utc = datetime.utcnow()
                 
@@ -1735,9 +1691,7 @@ try:
                     if len(content) < 1900:
                         await ctx.send(f"```\n{content}\n```")
                     else:
-                        # Send just the last 1900 chars for readability
                         await ctx.send(f"```{content[-1900:]}```")
-                        # Or send full log file as attachment
                         await ctx.send("Full log attached:", file=discord.File(path))
 
                 except Exception as e:
@@ -1761,7 +1715,6 @@ try:
                 players = status.players.online
                 latency = status.latency
 
-                # Add role mention only if "tagmcr" was provided
                 role_mention = f"<@&{MCSROLEID}>\n" if option == "tagmcr" else ""
 
                 await ctx.send(
@@ -1783,7 +1736,6 @@ try:
         @bot.command(name="mkpoll")
         async def make_poll(ctx, question: str, *args):
             """Create a poll. Usage: !mkpoll <question> <opt1> <opt2> ... <duration>"""
-            # Validation
             if len(args) < 2:
                 return await ctx.send("You need at least **2 options** and a **duration** (e.g. 1h, 3d, 1w).")
 
@@ -1821,7 +1773,7 @@ try:
             prefix = format_version_prefix(VERSION)
 
             bug_number = len(bugs) + 1
-            bug_id = f"{prefix}{bug_number:02d}"  # e.g. 100001, 100002
+            bug_id = f"{prefix}{bug_number:02d}"
 
             bug_data = {
                 "id": bug_id,
@@ -1896,13 +1848,11 @@ try:
 
             words = reason.split()
             if words and words[-1].lower() in hard_delete_triggers:
-                # Hard delete
                 data = [f for f in data if f.get("id") != entry_id]
                 save_feedback(data)
                 await ctx.reply(f"Feedback **#{entry_id}** completely removed from records.")
                 return
 
-            # Soft delete
             if entry.get("status") == "DELETED":
                 await ctx.reply(f"Feedback #{entry_id} is already deleted.")
                 return
@@ -1937,7 +1887,6 @@ try:
 
             logging.info(f"[COMMAND] jvc called by {ctx.author} | mode={mode} | id={id_or_none}")
 
-            # Case 1: no args -> join caller's VC
             if mode is None and id_or_none is None:
                 member = ctx.author
                 if not member.voice or not member.voice.channel:
@@ -1945,7 +1894,6 @@ try:
                     return
                 channel = member.voice.channel
 
-            # Normalize provided args
             elif id_or_none is None and mode is not None:
                 id_str = mode
                 mode_flag = "a"
@@ -1953,7 +1901,6 @@ try:
                 id_str = id_or_none
                 mode_flag = (mode or "").lower()
 
-            # Resolve channel if an ID was provided
             if not channel:
                 if not id_str or not id_str.isdigit():
                     await ctx.reply(get_bot_message("voice", "invalid_id"))
@@ -1977,25 +1924,21 @@ try:
                     await ctx.reply(get_bot_message("errors", "failed_to_send", error=str(e)))
                     return
 
-            # Connection logic with retries and informative messages
             async def attempt_connect(max_retries: int = 3, delay: int = 5) -> bool:
                 nonlocal existing_vc
                 for attempt in range(1, max_retries + 1):
                     try:
-                        # Already in target channel
                         if existing_vc and existing_vc.channel.id == channel.id:
                             await ctx.reply(get_bot_message("voice", "already_connected", channel=channel.name))
                             logging.info(f"[INFO] Already in channel {channel.name}")
                             return True
 
-                        # Move if connected elsewhere
                         if existing_vc:
                             await existing_vc.move_to(channel)
                             await ctx.reply(get_bot_message("voice", "moved_to", channel=channel.name))
                             logging.info(f"[INFO] Moved to {channel.name}")
                             return True
 
-                        # Connect anew
                         logging.info(f"[INFO] Attempt {attempt}: connecting to {channel.name} ({channel.id})...")
                         vc = await channel.connect(reconnect=False)
                         await ctx.reply(get_bot_message("voice", "connected_to", channel=channel.name, attempt=attempt))
@@ -2012,7 +1955,6 @@ try:
                         logging.exception(f"[ERROR] Unexpected connection error on attempt {attempt}: {e}")
                         await asyncio.sleep(delay)
 
-                # final failure
                 await ctx.reply(get_bot_message("voice", "connection_failed"))
                 return False
 
@@ -2060,7 +2002,6 @@ try:
 
             queue = get_queue(ctx)
 
-            # Try local file reference
             file_data = get_file(source)
             if file_data:
                 file_path, filename = file_data
@@ -2071,7 +2012,6 @@ try:
                     await play_next(ctx)
                 return
 
-            # Treat as URL
             queue.append(("url", source))
             await ctx.reply(get_bot_message("voice", "url_queued", source=source))
             logging.info(f"[VOICE] Queued URL {source} for guild {ctx.guild.id}")
@@ -2185,7 +2125,6 @@ try:
                 except Exception:
                     payload = str(val)
 
-                # keep message short if huge
                 max_len = 1800
                 if len(payload) > max_len:
                     truncated = payload[:max_len] + "\n... (truncated)"
@@ -2201,13 +2140,11 @@ try:
                 path = args[0]
                 new_raw = " ".join(args[1:]).strip()
 
-                # attempt JSON parse, fallback to string
                 try:
                     new_val = json.loads(new_raw)
                 except Exception:
                     new_val = new_raw
 
-                # find parent container and key/name
                 if "." in path:
                     parent_path, last = path.rsplit(".", 1)
                     parent, err = resolve(parent_path)
@@ -2218,14 +2155,12 @@ try:
                     parent = globals()
                     last = path
 
-                # set value
                 try:
                     if isinstance(parent, dict):
                         parent[last] = new_val
                     elif hasattr(parent, last):
                         setattr(parent, last, new_val)
                     else:
-                        # allow creating new global
                         if parent is globals():
                             globals()[last] = new_val
                         else:
@@ -2236,12 +2171,10 @@ try:
                     logging.exception("debug_var edit failed")
                     return
 
-                # persistence hooks for known datastructures
                 try:
                     if path.startswith("config_data") or (path == "config_data"):
                         save_json(CONFIG_FILE, config_data)
                     if path.startswith("BANNED_WORDS") or path.startswith("WHITELISTED_WORDS") or path.startswith("banned_words.json"):
-                        # sync sets if needed
                         if isinstance(BANNED_WORDS, set):
                             save_banwjson("banned", BANNED_WORDS)
                         if isinstance(WHITELISTED_WORDS, set):
@@ -2251,7 +2184,6 @@ try:
                 except Exception:
                     logging.exception("debug_var persistence hook failed")
 
-                # reply with new value and type
                 try:
                     payload = json.dumps(new_val, default=str, ensure_ascii=False, indent=2)
                 except Exception:
@@ -2283,20 +2215,17 @@ try:
                 try:
                     return bytes(s, "utf-8").decode("unicode_escape")
                 except Exception:
-                    # fallback: remove backslash escapes like \" or \\ but keep text
                     return re.sub(r'\\(.)', r'\1', s)
 
             a_val = None
             b_val = None
 
-            # key="value" style supporting escaped chars inside quotes
             m_a = re.search(r'a\s*=\s*"((?:\\.|[^"\\])*)"', raw_args)
             m_b = re.search(r'b\s*=\s*"((?:\\.|[^"\\])*)"', raw_args)
             if m_a and m_b:
                 a_val = _unescape(m_a.group(1))
                 b_val = _unescape(m_b.group(1))
 
-            # Fallback: positional args (split into two parts)
             if (a_val is None or b_val is None):
                 parts = raw_args.strip().split(None, 1)
                 if len(parts) >= 2:
@@ -2451,7 +2380,6 @@ try:
 
         console = ConsoleInterface(name="BestDiscordBotEver", version=str(globals().get("VERSION", "—")), prompt="console> ", banner=_banner)
 
-        # START
         async def _cmd_start(args):
             nonlocal console
             global bot_started, bot, bot_loop, startmessage, DEBUGB, session_id
@@ -2497,7 +2425,6 @@ try:
                 logging.exception("Failed to start bot")
                 print("Failed to start bot (see logs).")
 
-        # STOP
         async def _cmd_stop(args):
             global bot_started, bot_loop, manual_shutdown, stop_message, target_channel_id
             if not bot_started:
@@ -2533,20 +2460,16 @@ try:
             bot_started = False
             print("Bot stopped.")
 
-        # EXIT
         async def _cmd_exit(args):
             if bot_started and bot_loop:
-                # attempt graceful stop
                 await _cmd_stop([])
             print("Exiting console.")
-            # allow caller to stop process
             os._exit(0)
 
         async def _fexit(args):
             print("Console is not closed.")
             sys.exit()
             
-        # TARGCH
         async def _cmd_targch(args):
             global target_channel_id, config_data
             if not args or not args[0].isdigit():
@@ -2558,7 +2481,6 @@ try:
             logging.info(f"Target channel set to {target_channel_id}")
             print(f"Target channel set to {target_channel_id}")
 
-        # REPLY
         async def _cmd_reply(args):
             if len(args) < 2:
                 print("Usage: reply <message_id> <message>")
@@ -2572,12 +2494,9 @@ try:
 
             raw_msg = " ".join(args[1:])
             possible_override = None
-
-            # Detect optional channel override in {123456789012345678}
             match = re.search(r"\{(\d+)\}$", raw_msg)
             if match:
                 possible_override = int(match.group(1))
-                # Strip the {id} part from the message text
                 raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
 
             if not (bot_started and bot_loop):
@@ -2588,7 +2507,6 @@ try:
                 try:
                     ch_id = possible_override or target_channel_id
 
-                    # Fetch channel (try cache first, then fetch)
                     channel = bot.get_channel(ch_id)
                     if channel is None:
                         try:
@@ -2597,23 +2515,16 @@ try:
                             logging.warning(f"Could not fetch channel {ch_id}")
                             return
 
-                    # Apply placeholder replacement
                     msg_text = await replace_placeholders(channel, raw_msg)
-
-                    # Fetch the message to reply to
                     target_msg = await channel.fetch_message(message_to_re)
-
-                    # Send reply
                     await target_msg.reply(msg_text, mention_author=False)
                     logging.info(f"Replied to message {message_to_re} in channel {ch_id}.")
 
                 except Exception as e:
                     logging.exception(f"Failed to reply to message {message_to_re}: {e}")
 
-            # Schedule in bot loop safely
             asyncio.run_coroutine_threadsafe(reply_to_message(), bot_loop)
 
-        # SENDMSG
         async def _cmd_sendmsg(args):
             if not args:
                 print("Usage: sendmsg <message> [{channel_id}]")
@@ -2623,12 +2534,10 @@ try:
             override_channel_id = None
             possible_override = None
 
-            # Check if last arg is {channel_id}
             if raw_msg.endswith("}"):
                 match = re.search(r"\{(\d+)\}$", raw_msg)
                 if match:
                     possible_override = int(match.group(1))
-                    # remove {id} from the text
                     raw_msg = raw_msg[: raw_msg.rfind("{")].strip()
 
             if bot_started and bot_loop:
@@ -2643,10 +2552,8 @@ try:
                             logging.info(f"Channel {ch_id} not found.")
                             return
 
-                        # Replace placeholders and send files
                         msg_text = await replace_placeholders(channel, raw_msg)
 
-                        # Send remaining text if any
                         if msg_text.strip():
                             await channel.send(msg_text)
 
@@ -2659,7 +2566,6 @@ try:
             else:
                 print("Bot is not running.")
 
-        # FILE HANDLERS (sync wrappers)
         async def _cmd_addfile(args):
             if len(args) != 2:
                 print("Usage: addfile <ui|dir> <file_reference>")
@@ -2681,7 +2587,6 @@ try:
             del_file(args[0])
             print("File deleted (if existed).")
 
-        # SAYINVC
         async def _cmd_sayinvc(args):
             if not args:
                 print("Usage: sayinvc <text> [ovr]")
@@ -2715,7 +2620,6 @@ try:
 
             channel_id, message_id, emoji_arg = args
 
-            # Fetch the channel
             try:
                 channel = bot.get_channel(int(channel_id))
                 if channel is None:
@@ -2725,18 +2629,12 @@ try:
                 print("Invalid channel ID:", e)
                 return
 
-            # Fetch the message
             try:
                 message = await channel.fetch_message(int(message_id))
             except Exception as e:
                 print("Could not fetch message:", e)
                 return
 
-            # ----------------------------
-            # Handle the emoji
-            # ----------------------------
-
-            # 1. raw emoji "<:name:id>"
             if isinstance(emoji_arg, str) and emoji_arg.startswith("<:"):
                 try:
                     await message.add_reaction(emoji_arg)
@@ -2744,7 +2642,6 @@ try:
                     print("Failed to add raw emoji:", e)
                 return
 
-            # 2. emoji name
             if isinstance(emoji_arg, str) and not emoji_arg.isdigit():
                 emoji = bot.app_emojis_by_name.get(emoji_arg)
                 if emoji is None:
@@ -2756,7 +2653,6 @@ try:
                     print("Failed to add emoji:", e)
                 return
 
-            # 3. emoji ID
             try:
                 emoji_id = int(emoji_arg)
             except ValueError:
@@ -2806,7 +2702,7 @@ try:
                 return
 
             status = args[0]
-            TEXT = " ".join(args[1:]).strip('"')   # join + remove surrounding quotes
+            TEXT = " ".join(args[1:]).strip('"') 
 
             config_data["config"]["stattype"] = status
             config_data["config"]["stattext"] = TEXT
@@ -2815,7 +2711,6 @@ try:
             await setstat(status, TEXT)
             logging.info(f"Set status text to {TEXT} ({status}).")
                 
-        # register commands
         console.add_command("start", _cmd_start, "Start the bot: start [start_message] {debug}")
         console.add_command("stop", _cmd_stop, "Stop the bot: stop [message|none]")
         console.add_command("exit", _cmd_exit, "Exit console (will stop bot if running)")
@@ -2831,7 +2726,6 @@ try:
         console.add_command("eval",_eval,"Eveluate string: eval STR")
         console.add_command("statset", _statusset, "Set status text: <type> <text>")
         
-        # start console (blocking)
         try:
             asyncio.run(console.start())
         except Exception:
