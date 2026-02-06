@@ -36,7 +36,6 @@ from unidecode import unidecode
 from gtts import gTTS
 from typing import Optional
 from conintf_ptk import ConsoleInterface
-import WinTmp
 
 try:
     global DEBUGB
@@ -180,15 +179,24 @@ try:
                 self.handleError(record)
 
     class RotationHandler(TimedRotatingFileHandler):
-        """Custom handler that runs upload_log.bat after rotation."""
+        """Custom handler that runs log upload after rotation."""
 
         def doRollover(self):
             super().doRollover()
             try:
-                subprocess.Popen("upload_log.bat", cwd=os.getcwd())
-                logging.info("Triggered log upload batch file.")
+                # Cross-platform log upload implementation
+                # On Windows, try to run upload_log.bat; on Unix-like systems, use a Python function
+                if platform.system() == "Windows":
+                    try:
+                        subprocess.Popen("upload_log.bat", cwd=os.getcwd())
+                        logging.info("Triggered log upload batch file.")
+                    except Exception as e:
+                        logging.warning(f"Failed to run upload_log.bat: {e}")
+                else:
+                    # On Linux/macOS, we could implement a Python-based upload function here
+                    logging.info("Log rotation occurred. Consider implementing cross-platform upload handler.")
             except Exception as e:
-                logging.warning(f"Failed to run upload_log.bat: {e}")
+                logging.warning(f"Log rotation handler error: {e}")
 
     log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
     os.makedirs(log_dir, exist_ok=True)
@@ -276,9 +284,13 @@ try:
                 print("Would you like to try and decrypt the token (IF YOU ARE TONPALMUNMAIN, IF NOT FUCK OFF AND MAKE A NEW ONE)")
                 result = input(">>>")
                 if result == "y" or None:
-                    os.system("\.venv\Scripts\activate")
-                    print("USE> decrypt token.config.enc token.config")
-                    os.system("python token/tokener.py")
+                    # Cross-platform virtual environment activation
+                    venv_script = os.path.join(".venv", "Scripts", "activate") if platform.system() == "Windows" else os.path.join(".venv", "bin", "activate")
+                    print(f"USE> source {venv_script} && decrypt token.config.enc token.config" if platform.system() != "Windows" else f"USE> {venv_script} && decrypt token.config.enc token.config")
+                    print("USE> python token/tokener.py")
+                    # Alternatively, run directly with the venv's python
+                    venv_python = os.path.join(".venv", "Scripts", "python.exe") if platform.system() == "Windows" else os.path.join(".venv", "bin", "python")
+                    subprocess.run([venv_python, "token/tokener.py"])
     except FileNotFoundError:
         logging.critical("token.config not found. Create the file with your bot token.")
         sys.exit(1)
@@ -476,7 +488,17 @@ try:
         source_type, source = item
 
         import shutil
-        ffmpeg_exec = shutil.which("ffmpeg") or r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
+        ffmpeg_exec = shutil.which("ffmpeg")
+        
+        # Fallback paths for different OSes
+        if not ffmpeg_exec:
+            if platform.system() == "Windows":
+                ffmpeg_exec = r"C:\Program Files\FFmpeg\bin\ffmpeg.exe"
+            elif platform.system() == "Darwin":  # macOS
+                ffmpeg_exec = "/usr/local/bin/ffmpeg"
+            else:  # Linux and other Unix-like systems
+                ffmpeg_exec = "/usr/bin/ffmpeg"
+        
         logging.info(f"Using ffmpeg executable: {ffmpeg_exec}")
 
         try:
@@ -1385,21 +1407,6 @@ try:
 
                 cpu_temp_str = "N/A"
                 gpu_temp_str = "N/A"
-                try:
-                    cpu_temps = WinTmp.CPU_Temps()
-                    if cpu_temps:
-                        avg_cpu_temp = sum(cpu_temps) / len(cpu_temps)
-                        cpu_temp_str = f"{avg_cpu_temp:.1f}°C"
-                except Exception as e:
-                    logging.warning(f"Failed to get CPU temps: {e}")
-
-                try:
-                    gpu_temps = WinTmp.GPU_Temps()
-                    if gpu_temps:
-                        avg_gpu_temp = sum(gpu_temps) / len(gpu_temps)
-                        gpu_temp_str = f"{avg_gpu_temp:.1f}°C"
-                except Exception as e:
-                    logging.warning(f"Failed to get GPU temps: {e}")
 
                 embed = discord.Embed(
                     title="Session Information",

@@ -13,4 +13,3 @@ pynacl
 pytesseract
 pillow
 conintf-ptk
-wintmp==1.2.0
