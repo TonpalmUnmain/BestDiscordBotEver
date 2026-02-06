@@ -787,6 +787,7 @@ try:
         return "".join(output).strip()
 
     # ===== BANNED WORDS =====
+    bwdisable = True
     BANNED_WORDS_FILE = "banned_words.json"
 
     def load_banwjson(type: str):
@@ -960,7 +961,7 @@ try:
 
             if (
                 is_banned(content)
-                and not (ctx.command and ctx.command.name in ["banword", "rmword","whitelistword","rmwhitelistword"])
+                and not (ctx.command and ctx.command.name in ["banword", "rmword","whitelistword","rmwhitelistword"]) and not bwdisable
             ):
                 if any(role.id == 1411139316171931738 for role in message.author.roles):
                     logging.info(f"User {message.author} has GOD role, not timeouted.")
@@ -1479,30 +1480,21 @@ try:
                 await ctx.send("Error retrieving session info.")
                 logging.error(f"Error: {e}")
                 
-        @bot.command(name="eval")
+        @bot.command(name="exec")
         @commands.is_owner()
-        async def eval_str(ctx, *, code: str = None):
-            """Evaluate Python code (owner only). Usage: !eval <code>"""
+        async def exec_str(ctx, *, code: str = None):
+            """execute Python code (owner only). Usage: !exec <code>"""
             if not code:
-                await ctx.send("Usage: `!eval <code>`")
+                await ctx.send("Usage: `!exec <code>`")
                 return
             
             try:
-                result = eval(code, {"__builtins__": {}}, {
-                    "bot": bot,
-                    "ctx": ctx,
-                    "discord": discord,
-                    "asyncio": asyncio,
-                    "logging": logging,
-                    "config_data": config_data,
-                    "user_info": user_info,
-                    "BANNED_WORDS": BANNED_WORDS,
-                })
+                result = exec(code)
                 await ctx.send(f"Result: `{result}`")
-                logging.info(f"[EVAL] {ctx.author} evaluated: {code}")
+                logging.info(f"[EXEC] {ctx.author} executed: {code}")
             except Exception as e:
                 await ctx.send(f"Error: `{type(e).__name__}: {e}`")
-                logging.error(f"[EVAL] Error by {ctx.author}: {e}")
+                logging.error(f"[EXEC] Error by {ctx.author}: {e}")
                 
         @bot.command(name="banword")
         @commands.has_permissions(administrator=True)
@@ -2677,24 +2669,11 @@ try:
                 return
             bot.loop.create_task(_add_reaction(args))
 
-        def _eval(args):
-            if len(args) > 1:
-                print("Calm down, only 1.")
-            elif len(args) == 1:
-                try:
-                    eval(args[0], {"__builtins__": {}}, {
-                        "bot": bot,
-                        "discord": discord,
-                        "asyncio": asyncio,
-                        "logging": logging,
-                        "config_data": config_data,
-                        "user_info": user_info,
-                        "BANNED_WORDS": BANNED_WORDS,
-                    })
-                except Exception as e:
-                    logging.info(f"EVAL failed: {e}")
-            else:
-                print("??!")
+        async def _exec(args):
+            try:
+                exec(' '.join(args))
+            except Exception as e:
+                logging.info(f"EXEC failed: {e}")
         
         async def _statusset(args):
             if len(args) < 2:
@@ -2723,7 +2702,7 @@ try:
         console.add_command("delfile", _cmd_delfile, "Delete file reference: delfile <ref>")
         console.add_command("sayinvc", _cmd_sayinvc, "TTS into VC: sayinvc <text> [ovr]")
         console.add_command("react", _react, "Add reaction to message: react <channel_id> <message_id> <emoji_name|emoji_id>")
-        console.add_command("eval",_eval,"Eveluate string: eval STR")
+        console.add_command("exec",_exec,"Execute string: exec <str>")
         console.add_command("statset", _statusset, "Set status text: <type> <text>")
         
         try:
