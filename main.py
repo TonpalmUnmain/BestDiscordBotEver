@@ -20,7 +20,7 @@ import socket
 import getpass
 import io
 import psutil
-import GPUtil
+import pynvml
 import traceback
 from mcstatus import BedrockServer
 import tkinter as tk
@@ -1370,20 +1370,29 @@ try:
                         disk_info.append(f"{d.device} ({d.mountpoint}): Not ready")
 
                 gpu_info = []
-                if GPUtil:
-                    try:
-                        gpus = GPUtil.getGPUs()
-                        if gpus:
-                            for gpu in gpus:
-                                gpu_info.append(
-                                    f"{gpu.name} ({gpu.memoryTotal}MB) - {gpu.load * 100:.1f}% load"
-                                )
-                        else:
-                            gpu_info.append("No GPU detected")
-                    except Exception:
-                        gpu_info.append("Error retrieving GPU info")
-                else:
-                    gpu_info.append("GPUtil not installed")
+
+                try:
+                    import pynvml
+                    pynvml.nvmlInit()
+
+                    count = pynvml.nvmlDeviceGetCount()
+                    if count == 0:
+                        gpu_info.append("No GPU detected")
+                    else:
+                        for i in range(count):
+                            handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+
+                            name = pynvml.nvmlDeviceGetName(handle).decode()
+                            mem = pynvml.nvmlDeviceGetMemoryInfo(handle)
+                            util = pynvml.nvmlDeviceGetUtilizationRates(handle)
+
+                            gpu_info.append(
+                                f"{name} ({mem.total // (1024**2)}MB) - {util.gpu:.1f}% load"
+                            )
+
+                except Exception:
+                    gpu_info.append("Error retrieving GPU info")
+
 
                 net_if_addrs = psutil.net_if_addrs()
                 net_info = []
