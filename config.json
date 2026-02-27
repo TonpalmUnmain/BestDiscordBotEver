@@ -1,0 +1,28 @@
+{
+    "config": {
+        "version": "3.2.0",
+        "author": "TonpalmUnmain",
+        "default_target_channel_id": "1371357608904228924",
+        "admin_role_id": "1411139316171931738",
+        "command_prefix": "!",
+        "bot_test_channel_id": "1399900695993253970",
+        "ffmpeg_dir": "",
+        "stattype": "play",
+        "stattext": "I'm not hungry, or am I?"
+    },
+    "MCS": {
+        "mcsAdress": "none-missile.gl.at.ply.gg ",
+        "mcsPort": 9260,
+        "mcsChID": 1421497953834631319,
+        "mcsDelay": 3600,
+        "mcsRoleID": "1394542459538640977"
+    },
+    "guilds": {
+        "1371357608459501640": {
+            "target_channel_id": "1371357608904228924"
+        },
+        "1436324817149231176": {
+            "target_channel_id": "1476883457434194021"
+        }
+    }
+}
