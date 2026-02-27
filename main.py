@@ -36,6 +36,8 @@ from unidecode import unidecode
 from gtts import gTTS
 from typing import Optional
 from conintf_ptk import ConsoleInterface
+from collections import defaultdict  # used for per-guild silenced sets
+import contextvars  # for guild context tracking
 
 try:
     global DEBUGB
@@ -43,6 +45,17 @@ try:
     def debug(txt: str, id: str):
         if DEBUGB == True:
             print("Debug Print ", id, ": ",txt)
+    
+    # ===== GUILD CONTEXT FOR LOGGING =====
+    current_guild_context = contextvars.ContextVar('current_guild', default={'id': None, 'name': 'Unknown'})
+    
+    def set_guild_context(guild_id: int, guild_name: str):
+        """Set the current guild context for logging."""
+        current_guild_context.set({'id': guild_id, 'name': guild_name})
+    
+    def get_guild_context():
+        """Get the current guild context."""
+        return current_guild_context.get()
         
     # ===== SETUP =====
     if hasattr(sys.stdout, "buffer"):
@@ -166,6 +179,70 @@ try:
         logging.info(f"Deleted reference '{file_reference}'")
     
     # ===== LOGGING SETUP =====
+    class GuildAwareFormatter(logging.Formatter):
+        """Formatter that includes guild context in log messages."""
+        def format(self, record):
+            guild_info = get_guild_context()
+            guild_str = f' in "{guild_info["name"]}"' if guild_info['name'] != 'Unknown' else ""
+            record.msg = str(record.msg)  # ensure message is string
+            formatted = super().format(record)
+            # insert guild info after timestamp and before [LEVEL]
+            parts = formatted.split('] ', 1)
+            if len(parts) == 2 and '[' in parts[0]:
+                level_part = parts[1].split(']', 1)[0]
+                remainder = parts[1].split('] ', 1)[1] if '] ' in parts[1] else parts[1]
+                return f"{parts[0]}]{guild_str} [{level_part}] {remainder}"
+            return formatted
+
+    class GuildRoutingFileHandler(TimedRotatingFileHandler):
+        """File handler that routes logs to guild-specific directories and a main log."""
+        def __init__(self, base_dir="log"):
+            self.base_dir = base_dir
+            self.guild_handlers = {}  # cache of handlers per guild
+            self.main_log_dir = f"{base_dir}/{datetime.now().strftime('%Y-%m-%d')}"
+            os.makedirs(self.main_log_dir, exist_ok=True)
+            main_log_file = f"{self.main_log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
+            super().__init__(main_log_file, when="h", interval=6, backupCount=14, encoding="utf-8")
+
+        def get_guild_handler(self, guild_id, guild_name):
+            """Get or create a handler for a specific guild."""
+            key = str(guild_id)
+            if key not in self.guild_handlers:
+                guild_safe_name = re.sub(r'[^a-zA-Z0-9_-]', '_', guild_name)
+                guild_log_dir = f"{self.base_dir}/{guild_safe_name}/{datetime.now().strftime('%Y-%m-%d')}"
+                os.makedirs(guild_log_dir, exist_ok=True)
+                guild_log_file = f"{guild_log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
+                handler = TimedRotatingFileHandler(guild_log_file, when="h", interval=6, backupCount=14, encoding="utf-8")
+                handler.setFormatter(GuildAwareFormatter("%(asctime)s [%(levelname)s] %(message)s"))
+                self.guild_handlers[key] = handler
+            return self.guild_handlers[key]
+
+        def emit(self, record):
+            # always write to main log
+            super().emit(record)
+            # also write to guild-specific log if guild context is set
+            guild_info = get_guild_context()
+            if guild_info['id'] is not None:
+                guild_handler = self.get_guild_handler(guild_info['id'], guild_info['name'])
+                try:
+                    guild_handler.emit(record)
+                except Exception:
+                    self.handleError(record)
+
+        def doRollover(self):
+            super().doRollover()
+            try:
+                if platform.system() == "Windows":
+                    try:
+                        subprocess.Popen("upload_log.bat", cwd=os.getcwd())
+                        super().emit(logging.LogRecord(
+                            "logging", logging.INFO, "", 0, "Triggered log upload batch file.", (), None
+                        ))
+                    except Exception as e:
+                        pass
+            except Exception as e:
+                pass
+
     class PTKHandler(logging.Handler):
         lock = threading.Lock()
         
@@ -178,39 +255,15 @@ try:
             except Exception:
                 self.handleError(record)
 
-    class RotationHandler(TimedRotatingFileHandler):
-        """Custom handler that runs log upload after rotation."""
-
-        def doRollover(self):
-            super().doRollover()
-            try:
-                # Cross-platform log upload implementation
-                # On Windows, try to run upload_log.bat; on Unix-like systems, use a Python function
-                if platform.system() == "Windows":
-                    try:
-                        subprocess.Popen("upload_log.bat", cwd=os.getcwd())
-                        logging.info("Triggered log upload batch file.")
-                    except Exception as e:
-                        logging.warning(f"Failed to run upload_log.bat: {e}")
-                else:
-                    # On Linux/macOS, we could implement a Python-based upload function here
-                    logging.info("Log rotation occurred. Consider implementing cross-platform upload handler.")
-            except Exception as e:
-                logging.warning(f"Log rotation handler error: {e}")
-
-    log_dir = f"log/{datetime.now().strftime('%Y-%m-%d')}"
-    os.makedirs(log_dir, exist_ok=True)
-
-    log_file = f"{log_dir}/log_{datetime.now().strftime('%H-%M-%S')}.txt"
-
-    file_handler = RotationHandler(log_file, when="h", interval=6, backupCount=14, encoding="utf-8")
+    # Initialize handlers
+    routing_handler = GuildRoutingFileHandler(base_dir="log")
     console_handler = PTKHandler()
 
-    formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
-    file_handler.setFormatter(formatter)
-    console_handler.setFormatter(formatter)
+    # Set formatters
+    routing_handler.setFormatter(GuildAwareFormatter("%(asctime)s [%(levelname)s] %(message)s"))
+    console_handler.setFormatter(GuildAwareFormatter("%(asctime)s [%(levelname)s] %(message)s"))
 
-    logging.basicConfig(level=logging.INFO, handlers=[file_handler, console_handler])
+    logging.basicConfig(level=logging.INFO, handlers=[routing_handler, console_handler])
 
     log = logging.getLogger(__name__)
 
@@ -245,6 +298,42 @@ try:
             logging.error(f"Failed to read {file_path}: invalid JSON format.")
             return None
 
+    def create_config_wizard():
+        """Interactive wizard to generate a basic config.json when none exists."""
+        print("\nNo valid config.json found. Running interactive configuration wizard.")
+        cfg = {"config": {}}
+        # basic config entries
+        cfg["config"]["version"] = input("Version (default 3.1.0): ").strip() or "3.1.0"
+        cfg["config"]["author"] = input("Author name: ").strip() or "Unknown"
+        cfg["config"]["default_target_channel_id"] = input("Default target channel ID (optional): ").strip()
+        cfg["config"]["admin_role_id"] = input("Admin role ID (optional): ").strip()
+        cfg["config"]["command_prefix"] = input("Command prefix (default !): ").strip() or "!"
+        cfg["config"]["bot_test_channel_id"] = input("Bot test channel ID (optional): ").strip()
+        cfg["config"]["ffmpeg_dir"] = input("FFmpeg directory (optional): ").strip()
+
+        # guild-level section start empty
+        cfg.setdefault("guilds", {})
+
+        # MCS settings
+        print("\nMinecraft server monitoring (optional) settings:")
+        mcs = {}
+        mcs["mcsAdress"] = input("MCS address: ").strip()
+        try:
+            mcs["mcsPort"] = int(input("MCS port (default 9260): ").strip() or 9260)
+        except ValueError:
+            mcs["mcsPort"] = 9260
+        mcs["mcsChID"] = input("MCS channel ID (optional): ").strip()
+        try:
+            mcs["mcsDelay"] = int(input("MCS delay seconds (default 3600): ").strip() or 3600)
+        except ValueError:
+            mcs["mcsDelay"] = 3600
+        mcs["mcsRoleID"] = input("MCS role ID (optional): ").strip()
+        cfg["MCS"] = mcs
+
+        save_json(CONFIG_FILE, cfg)
+        print(f"Configuration saved to {CONFIG_FILE}. Please edit further if needed and rerun the bot.")
+        return cfg
+
     def save_json(file_path, data):
         try:
             with open(file_path, "w", encoding="utf-8") as f:
@@ -269,8 +358,15 @@ try:
             logging.error(f"Failed to write to {file_path}: {e}")
 
     config_data = load_json(CONFIG_FILE)
-    if not config_data:
-        sys.exit(1)
+    if not config_data or "config" not in config_data:
+        # attempt interactive wizard to create a new config
+        try:
+            config_data = create_config_wizard()
+        except Exception as e:
+            logging.error(f"Configuration wizard failed: {e}")
+            sys.exit(1)
+    # ensure basic structure exists
+    config_data.setdefault("config", {})
 
     user_info = load_json(USER_INFO_FILE, default={"discord_users": {}, "last_saved": None})
     if not user_info or "discord_users" not in user_info:
@@ -294,11 +390,64 @@ try:
     except FileNotFoundError:
         logging.critical("token.config not found. Create the file with your bot token.")
         sys.exit(1)
-    target_channel_id = int(config_data["config"]["default_target_channel_id"]) or None
-    silenced_users = set()
-    silenced_roles = set()
-    recent_warnings = {}
-    
+    # backward compatible default (global) for any guild that doesn't override
+    target_channel_id = int(config_data["config"].get("default_target_channel_id") or 0) or None
+
+    # per-guild silenced users/roles
+    silenced_users = defaultdict(set)   # guild_id -> set(user_id)
+    silenced_roles = defaultdict(set)   # guild_id -> set(role_id)
+    recent_warnings = {}  # still global per-user
+
+    # ===== MULTI-GUILD CONFIG HELPERS =====
+    # store per-guild settings under config_data["guilds"]
+    config_data.setdefault("guilds", {})
+
+    def get_guild_config(guild_id: int) -> dict:
+        return config_data["guilds"].setdefault(str(guild_id), {})
+
+    def get_guild_setting(guild_id: int, key: str, default=None):
+        return get_guild_config(guild_id).get(key, default)
+
+    def set_guild_setting(guild_id: int, key: str, value):
+        cfg = get_guild_config(guild_id)
+        cfg[key] = str(value)
+        save_json(CONFIG_FILE, config_data)
+
+    def get_target_channel_id_for_guild(guild_id: int):
+        # return a numeric channel id, falling back to global default
+        val = get_guild_setting(guild_id, "target_channel_id")
+        if val:
+            try:
+                return int(val)
+            except ValueError:
+                return None
+        return target_channel_id
+
+    # ===== CONFIG EDIT UTILS =====
+    def set_config_value(dot_path: str, value):
+        """Set a nested key in config_data given a dot-separated path."""
+        parts = dot_path.split(".")
+        d = config_data
+        for part in parts[:-1]:
+            if part not in d or not isinstance(d[part], dict):
+                d[part] = {}
+            d = d[part]
+        d[parts[-1]] = value
+        save_json(CONFIG_FILE, config_data)
+
+    def get_config_value(dot_path: str):
+        parts = dot_path.split(".")
+        d = config_data
+        for part in parts:
+            if not isinstance(d, dict) or part not in d:
+                return None
+            d = d[part]
+        return d
+
+    def get_target_channel_for_guild(guild):
+        cid = get_target_channel_id_for_guild(guild.id)
+        return bot.get_channel(cid) if cid else None
+
     # ===== VERSION INFO =====
     VERSION = config_data["config"]["version"]
     AUTHOR = config_data["config"]["author"]
@@ -443,10 +592,11 @@ try:
     bot = None
     bot_loop = None
     manual_shutdown = False
+    filtered_guild_ids = set()  # for fcsguild log filtering
 
     # ===== MESSAGES =====
     startmessage: str | None = None
-    stopmessage: str | None = None
+    stop_message: str | None = None  # renamed from stopmessage for consistency
 
     # ===== AUDIO =====
     guild_queues = {}
@@ -673,21 +823,35 @@ try:
         bot_started = True
         logging.info("Bot started.")
 
-    async def stopsession(message: str = None): # FOR INTERNAL USE ONLY
+    async def stopsession(message: str = None, guild=None): # FOR INTERNAL USE ONLY
+        """Shut down the bot and optionally post a message to a specific guild's configured channel.
+        If `guild` is None the message is broadcast to every guild using its configured channel.
+        """
         global bot_started
         if not bot_started:
             logging.info("Bot is not running.")
             return
 
         logging.info("Bot stopped. Closing connection...")
-        if stopmessage:
-            channel = bot.get_channel(target_channel_id)
-            if channel:
-                try:
-                    await channel.send(message)
-                    logging.info(f"Sent stop message to channel ID: {target_channel_id}")
-                except Exception as e:
-                    logging.error(f"Failed to send stop message: {e}")
+        if stop_message and message:
+            if guild is not None:
+                channel = get_target_channel_for_guild(guild)
+                if channel:
+                    try:
+                        await channel.send(message)
+                        logging.info(f"Sent stop message to channel ID: {channel.id} for guild {guild.id}")
+                    except Exception as e:
+                        logging.error(f"Failed to send stop message in guild {guild.id}: {e}")
+            else:
+                # broadcast to all guilds
+                for g in bot.guilds:
+                    channel = get_target_channel_for_guild(g)
+                    if channel:
+                        try:
+                            await channel.send(message)
+                            logging.info(f"Sent stop message to channel ID: {channel.id} for guild {g.id}")
+                        except Exception as e:
+                            logging.error(f"Failed to send stop message in guild {g.id}: {e}")
         try:
             await bot.close()
         except Exception as e:
@@ -912,6 +1076,12 @@ try:
         async def on_ready():
             global startmessage
             logging.info(f"Logged in as {bot.user} (ID: {bot.user.id})")
+            # make sure every guild has an entry in the persistent config
+            for guild in bot.guilds:
+                cfg = get_guild_config(guild.id)
+                if "target_channel_id" not in cfg and target_channel_id:
+                    cfg["target_channel_id"] = str(target_channel_id)
+            save_json(CONFIG_FILE, config_data)
             
             stattype = config_data["config"]["stattype"]
             stattext = config_data["config"]["stattext"]
@@ -925,13 +1095,15 @@ try:
                 logging.info("No startmessage set.")
                 return
 
-            channel = bot.get_channel(target_channel_id)
-            if channel:
-                try:
-                    await channel.send(startmessage)
-                    logging.info(f"Sent startup message to channel ID: {target_channel_id}")
-                except Exception as e:
-                    logging.error(f"Failed to send startup message: {e}")
+            # send startup message to each guild's configured channel
+            for guild in bot.guilds:
+                channel = get_target_channel_for_guild(guild)
+                if channel:
+                    try:
+                        await channel.send(startmessage)
+                        logging.info(f"Sent startup message to channel ID: {channel.id} for guild {guild.id}")
+                    except Exception as e:
+                        logging.error(f"Failed to send startup message in guild {guild.id}: {e}")
 
             if not auto_save_users.is_running():
                 auto_save_users.start()
@@ -939,7 +1111,20 @@ try:
             await auto_save_users()
                 
         @bot.event
+        async def on_guild_join(guild):
+            # ensure configuration entry exists for the guild (copy global defaults)
+            cfg = config_data.setdefault("guilds", {})
+            if str(guild.id) not in cfg:
+                cfg[str(guild.id)] = {"target_channel_id": config_data["config"].get("default_target_channel_id")}
+                save_json(CONFIG_FILE, config_data)
+                logging.info(f"Initialized configuration for new guild {guild.id}")
+
+        @bot.event
         async def on_message(message):
+            # set guild context for logging
+            if message.guild:
+                set_guild_context(message.guild.id, message.guild.name)
+            
             logging.info(
                 f"{message.id}:{message.author} ({message.author.id}) in #{message.channel.name} ({message.channel.id}): {message.content}"
             )
@@ -962,7 +1147,9 @@ try:
             whitelist = {normalize_message(w) for w in load_banwjson("whitelist")}
 
             user = message.author
-            if (user.id in silenced_users or any(r.id in silenced_roles for r in user.roles)) and user.id != owner.id:
+            # check per-guild silenced lists
+            guild_id = message.guild.id if message.guild else None
+            if (guild_id and ((user.id in silenced_users.get(guild_id, set())) or any(r.id in silenced_roles.get(guild_id, set()) for r in user.roles))) and user.id != owner.id:
                 try:
                     await message.delete()
                     now = time.time()
@@ -1028,6 +1215,10 @@ try:
 
         @bot.event
         async def on_message_edit(before, after):
+            # set guild context for logging
+            if after.guild:
+                set_guild_context(after.guild.id, after.guild.name)
+            
             if after.author.bot:
                 return
 
@@ -1062,6 +1253,7 @@ try:
                     
         @bot.event
         async def on_voice_state_update(member, before, after):
+            set_guild_context(member.guild.id, member.guild.name)
             if before.channel is None and after.channel is not None:
                 logging.info(f"{member} joined {after.channel.name}")
             if before.channel is not None and after.channel is None:
@@ -1091,7 +1283,8 @@ try:
                            
         @bot.event
         async def on_member_join(member):
-            channel = bot.get_channel(target_channel_id)
+            set_guild_context(member.guild.id, member.guild.name)
+            channel = get_target_channel_for_guild(member.guild)
             if channel:
                 guild_owner_mention = member.guild.owner.mention
                 bot_mention = bot.user.mention
@@ -1115,10 +1308,12 @@ try:
 
                 await channel.send(embed=embed)
         async def on_member_remove(member):
+            set_guild_context(member.guild.id, member.guild.name)
             logging.info(f"{member} left the server")
 
         @bot.event
         async def on_member_update(before, after):
+            set_guild_context(before.guild.id, before.guild.name)
             if before.communication_disabled_until != after.communication_disabled_until:
                 
                 if after.communication_disabled_until is not None:
@@ -1190,10 +1385,12 @@ try:
 
         @bot.event
         async def on_member_ban(guild, user):
+            set_guild_context(guild.id, guild.name)
             logging.info(f"{user} was banned from {guild.name}")
 
         @bot.event
         async def on_member_unban(guild, user):
+            set_guild_context(guild.id, guild.name)
             logging.info(f"{user} was unbanned from {guild.name}")
 
         @bot.event
@@ -1243,7 +1440,8 @@ try:
                     f"`{CMD_PREFIX}pewthyself` - Shutdown bot (owner)\n"
                     f"`{CMD_PREFIX}deplete [ms|sec|min|hr|d] [value]` - Delayed shutdown\n"
                     f"`{CMD_PREFIX}seelog [date] [filename]` or `seelog recent` - View logs\n"
-                    f"`{CMD_PREFIX}cfch [channel_id|current]` - Change target channel"
+                    f"`{CMD_PREFIX}edit <path> <value>` - Edit config.json key (owner)\n"
+                    f"`{CMD_PREFIX}cfch [channel_id|current]` - Change target channel for this guild (admin)"
                 ),
                 inline=False
             )
@@ -1444,7 +1642,7 @@ try:
                         f"**Discord.py:** `{discord_ver}`\n"
                         f"**Libraries:** {libs}\n"
                         f"**Bot Version:** `{VERSION}`"
-                        f"**Message Version:** `{get_bot_message("v")}`"
+                        f"**Message Version:** `{get_bot_message("v")}"
                     ),
                     inline=False,
                 )
@@ -1502,7 +1700,13 @@ try:
             except Exception as e:
                 await ctx.send(f"Error: `{type(e).__name__}: {e}`")
                 logging.error(f"[EXEC] Error by {ctx.author}: {e}")
-                
+        
+        @bot.command(name="bitchvariable")
+        async def bitch(ctx):
+            bitch = ctx.guild.get_member(913994744953196614)
+            await ctx.send(f"Bitch variable set to: {bitch.mention}")
+            await ctx.send("bozo bitch")
+                    
         @bot.command(name="banword")
         @commands.has_permissions(administrator=True)
         async def ban_word(ctx, *, word: str):
@@ -1590,7 +1794,7 @@ try:
         @commands.is_owner()
         async def sessionend(ctx):
             """Shut down the bot gracefully (owner only)."""
-            await stopsession(get_bot_message("shutdown", mention=ctx.author.mention))
+            await stopsession(get_bot_message("shutdown", mention=ctx.author.mention), guild=ctx.guild)
 
         @bot.command(name="version")
         async def version_command(ctx):
@@ -1634,69 +1838,167 @@ try:
             seconds = value * units[type]
             await ctx.send(get_bot_message("responses", "deplete_countdown", seconds=seconds))
             await asyncio.sleep(seconds)
-            await stopsession(get_bot_message("shutdown", mention=ctx.author.mention))
+            await stopsession(get_bot_message("shutdown", mention=ctx.author.mention), guild=ctx.guild)
             global manual_shutdown
             manual_shutdown = True
+
+        @bot.command(name="edit")
+        @commands.is_owner()
+        async def edit_config(ctx, path: str, *, value: str):
+            """Edit a value in config.json.
+            Usage: !edit config.version 1.2.3
+            The path is dot-separated and the value is stored as text.
+            (Owner only)
+            """
+            try:
+                set_config_value(path, value)
+                await ctx.send(f"Config updated: {path} = {value}")
+            except Exception as e:
+                await ctx.send(f"Failed to update config: {e}")
 
         @bot.command(name="cfch")
         @commands.has_permissions(administrator=True)
         async def cfch(ctx, channel_id: str):
-            """Change the default target channel. Use 'current' to set to the invoking channel (admin only)."""
-            global target_channel_id
+            """Change the target channel for this server. Use 'current' to set to the invoking channel (admin only)."""
             if channel_id.lower() == "current":
-                target_channel_id = ctx.channel.id
-                await ctx.send(f"Target channel set to this channel: {ctx.channel.name} (ID: {target_channel_id})")
+                new_id = ctx.channel.id
             else:
                 try:
                     new_id = int(channel_id)
-                    channel = bot.get_channel(new_id)
-                    if channel:
-                        target_channel_id = new_id
-                        await ctx.send(f"Target channel set to {channel.name} (ID: {target_channel_id})")
-                    else:
-                        await ctx.send("Invalid channel ID.")
                 except ValueError:
                     await ctx.send("Please provide a valid channel ID or use current.")
+                    return
+            channel = bot.get_channel(new_id)
+            if channel:
+                set_guild_setting(ctx.guild.id, "target_channel_id", new_id)
+                await ctx.send(f"Target channel for this server set to {channel.name} (ID: {new_id})")
+            else:
+                await ctx.send("Invalid channel ID.")
 
         @bot.command(name="seelog")
         @commands.has_permissions(administrator=True)
-        async def see_log(ctx, date: str = None, filename: str = None):
-            """Send the specified log file or the most recent log when using 'recent' (admin only).
-            Usage: !seelog recent OR !seelog YYYY-MM-DD filename.log"""
-            logging.info(f"[{ctx.author} ({ctx.author.id})] Called see_log with date: {date}, filename: {filename}")
+        async def see_log(ctx, guild_or_date: str = None, date_or_filename: str = None, filename: str = None):
+            """Send the specified log file or the most recent log.
+            Usage: !seelog recent - most recent main log
+                   !seelog GUILDNAME recent - most recent guild log  
+                   !seelog GUILDNAME YYYY-MM-DD filename.log - specific guild log
+                   !seelog YYYY-MM-DD filename.log - specific main log
+            If guild filters are set (!fcsguild), only shows lines from those guilds."""
+            logging.info(f"[{ctx.author} ({ctx.author.id})] Called see_log")
 
-            if date == "recent":
-                log_dirs = sorted(os.listdir("log"), reverse=True)
-                if not log_dirs:
-                    await ctx.send("No logs found.")
-                    return
-                recent_dir = log_dirs[0]
-                log_files = sorted(os.listdir(f"log/{recent_dir}"), reverse=True)
-                if not log_files:
-                    await ctx.send("No log files found in the most recent directory.")
-                    return
-                date, filename = recent_dir, log_files[0]
-
-            if not date or not filename:
-                await ctx.send("Please provide a valid date and filename, or use 'recent'.")
+            # Determine if first arg is guild name or date
+            path = None
+            is_guild_log = False
+            
+            if guild_or_date == "recent":
+                # Get most recent main log
+                log_dirs = sorted([d for d in os.listdir("log") if os.path.isdir(f"log/{d}") and re.match(r'\d{4}-\d{2}-\d{2}', d)], reverse=True)
+                if log_dirs:
+                    date = log_dirs[0]
+                    log_files = sorted(os.listdir(f"log/{date}"), reverse=True)
+                    if log_files:
+                        filename = log_files[0]
+                        path = f"log/{date}/{filename}"
+            elif guild_or_date and date_or_filename:
+                # Could be guild_name + recent, or guild_name + date + filename, or date + filename
+                guild_dir = f"log/{guild_or_date}"
+                if os.path.isdir(guild_dir):
+                    # This is a guild name
+                    is_guild_log = True
+                    if date_or_filename == "recent":
+                        log_dirs = sorted([d for d in os.listdir(guild_dir) if os.path.isdir(f"{guild_dir}/{d}") and re.match(r'\d{4}-\d{2}-\d{2}', d)], reverse=True)
+                        if log_dirs:
+                            date = log_dirs[0]
+                            log_files = sorted(os.listdir(f"{guild_dir}/{date}"), reverse=True)
+                            if log_files:
+                                filename = log_files[0]
+                                path = f"{guild_dir}/{date}/{filename}"
+                    elif filename:
+                        path = f"{guild_dir}/{date_or_filename}/{filename}"
+                else:
+                    # Try as main log with date and filename
+                    path = f"log/{guild_or_date}/{date_or_filename}"
+            elif guild_or_date and date_or_filename == "recent":
+                # Might be a guild name with recent
+                guild_dir = f"log/{guild_or_date}"
+                if os.path.isdir(guild_dir):
+                    is_guild_log = True
+                    log_dirs = sorted([d for d in os.listdir(guild_dir) if os.path.isdir(f"{guild_dir}/{d}") and re.match(r'\d{4}-\d{2}-\d{2}', d)], reverse=True)
+                    if log_dirs:
+                        date = log_dirs[0]
+                        log_files = sorted(os.listdir(f"{guild_dir}/{date}"), reverse=True)
+                        if log_files:
+                            filename = log_files[0]
+                            path = f"{guild_dir}/{date}/{filename}"
+                else:
+                    path = f"log/{guild_or_date}/{date_or_filename}"
+            elif guild_or_date:
+                await ctx.send("Usage: !seelog recent | !seelog GUILDNAME recent | !seelog GUILDNAME YYYY-MM-DD filename | !seelog YYYY-MM-DD filename")
                 return
 
-            path = f"log/{date}/{filename}"
-            if os.path.exists(path):
-                try:
-                    with open(path, "r", encoding="utf-8", errors="replace") as f:
-                        content = f.read()
+            if not path or not os.path.exists(path):
+                await ctx.send("Log not found. Check guild name, date format (YYYY-MM-DD), and filename.")
+                return
 
-                    if len(content) < 1900:
-                        await ctx.send(f"```\n{content}\n```")
-                    else:
-                        await ctx.send(f"```{content[-1900:]}```")
-                        await ctx.send("Full log attached:", file=discord.File(path))
+            try:
+                with open(path, "r", encoding="utf-8", errors="replace") as f:
+                    lines = f.readlines()
+                
+                # filter by guild if fcsguild is set
+                if filtered_guild_ids:
+                    filtered_lines = []
+                    for line in lines:
+                        if any(f'in "{guild_name}"' in line or f"({gid})" in line for gid in filtered_guild_ids for guild_name in [g for g in os.listdir(f"log") if os.path.isdir(f"log/{g}") and g not in [d for d in os.listdir("log") if re.match(r'\d{4}-\d{2}-\d{2}', d)]]):
+                            filtered_lines.append(line)
+                    content = "".join(filtered_lines)
+                else:
+                    content = "".join(lines)
 
-                except Exception as e:
-                    await ctx.send(f"Error reading log file: {e}")
-            else:
-                await ctx.send("Log not found. I lost it or u dyslexic?")
+                if len(content) < 1900:
+                    await ctx.send(f"```\n{content}\n```")
+                else:
+                    await ctx.send(f"```{content[-1900:]}```")
+                    if filtered_guild_ids:
+                        await ctx.send(f"(Filtered to guilds: {', '.join(map(str, sorted(filtered_guild_ids)))})")
+
+            except Exception as e:
+                await ctx.send(f"Error reading log file: {e}")
+
+        @bot.command(name="fcsguild")
+        @commands.has_permissions(administrator=True)
+        async def filter_guild(ctx, *, guild_ids: str = None):
+            """Filter logs by guild ID(s). Usage: !fcsguild 12345 67890 or !fcsguild clear
+            Multiple guild IDs separated by space or comma.
+            !fcsguild clear - remove all filters.
+            !fcsguild - show current filters.
+            """
+            global filtered_guild_ids
+            
+            if guild_ids is None or guild_ids.lower() == "":
+                # show current filters
+                if filtered_guild_ids:
+                    await ctx.send(f"Current guild filters: {', '.join(map(str, sorted(filtered_guild_ids)))}")
+                else:
+                    await ctx.send("No guild filters set. Use `!fcsguild <guild_id> [<guild_id> ...]` to set.")
+                return
+            
+            if guild_ids.lower() == "clear":
+                filtered_guild_ids.clear()
+                await ctx.send("Guild filters cleared.")
+                return
+            
+            # parse guild IDs (support both space and comma separation)
+            guild_ids = guild_ids.replace(",", " ")
+            try:
+                new_ids = set(int(gid.strip()) for gid in guild_ids.split() if gid.strip())
+                if not new_ids:
+                    await ctx.send("No valid guild IDs provided.")
+                    return
+                filtered_guild_ids = new_ids
+                await ctx.send(f"Guild filters set to: {', '.join(map(str, sorted(filtered_guild_ids)))}")
+                logging.info(f"Guild log filter set by {ctx.author}: {filtered_guild_ids}")
+            except ValueError:
+                await ctx.send("Invalid guild IDs. Please provide numeric values.")
 
         @bot.command(name="thx")
         async def thank_you(ctx):
@@ -2287,7 +2589,7 @@ try:
 
             if isinstance(target, discord.Member):
                 await target.add_roles(muted_role)
-                silenced_users.add(target.id)
+                silenced_users[guild.id].add(target.id)
                 await ctx.send(get_bot_message("silence", "muted", mention=target.mention))
 
             elif isinstance(target, discord.Role):
@@ -2297,7 +2599,7 @@ try:
                     overwrite.speak = False
                     overwrite.add_reactions = False
                     await channel.set_permissions(target, overwrite=overwrite)
-                silenced_roles.add(target.id)
+                silenced_roles[guild.id].add(target.id)
                 await ctx.send(get_bot_message("silence", "r_muted", mention=target.mention))
 
             else:
@@ -2316,7 +2618,7 @@ try:
             if isinstance(target, discord.Member):
                 if muted_role in target.roles:
                     await target.remove_roles(muted_role)
-                silenced_users.discard(target.id)
+                silenced_users[guild.id].discard(target.id)
                 await ctx.send(get_bot_message("unsilence", "unmuted", mention=target.mention))
 
             elif isinstance(target, discord.Role):
@@ -2326,19 +2628,21 @@ try:
                     overwrite.speak = None
                     overwrite.add_reactions = None
                     await channel.set_permissions(target, overwrite=overwrite)
-                silenced_roles.discard(target.id)
+                silenced_roles[guild.id].discard(target.id)
                 await ctx.send(get_bot_message("unsilence", "r_unmuted", mention=target.mention))
 
         @bot.command(name="listsilenced")
         @commands.has_permissions(administrator=True)
         async def listsilenced(ctx):
-            """List silenced users and roles."""
+            """List silenced users and roles in this guild."""
             guild = ctx.guild
-            if not silenced_users and not silenced_roles:
+            uset = silenced_users.get(guild.id, set())
+            rset = silenced_roles.get(guild.id, set())
+            if not uset and not rset:
                 return await ctx.send(get_bot_message("silence", "none_active"))
 
-            users = [guild.get_member(uid).mention for uid in silenced_users if guild.get_member(uid)]
-            roles = [guild.get_role(rid).mention for rid in silenced_roles if guild.get_role(rid)]
+            users = [guild.get_member(uid).mention for uid in uset if guild.get_member(uid)]
+            roles = [guild.get_role(rid).mention for rid in rset if guild.get_role(rid)]
             msg = get_bot_message("silence", "list", users=", ".join(users) or "None", roles=", ".join(roles) or "None")
             await ctx.send(msg)
                 
@@ -2375,7 +2679,7 @@ try:
 
         def _banner():
             ver = globals().get("VERSION", "—")
-            return f"BestBotEver!!! {ver}\n© 2025 TonpalmUnmain\nUnder GNU general public license v3.0\n{datetime.now().strftime('%Y-%m-%d')}\n------------------------------------------\nConsole ready. Commands: start [msg], stop [msg], targch [channel_id], exit"
+            return f"BestBotEver!!! {ver}\n© 2025 TonpalmUnmain\nUnder GNU general public license v3.0\n{datetime.now().strftime('%Y-%m-%d')}\n------------------------------------------\nConsole ready. Commands: start [msg], stop [msg], targch [channel_id], editcfg <path> <value>, exit"
 
         console = ConsoleInterface(name="BestDiscordBotEver", version=str(globals().get("VERSION", "—")), prompt="console> ", banner=_banner)
 
@@ -2439,11 +2743,16 @@ try:
             async def _shutdown():
                 try:
                     logging.info("Shutting down bot...")
-                    if stop_message and target_channel_id:
-                        channel = bot.get_channel(target_channel_id)
-                        if channel:
-                            await channel.send(stop_message)
-                            logging.info(f"Sent shutdown message to #{channel} ({channel.id}): {stop_message}")
+                    if stop_message:
+                        # send shutdown message to each guild based on per-guild config
+                        for guild in bot.guilds:
+                            channel = get_target_channel_for_guild(guild)
+                            if channel:
+                                try:
+                                    await channel.send(stop_message)
+                                    logging.info(f"Sent shutdown message to #{channel} ({channel.id}) in guild {guild.id}: {stop_message}")
+                                except Exception as e:
+                                    logging.error(f"Failed to send shutdown message in guild {guild.id}: {e}")
                     for t in asyncio.all_tasks(loop=bot_loop):
                         if t is not asyncio.current_task(loop=bot_loop):
                             t.cancel()
@@ -2471,14 +2780,37 @@ try:
             
         async def _cmd_targch(args):
             global target_channel_id, config_data
-            if not args or not args[0].isdigit():
-                print("Usage: targch <channel_id>")
+            # usage: targch <channel_id>          -> change global default
+            #        targch <guild_id> <channel_id> -> change for specific guild
+            if not args or not all(a.isdigit() for a in args):
+                print("Usage: targch <channel_id> OR targch <guild_id> <channel_id>")
                 return
-            target_channel_id = int(args[0])
-            config_data["config"]["default_target_channel_id"] = str(target_channel_id)
-            save_json(CONFIG_FILE, config_data)
-            logging.info(f"Target channel set to {target_channel_id}")
-            print(f"Target channel set to {target_channel_id}")
+            if len(args) == 1:
+                # update global fallback
+                target_channel_id = int(args[0])
+                config_data["config"]["default_target_channel_id"] = str(target_channel_id)
+                save_json(CONFIG_FILE, config_data)
+                logging.info(f"Global default target channel set to {target_channel_id}")
+                print(f"Global default target channel set to {target_channel_id}")
+            else:
+                guild_id = int(args[0])
+                channel_id = int(args[1])
+                set_guild_setting(guild_id, "target_channel_id", channel_id)
+                logging.info(f"Target channel for guild {guild_id} set to {channel_id}")
+                print(f"Target channel for guild {guild_id} set to {channel_id}")
+
+        async def _cmd_editcfg(args):
+            if len(args) < 2:
+                print("Usage: editcfg <path> <value>")
+                return
+            path = args[0]
+            value = " ".join(args[1:])
+            try:
+                set_config_value(path, value)
+                print(f"Config updated: {path} = {value}")
+                logging.info(f"Config updated via console: {path} = {value}")
+            except Exception as e:
+                print(f"Failed to update config: {e}")
 
         async def _cmd_reply(args):
             if len(args) < 2:

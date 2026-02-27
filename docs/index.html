@@ -89,6 +89,9 @@
           const c = cfg.config || {};
           cfgEl('cfg-version').textContent = c.version || '—';
           cfgEl('cfg-channel').textContent = c.default_target_channel_id || '—';
+          if (cfg.guilds) {
+            cfgEl('cfg-channel').textContent += ' (global default; guild-specific overrides stored in \"guilds\")';
+          }
           cfgEl('cfg-admin').textContent = c.admin_role_id || '—';
         } else {
           cfgEl('cfg-version').textContent = 'config.json not found';

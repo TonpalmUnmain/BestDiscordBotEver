@@ -28,6 +28,8 @@ choco install ffmpeg
 
 4. Configure
 - Copy `config.example.json` -> `config.json` and update fields (bot token must be placed in `token.config`).
+
+  *If no `config.json` is present when the bot starts, an interactive wizard will prompt you for basic settings and create the file.*
 - Ensure folders exist:
 ```powershell
 mkdir log userdata feedback fdump tts_output
@@ -68,6 +70,14 @@ Example `config.json` (current project defaults):
     "bot_test_channel_id": "1399900695993253970",
     "ffmpeg_dir": ""
   },
+  "guilds": {
+    "123456789012345678": {
+      "target_channel_id": "1371357608904228924"
+    },
+    "876543210987654321": {
+      "target_channel_id": "1421497953834631319"
+    }
+  },
   "MCS": {
     "mcsAdress": "multi-nor.gl.at.ply.gg",
     "mcsPort": 5355,
@@ -78,7 +88,11 @@ Example `config.json` (current project defaults):
 }
 ```
 
+The new `guilds` section allows per-server overrides (e.g. target channel) while the original `default_target_channel_id` acts as a fallback for any guild without its own entry.
+
 Other important files:
+
+  • `config.example.json` provides sample values for the wizard.
 - `token.config` — bot token (plain text)
 - `messages.json` — all bot user-visible message templates
 - `banned_words.json` — banned / whitelisted words and translations
@@ -133,8 +147,9 @@ Moderation / Admin
 - `!rmwhitelistword <word>` — remove whitelist (owner)
 - `!listwhitelistword` — list whitelist (owner)
 - `!forgive @user` — remove timeout (moderate_members)
-- `!cfch <channel_id|current>` — set default target channel (admin)
+- `!cfch <channel_id|current>` — set target channel for the current server (admin)
 - `!seelog recent|YYYY-MM-DD filename` — view logs (admin)
+- `!fcsguild <guild_id> [<guild_id> ...]` or `!fcsguild clear` — filter logs by guild IDs (admin)
 
 Voice
 - `!jvc` — join caller's voice channel
