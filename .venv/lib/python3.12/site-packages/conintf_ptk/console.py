@@ -1,0 +1,100 @@
+import asyncio
+from datetime import datetime
+
+try:
+    from prompt_toolkit import PromptSession
+    from prompt_toolkit.patch_stdout import patch_stdout
+except ImportError:
+    raise ImportError(
+        "conintf_ptk requires prompt_toolkit. Install it via `pip install prompt_toolkit`."
+    )
+
+class ConsoleInterface:
+    """
+    Reusable async console interface using prompt_toolkit.
+    Banner is fully customizable with optional command display.
+    """
+
+    def __init__(self, name="Console", version="1.0", prompt="> ", banner=None):
+        self.name = name
+        self.version = version
+        self.prompt = prompt
+        self.session = PromptSession()
+        self.commands = {}  
+        self.running = True
+        self.banner = banner or self.default_banner
+        self.show_commands_in_banner = False
+        self.commands_banner_prefix = "Available commands:"
+
+    def default_banner(self):
+        return f"{self.name} {self.version}\nDate: {datetime.now().strftime('%Y-%m-%d')}\n" + "-"*40
+
+    def banner_showcmd(self, show: bool = True, prefix: str = "Available commands:"):
+        self.show_commands_in_banner = show
+        self.commands_banner_prefix = prefix
+
+    def add_command(self, name, func, help_msg=""):
+        self.commands[name] = {"func": func, "help": help_msg}
+
+    def show_banner(self):
+        if callable(self.banner):
+            print(self.banner())
+        else:
+            print(str(self.banner))
+        if self.show_commands_in_banner and self.commands:
+            print(self.commands_banner_prefix)
+            for cmd, info in self.commands.items():
+                print(f" - {cmd}: {info['help']}")
+
+    async def start(self):
+        self.show_banner()
+        with patch_stdout():
+            while self.running:
+                try:
+                    line = await self.session.prompt_async(self.prompt)
+                    cmd_parts = line.strip().split()
+                    if not cmd_parts:
+                        continue
+                    cmd_name, *args = cmd_parts
+                    if cmd_name in self.commands:
+                        func = self.commands[cmd_name]["func"]
+                        if asyncio.iscoroutinefunction(func):
+                            await func(args)
+                        else:
+                            func(args)
+                    else:
+                        print(f"Unknown command: {cmd_name}")
+                except (KeyboardInterrupt, EOFError):
+                    print("\nExiting console.")
+                    break
+
+    async def stop(self):
+        self.running = False
+
+    async def execute(self, command, args=None):
+        """
+        Execute a registered command programmatically.
+        
+        Args:
+            command: The name of the command to execute
+            args: Optional list of arguments to pass to the command
+            
+        Returns:
+            The result of the command execution, or None if command not found
+        """
+        if args is None:
+            args = []
+        
+        if command not in self.commands:
+            print(f"Unknown command: {command}")
+            return None
+        
+        func = self.commands[command]["func"]
+        try:
+            if asyncio.iscoroutinefunction(func):
+                return await func(args)
+            else:
+                return func(args)
+        except Exception as e:
+            print(f"Error executing command '{command}': {e}")
+            return None
