@@ -2,7 +2,7 @@ discord.py
 mcstatus
 prompt_toolkit
 psutil
-GPUtil
+pynvml
 yt-dlp
 homoglyphs
 ftfy
